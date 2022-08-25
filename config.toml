@@ -1,4 +1,4 @@
-baseURL = "http://pilotcloud.ascon.net"
+baseURL = "https://pilotcloud.ascon.net"
 languageCode = 'en-us'
 title = "Pilot-CloudService"
 theme = "hugo-geekdoc"
