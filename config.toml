@@ -142,11 +142,11 @@ enableRobotsTXT = false
 # geekdocBreadcrumb = false
 
 # Установите местоположение исходного репозитория.
- geekdocRepo = "http://vsc.pilot.ascon.net/pilotbim/cloudservicedocs.git"
+# geekdocRepo = "http://vsc.pilot.ascon.net/pilotbim/cloudservicedocs.git"
 
 # Включить ссылки "Редактировать страницу" (Edit page). Требуется параметр 'GeekdocRepo'
 # и путь должен указывать на родительский каталог папки 'content'.edit/main/cloudservicedocs
- geekdocEditPath = "C://git/cloudservicedocs"
+# geekdocEditPath = "C://git/cloudservicedocs"
 
 # Используется для ссылки "Редактировать страницу" (Edit page), установленной по умолчанию в значение '.File.Path'.
 # Может быть перезаписан путем, относящимся к 'geekdocEditPath'
