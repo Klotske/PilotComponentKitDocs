@@ -45,8 +45,8 @@ Viewer для 2D документов &amp;lt;link rel=&amp;#34;stylesheet&amp;#
       <pubDate>Thu, 04 Aug 2022 12:44:03 +0300</pubDate>
       
       <guid>https://pilotcloud.ascon.net/documentation/sovmestimost/</guid>
-      <description> Поддержка браузеров Для просмотра требуется браузер, совместимый с WebGL-canvas:
-- Chrome 50+- Firefox 45+- Opera 37+- Edge 20+</description>
+      <description> Поддержка браузеров Требуется браузер, совместимый с WebGL-canvas. Обеспечивается работоспособность со следующими браузерами:
+- Chrome 104+- Edge 104+- Яндекс.Браузер 22+</description>
     </item>
     
     <item>
