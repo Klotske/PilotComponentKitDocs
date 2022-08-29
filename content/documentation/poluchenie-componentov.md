@@ -6,7 +6,7 @@ draft: false
 
 Последнюю версию компонентов Pilot-Viewer можно получить с сервера PILOT-NAME
 
-## VIEWER ДЛЯ 2D ДОКУМЕНТОВ
+## Viewer для 2D документов
 
 {{< highlight html >}}
 <link rel="stylesheet" href="https://api.pilot.ascon.net/pilot.web.viewer/v1/viewer.2d/style.min.css" type="text/css">
@@ -14,7 +14,7 @@ draft: false
 <script src="https://api.pilot.ascon.net/pilot.web.viewer/v1/viewer.2d/viewer2d.min.js"></script>
 {{< /highlight >}}
 
-## VIEWER ДЛЯ 3D ДОКУМЕНТОВ
+## Viewer для 3D документов
 
 {{< highlight html >}}
 <link rel="stylesheet" href="https://api.pilot.ascon.net/pilot.web.viewer/v1/viewer.3d/style.min.css" type="text/css">

@@ -1,6 +1,6 @@
 baseURL = "https://pilotcloud.ascon.net"
 languageCode = 'en-us'
-title = "Pilot-CloudService"
+title = "Pilot-Cloud"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false
@@ -11,7 +11,7 @@ pygmentsCodeFences = true
 disablePathToLower = true
 
 # Required if you want to render robots.txt template
-enableRobotsTXT = true
+enableRobotsTXT = false
 
 # Needed for mermaid shortcodes
 [markup]
@@ -26,17 +26,17 @@ enableRobotsTXT = true
    tag = "tags"
    
 [params]
-  # Вложенность меню (Необязательно, по умолчанию 6) Установите, сколько уровней оглавления должно отображаться на странице.
+  # ВЛОЖЕННОСТЬ МЕНЮ (Необязательно, по умолчанию 6) Установите, сколько уровней оглавления должно отображаться на странице.
   # Используйте false, чтобы скрыть ToC, обратите внимание, 
   # что 0 будет обозначать значение по умолчанию, т.е. 6 (https://gohugo.io/functions/default/)
   # Также можно указать этот параметр для каждой страницы в разделе front matter.
   geekdocToC = 3
 
-  # Логотип(Необязательно, по умолчанию static/brand.svg) Задайте путь к логотипу для Geekdoc
+  # ЛОГОТИП(Необязательно, по умолчанию static/brand.svg) Задайте путь к логотипу для Geekdoc
   # относительно вашей папки 'static/' folder.
   geekdocLogo = "logo-redsm.png"
 
-  # (Необязательно, по умолчанию false) Визуализируйте меню из файла данных в 'data/menu/main.yaml'.
+  # BUNDLE MENU(Необязательно, по умолчанию false) Визуализируйте меню из файла данных в 'data/menu/main.yaml'.
   # Смотрите также https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle = false
 
@@ -44,30 +44,30 @@ enableRobotsTXT = true
   # на страницу, если включена эта опция. Может быть включен для каждой страницы с помощью 'geekdocCollapseSection'.
   geekdocCollapseAllSections = false
 
-  # (Необязательно, по умолчанию true) Показывать ссылки для навигации по страницам внизу каждой
+  # BUNDLE MENU(Необязательно, по умолчанию true) Показывать ссылки для навигации по страницам внизу каждой
   # страницы (только для связанного меню - bundle menu).
   geekdocNextPrev = false
 
-  # Хлебные крошки(Необязательно, по умолчанию true) Показать панель навигации в виде пути до страницы в верхней части каждой страницы документов.
+  # ХЛЕБНЫЕ КРОШКИ(Необязательно, по умолчанию true) Показать панель навигации в виде пути до страницы в верхней части каждой страницы документов.
   # Вы также можете указать этот параметр для каждой страницы в разделе front matter.
   geekdocBreadcrumb = true
 
   # Репозиторий для редактируемых страниц (Необязательно, по умолчанию none) Установите местоположение исходного репозитория. 
   # Используется для ссылок "Редактировать страницу" (Edit page links).
   # Вы также можете указать этот параметр для каждой страницы в разделе front matter.
-  geekdocRepo = "https://github.com/Lekarjal/pilotcloud.git"
+  # geekdocRepo = "https://github.com/Lekarjal/pilotcloud.git"
 
   # (Необязательно, по умолчанию none) Доступно для  ссылок "Редактировать страницу" (Edit page links). 
   # Требуется заданный параметр 'GeekdocRepo'
   # и путь должен указывать на родительский каталог папки 'content'. Например, geekdocEditPath = "edit/main/exampleSite"
   # Вы также можете указать этот параметр для каждой страницы в разделе front matter.
-   geekdocEditPath = "Hugo/Sites/pilotcloud.ascon.net"
+  # geekdocEditPath = "Hugo/Sites/pilotcloud.ascon.net"
 
-  # (Необязательно, по умолчанию true) Включает функцию поиска с помощью flexsearch.
+  # ПОИСК(Необязательно, по умолчанию true) Включает функцию поиска с помощью flexsearch.
   # Index создается "на лету" и может замедлить работу вашего сайта.
-  geekdocSearch = false
+  geekdocSearch = true
 
-  # (Необязательно, по умолчанию false) Отображение результатов поиска с родительской папкой в качестве префикса.
+  # ПОИСК(Необязательно, по умолчанию false) Отображение результатов поиска с родительской папкой в качестве префикса.
   # Эта опция позволяет различать файлы с одинаковыми именами в разных папках.
   # ВНИМАНИЕ: Этот параметр применяется только в том случае, если 'geekdocSearch = true'.
   geekdocSearchShowParent = true
@@ -106,7 +106,7 @@ enableRobotsTXT = true
   geekdocBackToTop = true
 
   # Добавление тэгов в меню (Необязательно, по умолчанию false) Включите или отключите автоматическое добавление тегов для страниц c публикациями на боковую панель навигации.
-  geekdocTagsToMenu = true
+  geekdocTagsToMenu = false
 
   # Сортировка меню (Необязательно, по умолчанию 'title') Настройте порядок сортировки элементов для дерева файлов в меню. Возможные варианты 'title', 'linktitle',
   # 'date', 'publishdate', 'expirydate' or 'lastmod'. Каждый параметр также может быть использован с обратным модификатором
@@ -142,21 +142,21 @@ enableRobotsTXT = true
 # geekdocBreadcrumb = false
 
 # Установите местоположение исходного репозитория.
-# geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
+ geekdocRepo = "http://vsc.pilot.ascon.net/pilotbim/cloudservicedocs.git"
 
 # Включить ссылки "Редактировать страницу" (Edit page). Требуется параметр 'GeekdocRepo'
-# и путь должен указывать на родительский каталог папки 'content'.
-# geekdocEditPath = "edit/main/exampleSite"
+# и путь должен указывать на родительский каталог папки 'content'.edit/main/cloudservicedocs
+ geekdocEditPath = "C://git/cloudservicedocs"
 
 # Используется для ссылки "Редактировать страницу" (Edit page), установленной по умолчанию в значение '.File.Path'.
 # Может быть перезаписан путем, относящимся к 'geekdocEditPath'
 # geekdocFilePath =
 
 # Установите флажок помечать страницу как самостоятельный раздел (только меню дерева файлов).
-# geekdocFlatSection = true
+ geekdocFlatSection = true
 
 # Установите значение true, чтобы скрыть страницу или раздел из бокового меню (только меню дерева файлов).
-# geekdocHidden = true
+ geekdocHidden = true
 
 # Установите значение false, чтобы отобразить эту страницу в виде элемента меню дерева файлов, если вы хотите, чтобы она была скрыта на боковой панели.
 # ВНИМАНИЕ: Применяется только в том случае, если 'geekdocHidden = true'.
@@ -166,7 +166,7 @@ enableRobotsTXT = true
 # geekdocCollapseSection = true
 
 # Добавить якорную ссылку к заголовкам.
-# geekdocAnchor = true
+ geekdocAnchor = true
 
 # Если вы защитили некоторые страницы, например, с помощью базовой аутентификации, вы можете захотеть исключить эти страницы
 # из файла данных, в противном случае может произойти утечка информации. Установка для этого параметра значения "true" исключит
@@ -176,3 +176,5 @@ enableRobotsTXT = true
 
 # Задайте "left" (по умолчанию), "center" или "right" для настройки выравнивания текста страницы.
 # geekdocAlign = "left"
+
+refLinksNotFoundURL = "http://www.bileyg.com"
