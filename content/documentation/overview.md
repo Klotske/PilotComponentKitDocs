@@ -6,7 +6,7 @@ draft: false
 
 ## Обзор
 
-### Что такое PilotWebViewer?
+### Что такое PilotWeb?
 
 Pilot.Web.3D и Pilot.Web.2D  это JavaScript библиотеки для просмотра 3D моделей и 2D документов. Эти библиотеки позволяют просматривать документы в формате xps и 3D модели созданные в системе Pilot-BIM.
 
@@ -27,9 +27,6 @@ Pilot.Web.3D и Pilot.Web.2D  это JavaScript библиотеки для пр
 
 Для просмотра 2D документов просто используте документы в формате The XML Paper Specification (XPS).
 Чтобы начать просматривать 3D модели сначала необходимо получить файлы в формате BM. Стандартный формат работы с 3D моделями в системе Pilot-BIM.
-
-The Model Derivative API enables users to represent and share their designs in different formats. The Viewer communicates natively with the Model Derivative API to fetch model data, complying with its authorization and security requirements. See the Prepare a File for the Viewer tutorial for the Model Derivative API for more information.
-Authentication (OAuth) is required in order to use Model Derivative. The Model Derivative tutorial guides you through the process of obtaining an access token. You can also refer to the Authentication Documentation.
 
 ### Требования к браузеру
 
