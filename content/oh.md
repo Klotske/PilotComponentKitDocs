@@ -95,5 +95,4 @@ hint type="note" icon=gdoc_info_outline title="Примечание"      - го
 hint type="tip" icon=gdoc_check_circle_outline title="Совет"    - зелёная    - используется, чтобы дать совет, как лучше что-то сделать
 hint type="caution" icon=gdoc_dangerous title="Запрещено"       - фиолетовая - используется в качестве "Внимание, так делать нельзя!"
 hint type="warning" icon=gdoc_fire title="Внимание"             - красная    - используется в качестве "Внимание, нужно делать вот так обязательно, без этого не будет работать"
-
-hint type="important" icon=gdoc_error_outline title="Важно"     - жёлтая - запасная
+hint type="important" icon=gdoc_error_outline title="Важно"     - жёлтая - важная информация, которую надо выделить
