@@ -26,7 +26,6 @@ draft: false
 Пример загрузки нескольких частей модели:
 
 {{< highlight js >}} 
-```js
   let options = { 
     isConsolidatedModel: true,
     Guid: bmFileId
@@ -38,7 +37,6 @@ draft: false
   },(e) => {
     console.error(`${options.Guid}: An error occured while loading model part: ${e}`);
   });
-```
 {{< /highlight >}}
 
 {{< hint type="note" title="Примечание">}}
