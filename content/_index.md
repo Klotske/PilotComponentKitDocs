@@ -5,7 +5,7 @@ draft: false
 
 ---
 
-# Pilot-CloudService
+# Pilot-Cloud
 
 {{< columns >}} <!-- begin columns block -->
 

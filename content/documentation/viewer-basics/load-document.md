@@ -1,0 +1,26 @@
+---
+title: "3.2. Загрузка документа"
+date: 2022-08-29T14:44:03+03:00
+draft: false
+---
+
+## Загрузка документа XPS в 2D компонент
+
+Компонент Pilot.Web.2D предназначен для просмотра документов в формате XPS. Никаких предварительных требований для просмотра документа нет.
+
+Пример загрузки документа:
+```js
+  let options = {};
+  let buffer = // ArrayBuffer from xps document
+  viewer.loadDocument(buffer, {}, () => {
+    console.log("The document loaded successfully");
+    /* place your code here */
+  }, 
+  (e) => {
+    console.log("An error occured while loading document: " + e)
+  });
+```
+
+{{< hint type=[note]>}}
+`buffer` - это массив байт полученный из файла **.xps**.
+{{< /hint >}}
