@@ -40,7 +40,7 @@ withClickAction(action: EventListener) : ButtonBuilder;
 `action` - обработчик события нажатия кнопки.
 `return ButtonBuilder` - возвращает класс строителя кнопки.
 
-{{< hint type=[note]>}}
+{{< hint type="note">}}
 Метод еще не доработан и может быть изменен в следующих версиях.
 {{< /hint >}}
 

@@ -21,6 +21,6 @@ draft: false
   });
 ```
 
-{{< hint type=[note]>}}
+{{< hint type="note">}}
 `buffer` - это массив байт полученный из файла **.xps**.
 {{< /hint >}}
