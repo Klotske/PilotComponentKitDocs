@@ -33,20 +33,16 @@ Authentication (OAuth) is required in order to use Model Derivative. The Model D
 
 ### Требования к браузеру
 
-Для просмотра 3D моделей необходимо использовать браузер совместимый с WebGL-canvas:
+Для просмотра 3D моделей рекомендуется использовать браузер совместимый с WebGL-canvas:
 
-- Chrome 51+
-- Firefox 54+
-- Opera 38+
-- Safari 10+
-- Microsoft Edge 79+
-- Яндекс браузер 20+
+- Google Chrome 104+
+- Firefox 106+
+- Microsoft Edge 104+
+- Яндекс.Браузер 22+
 
-Для просмотра 2D документов необходимо использовать браузер:
+Для просмотра 2D документов рекомендуется использовать браузер:
 
-- Chrome 51+
-- Firefox 54+
-- Opera 38+
-- Safari 10+
-- Microsoft Edge 79+
-- Яндекс браузер 20+
+- Chrome 104+
+- Firefox 106+
+- Microsoft Edge 104+
+- Яндекс.Браузер 22+
