@@ -15,7 +15,7 @@
     <div class="wrapper">
       <input type="checkbox" class="hidden" id="menu-header-control" />
 
-      {{ partial "site-header" (dict "Root" . "MenuEnabled" false) }}
+      {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
 
 
       <main class="gdoc-error flex-even">
@@ -27,6 +27,7 @@
             <div class="gdoc-error__line gdoc-error__title">{{ i18n "error_message_title" }}</div>
             <div class="gdoc-error__line gdoc-error__code">{{ i18n "error_message_code" }}</div>
             <div class="gdoc-error__line gdoc-error__help">
+			Мы не можем найти эту страницу. 
               {{ i18n "error_message_text" .Site.BaseURL | safeHTML }}
             </div>
           </div>

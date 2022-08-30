@@ -1,7 +1,8 @@
 ---
-title: "Сопоставление методов Autodesk Forge/Pilot.Web.3D/Pilot-BIM"
+title: "Сопоставление методов Autodesk Forge/Pilot-Web-Viewer/Pilot-BIM"
 date: 2022-08-04T12:44:03+03:00
 draft: false
+
 ---
 
 ## Сопоставление методов 3D API
@@ -11,7 +12,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-### Название метода Pilot.Web.3D
+### Название метода Pilot-Web-Viewer
 
 <---> <!-- magic separator, between columns -->
 
@@ -27,15 +28,12 @@ draft: false
 
 {{< columns >}} <!-- begin columns block -->
 
-{{< highlight javascript >}}
-start(url, options, onSuccessCallback, onErrorCallback, initOptions)
-: number
-{{< /highlight >}}
+`start(url, options, onSuccessCallback, onErrorCallback, initOptions): number`
 
 <---> <!-- magic separator, between columns -->
-```Shell
-start(): number
-```
+
+`start(): number`
+
 <---> <!-- magic separator, between columns -->
 
 &nbsp;
@@ -50,15 +48,11 @@ start(): number
 
 {{< columns >}} <!-- begin columns block -->
 
-{{< highlight javascript >}}
-finish(): void
-{{< /highlight >}}
+`finish(): void`
 
 <---> <!-- magic separator, between columns -->
 
-```Shell
-finish(): void
-```
+`finish(): void`
 <---> <!-- magic separator, between columns -->
 
 &nbsp;
@@ -73,15 +67,11 @@ finish(): void
 
 {{< columns >}} <!-- begin columns block -->
 
-{{< highlight javascript >}}
-loadModel(url, options, onSuccessCallback, onErrorCallback): void
-{{< /highlight >}}
+`loadModel(url, options, onSuccessCallback, onErrorCallback): void`
 
 <---> <!-- magic separator, between columns -->
 
-```Shell
-loadModel(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void
-```
+`loadModel(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
 <---> <!-- magic separator, between columns -->
 
 &nbsp;
