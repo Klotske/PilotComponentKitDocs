@@ -12,7 +12,7 @@ draft: false
 ```js
   let options = {};
   let buffer = // ArrayBuffer from xps document
-  viewer.loadDocument(buffer, {}, () => {
+  let viewer.loadDocument(buffer, {}, () => {
     console.log("The document loaded successfully");
     /* place your code here */
   }, 
@@ -21,6 +21,6 @@ draft: false
   });
 ```
 
-{{< hint type="note">}}
+{{< hint type="note" title="Примечание">}}
 `buffer` - это массив байт полученный из файла **.xps**.
 {{< /hint >}}

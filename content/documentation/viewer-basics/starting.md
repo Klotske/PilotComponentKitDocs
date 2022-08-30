@@ -13,8 +13,8 @@ draft: false
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/viewers/1.0.0/3d/style.css" type="text/css">
-    <script src="https://pilotcloud.ascon.net/components/viewers/1.0.0/3d/pilotweb3d.min.js"></script>
+    <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/1.0.0/pilotweb3d/style.css" type="text/css">
+    <script src="https://pilotcloud.ascon.net/components/1.0.0/pilotweb3d/pilotweb3d.min.js"></script>
 
     <style>
         body {
@@ -39,8 +39,8 @@ draft: false
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/viewers/1.0.0/2d/style.css" type="text/css">
-    <script src="https://pilotcloud.ascon.net/components/viewers/1.0.0/2d/pilotweb2d.min.js"></script>
+    <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/1.0.0/pilotweb2d/style.css" type="text/css">
+    <script src="https://pilotcloud.ascon.net/components/1.0.0/pilotweb2d/pilotweb2d.min.js"></script>
 
     <style>
         body {

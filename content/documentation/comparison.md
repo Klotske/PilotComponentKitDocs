@@ -1,5 +1,5 @@
 ---
-title: "Сопоставление методов Autodesk Forge/Pilot-Web-Viewer/Pilot-BIM"
+title: "Сопоставление методов Autodesk Forge и Pilot.Web.3D"
 date: 2022-08-04T12:44:03+03:00
 draft: false
 
@@ -12,7 +12,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-### Название метода Pilot-Web-Viewer
+### Название метода Pilot.Web.3D
 
 <---> <!-- magic separator, between columns -->
 
@@ -40,7 +40,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Подписка на события и др. действия (загрузка расширений — не реализовано)
+Подписка на события и др. действия 
 
 {{< /columns >}}
 
@@ -59,7 +59,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Отписка от событий (выгрузка расширений — не реализовано)
+Отписка от событий
 
 {{< /columns >}}
 
@@ -71,14 +71,14 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-`loadModel(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
+`loadModelPart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
 <---> <!-- magic separator, between columns -->
 
 &nbsp;
 
 <---> <!-- magic separator, between columns -->
 
-Загрузка модели во вьювер
+Загрузка части модели
 
 {{< /columns >}}
 
@@ -90,7 +90,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-`unloadModel(modelId: string | ModelPart): void`
+`unloadModelPart(modelId: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -98,7 +98,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Выгрузить модель (пока не   определились с параметрами)
+Выгрузить часть модели
 
 {{< /columns >}}
 
@@ -178,7 +178,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Скрыть модель (часть модели)
+Скрыть часть модели
 
 {{< /columns >}}
 
@@ -198,7 +198,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Показать ранее скрытую модель
+Показать ранее скрытую часть модели
 
 {{< /columns >}}
 
@@ -218,8 +218,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Получить селектированные объекты по моделям. У Forge есть 2 разных метода getSelection и getAggregateSelection.
-Один работает для одной модели, второй для множества моделей. У нас всегда работаем с множестовм моделей.
+Получить селектированные объекты.
 
 {{< /columns >}}
 
@@ -239,7 +238,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Спрятать отдельные бим-объекты (элементы) в модели.
+Спрятать отдельные элементы.
 
 {{< /columns >}}
 
@@ -279,7 +278,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Показать отдельные бим-объекты (элементы) в модели.
+Показать отдельные элементы.
 
 {{< /columns >}}
 
@@ -319,6 +318,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
+Удалить эту строку!!!!!!!!!!!
 Сменить селект на элементах на противоположный. SelectType – тип выбора элемента (типа последний или корневой, у нас не реализовано).
 
 {{< /columns >}}
@@ -339,7 +339,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Селектировать бим-объекты (элементы).
+Выделить элементы.
 
 {{< /columns >}}
 
@@ -359,7 +359,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Снять селектирование.
+Снять выделение.
 
 {{< /columns >}}
 
@@ -379,8 +379,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Задать цвет для бим-объектов (элементов).
-Задаем как THREE.Color но этот цвет не позволяет задать альфа канал. Рекурсивность не реализована.
+Задать цвет для элементов.
 
 {{< /columns >}}
 
@@ -400,7 +399,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Вернуть цвет для модели
+Вернуть цвет для всех элементов части модели.
 
 {{< /columns >}}
 
@@ -420,7 +419,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-Подписаться на событие. У Forge эти методы можно вызвать прям у viewer. У нас будет отдельное св-во events. 
+Подписаться на события.
 
 {{< /columns >}}
 

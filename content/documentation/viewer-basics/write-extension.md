@@ -4,27 +4,26 @@ date: 2022-08-29T14:44:03+03:00
 draft: false
 ---
 
-## Создание расширения
-
 ### Что такое расширение
-С помощью расширений можно расширить возможности взаимодействия с компонентами просмотра документов и 3D моделей.
+С помощью расширений можно дополнять функциональность компонентов работы с BIM-моделями и документами.
 
 #### Шаг 1. Подключение файла расширения
 Расширение должно быть подключено после подключения всех классов ядра компонента Pilot.Web.3D/Pilot.Web.2D. 
 Пример для подключения расширения `my-extension.js`
 
 ```html
-<script src="https://pilotcloud.ascon.net/components/viewers/1.0.0/3d/pilotweb3d.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/1.0.0/pilotweb3d/pilotweb3d.min.js"></script>
 <script src="my-extension.js"></script>
 ```
 
 #### Шаг 2. Пишем код расширения
 Чтобы написать свое расширение для компонентов необходимо:
 
-1. Унаследоваться от PilotWeb3D.Extension для 3D компонента и PilotWeb2D.Extension для 2D компонента.
+1. Унаследоваться от класса `PilotWeb3D.Extension` или `PilotWeb2D.Extension`.
 2. Зарегистрировать расширение с уникальным именем в системе.
 
 Пример:
+
 ```js
 class My3DExtension extends PilotWeb3D.Extension {
     
@@ -52,9 +51,10 @@ class My3DExtension extends PilotWeb3D.Extension {
 PilotWeb3D.theExtensionManager.registerExtensionType('My3DExtension', My3DExtension);
 ```
 
-#### Шаг 3. Загрузка расширения.
+#### Шаг 3. Загрузка расширения
 
-Пример загрузки расширения для 3D компонента
+Пример загрузки расширения для 3D компонента:
+
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
@@ -64,7 +64,8 @@ viewer.extensionsLoader.loadExtension("My3DExtension");
 viewer.loadModelPart(...);
 ```
 
-Пример загрузки расширения для 2D компонента
+Пример загрузки расширения для 2D компонента:
+
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb2D.CreateViewer(htmlDiv);

@@ -8,7 +8,8 @@ draft: false
 
 Перед загрузкой части модели ее необходимо получить из системы Pilot-BIM. После получения части модели ее можно загрузить в компонент Pilot.Web.3D
 
-Пример загрузки одной модели:
+Пример загрузки одной части модели:
+
 ```js
   let options = { 
     Guid: bmFileId
@@ -22,7 +23,9 @@ draft: false
   });
 ```
 
-Пример загрузки части модели:
+Пример загрузки нескольких частей модели:
+
+{{< highlight js >}} 
 ```js
   let options = { 
     isConsolidatedModel: true,
@@ -36,15 +39,16 @@ draft: false
     console.error(`${options.Guid}: An error occured while loading model part: ${e}`);
   });
 ```
+{{< /highlight >}}
 
-{{< hint type="note">}}
+{{< hint type="note" title="Примечание">}}
 Чтобы добавить часть модели к уже загруженным частям в `options` следует задать параметр `isConsolidatedModel : true`
 {{< /hint >}}
 
-{{< hint type="note">}}
+{{< hint type="note" title="Примечание">}}
 `Guid` - следует указывать уникальный идентифкатор части модели в рамках одной консолидированной модели.
 {{< /hint >}}
 
-{{< hint type="note">}}
+{{< hint type="note" title="Примечание">}}
 `buffer` - это массив байт полученный из файла **.bm** из системы **Pilot-BIM**.
 {{< /hint >}}
