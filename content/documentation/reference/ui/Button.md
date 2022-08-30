@@ -21,7 +21,7 @@ caption: string;
 clickAction: EventListener;
 ```
 
-{{< hint type=[note]>}}
+{{< hint type="note">}}
 Метод еще не доработан и может быть изменен в следующих версиях.
 {{< /hint >}}
 
