@@ -2,7 +2,12 @@
 
 date: 2022-08-04T12:44:03+03:00
 draft: false
-
+resources:
+  - name: forest-1
+    src: "pilotcloud_scheme_principal.png"
+    title: Forest (1)
+    params:
+      credits: "[Jay Mantri](https://unsplash.com/@jaymantri) on [Unsplash](https://unsplash.com/s/photos/forest)"
 ---
 
 # Pilot-Cloud
@@ -17,6 +22,8 @@ draft: false
 
 Используя компоненты системы, такие как комплекс сервисов и API, вы можете разрабатывать собственные инженерные решения. 
 {{< /columns >}}
+
+{{< img name="forest-1” size="large” lazy=false >}}
 
 
 
