@@ -4,12 +4,12 @@ date: 2022-08-26T14:44:03+03:00
 draft: false
 ---
 
-Pilot.Web.3D и Pilot.Web.2D -- это компоненты для работы с BIM-моделями и документами. Они содержат ряд функций и утилит для решения поставленных задач, написанных на языке JavaScript, и собранных в библиотеки. 
+**Pilot.Web.3D** и **Pilot.Web.2D** -- это компоненты для работы с BIM-моделями и документами. Они содержат ряд функций и утилит для решения поставленных задач, написанных на языке JavaScript, и собранных в библиотеки. 
 Кроме того, они включают в себя стили, методы API и документацию.
 
 #### BIM-модели
 
-В качестве моделей используйте файлы в формате .bm - это стандартный формат работы с BIM-моделями в системе Pilot-BIM.
+В качестве моделей используйте файлы в формате **.bm** - это стандартный формат работы с BIM-моделями в системе Pilot-BIM.
 
 <img src="../overview/3d_viewer.png" />
 
@@ -24,7 +24,6 @@ Pilot.Web.3D и Pilot.Web.2D -- это компоненты для работы 
 Для удобного просмотра документов на панели инструментов есть специальные команды.
 
 <!-- ### Кастомизация вьювера -->
-<!-- The Viewer comes with many default settings, the toolbar being just one example. Developers can customize the Viewer’s appearance and behavior with extensions. Check out this sandbox to see a customized version of the Viewer: https://viewer-rocks.autodesk.io/. -->
 
 ### Требования к браузеру
 
