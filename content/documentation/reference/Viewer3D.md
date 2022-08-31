@@ -28,7 +28,7 @@ get events(): EventsDispatcher;
 ```
 Свойство для управления событиями компонента.
 
-### model()
+### model
 Получить консолидированную модель.
 ```js
 get model(): Model;
