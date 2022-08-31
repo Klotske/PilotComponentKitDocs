@@ -9,25 +9,25 @@ draft: false
 
 ## Свойства
 
-#### container
+### container
 ```js
 container: HTMLElement;
 ```
 HTML элемент, в котором создан компонент просмотра BIM-моделей.
 
-#### extensionsLoader
+### extensionsLoader
 ```js
 extensionsLoader: ExtensionLoader;
 ```
 Тип работы с расширениями. Подробнее смотри (ExtensionLoader).
 
-#### events
+### events
 ```js
 get events(): EventsDispatcher;
 ```
 Свойство для управления событиями компонента.
 
-#### model()
+### model()
 Получить консолидированную модель.
 ```js
 get model(): Model;
@@ -35,20 +35,20 @@ get model(): Model;
 
 ## Методы
 
-#### start()
+### start()
 ```js
  start(): number;
 ```
 Метод инициализирует внутренние механизмы компонента.
 
-#### finish()
+### finish()
 ```js
 finish(): void;
 ```
 
 Метод деинициализирует внутренние механизмы компонента.
 
-#### loadModelPart()
+### loadModelPart()
 ```js
 loadModelPart(buffer, options, onSuccessCallback, onErrorCallback): void;
 ```
@@ -61,7 +61,7 @@ loadModelPart(buffer, options, onSuccessCallback, onErrorCallback): void;
   
   `onErrorCallback: ErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
 
-#### unloadModelPart()
+### unloadModelPart()
 ```js
 unloadModelPart(modelPart: string | ModelPart): void;
 ```

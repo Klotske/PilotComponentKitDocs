@@ -7,25 +7,25 @@ draft: false
 
 ## Методы
 
-#### getAllModelParts()
+### getAllModelParts()
 Метод возвращает все загруженные части консолидированной модели.
 ```js
 getAllModelParts(): ModelPart[] 
 ```
 
-#### getVisibleModelParts()
+### getVisibleModelParts()
 Метод возвращает все видимые части консолидированной модели.
 ```js
 getVisibleModelParts(): ModelPart[]
 ```
 
-#### getHiddenModelParts()
+### getHiddenModelParts()
 Метод возвращает все скрытые части консолидированной модели.
 ```js
 getHiddenModelParts(): ModelPart[]
 ```
 
-#### hideModelPart()
+### hideModelPart()
 Метод позволяет спрятать часть консолидированной модели.
 
 ```js
@@ -34,7 +34,7 @@ hideModelPart(modelPart: string | ModelPart): void;
 где:
 `modelPart` -- идентификатор или экземпляр части модели.
 
-#### showModelPart()
+### showModelPart()
 Метод позволяет показать часть консолидированной модели.
 ```js
 showModelPart(modelPart: string | ModelPart): void
@@ -42,7 +42,7 @@ showModelPart(modelPart: string | ModelPart): void
 где:
 `modelPart` -- идентификатор или экземпляр части модели.
 
-#### hide()
+### hide()
 Метод позволяет спрятать элементы модели.
 ```js
 hide(elementIds: string[] | string, modelPart?: string | ModelPart): void
@@ -53,13 +53,13 @@ hide(elementIds: string[] | string, modelPart?: string | ModelPart): void
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
-#### hideAll()
+### hideAll()
 Метод позволяет спрятать все элементы и части модели.
 ```js
 hideAll(): void;
 ```
 
-#### show()
+### show()
 Метод позволяет показать скрытые элементы.
 ```js
 show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
@@ -70,13 +70,13 @@ show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
-#### showAll()
+### showAll()
 Метод позволяет показать все элементы и части модели.
 ```js
 showAll(): void;
 ```
 
-#### select()
+### select()
 Метод позволяет селектировать элементы.
 ```js
 select(elementIds: string[] | string, modelPart?: string | ModelPart): void
@@ -87,19 +87,19 @@ select(elementIds: string[] | string, modelPart?: string | ModelPart): void
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
-#### clearSelection()
+### clearSelection()
 Метод позволяет снять выделение со всех элементов модели.
 ```js
 clearSelection(): void;
 ```
 
-#### getSelection()
+### getSelection()
 Метод позволяет получить выделенные элементы модели.
 ```js
 getSelection(): ModelElementIds[];
 ```
 
-#### setColor()
+### setColor()
 Метод позволяет задать цвет элементов модели.
 ```js
 setColor(elementIds: string[] | string, r: number, g: number, b: number, a: number, modelPart?: string | ModelPart): void
@@ -115,7 +115,7 @@ setColor(elementIds: string[] | string, r: number, g: number, b: number, a: numb
 `b` -- синий цвет (0-255).
 `a` -- альфа-канал (0-1).
 
-#### clearColors()
+### clearColors()
 Метод позволяет восстановить все цвета для элементов модели.
 ```js
 clearColors(model? : string | ModelPart): void;

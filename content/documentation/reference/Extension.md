@@ -8,25 +8,25 @@ draft: false
 
 ## Методы
 
-#### load()
+### load()
 Метод вызвается, когда расширение было загружено.
 ```js
 load() : boolean | Promise<boolean>;
 ```
 
-#### unload()
+### unload()
 Метод вызвается, когда расширение было выгружено.
 ```js
 unload(): boolean;
 ```
 
-#### getName()
+### getName()
 Метод вызвается, когда расширение пытается получить имя расширения.
 ```js
 getName(): string;
 ```
 
-#### onToolbarCreated()
+### onToolbarCreated()
 Метод вызывается, когда панель инструментов построилась, и расширение имеет возможность добавить/изменить/удалить элементы управления.
 ```js
 onToolbarCreated(builder: ToolbarBuilder): void;
@@ -34,7 +34,7 @@ onToolbarCreated(builder: ToolbarBuilder): void;
 где:
 `builder` -- построитель панели инструментов.
 
-#### onMouseDown()
+### onMouseDown()
 Метод вызывается, когда произошло событие нажатия левой клавиши мыши.
 
 ```js
@@ -43,7 +43,7 @@ onMouseDown(event: MouseEvent): void;
 где:
 `event` -- событие мыши.
 
-#### onMouseMove()
+### onMouseMove()
 Метод вызывается, когда произошло событие перемещения мыши.
 
 ```js
@@ -52,7 +52,7 @@ onMouseMove(event: MouseEvent): void;
 где:
 `event` -- событие мыши.
 
-#### onMouseUp()
+### onMouseUp()
 Метод вызывается, когда произошло событие отпускания левой клавиши мыши.
 
 ```js
