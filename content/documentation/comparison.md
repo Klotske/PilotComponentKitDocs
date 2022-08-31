@@ -16,10 +16,6 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-### Название метода Pilot-BIM
-
-<---> <!-- magic separator, between columns -->
-
 ### Комментарий
 
 {{< /columns >}}
@@ -36,11 +32,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Подписка на события и др. действия 
+Подписка на события и др. действия.
 
 {{< /columns >}}
 
@@ -53,13 +45,10 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `finish(): void`
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
-Отписка от событий
+Отписка от событий.
 
 {{< /columns >}}
 
@@ -72,13 +61,10 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `loadModelPart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
-Загрузка части модели
+Загрузка части модели.
 
 {{< /columns >}}
 
@@ -94,11 +80,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Выгрузить часть модели
+Выгрузить часть модели.
 
 {{< /columns >}}
 
@@ -114,11 +96,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Получить все части модели
+Получить все части модели.
 
 {{< /columns >}}
 
@@ -134,11 +112,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Получить все видимые модели
+Получить все видимые модели.
 
 {{< /columns >}}
 
@@ -154,11 +128,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Получить скрытые модели
+Получить скрытые модели.
 
 {{< /columns >}}
 
@@ -174,11 +144,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Скрыть часть модели
+Скрыть часть модели.
 
 {{< /columns >}}
 
@@ -194,11 +160,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Показать ранее скрытую часть модели
+Показать ранее скрытую часть модели.
 
 {{< /columns >}}
 
@@ -211,10 +173,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `getSelection(): Selection[]`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
@@ -234,10 +192,6 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
 Спрятать отдельные элементы.
 
 {{< /columns >}}
@@ -251,10 +205,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `hideAll(): void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
@@ -274,10 +224,6 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
 Показать отдельные элементы.
 
 {{< /columns >}}
@@ -294,32 +240,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
 Показать все.
-
-{{< /columns >}}
-
----
-
-{{< columns >}} <!-- begin columns block -->
-
-`toggleSelect(dbid, model, selectionType): void`
-
-<---> <!-- magic separator, between columns -->
-
-`toggleSelect(elementIds: string[] | string, model?: string | ModelPart) : void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Удалить эту строку!!!!!!!!!!!
-Сменить селект на элементах на противоположный. SelectType – тип выбора элемента (типа последний или корневой, у нас не реализовано).
 
 {{< /columns >}}
 
@@ -332,10 +253,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `select(elementIds: string[] | string, model?: string | ModelPart) : void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
@@ -355,10 +272,6 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
 Снять выделение.
 
 {{< /columns >}}
@@ -372,10 +285,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `setColor(elementIds: string[] | string, color: THREE.Color, model?: string | ModelPart): void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
@@ -395,10 +304,6 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
 Вернуть цвет для всех элементов части модели.
 
 {{< /columns >}}
@@ -412,10 +317,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `events.addEventListener(type: string, listener: EventListener, options?: any): void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
@@ -435,10 +336,6 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
 Отправить событие. 
 
 {{< /columns >}}
@@ -455,11 +352,7 @@ draft: false
 
 <---> <!-- magic separator, between columns -->
 
-&nbsp;
-
-<---> <!-- magic separator, between columns -->
-
-Проверить подписан или нет. 
+Проверить, подписан или нет. 
 
 {{< /columns >}}
 
@@ -472,10 +365,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `events.removeEventListener(type: string, listener: EventListener): void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
@@ -492,10 +381,6 @@ draft: false
 <---> <!-- magic separator, between columns -->
 
 `clearListeners(): void`
-
-<---> <!-- magic separator, between columns -->
-
-&nbsp;
 
 <---> <!-- magic separator, between columns -->
 
