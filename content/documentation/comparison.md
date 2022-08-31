@@ -1,5 +1,5 @@
 ---
-title: "Сопоставление методов Autodesk Forge и Pilot.Web.3D"
+title: "4.Сопоставление методов Autodesk Forge и Pilot.Web.3D"
 date: 2022-08-04T12:44:03+03:00
 draft: false
 
