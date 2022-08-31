@@ -4,9 +4,11 @@ date: 2022-08-29T14:44:03+03:00
 draft: false
 ---
 
-Менеджер расширений позволяет зарегистрировать или разрегистрировать расширения в компонентах Pilot.Web3D и Pilot.Web.2D. 
+**ExtensionManager** -- это класс-менеджер расширений, позволяет зарегистрировать или разрегистрировать расширения в компонентах Pilot.Web.3D и Pilot.Web.2D. 
 
-`ExtensionManager` доступен из пространства имен PilotWeb3D или PilotWeb2D через свойство `theExtensionManager`:
+`ExtensionManager` доступен из пространства имен PilotWeb3D или PilotWeb2D через свойство `theExtensionManager`.
+
+Пример:
 
 ```js
 // описываем расширение
@@ -19,32 +21,34 @@ PilotWeb3D.theExtensionManager.registerExtensionType('myExtension', MyExtension)
 
 ## Методы
 
-#### registerExtensionType()
+### registerExtensionType()
 
 Метод регистрирует новое расширение в системе. После этого это расширение можно загрузить.
 ```js
 registerExtensionType(extensionId: string, extension: typeof Extension) : boolean;
 ```
 где:
-`extensionId` - уникальное имя расширения.
-`extension` - тип расширения унаследованный от `PilotWeb3d.Extension` или `PilotWeb2D.Extension`
+
+`extensionId` -- уникальное имя расширения.
+
+`extension` -- тип расширения унаследованный от `PilotWeb3d.Extension` или `PilotWeb2D.Extension`
 
 
-#### unregisterExtensionType()
+### unregisterExtensionType()
 
 Метод разрегистрирует расширение.
 ```js
 unregisterExtensionType(extensionId: string) : boolean;
 ```
 где:
-`extensionId`- идентификатор расширения.
+`extensionId`-- идентификатор расширения.
 
 
-#### getExtensionType()
+### getExtensionType()
 
-Полает тип зарегистрированного расширения
+Метод получает тип зарегистрированного расширения.
 ```js
 getExtensionType(extensionId: string): typeof Extension
 ```
 где:
-`extensionId`- идентификатор расширения.
+`extensionId`-- идентификатор расширения.
