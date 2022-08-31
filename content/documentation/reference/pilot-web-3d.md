@@ -4,24 +4,20 @@ date: 2022-08-29T14:44:03+03:00
 draft: false
 ---
 
-**PilotWeb3D** -- это пространство имён для взаимодействия верхнего уровня с компонентом Pilot.Web.3D. Используется в первую очередь для инициализации компонента.
+`PilotWeb3D` -- это пространство имён верхнего уровня для взаимодействия с компонентом **Pilot.Web.3D**.
 
 ## Методы
 
-### Initializer(options, callback)
+#### Initializer()
 
-Статический метод для инициализации компонента Pilot.Web.3D. Все методы работы с компонентом следует использовать после вызова этого метода.
-
-**Параметры**
+Метод для инициализации компонента Pilot.Web.3D. Все методы работы с компонентом следует использовать после вызова этого метода.
 
 ```js
-  options: Object;
+type InitializeSuccessCallback = () => void;
+function Initializer(options, callback: InitializeSuccessCallback): void;
 ```
-`options` содержит настройки для инициализации компонента.
-
-```js
-  callback: () => void;
-```
+где:
+`options` -- содержит настройки для инициализации компонента.
 `callback` -- метод обратного вызова. Вызывается, когда завершится инициализация компонента.
 
 Пример:
@@ -34,16 +30,15 @@ var myCallback = function() {
 PilotWeb3D.Initializer(options, myCallback);
 ```
 
-### CreateViewer(container)
+#### CreateViewer()
 
-Метод создания просмотрщика BIM-моделей.
-
-**Параметры**
+Создает экземпляр компонента для просмотра документов.
 
 ```js
-  container: HTMLElement;
+function CreateViewer(container: HTMLElement) : GuiViewer3D;
 ```
-HTML элемент, в котором необходимо создать 3D просмотрщик.
+где:
+`container` -- HTML элемент, в котором создается компонент.
 
 Пример:
 ```js
