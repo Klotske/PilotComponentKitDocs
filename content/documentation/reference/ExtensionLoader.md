@@ -1,0 +1,50 @@
+---
+title: "ExtensionLoader"
+date: 2022-08-29T14:44:03+03:00
+draft: false
+---
+
+`ExtensionLoader` предназначен для загрузки и инициализации расширений, которые были зарегистрированы в компонентах. Перед тем, как загрузить расширение его необходимо зарегистрировать с помощью `ExtensionManager`:
+
+```js
+// описываем расширение
+class MyExtension extends PilotWeb3D.Extension {
+  ...
+}
+// регистрируем
+PilotWeb3D.theExtensionManager.registerExtensionType('myExtension', MyExtension);
+
+// загружаем в компонент
+let viewer = PilotWeb3D.CreateViewer(div);
+viewer.extensionLoader.loadExtension("myExtension);
+```
+
+## Методы
+
+#### loadExtension()
+
+Загружает зарегистрированное расширение в компонент.
+
+```js
+loadExtension(extensionId: string): Promise<Extension>;
+```
+где:
+`extensionId` - идентификатор расширения.
+
+#### unloadExtension()
+
+Выгружает расширение.
+
+```js
+unloadExtension(extensionId: string) : Promise<boolean>;
+```
+где:
+`extensionId` - идентификатор расширения.
+
+#### getExtensions()
+
+Получает все загруженные расширения.
+
+```js
+getExtensions(): Extension[] ;
+```
