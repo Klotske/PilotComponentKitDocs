@@ -64,7 +64,7 @@ code,
 .gdoc-header{font-family:"Metropolis",sans-serif}:root,
 :root[color-theme=light]{
 	--code-max-height: none;
-	--header-background: rgb(#4ec58a);
+	--header-background: rgb(217, 225, 181);
 	--header-font-color: rgb(255, 255, 255);
 	--body-background: white;
 	--body-font-color: rgb(52, 58, 64);
