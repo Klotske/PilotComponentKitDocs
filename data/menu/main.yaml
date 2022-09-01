@@ -1,0 +1,68 @@
+main:
+  - name: Версия 1
+    ref: "/documentation"
+    icon: "gdoc_notification"
+    sub:
+      - name: Обзор
+        ref: "/documentation/overview"
+        icon: "gdoc_notification"
+        
+      - name: Первые шаги
+        ref: "/documentation/viewer-basics"
+        icon: "gdoc_notification"
+        sub:  
+          - name: Добавить компоненты на HTML страницу  
+            ref: "/documentation/viewer-basics/1.starting.md"  
+          - name: Инициализация компонентов  
+            ref: "/documentation/viewer-basics/2.initialization.md"
+          - name: Загрузка частей модели  
+            ref: "/documentation/viewer-basics/3.1.load-model.md"
+          - name: Загрузка документа 
+            ref: "/documentation/viewer-basics/3.2.load-document.md"
+          - name: Создание расширения 
+            ref: "/documentation/viewer-basics/4.write-extension.md"
+        
+      - name: API Reference
+        ref: "/documentation/reference"
+        icon: "gdoc_notification"
+        sub:
+          - name: Extension
+            ref: "/documentation/reference/Extension.md"
+          - name: ExtensionLoader
+            ref: "/documentation/reference/ExtensionLoader.md"  
+          - name: ExtensionManager
+            ref: "/documentation/reference/ExtensionManager.md"  
+          - name: GuiViewer3D
+            ref: "/documentation/reference/GuiViewer3D.md"  
+          - name: Model
+            ref: "/documentation/reference/Model.md"  
+          - name: ModelElement
+            ref: "/documentation/reference/ModelElement.md"  
+          - name: ModelElementIds
+            ref: "/documentation/reference/ModelElementIds.md"  
+          - name: ModelElementTree
+            ref: "/documentation/reference/ModelElementTree.md"  
+          - name: ModelPart
+            ref: "/documentation/reference/ModelPart.md"  
+          - name: PilotWeb2d
+            ref: "/documentation/reference/pilot-web-2d.md"  
+          - name: PilotWeb3d.md
+            ref: "/documentation/reference/pilot-web-3d.md"  
+          - name: Viewer3D
+            ref: "/documentation/reference/Viewer3D.md"              
+          - name: UI
+            ref: "/documentation/reference/ui"
+            icon: "gdoc_notification"
+            sub:
+              - name: Button  
+                ref: "/documentation/reference/ui/Button.md"
+              - name: ButtonBuilder  
+                ref: "/documentation/reference/ui/ButtonBuilder.md" 
+              - name: Control 
+                ref: "/documentation/reference/ui/Control.md" 
+              - name: Toolbar  
+                ref: "/documentation/reference/ui/Toolbar.md" 
+              - name: ToolbarBuilder
+                ref: "/documentation/reference/ui/ToolbarBuilder.md" 
+              - name: ViewerToolbar
+                ref: "/documentation/reference/ui/ViewerToolbar.md"                 

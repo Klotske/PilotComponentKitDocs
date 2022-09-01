@@ -30,7 +30,7 @@ enableRobotsTXT = false
   # Используйте false, чтобы скрыть ToC, обратите внимание, 
   # что 0 будет обозначать значение по умолчанию, т.е. 6 (https://gohugo.io/functions/default/)
   # Также можно указать этот параметр для каждой страницы в разделе front matter.
-  geekdocToC = 3
+  geekdocToC = 0
 
   # ЛОГОТИП(Необязательно, по умолчанию static/brand.svg) Задайте путь к логотипу для Geekdoc
   # относительно вашей папки 'static/' folder.
@@ -38,7 +38,7 @@ enableRobotsTXT = false
 
   # BUNDLE MENU(Необязательно, по умолчанию false) Визуализируйте меню из файла данных в 'data/menu/main.yaml'.
   # Смотрите также https://geekdocs.de/usage/menus/#bundle-menu.
-  geekdocMenuBundle = false
+  geekdocMenuBundle = true
 
   # (Необязательно, по умолчанию false) Свернуть все пункты меню, не могут быть перезаписаны
   # на страницу, если включена эта опция. Может быть включен для каждой страницы с помощью 'geekdocCollapseSection'.
