@@ -46,7 +46,7 @@ main:
             ref: "/documentation/reference/ModelPart.md"  
           - name: PilotWeb2d
             ref: "/documentation/reference/pilot-web-2d.md"  
-          - name: PilotWeb3d.md
+          - name: PilotWeb3d
             ref: "/documentation/reference/pilot-web-3d.md"  
           - name: Viewer3D
             ref: "/documentation/reference/Viewer3D.md"              

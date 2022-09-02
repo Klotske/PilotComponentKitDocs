@@ -42,7 +42,7 @@ enableRobotsTXT = false
 
   # (Необязательно, по умолчанию false) Свернуть все пункты меню, не могут быть перезаписаны
   # на страницу, если включена эта опция. Может быть включен для каждой страницы с помощью 'geekdocCollapseSection'.
-  geekdocCollapseAllSections = false
+  geekdocCollapseAllSections = true
 
   # BUNDLE MENU(Необязательно, по умолчанию true) Показывать ссылки для навигации по страницам внизу каждой
   # страницы (только для связанного меню - bundle menu).
