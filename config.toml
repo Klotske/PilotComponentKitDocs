@@ -38,8 +38,7 @@ enableRobotsTXT = false
 
   # BUNDLE MENU(Необязательно, по умолчанию false) Визуализируйте меню из файла данных в 'data/menu/main.yaml'.
   # Смотрите также https://geekdocs.de/usage/menus/#bundle-menu.
-  geekdocMenuBundle = true
-
+  geekdocMenuBundle = false
   # (Необязательно, по умолчанию false) Свернуть все пункты меню, не могут быть перезаписаны
   # на страницу, если включена эта опция. Может быть включен для каждой страницы с помощью 'geekdocCollapseSection'.
   geekdocCollapseAllSections = true
