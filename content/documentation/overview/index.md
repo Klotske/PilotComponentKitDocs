@@ -1,7 +1,8 @@
 ---
-title: "1.Обзор"
+title: "Обзор"
 date: 2022-08-26T14:44:03+03:00
 draft: false
+weight: 1
 resources:
 - name: 3d_view
   src: "3d_viewer.png"

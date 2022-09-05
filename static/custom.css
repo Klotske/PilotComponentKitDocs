@@ -35,7 +35,7 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --header-background: #4ec58a;
+    --header-background: #b1bea5;
     --header-font-color: #ffffff;
 
     --body-background: #ffffff;
@@ -73,7 +73,7 @@
 
 /* Dark mode theming */
 :root[color-theme="dark"] {
-  --header-background: #4ec58a;
+  --header-background: #b1bea5;
   --header-font-color: #ffffff;
 
   --body-background: #343a40;
@@ -109,7 +109,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --header-background: #4ec58a;
+    --header-background: #b1bea5;
     --header-font-color: #ffffff;
 
     --body-background: #343a40;

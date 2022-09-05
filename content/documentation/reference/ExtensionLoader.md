@@ -19,7 +19,7 @@ PilotWeb3D.theExtensionManager.registerExtensionType('myExtension', MyExtension)
 
 // загружаем в компонент
 let viewer = PilotWeb3D.CreateViewer(div);
-viewer.extensionLoader.loadExtension("myExtension);
+viewer.extensionLoader.loadExtension('myExtension');
 ```
 
 ## Методы
