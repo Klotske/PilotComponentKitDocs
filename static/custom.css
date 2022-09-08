@@ -1,9 +1,11 @@
 :root[color-theme="light"] {
-  --header-background: #b1bea5;
-  --header-font-color: #ffffff;
+  --header-background: #d9e1b5;
+  --header-font-color: #95a37b;
 
   --body-background: #ffffff;
   --body-font-color: #343a40;
+  
+  --arrow-color: #95a37b;
 
   --mark-color: #ffab00;
 
@@ -28,18 +30,20 @@
 
   --control-icons: #b2bac1;
 
-  --footer-background: #2f333e;
+  --footer-background: #95a37b;
   --footer-font-color: #ffffff;
-  --footer-link-color: #ffcc5c;
-  --footer-link-color-visited: #ffcc5c;
+  --footer-link-color: #d9e1b5;
+  --footer-link-color-visited: #d9e1b5;
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --header-background: #b1bea5;
-    --header-font-color: #ffffff;
+    --header-background: #d9e1b5;
+    --header-font-color: #95a37b;
 
     --body-background: #ffffff;
     --body-font-color: #343a40;
+	
+	--arrow-color: #95a37b;
 
     --mark-color: #ffab00;
 
@@ -64,20 +68,22 @@
 
     --control-icons: #b2bac1;
 
-    --footer-background: #2f333e;
+    --footer-background: #95a37b;
     --footer-font-color: #ffffff;
-    --footer-link-color: #ffcc5c;
-    --footer-link-color-visited: #ffcc5c;
+    --footer-link-color: #d9e1b5;
+    --footer-link-color-visited: #d9e1b5;
   }
 }
 
 /* Dark mode theming */
 :root[color-theme="dark"] {
-  --header-background: #b1bea5;
-  --header-font-color: #ffffff;
+  --header-background: #d9e1b5;
+  --header-font-color: #95a37b;
 
   --body-background: #343a40;
   --body-font-color: #ced3d8;
+  
+  --arrow-color: #95a37b;
 
   --mark-color: #ffab00;
 
@@ -102,18 +108,20 @@
 
   --control-icons: #b2bac1;
 
-  --footer-background: #2f333e;
+  --footer-background: #95a37b;
   --footer-font-color: #ffffff;
-  --footer-link-color: #ffcc5c;
-  --footer-link-color-visited: #ffcc5c;
+  --footer-link-color: #d9e1b5;
+  --footer-link-color-visited: #d9e1b5;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --header-background: #b1bea5;
-    --header-font-color: #ffffff;
+    --header-background: #d9e1b5;
+    --header-font-color: #95a37b;
 
     --body-background: #343a40;
     --body-font-color: #ced3d8;
+	
+	--arrow-color: #95a37b;
 
     --mark-color: #ffab00;
 
@@ -138,9 +146,15 @@
 
     --control-icons: #b2bac1;
 
-    --footer-background: #2f333e;
+    --footer-background: #95a37b;
     --footer-font-color: #ffffff;
-    --footer-link-color: #ffcc5c;
-    --footer-link-color-visited: #ffcc5c;
+    --footer-link-color: #d9e1b5;
+    --footer-link-color-visited: #d9e1b5;
   }
 }
+
+.gdoc-header{background:var(--header-background);color:var(--header-font-color);border-bottom:.3em solid var(--footer-background)}
+.gdoc-brand__img{margin-right:1rem;width:3rem;height:3rem}
+.gdoc-nav__list li{margin: 0; padding-bottom:1rem; padding-top:1rem; border-bottom:.1em solid var(--footer-background)}
+.gdoc-nav__list ul{padding-left:1rem; padding-bottom:1rem;}
+.arrows {color:var(--arrow-color);}

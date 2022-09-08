@@ -1,5 +1,0 @@
-more:  
-  - name: Releases
-    ref: "https://pilot.ascon.ru/"
-    external: true
-    icon: "gdoc_download"

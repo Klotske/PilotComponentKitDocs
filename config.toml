@@ -34,7 +34,7 @@ enableRobotsTXT = false
 
   # ЛОГОТИП(Необязательно, по умолчанию static/brand.svg) Задайте путь к логотипу для Geekdoc
   # относительно вашей папки 'static/' folder.
-  geekdocLogo = "logo-redsm.png"
+  geekdocLogo = "logo-corall.png"
 
   # BUNDLE MENU(Необязательно, по умолчанию false) Визуализируйте меню из файла данных в 'data/menu/main.yaml'.
   # Смотрите также https://geekdocs.de/usage/menus/#bundle-menu.
