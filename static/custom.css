@@ -7,7 +7,7 @@
   
   --arrow-color: #95a37b;
 
-  --mark-color: #ffab00;
+  --mark-color: #ffab00; /*рыжий*/
 
   --button-background: #62cb97;
   --button-border-color: #4ec58a;
@@ -15,20 +15,20 @@
   --link-color: #95a37b;
   --link-color-visited: #c54e8a;
 
-  --code-background: #f5f6f8;
-  --code-accent-color: #e3e7eb;
-  --code-accent-color-lite: #eff1f3;
-  --code-font-color: #5f5f5f;
+  --code-background: #f5f6f8; /*бледно серый*/
+  --code-accent-color: #e3e7eb; /*светло серый*/
+  --code-accent-color-lite: #eff1f3; /*бледно-светло серый*/
+  --code-font-color: #5f5f5f; /*тёмно  серый*/
 
   --code-copy-background: #f5f6f8;
-  --code-copy-font-color: #6b7784;
-  --code-copy-border-color: #adb4bc;
-  --code-copy-success-color: #00c853;
+  --code-copy-font-color: #6b7784; /*тёмный серо-голубой*/
+  --code-copy-border-color: #adb4bc; /*светлый серо-голубой*/
+  --code-copy-success-color: #00c853; /*ярко зелёный*/
 
-  --accent-color: #e9ecef;
-  --accent-color-lite: #f8f9fa;
+  --accent-color: #e9ecef; /*цвет светло-серого фона*/
+  --accent-color-lite: #f8f9fa; /*почти белый*/
 
-  --control-icons: #b2bac1;
+  --control-icons: #b2bac1; /*очередной серый*/
 
   --footer-background: #95a37b;
   --footer-font-color: #ffffff;
@@ -112,6 +112,8 @@
   --footer-font-color: #ffffff;
   --footer-link-color: #d9e1b5;
   --footer-link-color-visited: #d9e1b5;
+  
+
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -168,3 +170,6 @@
   align-content: center;
   flex-direction: column;
 }
+h1{color: #95a37b;}
+h2{color: #95a37b;}
+h3{color: #95a37b;}
