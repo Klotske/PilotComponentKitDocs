@@ -158,3 +158,13 @@
 .gdoc-nav__list li{margin: 0; padding-bottom:1rem; padding-top:1rem; border-bottom:.1em solid var(--footer-background)}
 .gdoc-nav__list ul{padding-left:1rem; padding-bottom:1rem;}
 .arrows {color:var(--arrow-color);}
+	.gdoc-columns__content {
+  flex: 1 1;
+  margin: 1rem 0;
+  min-width: 13.2rem;
+  padding: 0;
+  display: flex;                 /*4 строки на вертикальное центрирование текста*/
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
