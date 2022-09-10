@@ -20,7 +20,7 @@ HTML элемент, в котором создан компонент прос�
 ```js
 extensionsLoader: ExtensionLoader;
 ```
-Тип работы с расширениями. Подробнее смотри (ExtensionLoader).
+Тип работы с расширениями. Подробнее смотри <a href="../ExtensionLoader/">ExtensionLoader</a>.
 
 ### events
 ```js
