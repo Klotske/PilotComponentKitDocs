@@ -37,7 +37,7 @@ get model(): Model;
 
 ### start()
 ```js
- start(): number;
+ start(): Promise<number>;
 ```
 Метод инициализирует внутренние механизмы компонента.
 
@@ -50,16 +50,16 @@ finish(): void;
 
 ### loadModelPart()
 ```js
-loadModelPart(buffer, options, onSuccessCallback, onErrorCallback): void;
+loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
 ```
 где:
-  `buffer: ArrayBuffer` -- массив байт модели,
+  `buffer` -- массив байт модели,
   
-  `options: any` -- опции для загрузки части модели,
+  `options` -- опции для загрузки части модели,
   
-  `onSuccessCallback: SuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
+  `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
   
-  `onErrorCallback: ErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
+  `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
 
 ### unloadModelPart()
 ```js
@@ -83,10 +83,10 @@ getCameraPosition(): CameraPosition;
 ### setCameraPosition()
 Метод, позволяющий задать позицию камеры.
 ```js
-setCameraPosition(cameraPosition: CameraPosition): void;
+setCameraPosition(params: CameraPosition): void;
 ```
 где:
-`cameraPosition` -- позиция камеры.
+`params` -- параметры камеры.
 
 ### makeScreenshot()
 Метод, позволяющий сделать снимок сцены.

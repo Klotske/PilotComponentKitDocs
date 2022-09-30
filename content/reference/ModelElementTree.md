@@ -33,6 +33,12 @@ getRootElement(): ModelElement;
 getAllElements(): ModelElement[] 
 ```
 
+### getElement()
+Метод позволяет получить элемент дерева по идентификатору.
+```js
+getElement(id: string) : ModelElement
+```
+
 ### isViewableElement()
 Метод проверяет, может ли элемент быть отрисован на сцене.
 ```js
@@ -45,6 +51,14 @@ isViewableElement(element: string | ModelElement): boolean;
 Метод проверяет, отсоединён элемент от корневого элемента или нет.
 ```js
 isDetachedElement(element: string | ModelElement): boolean;
+```
+где:
+`element` -- идентификатор или экземпляр элемента.
+
+### getChildLevelNumber()
+Метод получает уровень вложенности для элемента.
+```js
+getChildLevelNumber(element: string | ModelElement): number
 ```
 где:
 `element` -- идентификатор или экземпляр элемента.

@@ -50,17 +50,17 @@ finish(): void;
 
 ### loadModelPart()
 ```js
-loadModelPart(buffer, options, onSuccessCallback, onErrorCallback): void;
+loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
 ```
 где:
 
-  `buffer: ArrayBuffer` -- массив байт модели,
+  `buffer` -- массив байт модели,
   
-  `options: any` -- опции для загрузки части модели,
+  `options` -- опции для загрузки части модели,
   
-  `onSuccessCallback: SuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
+  `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
   
-  `onErrorCallback: ErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
+  `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
 
 #### unloadModelPart()
 ```js

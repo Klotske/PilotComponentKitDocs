@@ -87,6 +87,17 @@ select(elementIds: string[] | string, modelPart?: string | ModelPart): void
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
+### deselect()
+Метод позволяет снять селектирование с заданных элементов.
+```js
+deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
+```
+где:
+
+`elementIds` -- один или несколько идентификаторов элементов модели.
+
+`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+
 ### clearSelection()
 Метод позволяет снять выделение со всех элементов модели.
 ```js
@@ -97,6 +108,18 @@ clearSelection(): void;
 Метод позволяет получить выделенные элементы модели.
 ```js
 getSelection(): ModelElementIds[];
+```
+
+### getHiddenElements()
+Метод позволяет получить все скрытые элементы.
+```js
+getHiddenElements(): ModelElementIds[]
+```
+
+### getVisibleElements()
+Метод позволяет получить все видимые элементы.
+```js
+getVisibleElements(): ModelElementIds[] 
 ```
 
 ### setColor()

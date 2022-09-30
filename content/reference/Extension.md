@@ -6,6 +6,13 @@ draft: false
 
 **Extension** -- это базовый класс описания расширения.
 
+## Свойства
+
+### _viewer
+```js
+protected _viewer: Viewer3D;
+```
+
 ## Методы
 
 ### load()
