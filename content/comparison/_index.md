@@ -42,7 +42,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.start(): number`
+`start(): number`
 
 <---> <!-- magic separator, between columns -->
 
@@ -58,7 +58,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.finish(): void`
+`finish(): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -74,7 +74,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.loadModelpart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
+`loadModelpart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -90,7 +90,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.unloadModelPart(modelPart: string | ModelPart): void`
+`unloadModelPart(modelPart: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -106,7 +106,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.setCameraPosition(params: CameraPosition): void`
+`setCameraPosition(params: CameraPosition): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -122,7 +122,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.getCameraPosition(): CameraPosition`
+`getCameraPosition(): CameraPosition`
 
 <---> <!-- magic separator, between columns -->
 
@@ -138,7 +138,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`viewer3d.makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>`
+`makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>`
 
 <---> <!-- magic separator, between columns -->
 
@@ -174,7 +174,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-Получить все видимые модели.
+Получить все видимые части модели.
 
 {{< /columns >}}
 
@@ -190,7 +190,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-Получить скрытые модели.
+Получить скрытые части модели.
 
 {{< /columns >}}
 
@@ -223,22 +223,6 @@ weight: 5
 <---> <!-- magic separator, between columns -->
 
 Получить все скрытые элементы модели.
-
-{{< /columns >}}
-
----
-
-{{< columns >}} <!-- begin columns block -->
-
-`isNodeVisible(nodeId: numder, model: number | Model): bool;`
-
-<---> <!-- magic separator, between columns -->
-
-`model.isElementVisible(element:  string | ModelElement): bool`
-
-<---> <!-- magic separator, between columns -->
-
-Проверить видимость элемента.
 
 {{< /columns >}}
 
@@ -286,7 +270,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-Получить выделенные объекты. Работает для множества моделей.
+Получить выделенные элементы. Работает для множества частей модели.
 
 {{< /columns >}}
 
@@ -531,7 +515,7 @@ weight: 5
 
 {{< columns >}} <!-- begin columns block -->
 
-`guid(): string`
+отсутствует
 
 <---> <!-- magic separator, between columns -->
 
@@ -547,7 +531,7 @@ weight: 5
 
 {{< columns >}} <!-- begin columns block -->
 
-`findViewableParent()`
+отсутствует
 
 <---> <!-- magic separator, between columns -->
 
@@ -603,7 +587,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-Получить дочерний элемент.
+Получить дочерние элементы.
 
 {{< /columns >}}
 
@@ -650,22 +634,6 @@ weight: 5
 <---> <!-- magic separator, between columns -->
 
 Получить все элементы дерева списком.
-
-{{< /columns >}}
-
----
-
-{{< columns >}} <!-- begin columns block -->
-
-`isViewable(): boolean`
-
-<---> <!-- magic separator, between columns -->
-
-`isViewableElement(element: string | ModelElement): boolean`
-
-<---> <!-- magic separator, between columns -->
-
-Проверить, может ли элемент отобразиться на сцене.
 
 {{< /columns >}}
 
