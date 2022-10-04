@@ -24,11 +24,25 @@ weight: 5
 
 {{< columns >}} <!-- begin columns block -->
 
+#### Класс Viewer3D
+
+<---> <!-- magic separator, between columns -->
+
+#### Класс Viewer3D
+
+<---> <!-- magic separator, between columns -->
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
 `start(url, options, onSuccessCallback, onErrorCallback, initOptions): number`
 
 <---> <!-- magic separator, between columns -->
 
-`start(): number`
+`viewer3d.start(): number`
 
 <---> <!-- magic separator, between columns -->
 
@@ -44,7 +58,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`finish(): void`
+`viewer3d.finish(): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -60,7 +74,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`loadModelPart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
+`viewer3d.loadModelpart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -76,7 +90,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`unloadModelPart(modelId: string | ModelPart): void`
+`viewer3d.unloadModelPart(modelPart: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -88,11 +102,59 @@ weight: 5
 
 {{< columns >}} <!-- begin columns block -->
 
+`applyCamera(camera, fit)`
+
+<---> <!-- magic separator, between columns -->
+
+`viewer3d.setCameraPosition(params: CameraPosition): void`
+
+<---> <!-- magic separator, between columns -->
+
+Задать позицию для камеры.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`getCamera()`
+
+<---> <!-- magic separator, between columns -->
+
+`viewer3d.getCameraPosition(): CameraPosition`
+
+<---> <!-- magic separator, between columns -->
+
+Получить позицию камеры.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`getScreenShot(w, h, cb, overlayRenderer): DOMString`
+
+<---> <!-- magic separator, between columns -->
+
+`viewer3d.makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>`
+
+<---> <!-- magic separator, between columns -->
+
+Получить снимок экрана.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
 `GetAllModels(): Model[]`
 
 <---> <!-- magic separator, between columns -->
 
-`getAllModels(): ModelPart[]`
+`model.getAllModelParts(): ModelPart[]`
 
 <---> <!-- magic separator, between columns -->
 
@@ -108,7 +170,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`getVisibleModels(): ModelPart[]`
+`model.getVisibleModelParts(): ModelPart[]`
 
 <---> <!-- magic separator, between columns -->
 
@@ -124,7 +186,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`getHiddenModels(): ModelPart[]`
+`model.getHiddenModels(): ModelPart[]`
 
 <---> <!-- magic separator, between columns -->
 
@@ -136,11 +198,59 @@ weight: 5
 
 {{< columns >}} <!-- begin columns block -->
 
+отсутствует
+
+<---> <!-- magic separator, between columns -->
+
+`model.getVisibleElements(): ModelElement[]`
+
+<---> <!-- magic separator, between columns -->
+
+Получить все видимые элементы модели.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`getHiddenNodes(model)`
+
+<---> <!-- magic separator, between columns -->
+
+`model.getHiddenElements(): ModelElement[]`
+
+<---> <!-- magic separator, between columns -->
+
+Получить все скрытые элементы модели.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`isNodeVisible(nodeId: numder, model: number | Model): bool;`
+
+<---> <!-- magic separator, between columns -->
+
+`model.isElementVisible(element:  string | ModelElement): bool`
+
+<---> <!-- magic separator, between columns -->
+
+Проверить видимость элемента.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
 `hideModel(model: number | Model): boolean`
 
 <---> <!-- magic separator, between columns -->
 
-`hideModel(model: string | ModelPart): void`
+`model.hideModelPart(modelPart: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -156,7 +266,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`showModel(model: string | ModelPart): void`
+`model.showModelPart(modelPart: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -172,11 +282,11 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`getSelection(): Selection[]`
+`model.getSelection(): ModelElementIds[]`
 
 <---> <!-- magic separator, between columns -->
 
-Получить селектированные объекты.
+Получить выделенные объекты. Работает для множества моделей.
 
 {{< /columns >}}
 
@@ -188,11 +298,11 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`hide(elementIds: string[] | string, model?: string | ModelPart): void`
+`model.hide(elementIds: string[] | string, modelPart?: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
-Спрятать отдельные элементы.
+Спрятать отдельные элементы в модели.
 
 {{< /columns >}}
 
@@ -204,7 +314,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`hideAll(): void`
+`model.hideAll(): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -220,11 +330,11 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`show(elementIds: string[]|string, model?: string | ModelPart): void`
+`model.show(elementIds: string[]|string, modelPart?: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
-Показать отдельные элементы.
+Показать отдельные элементы в модели.
 
 {{< /columns >}}
 
@@ -236,7 +346,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`showAll(): void`
+`model.showAll(): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -252,7 +362,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`select(elementIds: string[] | string, model?: string | ModelPart) : void`
+`model.select(elementIds: string[] | string, modelPart?: string | ModelPart) : void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -264,11 +374,27 @@ weight: 5
 
 {{< columns >}} <!-- begin columns block -->
 
+отсутствует
+
+<---> <!-- magic separator, between columns -->
+
+`model.deselect(elementIds: string[] | string, modelPart?: string | ModelPart) : void`
+
+<---> <!-- magic separator, between columns -->
+
+Снять выделение элементов.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
 `clearSelection(): void`
 
 <---> <!-- magic separator, between columns -->
 
-`clearSelection(): void`
+`model.clearSelection(): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -284,7 +410,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`setColor(elementIds: string[] | string, color: THREE.Color, model?: string | ModelPart): void`
+`model.setColor(elementIds: string[] | string, r: number, g: number, b: number, a: number, modelPart?: string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -300,7 +426,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`clearColors(model? : string | ModelPart): void`
+`model.clearColors(modelPart? : string | ModelPart): void`
 
 <---> <!-- magic separator, between columns -->
 
@@ -380,10 +506,215 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-`clearListeners(): void`
-
+`events.clearListeners(): void`
 <---> <!-- magic separator, between columns -->
 
 Очистить подписки. 
 
 {{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+#### Класс BubbleNode
+
+<---> <!-- magic separator, between columns -->
+
+#### Класс ModelElement
+
+<---> <!-- magic separator, between columns -->
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`guid(): string`
+
+<---> <!-- magic separator, between columns -->
+
+`get id(): string`
+
+<---> <!-- magic separator, between columns -->
+
+Получить идентификатор элемента модели.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`findViewableParent()`
+
+<---> <!-- magic separator, between columns -->
+
+`get parent(): ModelElement | undefined`
+
+<---> <!-- magic separator, between columns -->
+
+Получить родителя элемента модели.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`type(): string`
+
+<---> <!-- magic separator, between columns -->
+
+`get type(): string`
+
+<---> <!-- magic separator, between columns -->
+
+Получить тип элемента модели.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`name(): string`
+
+<---> <!-- magic separator, between columns -->
+
+`get name(): string`
+
+<---> <!-- magic separator, between columns -->
+
+Получить имя элемента модели.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+отсутствует
+
+<---> <!-- magic separator, between columns -->
+
+`get children(): ModelElement[]`
+
+<---> <!-- magic separator, between columns -->
+
+Получить дочерний элемент.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+#### Класс InstanceTree
+
+<---> <!-- magic separator, between columns -->
+
+#### Класс ModelElementTree
+
+<---> <!-- magic separator, between columns -->
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`getRootId(): number`
+
+<---> <!-- magic separator, between columns -->
+
+`getRootElement(): ModelElement`
+
+<---> <!-- magic separator, between columns -->
+
+Получить корневой элемент дерева.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+отсутствует
+
+<---> <!-- magic separator, between columns -->
+
+`getAllElements(): ModelElement[]`
+
+<---> <!-- magic separator, between columns -->
+
+Получить все элементы дерева списком.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`isViewable(): boolean`
+
+<---> <!-- magic separator, between columns -->
+
+`isViewableElement(element: string | ModelElement): boolean`
+
+<---> <!-- magic separator, between columns -->
+
+Проверить, может ли элемент отобразиться на сцене.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+отсутствует
+
+<---> <!-- magic separator, between columns -->
+
+`isDetachedElement(element: string | ModelElement): boolean`
+
+<---> <!-- magic separator, between columns -->
+
+Проверить, находится ли элемент вне дерева.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+отсутствует
+
+<---> <!-- magic separator, between columns -->
+
+`getChildLevelNumber(element: string | ModelElement): number`
+
+<---> <!-- magic separator, between columns -->
+
+Получить уровень вложенности для элемента.
+
+{{< /columns >}}
+
+---
+
+{{< columns >}} <!-- begin columns block -->
+
+`enumNodeChildren(node, callback, recursive): void`
+
+<---> <!-- magic separator, between columns -->
+
+`enumElementChildren(element: string | ModelElement, callback: (guid: string) => void, recursive?: boolean): void `
+
+<---> <!-- magic separator, between columns -->
+
+Применить действие ко всем дочерним элементам.
+
+{{< /columns >}}
+
+---
