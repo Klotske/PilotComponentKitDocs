@@ -366,7 +366,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-Снять выделение элементов.
+Снять выделение указанных элементов.
 
 {{< /columns >}}
 
@@ -382,7 +382,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-Снять выделение.
+Снять выделение со всех моделей.
 
 {{< /columns >}}
 
