@@ -2,6 +2,7 @@
 title: "ModelElementTree"
 date: 2022-08-29T14:44:03+03:00
 draft: false
+weight: 5
 ---
 
 **ModelElementTree** -- это класс для работы с деревом элементов части консолидированной модлели.

@@ -2,6 +2,7 @@
 title: "ExtensionManager"
 date: 2022-08-29T14:44:03+03:00
 draft: false
+weight: 9
 ---
 
 **ExtensionManager** -- это класс-менеджер расширений, позволяет зарегистрировать или разрегистрировать расширения в компонентах Pilot.Web.3D и Pilot.Web.2D. 

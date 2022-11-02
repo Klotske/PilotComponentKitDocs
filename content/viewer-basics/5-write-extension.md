@@ -12,7 +12,7 @@ weight: 50
 Пример для подключения расширения `my-extension.js`:
 
 ```html
-<script src="https://pilotcloud.ascon.net/components/1.0.1/pilotweb3d/pilotweb3d.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/1.0.6/pilotweb3d/pilotweb3d.min.js"></script>
 <script src="my-extension.js"></script>
 ```
 

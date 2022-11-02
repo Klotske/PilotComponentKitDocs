@@ -2,6 +2,7 @@
 title: "CameraPosition"
 date: 2022-09-30T14:44:03+03:00
 draft: false
+weight: 9
 ---
 
 **CameraPosition** -- описание параметров камеры.

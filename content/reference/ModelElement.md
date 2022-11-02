@@ -2,6 +2,7 @@
 title: "ModelElement"
 date: 2022-08-29T14:44:03+03:00
 draft: false
+weight: 5
 ---
 
 **ModelElement** -- это класс для получения информации об элементе.
