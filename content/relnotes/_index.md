@@ -7,7 +7,7 @@ weight: 1
 
 ## Что нового?
 
-#### Версия %%VERSION%% от %%DATE%%
+#### Версия @VERSION@ от @DATE@
 
 - API получения скрытых элементов консолидированной модели (<a href="../reference/Model#getHiddenElements">подробнее</a>) {{< ref "reference/Model.md#getHiddenElements" >}}
 - Расширение для просмотра дерева элементов (<a href="../reference/extensions/ModelsBrowser">ModelsBrowserExtension</a>)
@@ -28,4 +28,5 @@ weight: 1
 - API управления камерой во вьювере
 - API получения скриншота
 - Построение дерева. Методы API работы с деревом.
+- Событие `VIEWER_RESIZE_EVENT` - событие изменения размеров просмотрщика
 
