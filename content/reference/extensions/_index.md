@@ -14,7 +14,7 @@ weight: 11
 
 Пример подлючения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/1.0.6/extensions/FullScreen/FullScreen.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/FullScreen/FullScreen.min.js"></script>
 ```
 
 Пример подлючения в `javascript`:
@@ -31,9 +31,9 @@ viewer.extensionsLoader.loadExtension("PilotWeb3D.FullScreen");
 Пример подлючения в `html`:
 ```html
 ...
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/1.0.6/extensions/ModelsBrowser/ModelsBrowser.css">
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser/ModelsBrowser.css">
 ...
-<script src="https://pilotcloud.ascon.net/components/1.0.6/extensions/ModelsBrowser/ModelsBrowser.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser/ModelsBrowser.min.js"></script>
 ...
 ```
 
@@ -50,7 +50,7 @@ viewer.extensionsLoader.loadExtension("PilotWeb3D.ModelsBrowser");
 
 Пример подлючения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/1.0.6/extensions/ViewerSettings/ViewerSettings.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ViewerSettings/ViewerSettings.min.js"></script>
 ```
 
 Пример подлючения в `javascript`:

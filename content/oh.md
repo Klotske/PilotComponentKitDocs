@@ -225,4 +225,28 @@ Dolor sit, sumo unique argument um no ...
 {{< /columns >}}
 
 
+## Шаблоны для версии и даты
+
+Чтобы в документ добавить текущюю версию компонентов нужно указать специальный символ `@VERSION@`
+
+Например:
+```js
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/pilotweb2d/style.css" type="text/css">
+```
+
+В итоге после сборки TeamCity текст будет
+```js
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/1.0.7/pilotweb2d/style.css" type="text/css">
+```
+
+*Версия компонентов 1.0.7
+
+
+Чтобы в документ добавить текущюю дату компонентов нужно указать специальный символ `@DATE@`
+
+Например:
+```md
+#### Версия 5.0 от @DATE@
+```
+
 
