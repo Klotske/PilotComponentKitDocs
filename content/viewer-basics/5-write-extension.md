@@ -8,7 +8,7 @@ weight: 50
 С помощью расширений можно дополнять функциональность компонентов работы с BIM-моделями и документами.
 
 #### Шаг 1. Подключение файла расширения
-Расширение должно быть подключено после подключения всех классов ядра компонента **Pilot.Web.3D** или **Pilot.Web.2D**. 
+Расширение должно быть подключено после подключения всех классов ядра компонента **PilotWeb3D** или **PilotWeb2D**. 
 Пример для подключения расширения `my-extension.js`:
 
 ```html
@@ -53,7 +53,7 @@ PilotWeb3D.theExtensionManager.registerExtensionType('My3DExtension', My3DExtens
 
 #### Шаг 3. Загрузка расширения
 
-Пример загрузки расширения для компонента **Pilot.Web.3D**:
+Пример загрузки расширения для компонента **PilotWeb3D**:
 
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
@@ -64,7 +64,7 @@ viewer.extensionsLoader.loadExtension("My3DExtension");
 viewer.loadModelPart(...);
 ```
 
-Пример загрузки расширения для компонента **Pilot.Web.2D**:
+Пример загрузки расширения для компонента **PilotWeb2D**:
 
 ```js
 var htmlDiv = document.getElementById('pilotViewer')

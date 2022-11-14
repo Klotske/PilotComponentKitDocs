@@ -1,5 +1,5 @@
 ---
-title: "Сопоставление методов Autodesk Forge и Pilot.Web.3D"
+title: "Сопоставление методов Autodesk Forge и PilotWeb3D"
 date: 2022-08-04T12:44:03+03:00
 draft: false
 weight: 5
@@ -12,7 +12,7 @@ weight: 5
 
 <---> <!-- magic separator, between columns -->
 
-### Название метода Pilot.Web.3D
+### Название метода PilotWeb3D
 
 <---> <!-- magic separator, between columns -->
 

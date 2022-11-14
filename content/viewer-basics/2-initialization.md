@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-Инициализация компонента **Pilot.Web.3D** для работы с BIM-моделью:
+Инициализация компонента **PilotWeb3D** для работы с BIM-моделью:
 
 ```js
 var viewer;
@@ -18,7 +18,7 @@ PilotWeb3D.Initializer(options, () => {
     console.log('Initialization complete, loading a model next...');
   });
 ```
-Инициализация компонента **PIlot.Web.2D** для работы с документами:
+Инициализация компонента **PIlotWeb2D** для работы с документами:
 
 ```js
 var viewer;
