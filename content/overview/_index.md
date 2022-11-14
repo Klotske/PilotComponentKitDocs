@@ -2,7 +2,7 @@
 title: "Обзор"
 date: 2022-08-26T14:44:03+03:00
 draft: false
-weight: 1
+weight: 0
 resources:
 - name: 3d_view
   src: "3d_viewer.png"

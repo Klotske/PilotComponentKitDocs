@@ -111,7 +111,7 @@ clearSelection(): void;
 getSelection(): ModelElementIds[];
 ```
 
-### getHiddenElements()
+### getHiddenElements() {#getHiddenElements}
 Метод позволяет получить все скрытые элементы.
 ```js
 getHiddenElements(): ModelElementIds[]

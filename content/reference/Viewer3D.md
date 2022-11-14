@@ -63,7 +63,7 @@ loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallb
   
   `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
 
-#### unloadModelPart()
+### unloadModelPart()
 ```js
 unloadModelPart(modelPart: string | ModelPart): void;
 ```
