@@ -9,9 +9,21 @@ draft: false
 Используйте метод `activate()` для того, чтобы показать дерево элементов.  \
 Расширение имеет имя `PilotWeb3D.ModelsBrowser`.
 
-Пример подключения расширения:
+Пример подлючения в `html`:
+```html
+...
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser/ModelsBrowser.css">
+...
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser/ModelsBrowser.min.js"></script>
+...
+```
+
+Пример подлючения в `javascript`:
 ```js
-viewer.extensionsLoader.loadExtension('PilotWeb3D.ModelsBrowser')
+var htmlDiv = document.getElementById('pilotViewer')
+viewer = PilotWeb3D.CreateViewer(htmlDiv);
+viewer.start();
+viewer.extensionsLoader.loadExtension("PilotWeb3D.ModelsBrowser");
 ```
 
 ## Методы

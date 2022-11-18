@@ -9,9 +9,17 @@ draft: false
 Используйте метод `activate()` для перехода в полноэкранный режим.  \
 Расширение имеет имя `PilotWeb3D.FullScreen`.
 
-Пример подключения расширения:
+Пример подлючения в `html`:
+```html
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/FullScreen/FullScreen.min.js"></script>
+```
+
+Пример подлючения в `javascript`:
 ```js
-viewer.extensionsLoader.loadExtension('PilotWeb3D.FullScreen')
+var htmlDiv = document.getElementById('pilotViewer')
+viewer = PilotWeb3D.CreateViewer(htmlDiv);
+viewer.start();
+viewer.extensionsLoader.loadExtension("PilotWeb3D.FullScreen");
 ```
 
 ## Методы
