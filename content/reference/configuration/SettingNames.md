@@ -1,14 +1,14 @@
 ---
-title: "SettingNames"
+title: "SettingsNames"
 date: 2022-12-04T14:44:03+03:00
 draft: false
 ---
 
-**SettingNames** - список настроек для просмотрщика **PilotWeb3D**
+**SettingsNames** - список настроек для просмотрщика **PilotWeb3D**
 Для задания настроек используейте класс <a href="../Viewer3DConfiguration">Viewer3DConfiguration</a>
 
 ```js
-class SettingNames {
+class SettingsNames {
   static TELEMETRY = "telemetry";
   static ANTI_ALIASING = "antiAliasing";
   static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesNavigation";

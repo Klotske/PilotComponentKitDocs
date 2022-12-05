@@ -16,10 +16,10 @@ type ViewerSettings = Record<string, any>;
 
 ```js
 const defaultViewer3DSettings: ViewerSettings = {
-  [SettingNames.TELEMETRY] : false,
-  [SettingNames.ANTI_ALIASING]: true,
-  [SettingNames.HIDE_EDGES_WHEN_NAVIGATING]: true,
-  [SettingNames.DISPLAY_MODE]: DisplayMode.FACES_AND_EDGES,
-  [SettingNames.NAVIGATION_CUBE]: true
+  [SettingsNames.TELEMETRY] : false,
+  [SettingsNames.ANTI_ALIASING]: true,
+  [SettingsNames.HIDE_EDGES_WHEN_NAVIGATING]: true,
+  [SettingsNames.DISPLAY_MODE]: DisplayMode.FACES_AND_EDGES,
+  [SettingsNames.NAVIGATION_CUBE]: true
 }
 ```
