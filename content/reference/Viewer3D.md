@@ -92,6 +92,16 @@ makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 где:
 
 `mimeType` -- не облязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
-
 `quality` -- качество снимка.
 
+
+### fitToView()
+Метод позволяет центрировать камеру над заданными элеметом/элементами
+
+```js
+fitToView(elementIds: string[] | string, modelPart?: string | ModelPart, immediate: boolean = false): void
+```
+где:
+`elementIds` -- идентификатор элемента или список элементов.
+`modelPart` -- идентификатор части модели или экземпляр части модели.
+`immediate` -- параметр, указывающий на, то использовать анимацию при наведении или нет.
