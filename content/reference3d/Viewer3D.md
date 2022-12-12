@@ -1,12 +1,13 @@
 ---
-title: "GuiViewer3D"
+title: "Viewer3D"
 date: 2022-08-29T14:44:03+03:00
 draft: false
-weight: 2
+weight: 8
 ---
 
-**GuiViewer3D** -- это класс для компонента просмотра 3D моделей. Он расширяет возможности базового класса `Viewer3D` и содержит все, 
-что нужно для отображения и взаимодействия с 3D моделями полученными из системы **Pilot-BIM**.
+**Viewer3D** -- это базовый класс для всех видов компонентов работы с BIM-моделями.
+
+Этот класс содержит всё необходимое для отображения и взаимодействия с моделями, полученными из системы **Pilot-BIM**.
 
 ## Свойства
 
@@ -14,13 +15,13 @@ weight: 2
 ```js
 container: HTMLElement;
 ```
-HTML элемент, в котором создан компонент просмотра BIM-моделей.
+HTML элемент, в котором создан компонент просмотра 3D моделей.
 
 ### extensionsLoader
 ```js
 extensionsLoader: ExtensionLoader;
 ```
-Тип работы с расширениями. Подробнее смотри (ExtensionLoader).
+Тип работы с расширениями. Подробнее смотри <a href="../ExtensionLoader/">ExtensionLoader</a>.
 
 ### events
 ```js
@@ -46,7 +47,6 @@ get model(): Model;
 ```js
 finish(): void;
 ```
-
 Метод деинициализирует внутренние механизмы компонента.
 
 ### loadModelPart()
@@ -54,6 +54,7 @@ finish(): void;
 loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
 ```
 где:
+
   `buffer` -- массив байт модели,
   
   `options` -- опции для загрузки части модели,
@@ -69,37 +70,32 @@ unloadModelPart(modelPart: string | ModelPart): void;
 где:
   `modelPart` -- идентификатор части модели или экземпляр части модели.
 
-### getToolbar()
-Метод для получения экземпляра типа работы с панелью инструментов.
-```js
-getToolbar(): ViewerToolbar;
-```
-
 ### getCameraPosition()
-Метод для получения текущего положения камеры.
+Метод позволяет получить текущее положение камеры.
 ```js
 getCameraPosition(): CameraPosition;
 ```
 
 ### setCameraPosition()
-Метод, позволяющий задать позицию камеры.
+Метод позволяет задать позицию камеры.
 ```js
-setCameraPosition(params: CameraPosition): void;
+setCameraPosition(cameraPosition: CameraPosition): void;
 ```
 где:
-`params` -- параметры камеры.
+`cameraPosition` - позиция камеры.
 
 ### makeScreenshot()
-Метод, позволяющий сделать снимок сцены.
+Метод позволяет сделать снимок сцены.
 ```js
 makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 ```
 где:
-`mimeType` -- не обязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
+
+`mimeType` -- не облязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
 `quality` -- качество снимка.
 
 
-### fitToView()
+### fitToView() {#fitToView}
 Метод позволяет центрировать камеру над заданными элеметом/элементами
 
 ```js

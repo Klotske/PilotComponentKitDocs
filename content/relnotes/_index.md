@@ -6,14 +6,17 @@ weight: 1
 ---
 
 #### Версия @VERSION@ от @DATE@
+- API получения свойств элементов модели (<a href="../reference3d/Model#getElementProperties">getElementProperties</a>)
+- добавлен метод для центрирования камеры на элементе модели (<a href="../reference3d/Viewer3D#fitToView">fitToView</a>)
+#### Версия 1.0.6 от 18.11.2022
 
-- API получения скрытых элементов консолидированной модели (<a href="../reference/Model#getHiddenElements">подробнее</a>) {{< ref "reference/Model.md#getHiddenElements" >}}
-- Расширение для просмотра дерева элементов (<a href="../reference/extensions/ModelsBrowser">ModelsBrowserExtension</a>)
-- Расширение - полноэкранный режим (<a href="../reference/extensions/FullScreen">FullScreenExtension</a>)
-- Расширение - диалог настроек для 3D просмотрщика (<a href="../reference/extensions/ViewerSettings">ViewerSettingsExtension</a>)
+- API получения скрытых элементов консолидированной модели (<a href="../reference3d/Model#getHiddenElements">подробнее</a>)
+- Расширение для просмотра дерева элементов (<a href="../extensions3d/ModelsBrowser">ModelsBrowserExtension</a>)
+- Расширение - полноэкранный режим (<a href="../extensions3d/FullScreen">FullScreenExtension</a>)
+- Расширение - диалог настроек для 3D просмотрщика (<a href="../extensions3d/ViewerSettings">ViewerSettingsExtension</a>)
 - WASD навигация
 - Улучшена навиганция
-- Добавлены следующие (<a href="../reference/Events">события</a>):
+- Добавлены следующие (<a href="../reference3d/Events">события</a>):
   - `SELECTION_CHANGED_EVENT` - измение выделения элемента на сцене
   - `MODEL_PART_LOADED` - событие загрузки части модели в 3D просмотрщик
   - `MODEL_PART_UNLOADED` - событие выгрузки части модели
