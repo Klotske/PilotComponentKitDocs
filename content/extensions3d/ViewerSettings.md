@@ -11,7 +11,7 @@ draft: false
 
 Пример подлючения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ViewerSettings/ViewerSettings.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ViewerSettings3D/ViewerSettings.min.js"></script>
 ```
 
 Пример подлючения в `javascript`:

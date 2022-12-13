@@ -12,9 +12,9 @@ draft: false
 Пример подлючения в `html`:
 ```html
 ...
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser/ModelsBrowser.css">
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser3D/ModelsBrowser.css">
 ...
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser/ModelsBrowser.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser3D/ModelsBrowser.min.js"></script>
 ...
 ```
 
