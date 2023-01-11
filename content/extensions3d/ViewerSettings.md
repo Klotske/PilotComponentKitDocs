@@ -9,12 +9,12 @@ draft: false
 Используйте метод `activate()` для того, чтобы показать диалог настроек просмотрщика 3D моделей.  \
 Расширение имеет имя `PilotWeb3D.ViewerSettings`.
 
-Пример подлючения в `html`:
+Пример подключения в `html`:
 ```html
 <script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ViewerSettings3D/ViewerSettings.min.js"></script>
 ```
 
-Пример подлючения в `javascript`:
+Пример подключения в `javascript`:
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);

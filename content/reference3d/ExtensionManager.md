@@ -42,7 +42,7 @@ registerExtensionType(extensionId: string, extension: typeof Extension) : boolea
 unregisterExtensionType(extensionId: string) : boolean;
 ```
 где:
-`extensionId`-- идентификатор расширения.
+`extensionId`-- уникальное имя расширения.
 
 
 ### getExtensionType()
@@ -52,4 +52,4 @@ unregisterExtensionType(extensionId: string) : boolean;
 getExtensionType(extensionId: string): typeof Extension
 ```
 где:
-`extensionId`-- идентификатор расширения.
+`extensionId`-- уникальное имя расширения.

@@ -33,7 +33,7 @@ viewer.extensionLoader.loadExtension('myExtension');
 loadExtension(extensionId: string): Promise<Extension>;
 ```
 где:
-`extensionId` -- идентификатор расширения.
+`extensionId` -- уникальное имя расширения.
 
 ### unloadExtension()
 
@@ -43,7 +43,7 @@ loadExtension(extensionId: string): Promise<Extension>;
 unloadExtension(extensionId: string) : Promise<boolean>;
 ```
 где:
-`extensionId` -- идентификатор расширения.
+`extensionId` -- уникальное имя расширения.
 
 ### getExtensions()
 

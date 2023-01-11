@@ -4,17 +4,17 @@ date: 2022-11-01T14:44:03+03:00
 draft: false
 ---
 
-**FullScreenExtension** -- расширение, которое позволяет перейти в полноэкранный режим. Также расширение добавляет кнопку на панель интсрументов для управления полноэкранным режимом.
+**FullScreenExtension** -- расширение, которое позволяет перейти в полноэкранный режим. Также расширение добавляет кнопку на панель инструментов для управления полноэкранным режимом.
 
 Используйте метод `activate()` для перехода в полноэкранный режим.  \
 Расширение имеет имя `PilotWeb3D.FullScreen`.
 
-Пример подлючения в `html`:
+Пример подключения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/FullScreen/FullScreen.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/FullScreen3D/FullScreen.min.js"></script>
 ```
 
-Пример подлючения в `javascript`:
+Пример подключения в `javascript`:
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);

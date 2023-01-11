@@ -30,10 +30,12 @@ getHiddenModelParts(): ModelPart[]
 Метод позволяет спрятать часть консолидированной модели.
 
 ```js
-hideModelPart(modelPart: string | ModelPart): void;
+hideModelPart(modelPart: string | ModelPart, options?: SelectionOptions): void;
 ```
 где:
 `modelPart` -- идентификатор или экземпляр части модели.
+
+`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
 
 ### showModelPart()
 Метод позволяет показать часть консолидированной модели.
@@ -80,18 +82,20 @@ showAll(): void;
 ### select()
 Метод позволяет селектировать элементы.
 ```js
-select(elementIds: string[] | string, modelPart?: string | ModelPart): void
+select(elementIds: string[] | string, modelPart?: string | ModelPar, options?: SelectionOptions): void
 ```
 где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+
+`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
 
 ### deselect()
 Метод позволяет снять селектирование с заданных элементов.
 ```js
-deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
+deselect(elementIds: string[] | string, modelPart?: string | ModelPart, options?: SelectionOptions): void
 ```
 где:
 
@@ -99,11 +103,15 @@ deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
+`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
+
 ### clearSelection()
 Метод позволяет снять выделение со всех элементов модели.
 ```js
-clearSelection(): void;
+clearSelection(options?: SelectionOptions): void;
 ```
+
+`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
 
 ### getSelection()
 Метод позволяет получить выделенные элементы модели.
