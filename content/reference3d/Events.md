@@ -35,5 +35,7 @@ weight: 9
     static MODEL_PART_LOADED: string;
     // Событие выгрузки части консолидированной модели
     static MODEL_PART_UNLOADED: string;
+    // Событие изменения положения камеры
+    static CAMERA_CHANGE_EVENT: string;
   }
 ```

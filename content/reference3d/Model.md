@@ -30,12 +30,10 @@ getHiddenModelParts(): ModelPart[]
 Метод позволяет спрятать часть консолидированной модели.
 
 ```js
-hideModelPart(modelPart: string | ModelPart, options?: SelectionOptions): void;
+hideModelPart(modelPart: string | ModelPart): void;
 ```
 где:
 `modelPart` -- идентификатор или экземпляр части модели.
-
-`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
 
 ### showModelPart()
 Метод позволяет показать часть консолидированной модели.
@@ -82,20 +80,20 @@ showAll(): void;
 ### select()
 Метод позволяет селектировать элементы.
 ```js
-select(elementIds: string[] | string, modelPart?: string | ModelPar, options?: SelectionOptions): void
+select(elementIds: string[] | string, modelPart: string | ModelPar, selectionMode: SelectionMode): void
 ```
 где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+`modelPart` -- идентификатор или экземпляр части модели.
 
-`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
+`selectionMode` -- режим селектирования. Подробнее см <a href="/reference3d/SelectionMode">SelectionMode</a>
 
 ### deselect()
 Метод позволяет снять селектирование с заданных элементов.
 ```js
-deselect(elementIds: string[] | string, modelPart?: string | ModelPart, options?: SelectionOptions): void
+deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
 где:
 
@@ -103,15 +101,11 @@ deselect(elementIds: string[] | string, modelPart?: string | ModelPart, options?
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
-`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
-
 ### clearSelection()
 Метод позволяет снять выделение со всех элементов модели.
 ```js
-clearSelection(options?: SelectionOptions): void;
+clearSelection(): void;
 ```
-
-`options` -- необязательный параметр с параметрами селектирования. Подробнее см <a href="../reference3d/SelectionOptions">
 
 ### getSelection()
 Метод позволяет получить выделенные элементы модели.
@@ -143,8 +137,11 @@ setColor(elementIds: string[] | string, r: number, g: number, b: number, a: numb
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 `r` -- красный цвет (0-255).
+
 `g` -- зеленый цвет (0-255).
+
 `b` -- синий цвет (0-255).
+
 `a` -- альфа-канал (0-1).
 
 ### clearColors()
@@ -152,7 +149,8 @@ setColor(elementIds: string[] | string, r: number, g: number, b: number, a: numb
 ```js
 clearColors(model? : string | ModelPart): void;
 ```
-где: 
+где:
+
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
 
 ### getElementProperties() {#getElementProperties}
@@ -162,6 +160,11 @@ clearColors(model? : string | ModelPart): void;
 getElementProperties(elementId: string, modelPart?: string | ModelPart, version?: BigInt): ModelElementPropertySet[]
 ```
 где:
+
 `elementId` -- идентификатор элемента.
+
 `modelPart` -- идентификатор части модели или экземпляр части модели. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
+
 `version` -- версия модели. Задается в тиках. Если версия не указана, то берутся свойства актуальной версии загруженной части модели.
+
+Возвращает набор данных типа <a href="/reference3d/ModelElementPropertySet">ModelElementPropertySet</a>

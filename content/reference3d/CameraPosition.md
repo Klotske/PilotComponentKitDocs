@@ -11,15 +11,15 @@ weight: 9
 
 ### position
 ```js
-position: { x: number, y: number, z: number }
+position: Point3;
 ```
-Позиция камеры. Задается параметрами x, y, z.
+Позиция камеры. Задается параметрами x, y, z. Подробнее смотри (<a href="/reference3d/Point3/">Point3</a>).
 
 ### eyeDir
 ```js
-eyeDir: { x: number, y: number, z: number }
+eyeDir: Point3;
 ```
-Вектор направления взгляда камеры. Задается параметрами x, y, z.
+Вектор направления взгляда камеры. Задается параметрами x, y, z. Подробнее смотри (<a href="/reference3d/Point3/">Point3</a>).
 
 ### angle
 ```js
@@ -29,6 +29,6 @@ angle: number
 
 ### viewCenter
 ```js
-viewCenter: { x: number, y: number, z: number }
+viewCenter: Point3;
 ```
-Вектор точки взгляда.
+Вектор точки взгляда. Подробнее смотри (<a href="/reference3d/Point3/">Point3</a>).
