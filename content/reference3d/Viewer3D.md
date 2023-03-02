@@ -25,7 +25,7 @@ extensionsLoader: ExtensionLoader;
 
 ### events
 ```js
-get events(): EventsDispatcher;
+get events(): IEventsDispatcher;
 ```
 Свойство для управления событиями компонента.
 

@@ -80,7 +80,7 @@ showAll(): void;
 ### select()
 Метод позволяет селектировать элементы.
 ```js
-select(elementIds: string[] | string, modelPart: string | ModelPar, selectionMode: SelectionMode): void
+select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode): void
 ```
 где:
 
