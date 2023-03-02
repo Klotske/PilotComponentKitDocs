@@ -34,6 +34,14 @@ get events(): IEventsDispatcher;
 get model(): Model;
 ```
 
+### navigation
+Получить объект управления навигацией по модели.
+```js
+get navigation(): INavigation;
+```
+Подробнее смотри <a href="../Navigation">INavigation</a>
+
+
 ## Методы
 
 ### start()
@@ -72,20 +80,6 @@ unloadModelPart(modelPart: string | ModelPart): void;
 getToolbar(): ViewerToolbar;
 ```
 
-### getCameraPosition()
-Метод для получения текущего положения камеры.
-```js
-getCameraPosition(): CameraPosition;
-```
-
-### setCameraPosition()
-Метод, позволяющий задать позицию камеры.
-```js
-setCameraPosition(params: CameraPosition): void;
-```
-где:
-`params` -- параметры камеры.
-
 ### makeScreenshot()
 Метод, позволяющий сделать снимок сцены.
 ```js
@@ -94,15 +88,3 @@ makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 где:
 `mimeType` -- не обязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
 `quality` -- качество снимка.
-
-
-### fitToView() {#fitToView}
-Метод позволяет центрировать камеру над заданными элеметом/элементами
-
-```js
-fitToView(elementIds: string[] | string, modelPart?: string | ModelPart, immediate: boolean = false): void
-```
-где:
-`elementIds` -- идентификатор элемента или список элементов.
-`modelPart` -- идентификатор части модели или экземпляр части модели.
-`immediate` -- параметр, указывающий на, то использовать анимацию при наведении или нет.

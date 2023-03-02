@@ -45,3 +45,15 @@ get name(): string;
 get children(): ModelElement[];
 ```
 
+### hasGeometry
+Проверяет наличие геометрии у элемента.
+```js
+get hasGeometry(): boolean;
+```
+
+### boundingBoxCenter
+Получает центр bounding box элемента.
+```js
+get boundingBoxCenter(): Point3;
+```
+Подробнее смотри <a href="../Point3">Point3</a>.

@@ -11,8 +11,17 @@ weight: 3
 ### getAllModelParts()
 Метод возвращает все загруженные части консолидированной модели.
 ```js
-getAllModelParts(): ModelPart[] 
+getAllModelParts(): ModelPart[];
 ```
+
+### getModelPart()
+Метод возвращает часть консолидированной модели по ее идентификатору.
+```js
+getModelPart(id: string): ModelPart;
+```
+где:
+
+`id` -- идентификатор части консолидированной модели.
 
 ### getVisibleModelParts()
 Метод возвращает все видимые части консолидированной модели.

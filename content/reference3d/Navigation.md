@@ -99,7 +99,7 @@ getCamera(): THREE.Camera;
 Возвращает объект камеры. Подробнее смотри <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
 
 
-### fitToView()
+### fitToView() {#fitToView}
 Спозиционировать заданные элементы в центре экрана.
 
 ```js
