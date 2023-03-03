@@ -121,7 +121,7 @@ setPivotPoint(point: Point3): void;
 
 `point` -- <a href="../Point3">точка</a> в пространстве сцены.
 
-### setPivotPoint()
+### getPivotPoint()
 Получить положение опорной точки взгляда камеры.
 
 ```js
