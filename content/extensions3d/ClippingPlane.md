@@ -1,7 +1,6 @@
 ---
 title: "ClippingPlaneExtension"
-date: 2023-03-01T14:44:03+03:00
-draft: true
+draft: false
 ---
 
 **ClippingPlaneExtension** -- расширение, которое позволяет задать секущие плоскости на сцене.

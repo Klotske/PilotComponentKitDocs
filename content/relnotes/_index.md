@@ -15,9 +15,9 @@ weight: 1
 - Реализован элемент управления GizmoControl (PI#3-307).
 - В расширение <a href="../extensions3d/ModelsBrowser/">ModelsBrowserExtension</a> добавлено мультиселектирование объектов в дереве (PI#3-251).
 - Добавлены расширения:
-	- <a href="../extensions3d/BoxSelection/">BoxSelectionExtension</a> для выделения объектов рамкой (PI#3-197).
-	- ClippingPlaneExtension для установки секущей плоскости (PI#3-335, PI#3-382, PI#3-334).
-	- SceneObserverExtension для работы со слоями (PI#3-369).
+	- <a href="../extensions3d/BoxSelection">BoxSelectionExtension</a> для выделения объектов рамкой (PI#3-197).
+	- <a href="../extensions3d/ClippingPlane">ClippingPlaneExtension</a> для установки секущей плоскости (PI#3-335, PI#3-382, PI#3-334).
+	- <a href="../samples3d/SceneObserverExtension">SceneObserverExtension</a> - пример работы со слоями (PI#3-369).
 - Исправлены ошибки:
 	- Исправлено неравномерное перемещение камеры при навигации средней кнопкой мыши (PI#3-294).
 	- Исправлена ошибка при вызове метода finish у Viewer3D (PI#3-297).
