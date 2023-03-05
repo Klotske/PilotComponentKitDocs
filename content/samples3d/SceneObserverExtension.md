@@ -3,7 +3,7 @@ title: "SceneObserverExtension"
 draft: false
 ---
 
-**SceneObserverExtension** -- пример расширения, которое позволяет просматривать и управлять 3D сценами.
+**SceneObserverExtension** -- пример расширения, которое позволяет просматривать и управлять 3D-сценами.
 Расширение имеет имя `PilotWeb3D.SceneObserver`.
 
 Пример подключения в `html`:

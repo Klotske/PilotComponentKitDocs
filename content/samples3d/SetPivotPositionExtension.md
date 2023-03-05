@@ -3,7 +3,7 @@ title: "SetPivotPositionExtension"
 draft: false
 ---
 
-**SetPivotPositionExtension** -- пример расширения, которое показывает возможности работы с опорной точкой взгляда камеры.
+**SetPivotPositionExtension** -- пример расширения, которое показывает возможности работы с опорной точкой камеры.
 Расширение имеет имя `SetPivotPositionExtensionSample`.
 
 Пример подключения в `html`:

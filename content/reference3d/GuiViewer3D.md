@@ -5,37 +5,37 @@ draft: false
 weight: 2
 ---
 
-**GuiViewer3D** -- это класс для компонента просмотра 3D моделей. Он расширяет возможности базового класса `Viewer3D` и содержит все, 
-что нужно для отображения и взаимодействия с 3D моделями полученными из системы **Pilot-BIM**.
+**GuiViewer3D** -- это класс для компонента просмотра 3D-моделей. Он расширяет возможности базового класса `Viewer3D` и содержит всё, 
+что нужно для отображения и взаимодействия с 3D-моделями, полученными из системы **Pilot-BIM**.
 
 ## Свойства
 
 ### container
+HTML-элемент, в котором создан компонент просмотра BIM-моделей.
 ```js
 container: HTMLElement;
 ```
-HTML элемент, в котором создан компонент просмотра BIM-моделей.
 
 ### extensionsLoader
+Тип работы с расширениями. Подробнее смотри <a href="../ExtensionLoader">ExtensionLoader</a>.
 ```js
 extensionsLoader: ExtensionLoader;
 ```
-Тип работы с расширениями. Подробнее смотри (ExtensionLoader).
 
 ### events
+Свойство для управления событиями компонента.
 ```js
 get events(): IEventsDispatcher;
 ```
-Свойство для управления событиями компонента.
 
 ### model
-Получить консолидированную модель.
+Свойство для получения консолидированной модели.
 ```js
 get model(): Model;
 ```
 
 ### navigation
-Получить объект управления навигацией по модели.
+Свойство для получения объекта управления навигацией по модели.
 ```js
 get navigation(): INavigation;
 ```
@@ -45,19 +45,19 @@ get navigation(): INavigation;
 ## Методы
 
 ### start()
+Метод инициализирует внутренние механизмы компонента.
 ```js
  start(): Promise<number>;
 ```
-Метод инициализирует внутренние механизмы компонента.
 
 ### finish()
+Метод деинициализирует внутренние механизмы компонента.
 ```js
 finish(): void;
 ```
 
-Метод деинициализирует внутренние механизмы компонента.
-
 ### loadModelPart()
+Метод для управления загрузкой частей модели.
 ```js
 loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
 ```
@@ -65,9 +65,10 @@ loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallb
   `buffer` -- массив байт модели,
   `options` -- опции для загрузки части модели,
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
+  `onErrorCallback` -- метод для обратного вызова в случае неуспешной загрузки части модели.
 
 ### unloadModelPart()
+Метод для выгрузки части модели.
 ```js
 unloadModelPart(modelPart: string | ModelPart): void;
 ```
@@ -86,5 +87,5 @@ getToolbar(): ViewerToolbar;
 makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 ```
 где:
-`mimeType` -- не обязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
+`mimeType` -- необязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
 `quality` -- качество снимка.

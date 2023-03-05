@@ -4,7 +4,7 @@ draft: false
 weight: 9
 ---
 
-**INavigation** -- интерфейс позволяющий взаимодействовать с навигацией на сцене.
+**INavigation** -- интерфейс, позволяющий взаимодействовать с навигацией на сцене.
 
 ```js
 export interface INavigation {
@@ -26,8 +26,7 @@ export interface INavigation {
 ## Методы
 
 ### registerEventHandler()
-Зарегистрировать обработчика событий навигации.
-
+Метод позволяет зарегистрировать обработчик событий навигации.
 ```js
 registerEventHandler(navEventHandler: NavigationEventHandler): void;
 ```
@@ -36,8 +35,7 @@ registerEventHandler(navEventHandler: NavigationEventHandler): void;
 `navEventHandler` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationEventHandler">NavigationEventHandler</a>.
 
 ### unregisterEventHandler()
-Разрегистрировать обработчика событий навигации.
-
+Метод позволяет разрегистрировать обработчик событий навигации.
 ```js
 unregisterEventHandler(navEventHandler: NavigationEventHandler): void;
 ```
@@ -46,34 +44,30 @@ unregisterEventHandler(navEventHandler: NavigationEventHandler): void;
 `navEventHandler` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationEventHandler">NavigationEventHandler</a>.
 
 ### setActive()
-Установить обработчик навигации по умолчанию.
-
+Метод позволяет установить обработчик навигации по умолчанию.
 ```js
 setActive(nvEventHandlerName: string, isActive: boolean): void;
 ```
 где:
 
-`nvEventHandlerName` -- имя обработчика навигации.\
+`nvEventHandlerName` -- имя обработчика навигации,\
 `isActive` -- активность.
 
 ### getActiveNavigation()
-Получить текущий обработчик навигации
-
+Метод позволяет получить текущий обработчик навигации.
 ```js
 getActiveNavigation(): NavigationEventHandler;
 ```
 Возвращает объект <a href="../NavigationEventHandler">NavigationEventHandler</a>.
 
 ### setDefaultNavigation()
-Восстановить обработчик навигации по умолчанию.
-
+Метод позволяет восстановить обработчик навигации по умолчанию.
 ```js
 setDefaultNavigation(): void;
 ```
 
 ### setCameraPosition()
-Установить позицию камеры.
-
+Метод позволяет установить позицию камеры.
 ```js
 setCameraPosition(params: CameraPosition): void;
 ```
@@ -82,8 +76,7 @@ setCameraPosition(params: CameraPosition): void;
 `params` -- параметры <a href="../CameraPosition">позиции камеры</a>.
 
 ### getCameraPosition()
-Получить позицию камеры.
-
+Метод позволяет получить позицию камеры.
 ```js
 getCameraPosition(): CameraPosition;
 ```
@@ -91,8 +84,7 @@ getCameraPosition(): CameraPosition;
 
 
 ### getCamera()
-Получить камеру.
-
+Метод позволяет получить камеру.
 ```js
 getCamera(): THREE.Camera;
 ```
@@ -100,20 +92,18 @@ getCamera(): THREE.Camera;
 
 
 ### fitToView() {#fitToView}
-Спозиционировать заданные элементы в центре экрана.
-
+Метод позволяет спозиционировать заданные элементы в центре экрана.
 ```js
-fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
+fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate: boolean): void;
 ```
 где:
 
-`elementIds` -- список идентификаторов или один идентификатор элемнета сцены.\
-`modelPart` -- идентификатор части консолидированной модели или объект части консолидированной модели.\
-`immediate` -- анимация при центрировании. `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
+`elementIds` -- список идентификаторов или один идентификатор элемнета сцены,\
+`modelPart` -- идентификатор части консолидированной модели или объект части консолидированной модели,\
+`immediate` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
 ### setPivotPoint()
-Задать положение опорной точки взгляда камеры.
-
+Метод позволяет задать положение опорной точки камеры.
 ```js
 setPivotPoint(point: Point3): void;
 ```
@@ -122,8 +112,7 @@ setPivotPoint(point: Point3): void;
 `point` -- <a href="../Point3">точка</a> в пространстве сцены.
 
 ### getPivotPoint()
-Получить положение опорной точки взгляда камеры.
-
+Метод позволяет получить положение опорной точки камеры.
 ```js
 getPivotPoint(): Point3;
 ```
@@ -131,8 +120,7 @@ getPivotPoint(): Point3;
 
 
 ### resetPivotPoint()
-Сбросить положение опорной точки взгляда камеры.
-
+Метод позволяет сбросить положение опорной точки камеры.
 ```js
 resetPivotPoint(): void;
 ```

@@ -15,7 +15,7 @@ getAllModelParts(): ModelPart[];
 ```
 
 ### getModelPart()
-Метод возвращает часть консолидированной модели по ее идентификатору.
+Метод возвращает часть консолидированной модели по её идентификатору.
 ```js
 getModelPart(id: string): ModelPart;
 ```
@@ -87,7 +87,7 @@ showAll(): void;
 ```
 
 ### select()
-Метод позволяет селектировать элементы.
+Метод позволяет выделить элементы.
 ```js
 select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode): void
 ```
@@ -97,10 +97,10 @@ select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMo
 
 `modelPart` -- идентификатор или экземпляр части модели.
 
-`selectionMode` -- режим селектирования. Подробнее см <a href="/reference3d/SelectionMode">SelectionMode</a>
+`selectionMode` -- режим выделения. Подробнее см <a href="/reference3d/SelectionMode">SelectionMode</a>
 
 ### deselect()
-Метод позволяет снять селектирование с заданных элементов.
+Метод позволяет снять выделение с заданных элементов.
 ```js
 deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```

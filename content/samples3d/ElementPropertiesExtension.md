@@ -3,7 +3,7 @@ title: "ElementPropertiesExtension"
 draft: false
 ---
 
-**ElementPropertiesExtension** -- пример расширения, которое позволяет просматривать свойства селектированного бим-элемента.
+**ElementPropertiesExtension** -- пример расширения, которое позволяет просматривать свойства выделенного BIM-элемента.
 Расширение имеет имя `ElementPropertiesExtensionSample`.
 
 Пример подключения в `html`:
