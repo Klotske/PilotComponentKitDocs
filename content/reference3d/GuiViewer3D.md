@@ -76,7 +76,7 @@ unloadModelPart(modelPart: string | ModelPart): void;
   `modelPart` -- идентификатор части модели или экземпляр части модели.
 
 ### getToolbar()
-Метод для получения экземпляра типа работы с панелью инструментов.
+Метод получает объект для работы с панелью инструментов.
 ```js
 getToolbar(): ViewerToolbar;
 ```

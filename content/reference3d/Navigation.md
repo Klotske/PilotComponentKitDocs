@@ -94,7 +94,7 @@ getCamera(): THREE.Camera;
 ### fitToView() {#fitToView}
 Метод позволяет спозиционировать заданные элементы в центре экрана.
 ```js
-fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate: boolean): void;
+fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
 ```
 где:
 
