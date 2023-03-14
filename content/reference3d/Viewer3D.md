@@ -40,7 +40,7 @@ get model(): Model;
 ```js
 get navigation(): INavigation;
 ```
-Подробнее смотри <a href="../Navigation">INavigation</a>
+Подробнее смотри <a href="../navigation/Navigation">INavigation</a>
 
 
 ## Методы
