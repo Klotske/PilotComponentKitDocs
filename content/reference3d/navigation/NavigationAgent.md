@@ -53,7 +53,7 @@ navigationAgent.canvasNavigationSource.removeEventListener("mousemove", onMouseM
 readonly keyboardNavigationSource: INavigationEventSource;
 ```
 {{< hint type="tip" icon=gdoc_info_outline title="Примечание">}}
-Пример подписки на событие `keup`:
+Пример подписки на событие `keyup`:
 ```js
 navigationAgent.keyboardNavigationSource.addEventListener("keyup", onMouseMove);
 ```

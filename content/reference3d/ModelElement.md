@@ -56,4 +56,4 @@ get hasGeometry(): boolean;
 ```js
 get boundingBoxCenter(): Point3;
 ```
-Подробнее смотри <a href="../Point3">Point3</a>.
+Подробнее смотри <a href="/reference3d/navigation/Point3">Point3</a>.
