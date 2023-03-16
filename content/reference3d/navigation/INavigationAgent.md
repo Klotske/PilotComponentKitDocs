@@ -1,13 +1,13 @@
 ---
-title: "NavigationAgent"
+title: "INavigationAgent"
 draft: false
 weight: 9
 ---
 
-## NavigationAgent {#NavigationAgent}
-**NavigationAgent** -- класс, предоставляющий источники событий навигации.
+## INavigationAgent {#INavigationAgent}
+**INavigationAgent** -- интерфейс, позволяющий работать с источниками событий навигации.
 ```js
-export class NavigationAgent {
+export interface INavigationAgent  {
 
   readonly canvasNavigationSource: INavigationEventSource;
   readonly keyboardNavigationSource: INavigationEventSource;
@@ -59,13 +59,9 @@ navigationAgent.keyboardNavigationSource.addEventListener("keyup", onMouseMove);
 ```
 или
 ```js
-navigationAgent.keyboardNavigationSource.addEventListener("keyup", onKeyUp,  false);
-```
-или
-```js
 navigationAgent.keyboardNavigationSource.addEventListener("keyup", onKeyUp, {capture: false});
 ```
-или
+Те же опции, указанные явно:
 ```js
 navigationAgent.keyboardNavigationSource.addEventListener("keyup", onKeyUp, new NavigationEventOptions(false, NavigationHandlerPriority.DefaultNavigation, false, 'desktopNavigation'));
 ```
@@ -100,6 +96,7 @@ export interface INavigationEventSource {
 **NavigationEvent** -- базовый класс события навигации.
 ```js
 export class NavigationEvent {
+  // Задает и показывает было ли обработано событие.
   isHandled?: boolean;
 }
 ```
@@ -108,10 +105,14 @@ export class NavigationEvent {
 **NavigationEventOptions** -- опции подписки на событие навигации.
 ```js
 export class NavigationEventOptions implements EventListenerOptions {
-   capture: boolean;
-   priority: number | NavigationHandlerPriority;
-   alwaysHandle: boolean;
-   navigationTargetName?: string;
+  // Перехват события при всплытии (false), иначе при погружении (true). По умолчанию: false.
+  capture: boolean;
+  // Приоритет вызова обработчиков: от наибольшего к наименьшему. По умолчанию: NavigationHandlerPriority.CustomExtensions.
+  priority: number | NavigationHandlerPriority;
+  // Перехват события, если событие уже было обработано ранее (true), иначе событие игнорируется (false). По умолчанию false.
+  alwaysHandle: boolean;
+  // (Опционально) идентификатор подписчика на событие.
+  navigationTargetName?: string;
 }
 ```
 

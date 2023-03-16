@@ -12,9 +12,11 @@ export interface INavigation {
   unregisterNavigation(navigationTool: INavigationTool): void;
   setActive(navigationToolName: string, isActive: boolean): void;
   getActiveNavigation(): INavigationTool | null;
-  getNavigationAgent(): NavigationAgent;
-  setCameraPosition(params: CameraPosition): void;
-  getCameraPosition(): CameraPosition;
+  getNavigationAgent(): INavigationAgent;
+  getNavigationArea(): DOMRect;
+  setCameraParameters(params: CameraParameters): void;
+  getCameraParameters(): CameraParameters;
+  getCameraControl(): ICameraControl;
   getCamera(): THREE.Camera;
   fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
   setPivotPoint(point: Point3): void;
@@ -54,7 +56,7 @@ setActive(navigationToolName: string, isActive: boolean): void;
 `isActive` -- активность.
 
 {{<hint type="note" icon=gdoc_info_outline title="Примечание">}}
-    Активным может быть только один обработчик навигации в каждый момент времени.
+  Активным может быть только один обработчик навигации в каждый момент времени.
 {{< /hint>}}
 
 ### getActiveNavigation()
@@ -65,28 +67,41 @@ getActiveNavigation(): INavigationTool | null;
 Возвращает объект <a href="../INavigationTool">INavigationTool</a>.
 
 ### getNavigationAgent()
-Метод позволяет получить <a href="../NavigationAgent">NavigationAgent</a> - предоставляющий источники событий навигации.
+Метод позволяет получить <a href="../INavigationAgent">INavigationAgent</a> - предоставляющий источники событий навигации.
 ```js
-getNavigationAgent(): NavigationAgent;
+getNavigationAgent(): INavigationAgent;
 ```
-Возвращает объект <a href="../NavigationAgent">NavigationAgent</a>.
+Возвращает объект <a href="../INavigationAgent">INavigationAgent</a>.
 
-### setCameraPosition()
+### getNavigationArea()
+Метод позволяет получить прямоугольник области навигации.
+```js
+  getNavigationArea(): DOMRect;
+```
+Возвращает объект <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect">DOMRect</a>.
+
+### setCameraParameters()
 Метод позволяет установить позицию камеры.
 ```js
-setCameraPosition(params: CameraPosition): void;
+setCameraParameters(params: CameraParameters): void;
 ```
 где:
 
-`params` -- параметры <a href="../CameraPosition">позиции камеры</a>.
+`params` -- параметры <a href="../CameraParameters">позиции камеры</a>.
 
-### getCameraPosition()
+### getCameraParameters()
 Метод позволяет получить позицию камеры.
 ```js
-getCameraPosition(): CameraPosition;
+getCameraParameters(): CameraParameters;
 ```
-Возвращает <a href="../CameraPosition">позицию камеры</a>.
+Возвращает <a href="../CameraParameters">позицию камеры</a>.
 
+### getCameraControl()
+Метод позволяет получить контроллер камеры.
+```js
+  getCameraControl(): ICameraControl;
+```
+Возвращает <a href="../ICameraControl">контроллер камеры</a>.
 
 ### getCamera()
 Метод позволяет получить камеру.
@@ -94,7 +109,6 @@ getCameraPosition(): CameraPosition;
 getCamera(): THREE.Camera;
 ```
 Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
-
 
 ### fitToView() {#fitToView}
 Метод позволяет спозиционировать заданные элементы в центре экрана.

@@ -106,11 +106,11 @@ weight: 7
 
 <---> <!-- magic separator, between columns -->
 
-`setCameraPosition(params: CameraPosition): void`
+`setCameraParameters(params: CameraParameters): void`
 
 <---> <!-- magic separator, between columns -->
 
-Задать позицию для камеры.
+Задать параметры камеры.
 
 {{< /columns >}}
 
@@ -122,11 +122,11 @@ weight: 7
 
 <---> <!-- magic separator, between columns -->
 
-`getCameraPosition(): CameraPosition`
+`getCameraParameters(): CameraParameters`
 
 <---> <!-- magic separator, between columns -->
 
-Получить позицию камеры.
+Получить параметры камеры.
 
 {{< /columns >}}
 
