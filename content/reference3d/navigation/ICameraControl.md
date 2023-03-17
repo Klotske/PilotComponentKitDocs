@@ -6,6 +6,7 @@ weight: 9
 
 
 ## CameraParameters {#CameraParameters}
+**CameraParameters** -- описание параметров камеры.
 ```js
 export type CameraParameters = { position: THREE.Vector3, eyeDir: THREE.Vector3, angle: number };
 ```
@@ -83,7 +84,7 @@ setAspectRatio(width: number, heigth: number): boolean;
 `width` -- ширина изображения, может быть в любых величинах.\
 `heigth` -- высота изображения, может быть в любых величинах.\
 Результирующе соотношение сторон равно `width / heigth`.\
-Возвращает `true` если новое соотношение сторон отличается от предыдущего.</a>.
+Возвращает `true`, если новое соотношение сторон отличается от предыдущего.</a>.
 
 ###  rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
 Метод позволяет повернуть камеру вокруг точки вращения по круговой орбите.
@@ -95,7 +96,7 @@ rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
 `rotationCenter` -- точка, относительно которой осуществляется вращение камеры.
 
 ###  translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
-Метод позволяет переместить камеру по прямолинейной траектории, относительно заданной точки.
+Метод позволяет переместить камеру по прямолинейной траектории относительно заданной точки.
 ```js
 translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
 ```
@@ -122,7 +123,7 @@ orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): 
 `isAnimationEnabled` -- анимация при изменении ориентации, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
 ###  zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
-Метод позволяет приблизить, либо отдалить камеру относительно точки.
+Метод позволяет приблизить либо отдалить камеру относительно точки.
 ```js
 zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
 ```

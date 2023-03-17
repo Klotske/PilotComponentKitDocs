@@ -18,7 +18,7 @@ export class NavigationAgent {
 
 ### Поля
 #### canvasNavigationSource : INavigationEventSource
-Источник DOM-событий для навигации с помощью мыши, тачпада и т.д.. Смотри [INavigationEventSource](#INavigationEventSource).
+Источник DOM-событий для навигации с помощью мыши, тачпада и т.д. Смотри [INavigationEventSource](#INavigationEventSource).
 ```js
 readonly canvasNavigationSource: INavigationEventSource;
 ```

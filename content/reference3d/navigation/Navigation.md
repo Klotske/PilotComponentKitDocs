@@ -44,7 +44,7 @@ unregisterNavigation(navigationTool: INavigationTool): void;
 `navigationTool` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationTool">INavigationTool</a>.
 
 ### setActive()
-Метод позволяет установить активный обработчик навигации.
+Метод позволяет активировать обработчик событий навигации.
 ```js
 setActive(navigationToolName: string, isActive: boolean): void;
 ```

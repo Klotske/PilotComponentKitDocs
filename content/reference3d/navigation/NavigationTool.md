@@ -5,11 +5,11 @@ weight: 9
 ---
 
 **INavigationTool** -- интерфейс, позволяющий взаимодействовать с навигацией на сцене.\
-Для того, чтобы создать свой обработчик для навигации по сцене необходимо реализвать интерфейс `PilotWeb3D.INavigationTool`, либо унаследоваться от класса `PilotWeb3D.NavigationTool`.
+Для того, чтобы создать свой обработчик для навигации по сцене, необходимо реализовать интерфейс `PilotWeb3D.INavigationTool`, либо унаследоваться от класса `PilotWeb3D.NavigationTool`.
 
 {{< hint type="note" icon=gdoc_info_outline title="Примечание">}}
 Например, `MobileNavigation`, навигация для мобильных устройств:\
-Здесь `PilotWeb3D.MobileNavigation` наследуется от `PilotWeb3D.NavigationTool` который является реализацией интерфейса `PilotWeb3D.INavigationTool`.
+Здесь `PilotWeb3D.MobileNavigation` наследуется от `PilotWeb3D.NavigationTool`, который является реализацией интерфейса `PilotWeb3D.INavigationTool`.
 {{< /hint >}}
 
 
@@ -67,7 +67,7 @@ export abstract class NavigationTool implements INavigationTool {
 ```
 
 ## DesktopNavigation
-Обработчик навигации для десктопной версии приложения
+Обработчик навигации для десктопной версии приложения.
 ```js
 export class DesktopNavigation extends NavigationTool {
   protected _prevMousePos?: THREE.Vector2;
@@ -94,7 +94,7 @@ export class DesktopNavigation extends NavigationTool {
 }
 ```
 ## MobileNavigation
-Обработчик навигации для мобильной версии приложения
+Обработчик навигации для мобильной версии приложения.
 
 ```js
 export class MobileNavigation extends NavigationTool {
