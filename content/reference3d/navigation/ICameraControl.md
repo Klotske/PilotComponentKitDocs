@@ -39,7 +39,7 @@ export interface ICameraControl {
 ```js
 getCameraParameters(): CameraParameters;
 ```
-Возвращает [параметры](../CameraParameters) камеры.
+Возвращает параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
 
 ### setCameraParameters(iParams: CameraParameters): void;
 Метод позволяет задать параметры камеры.

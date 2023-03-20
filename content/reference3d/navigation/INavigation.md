@@ -87,28 +87,28 @@ setCameraParameters(params: CameraParameters): void;
 ```
 где:
 
-`params` -- параметры <a href="../CameraParameters">позиции камеры</a>.
+`params` -- параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
 
 ### getCameraParameters()
-Метод позволяет получить позицию камеры.
+Метод позволяет получить параметры камеры.
 ```js
 getCameraParameters(): CameraParameters;
 ```
-Возвращает <a href="../CameraParameters">позицию камеры</a>.
+Возвращает параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
 
 ### getCameraControl()
 Метод позволяет получить контроллер камеры.
 ```js
   getCameraControl(): ICameraControl;
 ```
-Возвращает <a href="../ICameraControl">контроллер камеры</a>.
+Возвращает контроллер камеры. Подробнее смотри [ICameraControl](../ICameraControl).
 
 ### getCamera()
 Метод позволяет получить камеру.
 ```js
 getCamera(): THREE.Camera;
 ```
-Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
+Возвращает объект камеры. Подробнее смотри <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
 
 ### fitToView() {#fitToView}
 Метод позволяет спозиционировать заданные элементы в центре экрана.
@@ -128,7 +128,7 @@ setPivotPoint(point: Point3): void;
 ```
 где:
 
-`point` -- <a href="../Point3">точка</a> в пространстве сцены.
+`point` -- точка в пространстве сцены. Подробнее смотри [Point3](../Point3).
 
 ### getPivotPoint()
 Метод позволяет получить положение опорной точки камеры.
