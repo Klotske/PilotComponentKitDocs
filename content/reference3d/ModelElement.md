@@ -9,13 +9,13 @@ weight: 5
 
 ## Свойства
 
-### id
+### id  {#id}
 Получает идентификатор элемента.
 ```js
 get id(): string;
 ```
 
-### modelPartId
+### modelPartId {#modelPartId}
 Получает идентификатор части модели, к которой относится этот элемент.
 ```js
 get modelPartId(): string;
