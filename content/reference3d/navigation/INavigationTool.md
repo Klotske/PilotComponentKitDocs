@@ -31,14 +31,14 @@ export interface INavigationTool {
 ```
 ## Методы
 
-### get name(): string
+### get name()
 Метод позволяет получить имя обработчика навигации.
 ```js
 get name(): string;
 ```
 Возвращает имя обработчика навигации.
 
-### init(navAgent: INavigationAgent, cameraControl: ICameraControl, intersectionChecker: IModelIntersectionChecker): void
+### init()
 Инициализатор обработчика навигации. Вызывается из [INavigation](../INavigation) при регистрации обработчика.
 ```js
 init(navAgent: INavigationAgent, cameraControl: ICameraControl, intersectionChecker: IModelIntersectionChecker): void;
@@ -46,24 +46,24 @@ init(navAgent: INavigationAgent, cameraControl: ICameraControl, intersectionChec
 где:
 `navAgent` -- агент навигации. Подробнее смотри [INavigationAgent](../INavigationAgent).\
 `cameraControl` -- контроллер камеры. Подробнее смотри [ICameraControl](../ICameraControl).\
-`intersectionChecker` -- контроллер камеры. Подробнее смотри [IModelIntersectionChecker](../../IModelIntersectionChecker).
+`intersectionChecker` -- обработчик пересечений на сцене. Подробнее смотри [IModelIntersectionChecker](../../IModelIntersectionChecker).
 
-### setActive(isActive: boolean): void
-Активатор обработчика навигации. Вызывается из [INavigation](../INavigation) при активации/деактивации обработчика.
+### setActive()
+Метод позволяет активировать обработчик событий навигации. Вызывается из [INavigation](../INavigation) при активации/деактивации обработчика.
 ```js
 setActive(isActive: boolean): void;
 ```
 где:
 `isActive` -- активность.
 
-### getPivotPoint(): THREE.Vector3
+### getPivotPoint()
 Метод позволяет получить положение опорной точки камеры.
 ```js
 getPivotPoint(): THREE.Vector3;
 ```
 Возвращает объект типа [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
-### setPivotPoint(): void
+### setPivotPoint()
 Метод позволяет задать положение опорной точки камеры.
 ```js
 setPivotPoint(pivotPoint: THREE.Vector3): void;
@@ -71,7 +71,7 @@ setPivotPoint(pivotPoint: THREE.Vector3): void;
 где:
 `pivotPoint` -- точка в мировом пространстве. Подробнее смотри [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
-### setCameraParameters(iParams: CameraParameters): void
+### setCameraParameters()
 Метод позволяет задать параметры камеры.
 ```js
   setCameraParameters(iParams: CameraParameters): void;
@@ -79,7 +79,7 @@ setPivotPoint(pivotPoint: THREE.Vector3): void;
 где:
 `iParams` -- параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
 
-### getCameraParameters(): CameraParameters
+### getCameraParameters()
 Метод позволяет получить параметры камеры.
 ```js
 getCameraParameters(): CameraParameters;

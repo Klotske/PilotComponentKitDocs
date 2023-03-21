@@ -17,7 +17,7 @@ export interface INavigationAgent  {
 ```
 
 ### Поля
-#### canvasNavigationSource : INavigationEventSource
+#### canvasNavigationSource
 Источник DOM-событий для навигации с помощью мыши, тачпада и т.д. Смотри [INavigationEventSource](#INavigationEventSource).
 ```js
 readonly canvasNavigationSource: INavigationEventSource;
@@ -47,7 +47,7 @@ navigationAgent.canvasNavigationSource.removeEventListener("mousemove", onMouseM
 ```
 {{< /hint >}}
 
-#### keyboardNavigationSource : INavigationEventSource
+#### keyboardNavigationSource
 Источник DOM-событий для навигации с помощью клавиатуры. Смотри [INavigationEventSource](#INavigationEventSource).
 ```js
 readonly keyboardNavigationSource: INavigationEventSource;
@@ -74,7 +74,7 @@ navigationAgent.keyboardNavigationSource.removeEventListener("keyup", onKeyUp, n
 
 ### Методы
 
-#### getNavigationArea(): DOMRect;
+#### getNavigationArea()
 Метод позволяет получить прямоугольник текущей рабочей области навигации.
 ```js
 getNavigationArea(): DOMRect;

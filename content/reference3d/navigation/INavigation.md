@@ -81,7 +81,7 @@ getNavigationAgent(): INavigationAgent;
 Возвращает объект <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect">DOMRect</a>.
 
 ### setCameraParameters()
-Метод позволяет установить позицию камеры.
+Метод позволяет установить параметры камеры.
 ```js
 setCameraParameters(params: CameraParameters): void;
 ```

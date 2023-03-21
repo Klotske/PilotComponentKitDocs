@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## DesktopNavigation
-**DesktopNavigation** - Обработчик навигации для десктопной версии приложения
+**DesktopNavigation** - Обработчик навигации для десктопной версии приложения.
 ```js
 export class DesktopNavigation extends NavigationTool {
   protected _prevMousePos?: THREE.Vector2;

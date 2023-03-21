@@ -37,6 +37,7 @@ export abstract class ViewObject extends THREE.Object3D {
   protected setVisibleForObject(iVal: boolean): void;
   protected setColorForObject(color: Color): void;
   protected resetColorForObject(): void;
+
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
 }
 ```
@@ -47,7 +48,7 @@ export abstract class ViewObject extends THREE.Object3D {
 ```
 где:\
 `entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Подробнее смотри [ModelElement.id](../../ModelElement#id).\
-`modelGuid` -- идентификатор части модели, к которой относится элемент. Подробнее смотри [ModelElement.modelPartId](../../ModelElement#modelPartId).\
+`modelGuid` -- идентификатор части модели, к которой относится объект модели. Подробнее смотри [ModelElement.modelPartId](../../ModelElement#modelPartId).\
 `color` -- начальный цвет объекта. Подробнее смотри [Color](../Color).
 
 ## Поля
@@ -67,14 +68,14 @@ export abstract class ViewObject extends THREE.Object3D {
 ## Свойства
 
 ###  get mesh()
-Геометрическое представление `ViewObject` в виде `THREE.Mesh`. Подробнее смотри [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh).
+Геометрическое представление `ViewObject` в виде `THREE.Mesh`. Подробнее смотри [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh).\
 Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get mesh(): THREE.Mesh | null;
 ```
 
 ###  get edges()
-Геометрическое представление `ViewObject` в виде `THREE.LineSegments`. Подробнее смотри [THREE.LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments).
+Геометрическое представление `ViewObject` в виде `THREE.LineSegments`. Подробнее смотри [THREE.LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments).\
 Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get edges(): THREE.LineSegments | null;
@@ -165,57 +166,65 @@ dispose(): void;
 ```
 
 ### getBoundingBox()
-Метод возвращает граничный объём `ViewObject`.
+Метод возвращает граничный объём `ViewObject`.\
+Реализация по умолчания возвращает пустой `THREE.Box3`. Метод доступен для переопределения.
 ```js
  getBoundingBox(): THREE.Box3;
 ```
 Вовзвращает объект типа [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).
 
 ### raycast()
-Метод вычисляет пересечение `ViewObject` с лучом. Метод пустой по умолчанию.\
+Метод вычисляет пересечение `ViewObject` с лучом.\
 Для расчета пересечений на сцене, должен быть переопределён в подклассах.\
+Метод пустой по умолчанию, доступен для переопределения.
 Подробнее смотри [THREE.Object3D.raycast](https://threejs.org/docs/index.html#api/en/core/Object3D.raycast)
 ```js
  raycast(iRaycaster: THREE.Raycaster, oIntersects: THREE.Intersection[]): void;
 ```
 
 ### protected setHoveredForObject()
-Метод описывает поведение объекта при ховере. Метод пустой по умолчанию.\
+Метод описывает поведение объекта при ховере.\
+Метод пустой по умолчанию, доступен для переопределения.
 ```js
 protected setHoveredForObject(iVal: boolean): void;
 ```
 где: `iVal` -- активность ховера над объектом.
 
 ### protected setSelectedForObject()
-Метод описывает поведение объекта при селекте. Метод пустой по умолчанию.\
+Метод описывает поведение объекта при селекте.\
+Метод пустой по умолчанию, доступен для переопределения.
 ```js
 protected setSelectedForObject(iVal: boolean): void;
 ```
 где: `iVal` -- значение селекта над объектом.
 
 ### protected setHiddenForObject()
-Метод описывает поведение объекта при скрытии. Реализация по умолчанию работает только для объектов на основной сцене `MainScene`.
+Метод описывает поведение объекта при скрытии.\
+Реализация по умолчанию работает только для объектов на основной сцене `MainScene`. Метод доступен для переопределения.
 ```js
 protected setHiddenForObject(iVal: boolean): void;
 ```
 где: `iVal` -- видимость объекта на сцене.
 
 ### protected setVisibleForObject()
-Метод описывает поведение объекта при изменении видимости. Реализация по умолчанию использует свойство [Object3D.visibility](https://threejs.org/docs/index.html#api/en/core/Object3D.visible).
+Метод описывает поведение объекта при изменении видимости.\
+Реализация по умолчанию использует свойство [Object3D.visibility](https://threejs.org/docs/index.html#api/en/core/Object3D.visible). Метод доступен для переопределения.
 ```js
 protected setVisibleForObject(iVal: boolean): void;
 ```
 где: `iVal` -- видимость объекта на сцене.
 
 ### protected setColorForObject() {#setColorForObject}
-Метод описывает поведение объекта при изменении цвета. Метод пустой по умолчанию.
+Метод описывает поведение объекта при изменении цвета.\
+Метод пустой по умолчанию, доступен для переопределения.
 ```js
 protected setColorForObject(color: Color): void;
 ```
 где: `color` -- цвет объекта. Подробнее смотри [Color](../Color).
 
 ### protected resetColorForObject()
-Метод описывает поведение объекта при сбрасывании цвета объекта на изначальный. Реализация по умолчанию использует [setColorForObject(originalColor)](#setColorForObject).
+Метод описывает поведение объекта при сбрасывании цвета объекта на изначальный.\
+Реализация по умолчанию использует [setColorForObject(originalColor)](#setColorForObject). Метод доступен для переопределения.
 ```js
 protected resetColorForObject(): void;
 ```

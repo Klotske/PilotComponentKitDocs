@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## MobileNavigation
-**MobileNavigation** - Обработчик навигации для мобильной версии приложения
+**MobileNavigation** - Обработчик навигации для мобильной версии приложения.
 
 ```js
 export class MobileNavigation extends NavigationTool {

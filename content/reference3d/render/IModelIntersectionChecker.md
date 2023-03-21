@@ -50,7 +50,7 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionByRay(ray: THREE.Ray): THREE.Intersection<THREE.Object3D> | undefined;
 ```
-где: `ray` -- луч, с которым считаются пересечения. Подробнее смотри [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+где: `ray` -- луч с которым считаются пересечения. Подробнее смотри [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByRay()
@@ -58,39 +58,39 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionIDByRay(ray: THREE.Ray): { modelId: string, guid: string } | undefined;
 ```
-где: `ray` -- луч, с которым считаются пересечения. Подробнее смотри [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+где: `ray` -- луч с которым считаются пересечения. Подробнее смотри [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionByNdcPt()
-Метод возвращает ближайшее пересечение объекта модели с лучом, выпущенном из точки нахождения камеры, в направлении точки в NDC-пространстве.
+Метод возвращает ближайшее пересечение объекта модели с лучом, выпущенным из точки нахождения камеры в направлении точки в NDC-пространстве.
 ```js
   getIntersectionByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
 ```
 где:\
-`ndcPoint` -- 2D координаты точки в NDC-пространстве, в которую выпускается луч. Подробнее смотри [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
-`camera` -- камера, используемая для перевода NDC-координат в мировые, и позиция которой используется как начало луча. Подробнее смотри [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
+`ndcPoint` -- 2D координаты точки в NDC-пространстве в которую выпускается луч. Подробнее смотри [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
+`camera` -- камера, используемая для определения положения начала луча, и для перевода NDC-координат в мировые координаты. Подробнее смотри [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByNdcPt()
-Метод возвращает `modelId` и `entityGuid` ближайшего объекта модели пересекающегося с лучом, выпущенном из точки нахождения камеры, в направлении точки в NDC-пространстве.
+Метод возвращает `modelId` и `entityGuid` ближайшего объекта модели, пересекающегося с лучом, выпущенным из точки нахождения камеры в направлении точки в NDC-пространстве.
 ```js
   getIntersectionIDByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
 ```
 где:\
-`ndcPoint` -- 2D координаты точки в NDC-пространстве, в которую выпускается луч. Подробнее смотри [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
-`camera` -- камера, используемая для перевода NDC-координат в мировые, и позиция которой используется как начало луча. Подробнее смотри [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
+`ndcPoint` -- 2D координаты точки в NDC-пространстве в которую выпускается луч. Подробнее смотри [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
+`camera` -- камера, используемая для определения положения начала луча, и для перевода NDC-координат в мировые координаты. Подробнее смотри [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`.
 
 
 ###  getIntersectionIDByFrustumNdcPt() {#getIntersectionIDByFrustumNdcPt}
-Метод возвращает список `modelId` и `entityGuid` объектов модели пересекаемых усеченной пирамидой (Frustum).
+Метод возвращает список `modelId` и `entityGuid` объектов модели, пересекаемых усеченной пирамидой (Frustum).
 ```js
   getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean): { modelId: string; guid: string; }[];
 ```
 где:\
 `ndcFrustumBox` -- Представление `Frsutum` в NDC-пространстве. Подробнее смотри [THREE.Box3](https://threejs.org/docs/?q=Box3#api/en/math/Box3).\
 `unProjMatrix` -- Матрица проекции координат NDC-пространства в мировые координаты. Подробнее смотри [THREE.Matrix4](https://threejs.org/docs/#api/en/math/Matrix4).\
-`isContainsOnly` -- если `true`, то объекты, не полностью содержащиеся внутри пирамиды отбрасываются. В противном случае в вывод включаются как содержащиеся внутри пирамиды, так и касающиеся, или пересекающиеся с ней.\
+`isContainsOnly` -- если `true`, то отбрасываются не полностью содержащиеся внутри пирамиды объекты. В противном случае в вывод включаются как содержащиеся внутри пирамиды объекты, так и касающиеся или пересекающиеся с ней.\
 Возвращает список объектов `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает пустой массив.
 
 {{< hint type="note" icon=gdoc_info_outline title="Пример">}}

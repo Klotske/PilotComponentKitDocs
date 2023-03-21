@@ -24,13 +24,13 @@ export interface I3DRenderer {
 
 ## Поля
 
-###  clippingPlanes: THREE.Plane[]
+###  clippingPlanes
 Глобальные секущие плоскости. Влияют на все операции отрисовки.
 ```js
   clippingPlanes: THREE.Plane[];
 ```
 
-###  domElement: HTMLCanvasElement {#domElement}
+###  domElement {#domElement}
 [Canvas](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) на котором происходит отрисовка.
 ```js
   domElement: HTMLCanvasElement;
@@ -38,24 +38,24 @@ export interface I3DRenderer {
 
 ## Методы
 
-###  clear(color?: boolean, depth?: boolean, stencil?: boolean): void {#clear}
+###  clear() {#clear}
 Метод очищает цветовой буффер, буффер глубины и буффер шаблона.
 ```js
   clear(color?: boolean, depth?: boolean, stencil?: boolean): void;
 ```
 где:\
-`color` -- `true` для очистки цветового буффера. По умолчанию `true`.\
-`depth` -- `true` для очистки буффера глубины. По умолчанию `true`.\
-`stencil` -- `true` для очистки буффера шаблона. По умолчанию `true`.
+`color` -- `true`, для очистки цветового буффера. По умолчанию `true`.\
+`depth` -- `true`, для очистки буффера глубины. По умолчанию `true`.\
+`stencil` -- `true`, для очистки буффера шаблона. По умолчанию `true`.
 
 ###  clearDepth(): void
-Очистите буфер глубины.  Эквивалентно вызову [.clear](#clear)(false, true, false).
+Метод очищает буффер глубины. Эквивалентно вызову [.clear](#clear)(false, true, false).
 ```js
   clearDepth(): void;
 ```
 
-###  render(scene: THREE.Object3D, camera: THREE.Camera): void
-Отрисовывает [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D) с помощью камеры.
+###  render()
+Метод отрисовывает [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D) с помощью камеры.
 ```js
   render(scene: THREE.Object3D, camera: THREE.Camera): void;
 ```
@@ -63,8 +63,8 @@ export interface I3DRenderer {
 `scene` -- объект для отрисовки. Подробнее смотри [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D).\
 `camera` -- камера. Подробнее смотри [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
 
-###  getSize(target: THREE.Vector2): THREE.Vector2
-Возвращает ширину и высоту [domElement](#domElement) в пикселях.
+###  getSize()
+Метод возвращает ширину и высоту [domElement](#domElement) в пикселях.
 ```js
   getSize(target: THREE.Vector2): THREE.Vector2;
 ```
@@ -72,8 +72,8 @@ export interface I3DRenderer {
 `target` -- результат будет скопирован в этот [THREE.Vector2](https://threejs.org/docs/index.html#api/en/math/Vector2).\
 Возвращает `target`.
 
-###  setSize(width: number, height: number, updateStyle?: boolean): void;
-Изменяет размер [domElement](#domElement) с учетом соотношения пикселей устройства, а также [устанавливает область просмотра](#setViewport) в соответствии с этим размером, начиная с (0, 0).  
+###  setSize()
+Метод изменяет размер [domElement](#domElement), а также [устанавливает область просмотра](#setViewport) в соответствии с этим размером.
 
 ```js
   setSize(width: number, height: number, updateStyle?: boolean): void;
@@ -83,8 +83,8 @@ export interface I3DRenderer {
 `height` -- высота окна.\
 `updateStyle` -- при значении `false` предотвращает любые изменения стиля [domElement](#domElement).
 
-###  setViewport(x: THREE.Vector4 | number, y?: number, width?: number, height?: number): void; {#setViewport}
-Метод устанавливает область просмотра для отрисовки от (x, y) до (x + width, y + height).
+###  setViewport() {#setViewport}
+Метод устанавливает область просмотра для отрисовки: от (x, y) до (x + width, y + height).
 ```js
   setViewport(x: THREE.Vector4 | number, y?: number, width?: number, height?: number): void;
 ```
@@ -94,8 +94,8 @@ export interface I3DRenderer {
 `width` -- ширина окна.\
 `height` -- высота окна.
 
-###  dispose(): void
-Освобождает ресурсы, связанные с графическим процессором, выделенные этим экземпляром.
+###  dispose()
+Метод освобождает ресурсы, связанные с графическим процессором, выделенные этим экземпляром.
 ```js
   dispose(): void;
 ```

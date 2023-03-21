@@ -20,20 +20,20 @@ export interface IRenderViewer3D {
 
 ## Методы
 
-### getIntersectionChecker(): IModelIntersectionChecker
+### getIntersectionChecker()
 Предоставляет [IModelIntersectionChecker](../IModelIntersectionChecker) - интерфейс обработки пересечений для всех сцен.
 ```js
 getIntersectionChecker(): IModelIntersectionChecker;
 ```
 Возвращается интерфейс обработки пересечений. Подробнее смотри  [IModelIntersectionChecker](../IModelIntersectionChecker).
 
-### updateCurrentCanvas(): Promise<void>
-Вызывает полную перерисовку сцен.
+### updateCurrentCanvas()
+Метод вызывает полную перерисовку сцен.
 ```js
 updateCurrentCanvas(): Promise<void>;
 ```
 
-###  placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string): Promise<void>
+###  placeObjectOnScene()
 Метод помещает объект на определённую сцену.
 ```js
  placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string): Promise<void>;
@@ -42,7 +42,7 @@ updateCurrentCanvas(): Promise<void>;
 `iObj` -- объект, который нужно поместить на сцену.\
 `sceneID` -- (Опционально) имя сцены. По умолчанию `MainScene`.
 
-###  removeObjectFromScene(iObj: THREE.Object3D): Promise<void>
+###  removeObjectFromScene()
 Метод удаляет объект со сцены.
 ```js
   removeObjectFromScene(iObj: THREE.Object3D): Promise<void>;
@@ -50,7 +50,7 @@ updateCurrentCanvas(): Promise<void>;
 где:\
 `iObj` -- объект, который нужно удалить.
 
-###  setClipping(planes: THREE.Plane[], sceneID?: string): void
+###  setClipping()
 Метод задает плоскости сечения для определённой сцены.
 ```js
 setClipping(planes: THREE.Plane[], sceneID?: string): void;
@@ -59,7 +59,7 @@ setClipping(planes: THREE.Plane[], sceneID?: string): void;
 `planes` -- список плоскостей сечения. Подробнее смотри [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).\
 `sceneID` -- (Опционально) имя сцены. По умолчанию `MainScene`.
 
-###  getScenes(): IUserScene[];
+###  getScenes()
 Метод возвращает список всех используемых сцен.
 ```js
   getScenes(): IUserScene[];
