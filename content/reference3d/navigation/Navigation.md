@@ -8,11 +8,11 @@ weight: 9
 
 ```js
 export interface INavigation {
-  registerEventHandler(navEventHandler: NavigationEventHandler): void;
-  unregisterEventHandler(navEventHandler: NavigationEventHandler): void;
-  setActive(nvEventHandlerName: string, isActive: boolean): void;
-  getActiveNavigation(): NavigationEventHandler;
-  setDefaultNavigation(): void;
+  registerNavigation(navigationTool: INavigationTool): void;
+  unregisterNavigation(navigationTool: INavigationTool): void;
+  setActive(navigationToolName: string, isActive: boolean): void;
+  getActiveNavigation(): INavigationTool | null;
+  getNavigationAgent(): NavigationAgent;
   setCameraPosition(params: CameraPosition): void;
   getCameraPosition(): CameraPosition;
   getCamera(): THREE.Camera;
@@ -25,46 +25,51 @@ export interface INavigation {
 
 ## Методы
 
-### registerEventHandler()
+### registerNavigation()
 Метод позволяет зарегистрировать обработчик событий навигации.
 ```js
-registerEventHandler(navEventHandler: NavigationEventHandler): void;
+registerNavigation(navigationTool: INavigationTool): void;
 ```
 где:
 
-`navEventHandler` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationEventHandler">NavigationEventHandler</a>.
+`navigationTool` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationTool">INavigationTool</a>.
 
-### unregisterEventHandler()
+### unregisterNavigation()
 Метод позволяет разрегистрировать обработчик событий навигации.
 ```js
-unregisterEventHandler(navEventHandler: NavigationEventHandler): void;
+unregisterNavigation(navigationTool: INavigationTool): void;
 ```
 где:
 
-`navEventHandler` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationEventHandler">NavigationEventHandler</a>.
+`navigationTool` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationTool">INavigationTool</a>.
 
 ### setActive()
-Метод позволяет установить обработчик навигации по умолчанию.
+Метод позволяет активировать обработчик событий навигации.
 ```js
-setActive(nvEventHandlerName: string, isActive: boolean): void;
+setActive(navigationToolName: string, isActive: boolean): void;
 ```
 где:
 
-`nvEventHandlerName` -- имя обработчика навигации,\
+`navigationToolName` -- имя обработчика навигации,\
 `isActive` -- активность.
+
+{{<hint type="note" icon=gdoc_info_outline title="Примечание">}}
+    Активным может быть только один обработчик навигации в каждый момент времени.
+{{< /hint>}}
 
 ### getActiveNavigation()
 Метод позволяет получить текущий обработчик навигации.
 ```js
-getActiveNavigation(): NavigationEventHandler;
+getActiveNavigation(): INavigationTool | null;
 ```
-Возвращает объект <a href="../NavigationEventHandler">NavigationEventHandler</a>.
+Возвращает объект <a href="../INavigationTool">INavigationTool</a>.
 
-### setDefaultNavigation()
-Метод позволяет восстановить обработчик навигации по умолчанию.
+### getNavigationAgent()
+Метод позволяет получить <a href="../NavigationAgent">NavigationAgent</a> - предоставляющий источники событий навигации.
 ```js
-setDefaultNavigation(): void;
+getNavigationAgent(): NavigationAgent;
 ```
+Возвращает объект <a href="../NavigationAgent">NavigationAgent</a>.
 
 ### setCameraPosition()
 Метод позволяет установить позицию камеры.
@@ -88,7 +93,7 @@ getCameraPosition(): CameraPosition;
 ```js
 getCamera(): THREE.Camera;
 ```
-Возвращает объект камеры. Подробнее смотри <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
+Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
 
 
 ### fitToView() {#fitToView}
@@ -98,7 +103,7 @@ fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediat
 ```
 где:
 
-`elementIds` -- список идентификаторов или один идентификатор элемнета сцены,\
+`elementIds` -- список идентификаторов или один идентификатор элемента сцены,\
 `modelPart` -- идентификатор части консолидированной модели или объект части консолидированной модели,\
 `immediate` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
