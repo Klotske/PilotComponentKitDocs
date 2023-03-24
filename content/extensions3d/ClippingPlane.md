@@ -63,23 +63,23 @@ public removePlanes(planeIDs?: string[]): void;
 Описание плоскости сечения.
 ```js
 export type ClippingPlaneDescription = {
-    normal: { x: number, y: number, z: number },
-    origin: { x: number, y: number, z: number }, 
+    normal: Point3,
+    origin: Point3, 
     guid?: string };
 ```
 ### normal
 Нормаль плоскости сечения.
 ```js
-normal: { x: number, y: number, z: number }, 
+normal: Point3
 ```
-где: `x`,`y`,`z` -- координаты вектора нормали в мировом пространстве.
+где: `normal` -- координаты вектора нормали в мировом пространстве. Подробнее смотри [Point3](../../reference3d/navigation/Point3).
 
 ### origin
 Точка, принадлежащая плоскости сечения. Также в эту точку помещается `ClippingPlaneViewObject` - вспомогательный визуальный oбъект, для отображения плоскости.
 ```js
-normal: { x: number, y: number, z: number }
+origin: Point3
 ```
-где: `x`,`y`,`z` -- координаты точки в мировом пространстве.
+где: `origin` -- координаты точки в мировом пространстве. Подробнее смотри [Point3](../../reference3d/navigation/Point3).
 
 ### guid
 Идентификатор плоскости сечения. Необязательный параметр. Может использоваться для выборочного [удаления](#removePlanes) плоскостей сечения.
