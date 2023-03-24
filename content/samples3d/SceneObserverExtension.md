@@ -3,7 +3,7 @@ title: "SceneObserverExtension"
 draft: false
 ---
 
-**SceneObserverExtension** -- пример расширения, которое позволяет просматривать и управлять 3D-сценами.
+**SceneObserverExtension** -- пример расширения, которое позволяет просматривать дерево графических объектов на сцене. Также расширение добавляет кнопку на панель интсрументов.
 Расширение имеет имя `PilotWeb3D.SceneObserver`.
 
 Пример подключения в `html`:
@@ -21,4 +21,16 @@ var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
 viewer.start();
 viewer.extensionsLoader.loadExtension("PilotWeb3D.SceneObserver");
+```
+## Методы
+
+### activate()
+Показать дерево графических объектов.
+```js
+activate(): void;
+```
+### deactivate()
+Скрыть дерево графических объектов.
+```js
+deactivate(): void;
 ```
