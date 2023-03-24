@@ -24,7 +24,6 @@ export interface IUserScene {
   manageScene(context?: IRenderOperationContext): boolean;
   render(context: IRenderOperationContext): void;
   clear(): void;
-  dispose(): void;
 }
 ```
 
@@ -143,8 +142,3 @@ render(context: IRenderOperationContext): void;
 clear(): void;
 ```
 
-###  dispose()
-Метод удаляет все объекты со сцены, и освобождает все ресурсы сцены.
-```js
-dispose(): void;
-```

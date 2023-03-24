@@ -9,13 +9,13 @@ weight: 9
 ```js
 export enum UpdateType {
   /**No changes */
-  NONE = 0,
+  None = 0,
   /**Object has been removed from the scene */
-  REMOVE = 1 << 0,
+  Remove = 1 << 0,
   /**Object has been added to the scene */
-  ADD = 1 << 1,
+  Add = 1 << 1,
   /**Оbject has been significantly changed. Re-insert required */
-  HARD = 1 << 2,
+  Hard = 1 << 2,
   /**Child objects has been changed*/
   Children = 1 << 3,
   /**Object geometry has been changed */

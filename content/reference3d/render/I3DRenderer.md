@@ -16,7 +16,6 @@ export interface I3DRenderer {
   getSize(target: THREE.Vector2): THREE.Vector2;
   setSize(width: number, height: number, updateStyle?: boolean): void;
   setViewport(x: THREE.Vector4 | number, y?: number, width?: number, height?: number): void;
-  dispose(): void;
   clippingPlanes: THREE.Plane[];
   domElement: HTMLCanvasElement;
 }
@@ -93,9 +92,3 @@ export interface I3DRenderer {
 `y` --  y-координата левого нижнего угла окна.\
 `width` -- ширина окна.\
 `height` -- высота окна.
-
-###  dispose()
-Метод освобождает ресурсы, связанные с графическим процессором, выделенные этим экземпляром.
-```js
-  dispose(): void;
-```
