@@ -99,11 +99,26 @@ weight - порядок элемента в меню
 
 &#8211; и --, соответственно
 
-## Вставка ссылки
+## Вставка ссылки {#reference}
 
-`<a href="../ExtensionLoader/">ExtensionLoader</a>`
+1. `<a href="../ExtensionLoader/">ExtensionLoader</a>`
 
-Результат: <a href="../ExtensionLoader/">ExtensionLoader</a>
+  Результат: <a href="../ExtensionLoader/">ExtensionLoader</a>
+
+2. `[Help](../oh)`
+
+  Результат: [Help](../oh)
+
+3. Ссылки внутри страницы на подзаголовки:
+`## Вставка ссылки {#reference}`\
+`[Вставка ссылки](#reference)`
+
+  Результат: [Вставка ссылки](#reference)
+
+4. Межстраничные ссылки на подзаголовки:
+`[Вставка ссылки](../oh#reference)`
+
+  Результат: [Вставка ссылки](../oh#reference)
 
 ## Вставка кода
 

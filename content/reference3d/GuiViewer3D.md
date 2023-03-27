@@ -17,7 +17,7 @@ container: HTMLElement;
 ```
 
 ### extensionsLoader
-Тип работы с расширениями. Подробнее смотри <a href="../ExtensionLoader">ExtensionLoader</a>.
+Тип работы с расширениями. Подробнее: <a href="../ExtensionLoader">ExtensionLoader</a>.
 ```js
 extensionsLoader: ExtensionLoader;
 ```
@@ -39,7 +39,7 @@ get model(): Model;
 ```js
 get navigation(): INavigation;
 ```
-Подробнее смотри <a href="../navigation/Navigation">INavigation</a>
+Подробнее: <a href="../navigation/INavigation">INavigation</a>
 
 
 ## Методы

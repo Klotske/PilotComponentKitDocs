@@ -76,10 +76,8 @@ isForcedExecution: boolean;
 ```js
   get isSuspensionRequested(): boolean;
 ```
-Возвращает `true`, если требуется приостановить операцию. В противном случае возвращает `false`.
-{{< hint type="note" icon=gdoc_info_outline title="Примечание">}}
-  Если [isForcedExecution](#isForcedExecution)`== true`, то [isSuspensionRequested](#isSuspensionRequested) всегда возвращает `false`.
-{{< /hint >}}
+Возвращает `true`, если требуется приостановить операцию. В противном случае возвращает `false`.\
+Если [isForcedExecution](#isForcedExecution) равен `true`, то [isSuspensionRequested](#isSuspensionRequested) всегда возвращает `false`.
 
 ###  get remainedTime()
 Сообщает сколько выделенного времени осталось на выполнение операции.
@@ -114,10 +112,8 @@ isForcedExecution: boolean;
 ```js
   get isElapsed(): boolean;
 ```
-Возвращает `true`, если выделенное время кончилось. В противном случае возвращает `false`.
-{{< hint type="note" icon=gdoc_info_outline title="Примечание">}}
-  В случае, если [isElapsed](#isElapsed) == `true` и [isForcedExecution](#isForcedExecution)`== false`, то [isSuspensionRequested](#isSuspensionRequested) вернёт `true`.
-{{< /hint >}}
+Возвращает `true`, если выделенное время кончилось. В противном случае возвращает `false`.\
+В случае, если [isElapsed](#isElapsed) равен `true`, а [isForcedExecution](#isForcedExecution) равен `false`, то [isSuspensionRequested](#isSuspensionRequested) вернёт `true`.
 
 ###  get userData()
 Данные, совместно используемые операциями в одном цикле рендера.

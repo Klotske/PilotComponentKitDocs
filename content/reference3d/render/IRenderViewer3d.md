@@ -25,7 +25,7 @@ export interface IRenderViewer3D {
 ```js
 getIntersectionChecker(): IModelIntersectionChecker;
 ```
-Возвращается интерфейс обработки пересечений. Подробнее смотри  [IModelIntersectionChecker](../IModelIntersectionChecker).
+Возвращается интерфейс обработки пересечений. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
 
 ### updateCurrentCanvas()
 Метод вызывает полную перерисовку сцен.
@@ -40,7 +40,7 @@ updateCurrentCanvas(): Promise<void>;
 ```
 где:\
 `iObj` -- объект, который нужно поместить на сцену.\
-`sceneID` -- (Опционально) имя сцены. По умолчанию `MainScene`.
+`sceneID` -- Имя сцены. Не обязательный параметр. По умолчанию `MainScene`.
 
 ###  removeObjectFromScene()
 Метод удаляет объект со сцены.
@@ -56,12 +56,12 @@ updateCurrentCanvas(): Promise<void>;
 setClipping(planes: THREE.Plane[], sceneID?: string): void;
 ```
 где:\
-`planes` -- список плоскостей сечения. Подробнее смотри [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).\
-`sceneID` -- (Опционально) имя сцены. По умолчанию `MainScene`.
+`planes` -- список плоскостей сечения. Подробнее: [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).\
+`sceneID` -- Имя сцены. Не обязательный параметр. По умолчанию `MainScene`.
 
 ###  getScenes()
 Метод возвращает список всех используемых сцен.
 ```js
   getScenes(): IUserScene[];
 ```
-Возвращает список сцен. Подробнее смотри [IUserScene](../IUserScene).
+Возвращает список сцен. Подробнее: [IUserScene](../IUserScene).

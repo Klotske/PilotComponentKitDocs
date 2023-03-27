@@ -18,59 +18,36 @@ export interface INavigationAgent  {
 
 ### Поля
 #### canvasNavigationSource
-Источник DOM-событий для навигации с помощью мыши, тачпада и т.д. Смотри [INavigationEventSource](#INavigationEventSource).
+Источник DOM-событий для навигации с помощью мыши, тачпада и т.д. Подробнее: [INavigationEventSource](#INavigationEventSource).
 ```js
 readonly canvasNavigationSource: INavigationEventSource;
 ```
-{{< hint type="tip" icon=gdoc_info_outline title="Примечание">}}
-Пример подписки на событие `mousemove`, [опции](#NavigationEventOptions) по умолчанию:\
-   *capture*: `false`; \
-   priority: `NavigationHandlerPriority.CustomExtensions`; \
-   *alwaysHandle*: `false`; \
-   *navigationTargetName*?: `undefined`;
+Пример подписки на событие mousemove, используются [NavigationEventOptions](#NavigationEventOptions), заданные по умолчанию:
 ```js
 navigationAgent.canvasNavigationSource.addEventListener("mousemove", onMouseMove);
-```
-или
-```js
+//или
 navigationAgent.canvasNavigationSource.addEventListener("mousemove", onMouseMove, false); //capture: false
-```
-
-Те же опции, указанные явно:
-```js
+//Те же опции, указанные явно:
 navigationAgent.canvasNavigationSource.addEventListener("mousemove", onMouseMove, new NavigationEventOptions(false, NavigationHandlerPriority.DefaultNavigation, false, undefined));
-```
-
-Для отписки от события, нужно передавать те же параметры, что и при подписке:
-```js
+//Для отписки от события, нужно передавать те же параметры, что и при подписке:
 navigationAgent.canvasNavigationSource.removeEventListener("mousemove", onMouseMove, new NavigationEventOptions(false, NavigationHandlerPriority.DefaultNavigation, false, undefined));
 ```
-{{< /hint >}}
 
 #### keyboardNavigationSource
-Источник DOM-событий для навигации с помощью клавиатуры. Смотри [INavigationEventSource](#INavigationEventSource).
+Источник DOM-событий для навигации с помощью клавиатуры. Подробнее: [INavigationEventSource](#INavigationEventSource).
 ```js
 readonly keyboardNavigationSource: INavigationEventSource;
 ```
-{{< hint type="tip" icon=gdoc_info_outline title="Примечание">}}
-Пример подписки на событие `keyup`:
+Пример подписки на событие `keyup`, используются [NavigationEventOptions](#NavigationEventOptions), заданные по умолчанию:
 ```js
 navigationAgent.keyboardNavigationSource.addEventListener("keyup", onMouseMove);
-```
-или
-```js
+//или
 navigationAgent.keyboardNavigationSource.addEventListener("keyup", onKeyUp, {capture: false});
-```
-Те же опции, указанные явно:
-```js
+//Те же опции, указанные явно:
 navigationAgent.keyboardNavigationSource.addEventListener("keyup", onKeyUp, new NavigationEventOptions(false, NavigationHandlerPriority.DefaultNavigation, false, 'desktopNavigation'));
-```
-
-Для отписки от события, нужно передавать те же параметры, что и при подписке:
-```js
+//Для отписки от события, нужно передавать те же параметры, что и при подписке:
 navigationAgent.keyboardNavigationSource.removeEventListener("keyup", onKeyUp, new NavigationEventOptions(false, NavigationHandlerPriority.DefaultNavigation, false, 'desktopNavigation'));
 ```
-{{< /hint >}}
 
 ### Методы
 
@@ -111,7 +88,7 @@ export class NavigationEventOptions implements EventListenerOptions {
   priority: number | NavigationHandlerPriority;
   // Перехват события, если событие уже было обработано ранее (true), иначе событие игнорируется (false). По умолчанию false.
   alwaysHandle: boolean;
-  // (Опционально) идентификатор подписчика на событие.
+  // Идентификатор подписчика на событие. Не обязательный параметр.
   navigationTargetName?: string;
 }
 ```

@@ -34,7 +34,7 @@ registerNavigation(navigationTool: INavigationTool): void;
 ```
 где:
 
-`navigationTool` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationTool">INavigationTool</a>.
+`navigationTool` -- реализация обработчика событий. Подробнее: <a href="../NavigationTool">INavigationTool</a>.
 
 ### unregisterNavigation()
 Метод позволяет разрегистрировать обработчик событий навигации.
@@ -43,21 +43,17 @@ unregisterNavigation(navigationTool: INavigationTool): void;
 ```
 где:
 
-`navigationTool` -- реализация обработчика событий. Подробнее смотри <a href="../NavigationTool">INavigationTool</a>.
+`navigationTool` -- реализация обработчика событий. Подробнее: <a href="../NavigationTool">INavigationTool</a>.
 
 ### setActive()
 Метод позволяет активировать обработчик событий навигации.
+Активным может быть только один обработчик навигации в каждый момент времени.
 ```js
 setActive(navigationToolName: string, isActive: boolean): void;
 ```
 где:
-
 `navigationToolName` -- имя обработчика навигации,\
 `isActive` -- активность.
-
-{{<hint type="note" icon=gdoc_info_outline title="Примечание">}}
-  Активным может быть только один обработчик навигации в каждый момент времени.
-{{< /hint>}}
 
 ### getActiveNavigation()
 Метод позволяет получить текущий обработчик навигации.
@@ -87,28 +83,28 @@ setCameraParameters(params: CameraParameters): void;
 ```
 где:
 
-`params` -- параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
+`params` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters). 
 
 ### getCameraParameters()
 Метод позволяет получить параметры камеры.
 ```js
 getCameraParameters(): CameraParameters;
 ```
-Возвращает параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
+Возвращает параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
 ### getCameraControl()
 Метод позволяет получить контроллер камеры.
 ```js
   getCameraControl(): ICameraControl;
 ```
-Возвращает контроллер камеры. Подробнее смотри [ICameraControl](../ICameraControl).
+Возвращает контроллер камеры. Подробнее: [ICameraControl](../ICameraControl).
 
 ### getCamera()
 Метод позволяет получить камеру.
 ```js
 getCamera(): THREE.Camera;
 ```
-Возвращает объект камеры. Подробнее смотри <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
+Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
 
 ### fitToView() {#fitToView}
 Метод позволяет спозиционировать заданные элементы в центре экрана.
@@ -128,7 +124,7 @@ setPivotPoint(point: Point3): void;
 ```
 где:
 
-`point` -- точка в пространстве сцены. Подробнее смотри [Point3](../Point3).
+`point` -- точка в пространстве сцены. Подробнее: [Point3](../Point3).
 
 ### getPivotPoint()
 Метод позволяет получить положение опорной точки камеры.

@@ -56,7 +56,7 @@ readonly name: string;
 ```js
   get intersectionChecker(): IModelIntersectionChecker | null;
 ```
-Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее смотри  [IModelIntersectionChecker](../IModelIntersectionChecker).
+Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
 
 ###  get threeObjectRepresentation()
 Представление сцены в виде иерархии [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D) объектов.\
@@ -74,7 +74,7 @@ readonly name: string;
 addRange(objects: THREE.Object3D[]): void;
 ```
 где:
-`objects` -- список объектов для добавления на сцену. Подробнее смотри [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
+`objects` -- список объектов для добавления на сцену. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
 
 ###  updateRange()
 Метод обновляет объекты на сцене.
@@ -83,7 +83,7 @@ addRange(objects: THREE.Object3D[]): void;
 ```
 где:
 `objects` -- список объектов для обновления. Каждый элемент списка является парой из самого объекта и соответствующего ему типа обновления.
-Подробнее смотри [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D), [TPair](../common/TPair), [UpdateType](../UpdateType).
+Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D), [UpdateType](../UpdateType).
 
 ###  removeRange()
 Метод удаляет список объектов со сцены.
@@ -91,7 +91,7 @@ addRange(objects: THREE.Object3D[]): void;
 removeRange(objects: THREE.Object3D[]): void;
 ```
 где:
-`objects` -- список объектов для удаления. Подробнее смотри [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
+`objects` -- список объектов для удаления. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
 
 ###  has()
 Метод показывает добавлен ли объект на сцену.
@@ -99,7 +99,7 @@ removeRange(objects: THREE.Object3D[]): void;
 has(obj: THREE.Object3D): boolean;
 ```
 где:
-`objects` -- проверяемый объект. Подробнее смотри [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).\
+`objects` -- проверяемый объект. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).\
 Вовзвращает `true`, если объект добавлен на сцену. В противном случае `false`.
 
 
@@ -117,7 +117,7 @@ traverse(callback: (object: THREE.Object3D) => void): void;
 setClipping(planes: THREE.Plane[]): void;
 ```
 где:
-`planes` -- список плоскостей сечения. Подробнее смотри [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).
+`planes` -- список плоскостей сечения. Подробнее: [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).
 
 ###  manageScene()
 Метод передает управление сцене для выполнения внутренних операций: обработки изменений на сцене, оптимизации отрисовки, оптимизации проверки пересечений и т.д.
@@ -125,7 +125,7 @@ setClipping(planes: THREE.Plane[]): void;
 manageScene(context?: IRenderOperationContext): boolean;
 ```
 где:
-`context` -- контекст операции рендера. Подробнее смотри [IRenderOperationContext](../IRenderOperationContext).
+`context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
 Вовзвращает `true`, если все запланированные операции на сцене были выполнены. Возвращает `false`, если требуется повторная передача управления.
 
 ###  render()
@@ -134,10 +134,10 @@ manageScene(context?: IRenderOperationContext): boolean;
 render(context: IRenderOperationContext): void;
 ```
 где:
-`context` -- контекст операции рендера. Подробнее смотри [IRenderOperationContext](../IRenderOperationContext).
+`context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
 
 ###  clear()
-Метод удаляет все объекты со сцены, за исключением [объектов освещения](https://threejs.org/docs/?q=Light#api/en/lights/Light), добавляемых по умолчанию.
+Метод удаляет все объекты со сцены, за исключением объектов [THREE.Light](https://threejs.org/docs/?q=Light#api/en/lights/Light), добавляемых по умолчанию.
 ```js
 clear(): void;
 ```

@@ -6,7 +6,7 @@ weight: 9
 
 ## I3DRenderer {#I3DRenderer}
 **I3DRenderer** -- интерфейс, позволяющий взаимодействовать с программой отрисовки.
-Поодробнее смотри [THREE.WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer).
+Поодробнее [THREE.WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer).
 
 ```js
 export interface I3DRenderer {
@@ -59,8 +59,8 @@ export interface I3DRenderer {
   render(scene: THREE.Object3D, camera: THREE.Camera): void;
 ```
 где:\
-`scene` -- объект для отрисовки. Подробнее смотри [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D).\
-`camera` -- камера. Подробнее смотри [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
+`scene` -- объект для отрисовки. Подробнее: [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D).\
+`camera` -- камера. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
 
 ###  getSize()
 Метод возвращает ширину и высоту [domElement](#domElement) в пикселях.
@@ -88,7 +88,7 @@ export interface I3DRenderer {
   setViewport(x: THREE.Vector4 | number, y?: number, width?: number, height?: number): void;
 ```
 где:\
-`x` -- x-координата левого нижнего угла окна, либо [4-компонентный вектор](https://threejs.org/docs/index.html#api/en/math/Vector4) задающий параметры окна.\
+`x` -- x-координата левого нижнего угла окна, либо 4-компонентный вектор: [THREE.Vector4](https://threejs.org/docs/index.html#api/en/math/Vector4), задающий параметры окна.\
 `y` --  y-координата левого нижнего угла окна.\
 `width` -- ширина окна.\
 `height` -- высота окна.

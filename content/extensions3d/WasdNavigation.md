@@ -88,7 +88,7 @@ deactivate(): void;
 setImpulseDirection(dir: Direction, add: boolean): void;
 ```
 где:
-`dir` -- Направление движения отсносительно камеры. Подробнее смотри [Direction](#Direction).\
+`dir` -- Направление движения отсносительно камеры. Подробнее: [Direction](#Direction).\
 `add` -- `true` для добавления, `false` для вычитания.
 
 ### getImpulseDirection()

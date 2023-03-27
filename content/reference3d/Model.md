@@ -97,7 +97,7 @@ select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMo
 
 `modelPart` -- идентификатор или экземпляр части модели.
 
-`selectionMode` -- режим выделения. Подробнее см <a href="/reference3d/SelectionMode">SelectionMode</a>
+`selectionMode` -- режим выделения. Подробнее: см <a href="/reference3d/SelectionMode">SelectionMode</a>
 
 ### deselect()
 Метод позволяет снять выделение с заданных элементов.

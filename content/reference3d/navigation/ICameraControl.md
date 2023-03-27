@@ -32,14 +32,14 @@ export interface ICameraControl {
 ```js
   getCamera(): THREE.Camera;
 ```
-Возвращает объект камеры. Подробнее смотри <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
+Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
 
 ### getCameraParameters()
 Метод позволяет получить параметры камеры.
 ```js
 getCameraParameters(): CameraParameters;
 ```
-Возвращает параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
+Возвращает параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
 ### setCameraParameters()
 Метод позволяет задать параметры камеры.
@@ -47,7 +47,7 @@ getCameraParameters(): CameraParameters;
   setCameraParameters(iParams: CameraParameters): void;
 ```
 где:
-`iParams` -- параметры камеры. Подробнее смотри [CameraParameters](../CameraParameters).
+`iParams` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
 ### setAspectRatio()
 Метод позволяет задать соотношение сторон камеры.
@@ -76,8 +76,8 @@ rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
 translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
 ```
 где:\
-`startNdcPos` -- начальное положение в нормализованных экранных координатах (NDC).\
-`endNdcPos` -- конечное положение в нормализованных экранных координатах (NDC).\
+`startNdcPos` -- начальное положение в Normalized Device Coordinates (NDC пространство).\
+`endNdcPos` -- конечное положение в Normalized Device Coordinates (NDC пространство).\
 `viewCenter` -- точка, относительно которой осуществляется смещение камеры.
 
 ###  spin()
@@ -94,7 +94,7 @@ spin(movement: THREE.Vector2): void;
 orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
 где:\
-`iOrientation` -- конечная ориентация камеры. Подробнее смотри [CameraOrientation](../CameraOrientation).\
+`iOrientation` -- конечная ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при изменении ориентации, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
 ###  zoomToPoint()
@@ -112,8 +112,8 @@ zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
 zoomToFit(boundingBox: THREE.Box3, iOrientation?: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
 где:\
-`boundingBox` -- ограничивающий объем, относительно которого центрируется камера. Подробнее смотри [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).\
-`iOrientation` -- конечная ориентация камеры. По умолчанию сохраняется текущая ориентация камеры. Подробнее смотри [CameraOrientation](../CameraOrientation).\
+`boundingBox` -- ограничивающий объем, относительно которого центрируется камера. Подробнее: [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).\
+`iOrientation` -- конечная ориентация камеры. По умолчанию сохраняется текущая ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
 ###  getNavigationMode()
@@ -121,7 +121,7 @@ zoomToFit(boundingBox: THREE.Box3, iOrientation?: CameraOrientation, isAnimation
 ```js
 getNavigationMode(): CameraNavigationMode;
 ```
-Возвращает тип навигации камеры. Подробнее смотри [CameraNavigationMode](../CameraNavigationMode).
+Возвращает тип навигации камеры. Подробнее: [CameraNavigationMode](../CameraNavigationMode).
 
 ###  setNavigationMode()
 Метод позволяет задать тип навигации камеры в пространстве.
@@ -129,11 +129,11 @@ getNavigationMode(): CameraNavigationMode;
 setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: number): void;
 ```
 где:\
-`mode` -- тип навигации камеры. Подробнее смотри [CameraNavigationMode](../CameraNavigationMode).\
+`mode` -- тип навигации камеры. Подробнее: [CameraNavigationMode](../CameraNavigationMode).\
 `isEnable` -- активность.\
-`duration` -- продолжительность навигации в *миллисекундах*, применимо только при `isEnable == true`.\
-{{<hint type="note" icon=gdoc_info_outline title="Примечание">}}
-  Если `isEnable == true`, и определён `duration`, то по истечении задержки в `duration` *ms* произойдет отключение заданного типа навигации.
-  Эквивалентно вызову `setNavigationMode(mode, false)` после задержки в `duration` *ms*.\
+`duration` -- продолжительность навигации в миллисекундах. Параметр применяется только если `isEnable == true`.\
+
+  Если `isEnable == true`, и определён `duration`, то по истечении задержки `duration` произойдет отключение заданного типа навигации.
+  Эквивалентно вызову `setNavigationMode(mode, false)` после задержки `duration`.
+
   Если во время ожидания происходит вызов `setNavigationMode` с любыми параметрами, то задержка сбрасывается и вызов `setNavigationMode(mode, false)` происходит немедленно, затем применяются новые параметры.
-{{< /hint>}}

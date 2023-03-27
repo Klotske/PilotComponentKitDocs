@@ -47,20 +47,20 @@ export abstract class ViewObject extends THREE.Object3D {
   constructor(entityGuid: string, modelGuid: string, color: Color);
 ```
 где:\
-`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Подробнее смотри [ModelElement.id](../../ModelElement#id).\
-`modelGuid` -- идентификатор части модели, к которой относится объект модели. Подробнее смотри [ModelElement.modelPartId](../../ModelElement#modelPartId).\
-`color` -- начальный цвет объекта. Подробнее смотри [Color](../Color).
+`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Подробнее: [ModelElement.id](../../ModelElement#id).\
+`modelGuid` -- идентификатор части модели, к которой относится объект модели. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).\
+`color` -- начальный цвет объекта. Подробнее: [Color](../Color).
 
 ## Поля
 
 ###  entityGuid
-Идентификатор элемента модели, соответствующего этому `ViewObject`. Подробнее смотри [ModelElement.id](../../ModelElement#id).
+Идентификатор элемента модели, соответствующего этому `ViewObject`. Подробнее: [ModelElement.id](../../ModelElement#id).
 ```js
   readonly entityGuid: string;
 ```
 
 ###  modelGuid
-Идентификатор части модели, к которой относится элемент модели, соответствующий этому `ViewObject`. Подробнее смотри [ModelElement.modelPartId](../../ModelElement#modelPartId).
+Идентификатор части модели, к которой относится элемент модели, соответствующий этому `ViewObject`. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).
 ```js
   readonly entityGuid: string;
 ```
@@ -68,14 +68,14 @@ export abstract class ViewObject extends THREE.Object3D {
 ## Свойства
 
 ###  get mesh()
-Геометрическое представление `ViewObject` в виде `THREE.Mesh`. Подробнее смотри [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh).\
+Геометрическое представление `ViewObject` в виде `THREE.Mesh`. Подробнее: [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh).\
 Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get mesh(): THREE.Mesh | null;
 ```
 
 ###  get edges()
-Геометрическое представление `ViewObject` в виде `THREE.LineSegments`. Подробнее смотри [THREE.LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments).\
+Геометрическое представление `ViewObject` в виде `THREE.LineSegments`. Подробнее: [THREE.LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments).\
 Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get edges(): THREE.LineSegments | null;
@@ -144,7 +144,7 @@ isHovered(): boolean;
 ```js
 setColor(color: Color): void;
 ```
-где: `color` -- цвет объекта. Подробнее смотри [Color](../Color).
+где: `color` -- цвет объекта. Подробнее: [Color](../Color).
 
 ### resetColor()
 Сбрасывает цвет объекта на изначальный.
@@ -177,7 +177,7 @@ dispose(): void;
 Метод вычисляет пересечение `ViewObject` с лучом.\
 Для расчета пересечений на сцене, должен быть переопределён в подклассах.\
 Метод пустой по умолчанию, доступен для переопределения.
-Подробнее смотри [THREE.Object3D.raycast](https://threejs.org/docs/index.html#api/en/core/Object3D.raycast)
+Подробнее: [THREE.Object3D.raycast](https://threejs.org/docs/index.html#api/en/core/Object3D.raycast)
 ```js
  raycast(iRaycaster: THREE.Raycaster, oIntersects: THREE.Intersection[]): void;
 ```
@@ -220,7 +220,7 @@ protected setVisibleForObject(iVal: boolean): void;
 ```js
 protected setColorForObject(color: Color): void;
 ```
-где: `color` -- цвет объекта. Подробнее смотри [Color](../Color).
+где: `color` -- цвет объекта. Подробнее: [Color](../Color).
 
 ### protected resetColorForObject()
 Метод описывает поведение объекта при сбрасывании цвета объекта на изначальный.\
@@ -230,22 +230,29 @@ protected resetColorForObject(): void;
 ```
 
 ### protected riseOnUpdated()
-Метод сообщает подписчикам об изменении объекта. Подробнее смотри [EventDispatcher](https://threejs.org/docs/#api/en/core/EventDispatcher).
+Метод сообщает подписчикам об изменении объекта. Подробнее: [EventDispatcher](https://threejs.org/docs/#api/en/core/EventDispatcher).
 ```js
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
 ```
 где:\
-`updateType` -- тип обновления. Подробнее смотри [UpdateType](../UpdateType).\
+`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).\
 `object` -- объект, источник обновения. По умолчанию текущий объект.
-{{< hint type="note" icon=gdoc_info_outline title="Пример">}}
-  При изменении дочерних объектов, которые не являются `ViewObject`, для оповещения об их изменениях можно использовать `riseOnUpdated` родительского объекта.
-  ```js
-  //При изменении видимости текущего объекта:
-  this.visible = false;
-  this.riseOnUpdated(UpdateType.Visibility);
 
-  //При изменении видимости дочернего объекта:
+  ```js
+  // При изменении дочерних объектов, которые не являются `ViewObject`,
+  // для оповещения об их изменениях можно использовать `riseOnUpdated` родительского объекта.
+
+  // При изменении видимости текущего объекта:
+  this.visible = false;
+  // Опопвещам об изменениях:
+  this.riseOnUpdated(UpdateType.Visibility);
+  // Эквивалентно вызову:
+  this.dispatchEvent({ type: 'update', updateType: UpdateType.Visibility });
+
+  // При изменении видимости дочернего объекта:
   childMesh.visibility = false;
+  // Опопвещам об изменениях:
   this.riseOnUpdated(UpdateType.Visibility, childMesh);
+  // Эквивалентно вызову:
+  childMesh.dispatchEvent({ type: 'update', updateType: UpdateType.Visibility });
   ```
-{{< /hint >}}
