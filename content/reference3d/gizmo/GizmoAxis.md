@@ -89,7 +89,7 @@ protected _raycaster: THREE.Raycaster;
 
 ## _worldPositionStart: THREE.Vector3 {#worldPositionStart}
 Поле хранит значение положения оси в мировых координатах, в момент активации оси.\
-При [setActive](#setActive)(`true`) в данный вектор сохраняется значение положения оси. Используется для расчета смещения оси относительно начального положения, во время манипуляций над осью.
+При [setActive](#setActive)(`true`) в данный вектор сохраняется значение положения оси. Используется для расчета смещения оси относительно начального положения во время манипуляций над осью.
 Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 ```js
 protected _worldPositionStart: THREE.Vector3;

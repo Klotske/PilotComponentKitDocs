@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## GizmoTranslationAxis {#GizmoTranslationAxis}
-**GizmoTranslationAxis** -- встроенная реализация оси переноса, для [GizmoControl](../GizmoControl). Подробнее: [GizmoAxis](../GizmoAxis).
+**GizmoTranslationAxis** -- встроенная реализация оси переноса для [GizmoControl](../GizmoControl). Подробнее: [GizmoAxis](../GizmoAxis).
 
 ```js
 export class GizmoTranslationAxis extends GizmoAxis {

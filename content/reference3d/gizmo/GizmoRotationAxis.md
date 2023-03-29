@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## GizmoRotationAxis {#GizmoRotationAxis}
-**GizmoRotationAxis** -- встроенная реализация оси вращения, для [GizmoControl](../GizmoControl). Подробнее: [GizmoAxis](../GizmoAxis).
+**GizmoRotationAxis** -- встроенная реализация оси вращения для [GizmoControl](../GizmoControl). Подробнее: [GizmoAxis](../GizmoAxis).
 
 ```js
 export class GizmoRotationAxis extends GizmoAxis {

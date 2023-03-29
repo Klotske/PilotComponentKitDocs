@@ -47,7 +47,7 @@ export class GizmoObject extends THREE.Object3D implements IGizmoObject {
 Геометрии, используемые для рендера на сцене. Также используются при [расчете пересечений](#raycast) с `GizmoObject`.
 
 ### baseMaterial: THREE.Material {#baseMaterial}
-Материал геометрий, применяемый в отсутствии ховера, и при неактивном `GizmoObject`. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
+Материал геометрий, применяемый в отсутствии ховера и при неактивном `GizmoObject`. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
 ```js
 baseMaterial: THREE.Material;
 ```
@@ -75,7 +75,7 @@ activeMaterial: THREE.Material;
 где:\
 `_meshes` -- геометрии объекта для отрисовки на сцене.
 
-`baseMaterial` -- материал геометрий, применяемый в отсутствии ховера, и при неактивном `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
+`baseMaterial` -- материал геометрий, применяемый в отсутствии ховера и при неактивном `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
 
 `hoverMaterial` -- материал геометрий, применяемый при ховере над `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
 

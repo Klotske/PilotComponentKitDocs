@@ -6,7 +6,7 @@ weight: 3
 ---
 
 ## GizmoControl
-[GizmoControl](./GizmoControl) -- контроллер, помещаемый на сцену, позволяющий изменять положение объектов на сцене.
+[GizmoControl](./GizmoControl) -- контроллер, прикрепляемый к 3D-объекту на сцене и управляющий его положением.
 
 ## GizmoAxis
 [GizmoAxis](./GizmoAxis) -- базовый класс осей `GizmoControl`.
@@ -22,4 +22,4 @@ weight: 3
 [GizmoMaterials](./GizmoMaterials) -- материалы, используемые объектами гизмо.
 
 ## GizmoBuilder
-[GizmoBuilder](./GizmoBuilder) -- вспомогательный класс, для построения `GizmoControl`, с реализацией по умолчанию.
+[GizmoBuilder](./GizmoBuilder) -- вспомогательный класс для построения `GizmoControl` с реализацией по умолчанию.

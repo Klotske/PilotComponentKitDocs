@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## GizmoScaleAxis {#GizmoScaleAxis}
-**GizmoScaleAxis** -- встроенная реализация оси масштабирования, для [GizmoControl](../GizmoControl).  Подробнее: [GizmoAxis](../GizmoAxis).
+**GizmoScaleAxis** -- встроенная реализация оси масштабирования для [GizmoControl](../GizmoControl).  Подробнее: [GizmoAxis](../GizmoAxis).
 
 ```js
 export class GizmoScaleAxis extends GizmoAxis {
