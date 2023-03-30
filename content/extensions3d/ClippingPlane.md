@@ -41,7 +41,7 @@ deactivate(): void;
 addPlanes(planes: ClippingPlaneDescription[]): void;
 ```
 где:\
-`planes` -- список описаний плоскостей сечения. Подробнее смотри [ClippingPlaneDescription](#ClippingPlaneDescription).
+`planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
 
 ### setPlanes()
 Задать плоскости сечения на основной сцене, уже существующие плоскости на сцене удаляются.
@@ -49,7 +49,7 @@ addPlanes(planes: ClippingPlaneDescription[]): void;
 public setPlanes(planes: ClippingPlaneDescription[]): void;
 ```
 где:\
-`planes` -- список описаний плоскостей сечения. Подробнее смотри [ClippingPlaneDescription](#ClippingPlaneDescription).
+`planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
 
 ### removePlanes() {#removePlanes}
 Удалить плоскости сечения с основной сцены.
@@ -57,7 +57,7 @@ public setPlanes(planes: ClippingPlaneDescription[]): void;
 public removePlanes(planeIDs?: string[]): void;
 ```
 где:\
-`planeIDs` -- (опционально), список идентификаторов плоскостей сечения. Если ничего не определено, то удаляются все существующие плоскости сечения.
+`planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то удаляются все существующие плоскости сечения.
 
 ### ClippingPlaneExtension.ClippingPlaneDescription {#ClippingPlaneDescription}
 Описание плоскости сечения.
@@ -72,14 +72,14 @@ export type ClippingPlaneDescription = {
 ```js
 normal: Point3
 ```
-где: `normal` -- координаты вектора нормали в мировом пространстве. Подробнее смотри [Point3](../../reference3d/navigation/Point3).
+где: `normal` -- координаты вектора нормали в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### origin
 Точка, принадлежащая плоскости сечения. Также в эту точку помещается `ClippingPlaneViewObject` - вспомогательный визуальный oбъект, для отображения плоскости.
 ```js
 origin: Point3
 ```
-где: `origin` -- координаты точки в мировом пространстве. Подробнее смотри [Point3](../../reference3d/navigation/Point3).
+где: `origin` -- координаты точки в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### guid
 Идентификатор плоскости сечения. Необязательный параметр. Может использоваться для выборочного [удаления](#removePlanes) плоскостей сечения.
