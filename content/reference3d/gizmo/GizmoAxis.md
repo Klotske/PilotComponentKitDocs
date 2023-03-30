@@ -67,7 +67,7 @@ protected _isHovered: boolean;
 ## _isActive: boolean
 Поле хранит значение активности оси.
 ```js
-protected _isHovered: boolean;
+protected _isActive: boolean;
 ```
 
 ## _plane: THREE.Plane {#AxisPlane}
@@ -133,9 +133,9 @@ constructor(axisDir: THREE.Vector3,
 
 `handle` -- задает [handle](#handle) - геометрию оси, рисуемую на сцене. Подробнее: [IGizmoObject](../IGizmoObject).
 
-`picker` -- задает [picker](#picker) - геометрию оси, используемая для проверки пересечений. Не обязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
+`picker` -- задает [picker](#picker) - геометрию оси, используемую для проверки пересечений. Не обязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
 
-`helper` -- задает [helper](#helper) - вспомогательную геометрия оси. Не обязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
+`helper` -- задает [helper](#helper) - вспомогательную геометрию оси. Не обязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
 
 ## Методы
 
@@ -169,12 +169,6 @@ constructor(axisDir: THREE.Vector3,
 где:\
 `value` - значение активности оси.
 Если `value` равен `true`, то запоминает текущее [положение](#worldPositionStart) оси в мировых координатах, [кватернион поворота](#worldQuaternionStart) и [вектор направления](#worldAxisDir) оси в мировых координатах. В противном случае, сбрасывает значения [начального](#StartPoint) и [конечного](#EndPoint) положения курсора.
-
-### dispose()
-Метод освобождает ресурсы, выделенные оси, а также вызывает методы `dispose()` у объектов [handle](#handle), [picker](#picker) и [helper](#helper).
-```js
-  dispose(): void;
-```
 
 ### dispose()
 Метод освобождает ресурсы, выделенные оси, а также вызывает методы `dispose()` у объектов [handle](#handle), [picker](#picker) и [helper](#helper).
