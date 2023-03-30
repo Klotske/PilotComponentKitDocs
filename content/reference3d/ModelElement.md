@@ -9,13 +9,13 @@ weight: 5
 
 ## Свойства
 
-### id
+### id  {#id}
 Получает идентификатор элемента.
 ```js
 get id(): string;
 ```
 
-### modelPartId
+### modelPartId {#modelPartId}
 Получает идентификатор части модели, к которой относится этот элемент.
 ```js
 get modelPartId(): string;
@@ -56,4 +56,4 @@ get hasGeometry(): boolean;
 ```js
 get boundingBoxCenter(): Point3;
 ```
-Подробнее смотри <a href="/reference3d/navigation/Point3">Point3</a>.
+Подробнее: <a href="/reference3d/navigation/Point3">Point3</a>.

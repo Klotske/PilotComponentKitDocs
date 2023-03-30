@@ -4,13 +4,6 @@ draft: false
 weight: 9
 ---
 
-
-## CameraParameters {#CameraParameters}
-**CameraParameters** -- описание параметров камеры.
-```js
-export type CameraParameters = { position: THREE.Vector3, eyeDir: THREE.Vector3, angle: number };
-```
-
 ## ICameraControl {#ICameraControl}
 **ICameraControl** -- интерфейс, позволяющий взаимодействовать с контроллером камеры.
 ```js
@@ -21,31 +14,14 @@ export interface ICameraControl {
   setAspectRatio(width: number, heigth: number): boolean;
 
   rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
-  translate(prevPosNdc: THREE.Vector2, currPosNdc: THREE.Vector2, viewCenter: THREE.Vector3): void;
+  translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
   spin(movement: THREE.Vector2): void;
   orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void
   zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
-  zoomToFit(bb: THREE.Box3, iOrientation?: CameraOrientation, iAnimationEnabled?: boolean): void;
+  zoomToFit(bb: THREE.Box3, iOrientation?: CameraOrientation, isAnimationEnabled?: boolean): void;
 
-  /** @deprecated */
-  isNavigation(): boolean;
-  /** @deprecated */
-  isRotationNavigation(): boolean;
-  /** @deprecated */
-  setNavigationByMouseActive(isActive: boolean, navDuration?: number): void;
-  /** @deprecated */
-  setNavigationByKeyboardActive(isActive: boolean): void;
-  /** @deprecated */
-  setRotationNavigationActive(isActive: boolean): void;
-
-  /** @deprecated */
-  getMovementVector(): THREE.Vector3;
-  /** @deprecated */
-  moveByImpulse(elapsed_ms: number, movementVector?: THREE.Vector3, intersection?: THREE.Intersection): boolean;
-  /** @deprecated */
-  setImpulseDirection(dir: Direction, add: boolean): void;
-  /** @deprecated */
-  setIncreasedImpulse(isIncreased: boolean): void;
+  getNavigationMode(): CameraNavigationMode;
+  setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: number): void;
 }
 ```
 
@@ -56,25 +32,24 @@ export interface ICameraControl {
 ```js
   getCamera(): THREE.Camera;
 ```
-Возвращает объект камеры. Подробнее смотри <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
+Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
 
-### getCameraParameters(): CameraParameters;
+### getCameraParameters()
 Метод позволяет получить параметры камеры.
 ```js
 getCameraParameters(): CameraParameters;
 ```
-Возвращает [параметры](#CameraParameters) камеры.
+Возвращает параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
-### setCameraParameters(iParams: CameraParameters): void;
+### setCameraParameters()
 Метод позволяет задать параметры камеры.
 ```js
   setCameraParameters(iParams: CameraParameters): void;
 ```
 где:
+`iParams` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
-`iParams` -- [параметры](#CameraParameters) камеры.
-
-### setAspectRatio(width: number, heigth: number): boolean;
+### setAspectRatio()
 Метод позволяет задать соотношение сторон камеры.
 ```js
 setAspectRatio(width: number, heigth: number): boolean;
@@ -86,7 +61,7 @@ setAspectRatio(width: number, heigth: number): boolean;
 Результирующе соотношение сторон равно `width / heigth`.\
 Возвращает `true`, если новое соотношение сторон отличается от предыдущего.</a>.
 
-###  rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
+###  rotate()
 Метод позволяет повернуть камеру вокруг точки вращения по круговой орбите.
 ```js
 rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
@@ -95,17 +70,17 @@ rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
 `movement` -- смещение в экранных координатах.\
 `rotationCenter` -- точка, относительно которой осуществляется вращение камеры.
 
-###  translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
+###  translate()
 Метод позволяет переместить камеру по прямолинейной траектории относительно заданной точки.
 ```js
 translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
 ```
 где:\
-`startNdcPos` -- начальное положение в нормализованных экранных координатах (NDC).\
-`endNdcPos` -- конечное положение в нормализованных экранных координатах (NDC).\
+`startNdcPos` -- начальное положение в Normalized Device Coordinates (NDC пространство).\
+`endNdcPos` -- конечное положение в Normalized Device Coordinates (NDC пространство).\
 `viewCenter` -- точка, относительно которой осуществляется смещение камеры.
 
-###  spin(movement: THREE.Vector2): void;
+###  spin()
 Метод позволяет повернуть камеру вокруг `Up` вектора камеры.
 ```js
 spin(movement: THREE.Vector2): void;
@@ -113,16 +88,16 @@ spin(movement: THREE.Vector2): void;
 где:\
 `movement` -- смещение в экранных координатах.
 
-###  orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void
+###  orientateCamera()
 Метод позволяет ориентировать камеру в пространстве, позиция камеры при этом не изменяется.
 ```js
 orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
 где:\
-`iOrientation` -- конечная ориентация камеры.\
+`iOrientation` -- конечная ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при изменении ориентации, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
-###  zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
+###  zoomToPoint()
 Метод позволяет приблизить либо отдалить камеру относительно точки.
 ```js
 zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
@@ -131,12 +106,34 @@ zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
 `deltaSign` -- дистанция приближения.\
 `point` -- точка приближения.
 
-###  zoomToFit(boundingBox: THREE.Box3, iOrientation?: CameraOrientation, iAnimationEnabled?: boolean): void;
+###  zoomToFit()
 Метод позволяет центрировать камеру относительно ограничивающего объема в нужной ориентации.
 ```js
 zoomToFit(boundingBox: THREE.Box3, iOrientation?: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
 где:\
 `boundingBox` -- ограничивающий объем, относительно которого центрируется камера. Подробнее: [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).\
-`iOrientation` -- конечная ориентация камеры. По умолчанию сохраняется текущая ориентация камеры.\
+`iOrientation` -- конечная ориентация камеры. По умолчанию сохраняется текущая ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
+
+###  getNavigationMode()
+Метод позволяет получить тип навигации, осуществляемой над камерой.
+```js
+getNavigationMode(): CameraNavigationMode;
+```
+Возвращает тип навигации камеры. Подробнее: [CameraNavigationMode](../CameraNavigationMode).
+
+###  setNavigationMode()
+Метод позволяет задать тип навигации камеры в пространстве.
+```js
+setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: number): void;
+```
+где:\
+`mode` -- тип навигации камеры. Подробнее: [CameraNavigationMode](../CameraNavigationMode).\
+`isEnable` -- активность.\
+`duration` -- продолжительность навигации в миллисекундах. Параметр применяется только если `isEnable == true`.
+
+  Если `isEnable == true`, и определён `duration`, то по истечении задержки `duration` произойдет отключение заданного типа навигации.
+  Эквивалентно вызову `setNavigationMode(mode, false)` после задержки `duration`.
+
+  Если во время ожидания происходит вызов `setNavigationMode` с любыми параметрами, то задержка сбрасывается и вызов `setNavigationMode(mode, false)` происходит немедленно, затем применяются новые параметры.

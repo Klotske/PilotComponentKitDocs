@@ -10,7 +10,7 @@ weight: 1
 - Реализовано отображение Gizmo и ClippingPlane на отдельном слое (PI#3-351).
 - Добавлено <a href="../reference3d/Events">событие</a>:
   - `CAMERA_CHANGE_EVENT` - Событие изменения положения камеры (PI#3-248).
-- Добавлены <a href="../reference3d/navigation/Navigation/#setpivotpoint">методы работы с опорной точкой камеры</a> (PI#3-249).
+- Добавлены <a href="../reference3d/navigation/INavigation/#setpivotpoint">методы работы с опорной точкой камеры</a> (PI#3-249).
 - Изменён метод <a href="../reference3d/Model/#select">select</a>, для выбора части модели добавлен аргумент <a href="../reference3d/SelectionMode/">SelectionMode</a> (PI#3-321, PI#3-324).
 - Реализован элемент управления GizmoControl (PI#3-307).
 - В расширение <a href="../extensions3d/ModelsBrowser/">ModelsBrowserExtension</a> добавлено мультиселектирование объектов в дереве (PI#3-251).
@@ -30,14 +30,14 @@ weight: 1
 - Добавлена возможность выбирать элементы на сцене с клавишей CTRL (мультивыбор).
 - Добавлена возможность управления видимостью видового куба.
 - Добавлено API получения свойств элементов модели (<a href="../reference3d/Model#getElementProperties">getElementProperties</a>)
-- Добавлен метод для центрирования камеры на элементе модели (<a href="../reference3d/navigation/Navigation#fitToView">fitToView</a>)
+- Добавлен метод для центрирования камеры на элементе модели (<a href="../reference3d/navigation/INavigation#fitToView">fitToView</a>)
 - Добавлен переход к объекту по двойному клику.
 - Добавлен переключатель режима отображения модели в настройках.
 
 
 #### Версия 22.0.6 от 18.11.2022
 
-- Добавлено API получения скрытых элементов консолидированной модели (<a href="../reference3d/Model#getHiddenElements">подробнее</a>)
+- Добавлено API получения скрытых элементов консолидированной модели (<a href="../reference3d/Model#getHiddenElements">Подробнее:</a>)
 - Добавлено расширение для просмотра дерева элементов (<a href="../extensions3d/ModelsBrowser">ModelsBrowserExtension</a>)
 - Добавлено расширение - полноэкранный режим (<a href="../extensions3d/FullScreen">FullScreenExtension</a>)
 - Добавлено расширение - диалог настроек для 3D просмотрщика (<a href="../extensions3d/ViewerSettings">ViewerSettingsExtension</a>)

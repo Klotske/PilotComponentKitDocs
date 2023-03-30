@@ -18,4 +18,4 @@ class Viewer3DConfiguration extends ViewerConfiguration {
 ```js
 settings?: ViewerSettings;
 ```
-Необязательное поле для задания настроек отображения просмотрщика 3D моделей. Подробнее смотри <a href="../ViewerSettings">ViewerSettings</a> 
+Необязательное поле для задания настроек отображения просмотрщика 3D моделей. Подробнее: <a href="../ViewerSettings">ViewerSettings</a> 

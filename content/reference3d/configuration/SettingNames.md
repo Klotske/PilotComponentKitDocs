@@ -42,7 +42,7 @@ static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesNavigation";
 static DISPLAY_MODE = "displayMode";
 ```
 Свойство для указания настройки отображение моделей в просмотрщике
-Настройка может иметь занчения `DisplayMode.FACES_AND_EDGES` / `DisplayMode.FACES` или `undefined`. Подробнее <a href="../../DisplayMode">DisplayMode</a>
+Настройка может иметь занчения `DisplayMode.FACES_AND_EDGES` / `DisplayMode.FACES` или `undefined`. Подробнее: <a href="../../DisplayMode">DisplayMode</a>
 
 ### NAVIGATION_CUBE
 ```js
