@@ -131,7 +131,7 @@ setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: numb
 где:\
 `mode` -- тип навигации камеры. Подробнее: [CameraNavigationMode](../CameraNavigationMode).\
 `isEnable` -- активность.\
-`duration` -- продолжительность навигации в миллисекундах. Параметр применяется только если `isEnable == true`.\
+`duration` -- продолжительность навигации в миллисекундах. Параметр применяется только если `isEnable == true`.
 
   Если `isEnable == true`, и определён `duration`, то по истечении задержки `duration` произойдет отключение заданного типа навигации.
   Эквивалентно вызову `setNavigationMode(mode, false)` после задержки `duration`.

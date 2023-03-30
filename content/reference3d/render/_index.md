@@ -17,7 +17,7 @@ weight: 11
 [IUserScene](./IUserScene)\
 [I3DRenderer](./I3DRenderer)\
 [IModelIntersectionChecker](./IModelIntersectionChecker)\
-[IRenderOperationContext](./IRenderOperationContext)\
+[IRenderOperationContext](./IRenderOperationContext)
 
 #### ViewObject:
 [ViewObject](./ViewObject)\
