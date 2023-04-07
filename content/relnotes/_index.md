@@ -1,11 +1,18 @@
 ---
 title: "Что нового?"
-date: 2022-08-04T12:44:03+03:00
 draft: false
 weight: 1
 ---
 
 #### Версия @VERSION@ от @DATE@
+- Добавлена возможность удалить плоскость сечения.
+- Добавлено <a href="../reference3d/gizmo">Gizmo API</a>.
+- Исправлены ошибки:
+  - удаление плоскостей сечения при выгрузке модели.
+  - загрузка расширений сразу после старта Viewer3D.
+  - совместная работа расширений BoxSelection и ClippingPlanes - учитывать клиппинг при выделениии рамкой.
+
+#### Версия 23.0.1 от 03.03.2023
 - Добавлена возможность читать свойства элемента: <a href="../reference3d/ModelElementProperty/">ModelElementProperty</a>, <a href="../reference3d/ModelElementPropertySet/">ModelElementPropertySet</a> (PI#3-99).
 - Реализовано отображение Gizmo и ClippingPlane на отдельном слое (PI#3-351).
 - Добавлено <a href="../reference3d/Events">событие</a>:
