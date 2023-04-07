@@ -58,7 +58,7 @@ PilotWeb3D.theExtensionManager.registerExtensionType('My3DExtension', My3DExtens
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
-viewer.start();
+await viewer.start();
 viewer.extensionsLoader.loadExtension("My3DExtension");
 ...
 viewer.loadModelPart(...);
@@ -69,7 +69,7 @@ viewer.loadModelPart(...);
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb2D.CreateViewer(htmlDiv);
-viewer.start();
+await viewer.start();
 viewer.extensionsLoader.loadExtension("My2DExtension");
 ...
 viewer.loadDocument(...);

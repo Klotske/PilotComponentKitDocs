@@ -11,10 +11,10 @@ weight: 20
 var viewer;
 var options = {};
 
-PilotWeb3D.Initializer(options, () => {
+PilotWeb3D.Initializer(options, async () => {
     var htmlDiv = document.getElementById('pilotViewer');
     viewer = PilotWeb3D.CreateViewer(htmlDiv);
-    viewer.start();
+    await viewer.start();
     console.log('Initialization complete, loading a model next...');
   });
 ```
@@ -24,10 +24,10 @@ PilotWeb3D.Initializer(options, () => {
 var viewer;
 var options = {};
 
-PilotWeb2D.Initializer(options, () => {
+PilotWeb2D.Initializer(options, async () => {
     var htmlDiv = document.getElementById('pilotViewer');
     viewer = PilotWeb2D.CreateViewer(htmlDiv);
-    viewer.start();
+    await viewer.start();
     console.log('Initialization complete, loading a document next...');
   });
 ```
@@ -57,7 +57,7 @@ PilotWeb2D.Initializer(options, () => {
 Далее необходимо вызвать метод `start()`, который инициализирует компонент:
 
 ```js
-  viewer.start();
+  await viewer.start();
 ```
 
 ### Освобождение ресурсов

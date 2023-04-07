@@ -18,7 +18,7 @@ draft: false
 ```js
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
-viewer.start();
+await viewer.start();
 viewer.extensionsLoader.loadExtension("PilotWeb3D.FullScreen");
 ```
 
