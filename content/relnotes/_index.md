@@ -5,12 +5,14 @@ weight: 1
 ---
 
 #### Версия @VERSION@ от @DATE@
-- Добавлена возможность удалить плоскость сечения.
-- Добавлено <a href="../reference3d/gizmo">Gizmo API</a>.
+- ClippingPlaneExtension: Реализована возможность удалить плоскость сечения.
+- Реализовано API для элемента управления <a href="../reference3d/gizmo">GizmoControl</a>.
 - Исправлены ошибки:
-  - удаление плоскостей сечения при выгрузке модели.
-  - загрузка расширений сразу после старта Viewer3D.
-  - совместная работа расширений BoxSelection и ClippingPlanes - учитывать клиппинг при выделениии рамкой.
+  - Убрано отображение плоскостей сечения после выгрузки модели.
+  - Загрузка расширений сразу после старта **PilotWeb3D**.
+  - Исправлен совместная работа расширений BoxSelectionExtension и ClippingPlaneExtension.
+- Добавлено расширение:
+  - <a href="../extensions3d/WasdNavigation/">WasdNavigationExtension</a> для навигации клавишами WASD.
 
 #### Версия 23.0.1 от 03.03.2023
 - Добавлена возможность читать свойства элемента: <a href="../reference3d/ModelElementProperty/">ModelElementProperty</a>, <a href="../reference3d/ModelElementPropertySet/">ModelElementPropertySet</a> (PI#3-99).
