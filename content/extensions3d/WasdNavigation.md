@@ -17,9 +17,7 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-...
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/WasdNavigation/WasdNavigation.min.js"></script>
-...
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/WasdNavigation3D/WasdNavigation.min.js"></script>
 ```
 
 Пример подключения в `javascript`:

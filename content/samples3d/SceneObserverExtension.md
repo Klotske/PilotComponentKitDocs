@@ -8,11 +8,8 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-...
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/samples/SceneObserver/SceneObserverExtension.css">
-...
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/samples/SceneObserver/SceneObserverExtension.js"></script>
-...
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/samples/SceneObserverExtension/SceneObserverExtension.css">
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/samples/SceneObserverExtension/SceneObserverExtension.js"></script>
 ```
 
 Пример подключения в `javascript`:

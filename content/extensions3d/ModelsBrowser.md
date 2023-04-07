@@ -11,11 +11,8 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-...
 <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser3D/ModelsBrowser.css">
-...
 <script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ModelsBrowser3D/ModelsBrowser.min.js"></script>
-...
 ```
 
 Пример подключения в `javascript`:

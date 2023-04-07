@@ -9,9 +9,7 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-...
 <script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ClippingPlane3D/ClippingPlane.min.js"></script>
-...
 ```
 
 Пример подключения в `javascript`:

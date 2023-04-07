@@ -8,10 +8,8 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-...
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/extensions/samples/ElementPropertiesExtension/ElementPropertiesExtension.css">
-...
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/samples/ElementPropertiesExtension/ElementPropertiesExtension.js"></script>
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/samples/ElementPropertiesExtension/ElementPropertiesExtension.css">
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/samples/ElementPropertiesExtension/ElementPropertiesExtension.js"></script>
 ...
 ```
 
