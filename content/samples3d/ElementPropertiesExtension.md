@@ -10,7 +10,6 @@ draft: false
 ```html
 <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/samples/ElementPropertiesExtension/ElementPropertiesExtension.css">
 <script src="https://pilotcloud.ascon.net/components/@VERSION@/samples/ElementPropertiesExtension/ElementPropertiesExtension.js"></script>
-...
 ```
 
 Пример подключения в `javascript`:
