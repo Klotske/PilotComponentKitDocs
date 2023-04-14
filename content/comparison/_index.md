@@ -2,7 +2,7 @@
 title: "Сопоставление методов Autodesk Forge и PilotWeb3D"
 date: 2022-08-04T12:44:03+03:00
 draft: false
-weight: 7
+weight: 8
 ---
 
 ## Сопоставление методов 3D API
