@@ -52,3 +52,9 @@ loadDocument(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallbac
   `options` -- опции для загрузки документа,
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки документа,
   `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки документа.
+
+### unloadDocument()
+```js
+unloadDocument(): void 
+```
+Метод очищает контейнер от содержимого.
