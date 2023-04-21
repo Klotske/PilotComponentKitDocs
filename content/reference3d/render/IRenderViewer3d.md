@@ -50,14 +50,21 @@ updateCurrentCanvas(): Promise<void>;
 где:\
 `iObj` -- объект, который нужно удалить.
 
-###  setClipping()
-Метод задает плоскости сечения для определённой сцены.
+###  setClipping() {#setClipping}
+Метод задает секущие плоскости для визулизации.
 ```js
-setClipping(planes: THREE.Plane[], sceneID?: string): void;
+setClipping(planes: THREE.Plane[]): void;
 ```
 где:\
-`planes` -- список плоскостей сечения. Подробнее: [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).\
-`sceneID` -- Имя сцены. Не обязательный параметр. По умолчанию `MainScene`.
+`planes` -- список плоскостей сечения. Подробнее: [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).
+
+###  setActiveClipPlaneIndices()
+Метод задает активные плоскости сечения. Сечения активных плоскостей окрашены в голубой цвет.
+```js
+setActiveClipPlaneIndices(indices: number[]): void;
+```
+где:\
+`indices` -- список индексов активных плоскостей сечения. Каждый индекс указывает на плоскость в списке, переданном в [setClipping()](#setClipping).
 
 ###  getScenes()
 Метод возвращает список всех используемых сцен.
