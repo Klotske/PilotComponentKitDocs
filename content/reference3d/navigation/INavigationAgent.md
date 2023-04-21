@@ -12,6 +12,7 @@ export interface INavigationAgent  {
   readonly canvasNavigationSource: INavigationEventSource;
   readonly keyboardNavigationSource: INavigationEventSource;
 
+  setActive(value: boolean): void;
   getNavigationArea(): DOMRect;
 }
 ```
@@ -51,6 +52,13 @@ navigationAgent.keyboardNavigationSource.removeEventListener("keyup", onKeyUp, n
 
 ### Методы
 
+#### setActive()
+Метод активирует или деактивирует все источники событий навигации.
+```js
+setActive(value: boolean): void;
+```
+где: `value` - активность.
+
 #### getNavigationArea()
 Метод позволяет получить прямоугольник текущей рабочей области навигации.
 ```js
@@ -58,10 +66,22 @@ getNavigationArea(): DOMRect;
 ```
 Возвращает объект [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
 
+{{< hint type="important" icon=gdoc_error_outline title="Важно">}}
+При перемещении курсора за пределы рабочей области навигации происходит деактивация всех источников событий навигации. При возвращении курсора в рабочую область происходит активация источников событий навигации.\
+Таким образом, источники событий навигации не генерируют события мыши/клавиатуры/тачпада, если курсор находится за пределами рабочей области.
+{{< /hint >}}
+
+
 ## INavigationEventSource {#INavigationEventSource}
 **INavigationEventSource** -- интерфейс источника событий навигации.
 ```js
 export interface INavigationEventSource {
+  // Ивент сигнализирует об изменении активности данного источника событий навигации.
+  readonly eventSourceActivityChanged: EventDispatcher<boolean>;
+
+  // Метод активирует или деактивирует данный источник событий навигации.
+  setActive(value: boolean): void;
+
   addEventListener<T extends keyof HTMLElementEventMap>(type: T, listener: (this: object, ev: HTMLElementEventMap[T] & NavigationEvent) => void, options?: boolean | EventListenerOptions | NavigationEventOptions): void;
 
   removeEventListener<T extends keyof HTMLElementEventMap>(type: T, listener: (this: object, ev: HTMLElementEventMap[T] & NavigationEvent) => void, options?: boolean | EventListenerOptions | NavigationEventOptions): void;
