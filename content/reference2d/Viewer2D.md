@@ -57,4 +57,4 @@ loadDocument(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallbac
 ```js
 unloadDocument(): void 
 ```
-Метод очищает контейнер от содержимого.
+Выгружает документ из компонента.
