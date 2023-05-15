@@ -5,10 +5,13 @@ weight: 1
 ---
 
 #### Версия @VERSION@ от @DATE@
+- Выпущен новый npm-пакет <a href="https://www.npmjs.com/package/@pilotdev/pilot-bim-dataprovider" target="blank">@pilotdev/pilot-bim-dataprovider</a> для чтения данных из информационной модели (BIM).
+- Добавлен npm-пакет с определениями типов (TypeScript) для компонента **PilotWeb3D** -- <a href="https://www.npmjs.com/package/@pilotdev/pilot-web-3d" target="blank">@pilotdev/pilot-web-3d</a>.
 - **ClippingPlaneExtension**: Поправлен цвет плоскости сечения. (PI#3-524)
-- **ClippingPlaneExtension**: добавлен новый вид сечений - куб сечений. (PI#3-523)
+- **ClippingPlaneExtension**: добавлен новый вид сечений -- куб сечений. (PI#3-523)
 - Новая стилизация элемента управления <a href="../reference3d/gizmo">GizmoControl</a>. (PI#3-385)
 - Добавлены методы <a href="../reference2d/Viewer2D#unloadDocument">выгрузки</a> документа из **PilotWeb2D**. (PI#3-537)
+- Обеспечена совместимость с моделями <a href="https://pilot.ascon.ru" target="blank">Pilot-BIM-Server</a> версии 23.15 и старше.
 - Исправлены ошибки:
   - Добавлена блокировка событий мыши, клавиатуры и сенорной панели при потере фокуса вьювером **PilotWeb3D**. (PI#3-530) 
   - Поправлено отображение картинок в компоненте **PilotWeb2D**. (PI#3-562) 
