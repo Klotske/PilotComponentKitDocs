@@ -53,7 +53,7 @@ loadDocument(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallbac
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки документа,
   `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки документа.
 
-### unloadDocument()
+### unloadDocument(){#unloadDocument}
 ```js
 unloadDocument(): void 
 ```
