@@ -9,7 +9,7 @@ weight: 1
 - **ClippingPlaneExtension**: добавлен новый вид сечений - куб сечений. (PI#3-523)
 - Новая стилизация элемента управления <a href="../reference3d/gizmo">GizmoControl</a>. (PI#3-385)
 - Добавлены методы <a href="../reference2d/Viewer2D#unloadDocument">выгрузки</a> документа из **PilotWeb2D**. (PI#3-537)
-- Исправлены ошибки
+- Исправлены ошибки:
   - Добавлена блокировка событий мыши, клавиатуры и сенорной панели при потере фокуса вьювером **PilotWeb3D**. (PI#3-530) 
   - Поправлено отображение картинок в компоненте **PilotWeb2D**. (PI#3-562) 
 
@@ -19,7 +19,7 @@ weight: 1
 - Исправлены ошибки:
   - Убрано отображение плоскостей сечения после выгрузки модели.
   - Загрузка расширений сразу после старта **PilotWeb3D**.
-  - Исправлен совместная работа расширений **BoxSelectionExtension** и **ClippingPlaneExtension**.
+  - Исправлена совместная работа расширений **BoxSelectionExtension** и **ClippingPlaneExtension**.
 - Добавлено расширение:
   - <a href="../extensions3d/WasdNavigation/">WasdNavigationExtension</a> для навигации клавишами WASD.
 
