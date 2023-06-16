@@ -5,7 +5,7 @@ draft: false
 weight: 8
 ---
 
-**Viewer2D** -- это базовый класс для всех видов компонентов работы с документами.
+**Viewer2D** -- это базовый класс для работы с документами компонента **PilotWeb2D**.
 
 Этот класс содержит всё необходимое для отображения и взаимодействия с документами, полученными из системы **Pilot**.
 
@@ -58,3 +58,9 @@ loadDocument(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallbac
 unloadDocument(): void 
 ```
 Выгружает документ из компонента.
+
+### getConfiguration()
+```js
+getConfiguration(): ViewerConfiguration
+```
+Получает текущие настройки просмотрщика. Подробнее: <a href="/reference2d/configuration/ViewerConfiguration">ViewerConfiguration</a>.

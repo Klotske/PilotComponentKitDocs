@@ -17,7 +17,15 @@ type ViewerSettings = Record<string, any>;
 ```js
 const defaultViewer3DSettings: ViewerSettings = {
   [SettingsNames.TELEMETRY] : false,
+  [SettingsNames.AXES] : true,
+  [SettingsNames.CAMERA_ANIMATION]: true,
+  [SettingsNames.HIDE_SMALL_ELEMENTS_WHEN_NAVIGATING]: false,
+  [SettingsNames.GLOBAL_LIGHT]: true,
+  [SettingsNames.LIGHT_SOURCE]: true,
   [SettingsNames.ANTI_ALIASING]: true,
+  [SettingsNames.HIDE_SMALL_ELEMENTS_MOVING]: false,
+  [SettingsNames.SMALL_ELEMENT_SIZE]: 10,
+  [SettingsNames.LABEL_LINE_LENGTH]: 1000,
   [SettingsNames.HIDE_EDGES_WHEN_NAVIGATING]: true,
   [SettingsNames.DISPLAY_MODE]: DisplayMode.FACES_AND_EDGES,
   [SettingsNames.NAVIGATION_CUBE]: true

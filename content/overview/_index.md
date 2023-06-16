@@ -25,12 +25,12 @@ resources:
 Для загрузки моделей в компоненты **PilotWeb3D** и **PilotBimDataProvider** используются файлы **.bm**, формируюмые сервисом **Pilot-BIM-Server**. Файлы **.bm** -- это контейнер данных информационной модели.
 Контейнер информационной модели может содержать как изменение данных относительно предыдущей версии так и актуальное состояние модели, включающее все её изменения до необходимой версии.
 
-{{< img1 name="3d_view" size="small">}}
+<iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/web-platform-v9kotm?embed=1&file=index.html&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=light&view=preview"></iframe>
+
 
 #### Документы
 
 Для загрузки документов используйте файлы в формате **.xps** (Open XML Paper Specification, ECMA-388).
 
-{{< img1 name="2d_view" size="small">}}
+<iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/web-platform-icnnur?embed=1&file=index.html&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=light&view=preview"></iframe>
 
-<!-- ### Кастомизация вьювера -->
