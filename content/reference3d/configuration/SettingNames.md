@@ -11,7 +11,7 @@ draft: false
 class SettingsNames {
   static TELEMETRY = "telemetry";
   static ANTI_ALIASING = "antiAliasing";
-  static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesNavigation";
+  static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesWhenNavigation";
   static DISPLAY_MODE = "displayMode";
   static NAVIGATION_CUBE = "navigationCube";
 }
@@ -32,7 +32,7 @@ static ANTI_ALIASING = "antiAliasing";
 
 ### HIDE_EDGES_WHEN_NAVIGATING
 ```js
-static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesNavigation";
+static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesWhenNavigation";
 ```
 Свойство для указания настройки скрытия ребер при навигации по 3D модели
 Настройка может иметь занчения `true/false/undefined`
