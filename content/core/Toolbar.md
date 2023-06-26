@@ -18,3 +18,19 @@ changeToolbarPosition(direction: string): void;
 ```js
 changeToolbarContent(content: string): void;
 ```
+
+### addControl()
+Добавляет элемент в тулбар.
+```js
+addControl(control: Control): void;
+```
+где:
+`control` -- объект типа Control.
+
+### removeControl()
+Удаляет элемент из тулбара.
+```js
+removeControl(id: string): void
+```
+где:
+`id` -- идентификатор элемента.
