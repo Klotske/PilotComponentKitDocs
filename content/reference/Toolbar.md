@@ -26,6 +26,7 @@ addControl(control: Control): void;
 ```
 где:
 `control` -- объект типа Control.
+Подробнее: <a href="../Control/">Control</a>.
 
 ### removeControl()
 Удаляет элемент из тулбара.
