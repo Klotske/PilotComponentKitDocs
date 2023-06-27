@@ -30,7 +30,7 @@ getId(): string;
 ```
 
 ### setToolTip()
-Возвращает id элемента.
+Устанавливает текст всплывающей подсказки.
 ```js
 setToolTip(tooltipText: string): void;
 ```
