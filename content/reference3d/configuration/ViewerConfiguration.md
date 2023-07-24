@@ -4,7 +4,7 @@ date: 2022-12-04T14:44:03+03:00
 draft: false
 ---
 
-**ViewerConfiguration** - Базовый класс описывающий настройки компонентов **PilotWeb2D** и **PilotWeb3D**.
+**ViewerConfiguration** - Базовый класс, описывающий настройки компонентов **PilotWeb2D** и **PilotWeb3D**.
 
 ```js
 class ViewerConfiguration {
@@ -29,7 +29,7 @@ appearance: ViewerSettings;
 ```js
 direction: string;
 ```
-Управляет положение панели инструментов.
+Управляет положением панели инструментов.
 
 ```js
 export enum ToolbarDirection {
@@ -54,6 +54,14 @@ export enum ToolbarContent {
   END = 'ascn-toolbar-content-end'
 }
 ```
+
+
+### settingsPrefix
+```js
+settingsPrefix: string;
+```
+Задает префикс для настроек, хранящихся в браузере клиента.
+
 
 
 
