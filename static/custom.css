@@ -1,6 +1,6 @@
 :root[color-theme="light"] {
-  --header-background: #d9e1b5;
-  --header-font-color: #95a37b;
+  --header-background: #95a37b;
+  --header-font-color: #ffffff;
 
   --body-background: #ffffff;
   --body-font-color: #343a40;
@@ -37,8 +37,8 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --header-background: #d9e1b5;
-    --header-font-color: #95a37b;
+    --header-background: #95a37b;
+    --header-font-color: #ffffff;
 
     --body-background: #ffffff;
     --body-font-color: #343a40;
@@ -77,8 +77,8 @@
 
 /* Dark mode theming */
 :root[color-theme="dark"] {
-  --header-background: #d9e1b5;
-  --header-font-color: #95a37b;
+  --header-background: #95a37b;
+  --header-font-color: #ffffff;
 
   --body-background: #343a40;
   --body-font-color: #ced3d8;
@@ -117,8 +117,8 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --header-background: #d9e1b5;
-    --header-font-color: #95a37b;
+    --header-background: #95a37b;
+    --header-font-color: #ffffff;
 
     --body-background: #343a40;
     --body-font-color: #ced3d8;
