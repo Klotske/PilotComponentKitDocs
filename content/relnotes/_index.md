@@ -5,6 +5,22 @@ weight: 1
 ---
 
 #### Версия @VERSION@ от @DATE@
+
+- Добавлена возможность изменения размеров диалоговых окон.
+- Добавлена возможность перетаскивания диалоговых окон.
+- Поднята версия компонента `Three.js` до версии `0.151.3`.
+- Реализована настройка положения панели инструментов для компонентов **PilotWeb3D** и **PilotWeb2D** -- <a href="../reference3d/configuration/ViewerConfiguration">ViewerConfiguration</a>.
+- Добавлена возможно указать префикс к имени для клиентских настроек при сохранение в `LocalStorage`.
+- Добавлена поддержка языков -- <a href="../reference/Localization">Localization</a>.
+- Исправлены ошибки:
+  - Исправлена ошибка управления настройками сцены (PI#3-756).
+  - Исправлена ошибка возникающая при отмене загрузки модели (PI#3-370).
+  - Исправлено отображение линий на 3D сцене (PI#3-669).
+  - Исправлена ошибка связанная с поддержкой 3D сцены на мобильных устройствах (PI#3-769)
+
+
+#### Версия 23.0.4 от 17.06.2023
+
 - Новая стилизация панели инструментов в компонентах. 
 - Реализовано чтение строительных осей в компоненте **PilotBimDataprovider** (PI#3-597).
 - Реализовано отображение строительных осей в компоненте **PilotWeb3D** (PI#3-681).
@@ -18,6 +34,7 @@ weight: 1
 
 
 #### Версия 23.0.3 от 15.05.2023
+
 - Выпущен новый npm-пакет <a href="https://www.npmjs.com/package/@pilotdev/pilot-bim-dataprovider" target="blank">@pilotdev/pilot-bim-dataprovider</a> для чтения данных из информационной модели (BIM).
 - Добавлен npm-пакет с определениями типов (TypeScript) для компонента **PilotWeb3D** -- <a href="https://www.npmjs.com/package/@pilotdev/pilot-web-3d" target="blank">@pilotdev/pilot-web-3d</a>.
 - **ClippingPlaneExtension**: Поправлен цвет плоскости сечения. (PI#3-524)
@@ -29,7 +46,9 @@ weight: 1
   - Добавлена блокировка событий мыши, клавиатуры и сенорной панели при потере фокуса вьювером **PilotWeb3D**. (PI#3-530) 
   - Поправлено отображение картинок в компоненте **PilotWeb2D**. (PI#3-562) 
 
+
 #### Версия 23.0.2 от 07.04.2023
+
 - **ClippingPlaneExtension**: Реализована возможность удалить плоскость сечения.
 - Реализовано API для элемента управления <a href="../reference3d/gizmo">GizmoControl</a>.
 - Исправлены ошибки:
@@ -39,7 +58,9 @@ weight: 1
 - Добавлено расширение:
   - <a href="../extensions3d/WasdNavigation/">WasdNavigationExtension</a> для навигации клавишами WASD.
 
+
 #### Версия 23.0.1 от 03.03.2023
+
 - Добавлена возможность читать свойства элемента: <a href="../reference3d/ModelElementProperty/">ModelElementProperty</a>, <a href="../reference3d/ModelElementPropertySet/">ModelElementPropertySet</a> (PI#3-99).
 - Реализовано отображение Gizmo и ClippingPlane на отдельном слое (PI#3-351).
 - Добавлено <a href="../reference3d/Events">событие</a>:
