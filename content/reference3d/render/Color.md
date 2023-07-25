@@ -50,16 +50,16 @@ export class Color {
 ## Методы
 
 ### fromThreeColor()
-Метод возвращает объект `Color` с параметрами цвета, соответствующими [THREE.Color](https://threejs.org/docs/#api/en/math/Color) и прозрачностью, равной `alpha`.
+Метод возвращает объект `Color` с `r`, `g`, `b` - компонентами цвета, соответствующими `r`, `g`, `b` - компонентам параметра `color` и прозрачностью равной `alpha`.
 ```js
   static fromThreeColor(color: THREE.Color, alpha = 1.0): Color;
 ```
 где:
-`color` - референсный цвет. Подробнее: [THREE.Color](https://threejs.org/docs/#api/en/math/Color).\
+`color` - источник `r`, `g`, `b` компонент цвета. Подробнее: [THREE.Color](https://threejs.org/docs/#api/en/math/Color).\
 `alpha` - значение прозрачности, от `0.0` до `1.0`. По умолчанию `1.0`.
 
 ### fromColorRepresentation()
-Метод возвращает объект `Color` с параметрами цвета, соответствующими `THREE.ColorRepresentation` и прозрачностью, равной `1.0`.
+Метод возвращает объект `Color` с параметрами цвета, соответствующими `THREE.ColorRepresentation` и прозрачностью равной `1.0`.
 ```js
   static fromColorRepresentation(representation: THREE.ColorRepresentation): Color;
 ```
@@ -67,12 +67,14 @@ export class Color {
 `THREE.ColorRepresentation` - объект представления цвета в виде `THREE.Color | string | number`. Подробнее: [THREE.Color](https://threejs.org/docs/#api/en/math/Color)
 
 ### fromMaterial()
-Метод возвращает объект `Color` с параметрами цвета, соответствующими `material`.   
+Метод возвращает объект `Color` с параметрами цвета, соответствующими `material`.
 ```js
   static fromMaterial(material: THREE.Material): Color;
 ```
 где:
-`material` - референсный материал. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
+`material` - материал, по которому вычисляются параметры цвета.\
+ `r`, `g`, `b` - компоненты цвета берутся равнымим `r`, `g`, `b` - компонентам свойства `color`, если материал определяет это свойство (пример: [MeshBasicMaterial.color](https://threejs.org/docs/#api/en/materials/MeshBasicMaterial.color)). Если нет, то берутся значения по умолчанию: `1.0`.\
+ `alpha` - значение прозрачности берётся равным значению свойства [Material.opacity](https://threejs.org/docs/#api/en/materials/Material.opacity).
 
 ### threeColor()
 Метод возвращает объект [THREE.Color](https://threejs.org/docs/#api/en/math/Color) с параметрами цвета, соответствующими текущему `Color`.

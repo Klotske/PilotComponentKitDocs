@@ -49,18 +49,18 @@ export class LabelSprite extends THREE.Sprite {
   constructor(parameters: LabelSpriteParameters);
 ```
 где:\
-`parameters`-- параметры текстового лэйбла. Подробнее: [LabelSpriteParameters](#LabelSpriteParameters).
+`parameters`-- параметры текстовой метки. Подробнее: [LabelSpriteParameters](#LabelSpriteParameters).
 
 ## Свойства
 
 ###  sizeAttenuation: boolean
-Задает или возвращает значение флага, показывающего влияние перспективы на текстовый лэйбл - уменьшается ли размер лэйбла с глубиной кадра.
+Задает или возвращает значение флага, показывающего влияние перспективы на текстовую метку - уменьшается ли размер метки с глубиной кадра.
 Влияет на отображение только с перспективной камерой.
 ```js
   get sizeAttenuation(): boolean;
   set sizeAttenuation(value: boolean);
 ```
-По умолчанию `false` - размер лэйбла не зависит от перспективы.
+По умолчанию `false` - размер метки не зависит от перспективы.
 
 ###  text: string
 Задает или возвращает строку отображаемого текста.
@@ -91,7 +91,7 @@ export class LabelSprite extends THREE.Sprite {
 
 
 ###  borderThickness: number
-Задает или возвращает толщину рамки лэйбла в пикселях.
+Задает или возвращает толщину рамки метки в пикселях.
 ```js
   get borderThickness(): number;
   set borderThickness(value: number);
@@ -99,7 +99,7 @@ export class LabelSprite extends THREE.Sprite {
 По умолчанию `2`.
 
 ###  borderColor: Color
-Задает или возвращает цвет рамки лэйбла.
+Задает или возвращает цвет рамки метки.
 ```js
   get borderColor(): Color;
   set borderColor(value: Color);
@@ -107,7 +107,7 @@ export class LabelSprite extends THREE.Sprite {
 По умолчанию `Color(0, 0, 0, 1.0)`. Подробнее: [Color](../Color).
 
 ###  borderRadius: number
-Задает или возвращает радиус скругления рамки лэйбла в пикселях.
+Задает или возвращает радиус скругления рамки метки в пикселях.
 ```js
   get borderRadius(): number;
   set borderRadius(value: number);
@@ -115,7 +115,7 @@ export class LabelSprite extends THREE.Sprite {
 По умолчанию `1`.
 
 ###  backgroundColor: Color
-Задает или возвращает цвет фона лэйбла.
+Задает или возвращает цвет фона метки.
 ```js
   get backgroundColor(): Color;
   set backgroundColor(value: Color);
@@ -132,7 +132,7 @@ export class LabelSprite extends THREE.Sprite {
 По умолчанию `Color(0, 0, 0, 1.0)`. Подробнее: [Color](../Color).
 
 ###  textPadding: THREE.Vector4Tuple
-Задает или возвращает отступ текста от границ лэйбла. Отступ задается в пикселях по порядку: слева, сверху, справа, снизу.
+Задает или возвращает отступ текста от границ метки. Отступ задается в пикселях по порядку: слева, сверху, справа, снизу.
 ```js
   get textPadding(): THREE.Vector4Tuple;
   set textPadding(value: THREE.Vector4Tuple);
@@ -142,14 +142,14 @@ export class LabelSprite extends THREE.Sprite {
 ## Методы
 
 ### dispose()
-Метод освообождает ресурсы, выделенные `LabelSprite`.
+Метод освобождает ресурсы, выделенные `LabelSprite`.
 ```js
 dispose(): void;
 ```
 
 
 ## LabelSpriteParameters {#LabelSpriteParameters}
-Параметры текстового лэйбла. Задают соответствующие свойства `LabelSprite`.
+Параметры текстовой метки. Задают соответствующие свойства `LabelSprite`.
 ```js
 export interface LabelSpriteParameters {
   text?: string | undefined;
