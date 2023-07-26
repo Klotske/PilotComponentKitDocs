@@ -170,6 +170,10 @@
   align-content: center;
   flex-direction: column;
 }
-h1{color: #95a37b;}
-h2{color: #95a37b;}
-h3{color: #95a37b;}
+h1{color: #95a37b;
+	margin: 2em 0 .67em;}
+h2{color: #95a37b;
+	margin: 2em 0 .67em;}
+h3{color: #95a37b;
+	margin: 2em 0 .67em;}
+h4{margin: 2em 0 .67em;}

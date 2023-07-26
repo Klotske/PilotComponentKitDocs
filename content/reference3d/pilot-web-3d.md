@@ -9,7 +9,7 @@ weight: 1
 
 ## Методы
 
-#### Initializer()
+### Initializer()
 
 Метод для инициализации компонента **PilotWeb3D**. Все методы работы с компонентом следует использовать после вызова этого метода.
 
@@ -31,7 +31,7 @@ var myCallback = function() {
 PilotWeb3D.Initializer(options, myCallback);
 ```
 
-#### CreateViewer()
+### CreateViewer()
 
 Создает экземпляр компонента для просмотра документов.
 
