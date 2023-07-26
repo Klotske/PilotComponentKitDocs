@@ -17,25 +17,31 @@ container: HTMLElement;
 ## Методы
 
 ### addClass()
+Добавляет класс к элементу.
 ```js
 addClass(cssClass: string): void
 ```
-Добавить класс `css`
+где:
+`cssClass` -- имя класса.
 
 ### removeClass()
+Удаляет класс у элемента.
 ```js
 removeClass(cssClass: string): void
 ```
-Удалить класс `css`
+где:
+`cssClass` -- имя класса.
 
 ### getId()
+Получить идентификатор контрола.
 ```js
 getId(): string
 ```
-Получить идентификатор контрола.
 
 ### setToolTip()
+Задать подсказку для контрола
 ```js
  setToolTip(tooltipText: string): void
 ```
-Задать подсказку для контрола
+где:
+`tooltipText` -- текст для всплывающей подсказки.
