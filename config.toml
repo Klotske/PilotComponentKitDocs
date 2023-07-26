@@ -116,7 +116,7 @@ enableRobotsTXT = false
   # Может использоваться, если вы хотите определить лицензию по умолчанию для своего контента.
   [params.geekdocContentLicense]
     name = "Лицензионное соглашение АСКОН"
-    link = "https://pilotems.com/source/documents/2014-license-pilotems.pdf?ysclid=l7lws4f9ep983743422"
+    link = "https://pilot.ascon.ru/license-pilotems.pdf"
 	
 #PAGE CONFIGURATION
 

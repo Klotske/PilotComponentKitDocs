@@ -21,7 +21,7 @@ resources:
 С помощью этих компонентов решаются задачи отображения в браузерах информационных моделей (BIM) и документов, навигации по ним, работы с данными трёхмерных моделей,
 в том числе скрытия элементов модели, изменения их цвета, получения свойств, выполнения измерений. 
 
-#### Информационные модели
+### Информационные модели
 
 Для загрузки моделей в компоненты **PilotWeb3D** и **PilotBimDataProvider** используются файлы **.bm**, формируемые сервисом **Pilot-BIM-Server**. Файлы **.bm** -- 
 это контейнер данных информационной модели.
@@ -30,7 +30,7 @@ resources:
 <iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/web-platform-v9kotm?embed=1&file=index.html&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=light&view=preview"></iframe>
 
 
-#### Документы
+### Документы
 
 Для загрузки документов используйте файлы в формате **.xps** (Open XML Paper Specification, ECMA-388).
 
