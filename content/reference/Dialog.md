@@ -88,7 +88,7 @@ setDialogElementClassNames(value: ElementClass): Dialog
 setResizable(value: boolean): Dialog
 ```
 где:\
-`value` - флаг для назначения включения/выключения возможности изменения ширины/высоты.
+`value` - флаг для назначения включения и выключения возможности изменения размеров окна.
 
 ### setWindowOptions()
 Устанавливает настройки для измнения положения и ширины/высоты диалога, возвращает класс Dialog. Без этой опции диалог не будет сохранять свои изменённые свойства. Подробнее: [IWindowStateOptions](../WindowStater#IWindowStateOptions).
