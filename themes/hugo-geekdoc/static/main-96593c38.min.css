@@ -44,20 +44,20 @@ template{display:none}[hidden]{display:none}
 .svg-sprite{position:absolute;width:0;height:0;overflow:hidden}
 .table-wrap{overflow:auto}
 .badge-placeholder{display:inline-block;min-width:4rem}
-@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans-Bold.woff2") format("woff2"),
-url("fonts/LiberationSans-Bold.woff") format("woff");font-weight:bold;font-style:normal;font-display:swap}
-@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans-BoldItalic.woff2") format("woff2"),
-url("fonts/LiberationSans-BoldItalic.woff") format("woff");font-weight:bold;font-style:italic;font-display:swap}
-@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans-Italic.woff2") format("woff2"),
-url("fonts/LiberationSans-Italic.woff") format("woff");font-weight:normal;font-style:italic;font-display:swap}
-@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans.woff2") format("woff2"),
-url("fonts/LiberationSans.woff") format("woff");font-weight:normal;font-style:normal;font-display:swap}
-@font-face{font-family:"Liberation Mono";src:url("fonts/LiberationMono.woff2") format("woff2"),
-url("fonts/LiberationMono.woff") format("woff");font-weight:normal;font-style:normal;font-display:swap}
-@font-face{font-family:"Metropolis";src:url("fonts/Metropolis.woff2") format("woff2"),
-url("fonts/Metropolis.woff") format("woff");font-weight:normal;font-style:normal;font-display:swap}
-@font-face{font-family:"GeekdocIcons";src:url("fonts/GeekdocIcons.woff2") format("woff2"),
-url("fonts/GeekdocIcons.woff") format("woff");font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans-Bold.woff2") format("woff2"),url("fonts/LiberationSans-Bold.woff") format("woff");
+font-weight:bold;font-style:normal;font-display:swap}
+@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans-BoldItalic.woff2") format("woff2"),url("fonts/LiberationSans-BoldItalic.woff") format("woff");
+font-weight:bold;font-style:italic;font-display:swap}
+@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans-Italic.woff2") format("woff2"),url("fonts/LiberationSans-Italic.woff") format("woff");
+font-weight:normal;font-style:italic;font-display:swap}
+@font-face{font-family:"Liberation Sans";src:url("fonts/LiberationSans.woff2") format("woff2"),url("fonts/LiberationSans.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"Liberation Mono";src:url("fonts/LiberationMono.woff2") format("woff2"),url("fonts/LiberationMono.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"Metropolis";src:url("fonts/Metropolis.woff2") format("woff2"),url("fonts/Metropolis.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"GeekdocIcons";src:url("fonts/GeekdocIcons.woff2") format("woff2"),url("fonts/GeekdocIcons.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
 body{font-family:"Liberation Sans",sans-serif}
 code,
 .gdoc-error__title{font-family:"Liberation Mono",monospace}
@@ -290,7 +290,7 @@ code,
 			--code-accent-color: #262b2f;--code-accent-color-lite: #2b3035;--code-font-color: rgb(185, 185, 185);--code-copy-background: rgb(52, 58, 64);
 			--code-copy-font-color: #6b7784;--code-copy-border-color: #6b7784;--code-copy-success-color: rgba(0, 200, 83, 0.45)
 			}
-			:root[color-theme=dark] .dark-mode-dim .gdoc-markdown img{filter:brightness(0.75) grayscale(0.2)}
+			:root[color-theme=dark] .dark-mode-dim .gdoc-markdown img{filter:none}
 			:root[color-theme=dark] .gdoc-markdown .gdoc-hint,:root[color-theme=dark] .gdoc-markdown .gdoc-props__tag,
 			:root[color-theme=dark] .gdoc-markdown .admonitionblock{filter:saturate(2.5) brightness(0.85)}
 			:root[color-theme=dark] .gdoc-markdown .gdoc-hint__title,
@@ -441,7 +441,7 @@ code,
 				svg.gdoc-icon.gdoc_keyboard_arrow_down{display:block}
 				.gdoc-nav__toggle:checked~label 
 				svg.gdoc-icon.gdoc_keyboard_arrow_left{display:none}.gdoc-nav--main>ul>li>span,.gdoc-nav--main>ul>li>span>a,.gdoc-nav--main>ul>li>label,
-				.gdoc-nav--main>ul>li>label>a{font-weight:bold}.gdoc-nav__entry,.gdoc-search__entry,.gdoc-language__entry{flex:1;color:var(--body-font-color)}
+				.gdoc-nav--main>ul>li>label>a{font-weight:normal}.gdoc-nav__entry,.gdoc-search__entry,.gdoc-language__entry{flex:1;color:var(--body-font-color)}
 				.gdoc-nav__entry:hover,
 				.gdoc-nav__entry.is-active,.gdoc-search__entry:hover,.gdoc-search__entry.is-active,.gdoc-language__entry:hover,
 				.gdoc-language__entry.is-active{text-decoration:underline;-webkit-text-decoration-style:dashed !important;text-decoration-style:dashed !important}

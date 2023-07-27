@@ -152,6 +152,9 @@
     --footer-font-color: #ffffff;
     --footer-link-color: #ffffff;
     --footer-link-color-visited: #ffffff;
+	
+	
+}
   }
 }
 
@@ -177,3 +180,27 @@ h2{color: #95a37b;
 h3{color: #95a37b;
 	margin: 2em 0 .67em;}
 h4{margin: 2em 0 .67em;}
+
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-Bold.woff2") format("woff2"),url("fonts/Roboto-Bold.woff") format("woff");
+font-weight:bold;font-style:normal;font-display:swap}
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-BoldItalic.woff2") format("woff2"),url("fonts/Roboto-BoldItalic.woff") format("woff");
+font-weight:bold;font-style:italic;font-display:swap}
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-Italic.woff2") format("woff2"),url("fonts/Roboto-Italic.woff") format("woff");
+font-weight:normal;font-style:italic;font-display:swap}
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-Medium.woff2") format("woff2"),url("fonts/Roboto-Medium.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-Light.woff2") format("woff2"),url("fonts/Roboto-Light.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-Regular.woff2") format("woff2"),url("fonts/Roboto-Regular.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+/*
+@font-face{font-family:"Roboto";src:url("fonts/Roboto-Thin.woff2") format("woff2"),url("fonts/Roboto-Thin.woff") format("woff");
+font-weight:normal;font-style:normal;font-display:swap}
+*/
+body {
+  font-family: "Roboto";
+}
+
+.gdoc-nav {
+  font-size: 1rem;   /* буквы меню того же размера, что и основной текст*/
+}
