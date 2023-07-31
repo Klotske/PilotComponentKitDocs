@@ -5,6 +5,7 @@ draft: false
 ---
 
 **Button** -- это класс для элемента управления **Кнопка**. Класс расширяет возможности базового класса `Control`.
+Подробнее: <a href="../Control/">Control</a>.
 
 ## Свойства
 
@@ -56,3 +57,11 @@ setIcon(iconClassName: string): void;
 ```
 где:
 `iconClassName` - имя класса `CSS` стиля, где содержится иконка.
+
+### setFromSvgTemlate()
+Метод позволяет установить иконку кнопки в виде svg
+```js
+setFromSvgTemlate(template: string): void
+```
+где:
+`template` - svg элемент иконки в виде строки.
