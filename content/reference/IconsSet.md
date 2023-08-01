@@ -9,28 +9,28 @@ draft: false
 ## Список доступных иконок:
 ```js
  export namespace Viewer3DIcons {
-  export const VIEWER_SETTINGS_ICON: string = require('!!svg-inline-loader!../assets/svg/settings.svg');
-  export const VIEWER_MODEL_BROWSER_ICON: string = require('!!svg-inline-loader!../assets/svg/model_browser.svg');
-  export const VIEWER_FULL_SCREEN_ICON: string = require('!!svg-inline-loader!../assets/svg/full_screen.svg');
-  export const VIEWER_COLLAPSE_ICON: string = require('!!svg-inline-loader!../assets/svg/collapse.svg');
-  export const VIEWER_ELEMENT_PROPERTIES_ICON: string = require('!!svg-inline-loader!../assets/svg/element_properties.svg');
-  export const VIEWER_ADD_CLIPPING_PLANE_ICON: string = require('!!svg-inline-loader!../assets/svg/clipping_plane_opt.svg');
-  export const VIEWER_CLIPPING_FLIP_ICON: string = require('!!svg-inline-loader!../assets/svg/clipping_flip.svg');
-  export const VIEWER_DELETE_CLIPPING_PLANE_ICON: string = require('!!svg-inline-loader!../assets/svg/clipping_delete.svg');
-  export const VIEWER_CLIPPING_CUBE_ICON: string = require('!!svg-inline-loader!../assets/svg/clipping_cube.svg');
-  export const VIEWER_DISABLED_DELETE_CLIPPING_PLANE_ICON: string = require('!!svg-inline-loader!../assets/svg/disabled_clipping_delete.svg');
-  export const VIEWER_DISABLED_CLIPPING_FLIP_ICON: string = require('!!svg-inline-loader!../assets/svg/disabled_clipping_flip.svg');
+  export const VIEWER_SETTINGS_ICON: string;
+  export const VIEWER_MODEL_BROWSER_ICON: string;
+  export const VIEWER_FULL_SCREEN_ICON: string;
+  export const VIEWER_COLLAPSE_ICON: string;
+  export const VIEWER_ELEMENT_PROPERTIES_ICON: string;
+  export const VIEWER_ADD_CLIPPING_PLANE_ICON: string;
+  export const VIEWER_CLIPPING_FLIP_ICON: string;
+  export const VIEWER_DELETE_CLIPPING_PLANE_ICON: string;
+  export const VIEWER_CLIPPING_CUBE_ICON: string;
+  export const VIEWER_DISABLED_DELETE_CLIPPING_PLANE_ICON: string;
+  export const VIEWER_DISABLED_CLIPPING_FLIP_ICON: string;
 }
 
 export namespace ViewerGeneralIcons {
-  export const ZOOM_IN: string = require('!!svg-inline-loader!../assets/svg/zoom_in.svg');
-  export const ZOOM_OUT: string = require('!!svg-inline-loader!../assets/svg/zoom_out.svg');
-  export const CLOSE: string = require('!!svg-inline-loader!../assets/svg/close.svg');
-  export const STRETCH_WINDOW: string = require('!!svg-inline-loader!../assets/svg/stretch_window.svg');
-  export const EXPAND_TREE: string = require('!!svg-inline-loader!../assets/svg/expand_more.svg');
-  export const COLLAPSE_TREE: string = require('!!svg-inline-loader!../assets/svg/expand_less.svg');
-  export const ARROW_DROP_DOWN: string = require('!!svg-inline-loader!../assets/svg/arrow_drop_down.svg');
-  export const ARROW_DROP_RIGHT: string = require('!!svg-inline-loader!../assets/svg/trailing_icon.svg');
+  export const ZOOM_IN: string;
+  export const ZOOM_OUT: string;
+  export const CLOSE: string;
+  export const STRETCH_WINDOW: string;
+  export const EXPAND_TREE: string;
+  export const COLLAPSE_TREE: string;
+  export const ARROW_DROP_DOWN: string;
+  export const ARROW_DROP_RIGHT: string;
 }
 ```
 
