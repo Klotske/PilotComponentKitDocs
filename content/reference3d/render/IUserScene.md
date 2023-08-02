@@ -14,6 +14,8 @@ export interface IUserScene {
   get needsRedraw(): boolean;
   get intersectionChecker(): IModelIntersectionChecker | null;
   get threeObjectRepresentation(): THREE.Object3D | null;
+  set clippingEnable(value: boolean);
+  get clippingEnable(): boolean;
 
   addRange(objects: THREE.Object3D[]): void;
   updateRange(objects: TPair<THREE.Object3D, UpdateType>[]): void;
@@ -65,6 +67,21 @@ readonly name: string;
   get threeObjectRepresentation(): THREE.Object3D | null;
 ```
 Возвращает [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D), если сцена поддерживает такое представление. В противном случае возвращается `null`.
+
+###  get clippingEnable()
+Показывает влияют ли секущие плоскости на отрисовку и проверку пересечений на данной сцене.
+```js
+  get clippingEnable(): boolean;
+```
+Возвращает `true`, если секущие плоскости влияют на отрисовку и проверку пересечений на данной сцене.
+
+###  set clippingEnable()
+Включает или выключает влияние секущих плоскостей на отрисовку и проверку пересечений на данной сцене.
+```js
+  set clippingEnable(value: boolean);
+```
+где:
+`value` -- параметр. Если `value` равен `true`, то объекты на сцене обрезаются секущими плоскостями, а также при проверке пересечений на данной сцене не учитываются отсечённые объекты. 
 
 ## Методы
 
