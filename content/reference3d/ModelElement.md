@@ -51,9 +51,16 @@ get children(): ModelElement[];
 get hasGeometry(): boolean;
 ```
 
-### boundingBoxCenter
-Получает центр bounding box элемента.
+### viewObject
+Получает геометрию элемента, если она есть. В противном случае возвращает `undefined`.
 ```js
-get boundingBoxCenter(): Point3;
+get viewObject(): ViewObject | undefined;
+```
+Подробнее: <a href="/reference3d/render/ViewObject">ViewObject</a>.
+
+### boundingBoxCenter
+Получает центр bounding box элемента, если у элемента есть геометрия. В противном случает возвращает `null`.
+```js
+get boundingBoxCenter(): Point3 | null;
 ```
 Подробнее: <a href="/reference3d/navigation/Point3">Point3</a>.

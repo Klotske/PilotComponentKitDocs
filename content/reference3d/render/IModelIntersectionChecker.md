@@ -12,8 +12,8 @@ export interface IModelIntersectionChecker {
   get boundingBox(): THREE.Box3;
 
   getIntersectionPoint(): THREE.Intersection<THREE.Object3D> | undefined;
-  getIntersectionByRay(ray: THREE.Ray): THREE.Intersection<THREE.Object3D> | undefined;
-  getIntersectionIDByRay(ray: THREE.Ray): { modelId: string, guid: string } | undefined;
+  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
   getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
   getIntersectionIDByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
   getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, isClippingEnable: boolean = true): { modelId: string; guid: string; }[] | undefined;
@@ -48,17 +48,19 @@ export interface IModelIntersectionChecker {
 ###  getIntersectionByRay()
 Метод возвращает ближайшее пересечение объекта модели с лучом.
 ```js
-  getIntersectionByRay(ray: THREE.Ray): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
 ```
 где: `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+`camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByRay()
 Метод возвращает `modelId` и `entityGuid` ближайшего объекта модели пересекающегося с лучом.
 ```js
-  getIntersectionIDByRay(ray: THREE.Ray): { modelId: string, guid: string } | undefined;
+  getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
 ```
 где: `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+`camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionByNdcPt()

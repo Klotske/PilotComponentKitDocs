@@ -35,6 +35,8 @@ export class Color {
     array[offset + 3] = this.a;
     return array;
   }
+
+  clone(): Color;
 }
 ```
 ## Конструктор
@@ -86,4 +88,10 @@ export class Color {
 Метод возвращает значение прозрачности.
 ```js
   alpha(): number;
+```
+
+### clone()
+Метод возвращает копию текущего объекта.
+```js
+  clone(): Color;
 ```

@@ -15,6 +15,8 @@ export interface IRenderViewer3D {
   removeObjectFromScene(iObj: THREE.Object3D): Promise<void>;
   setClipping(planes: THREE.Plane[], sceneID?: string): void;
   getScenes(): IUserScene[];
+  addScene(name: string, isClippable: boolean): IUserScene;
+  removeScene(scene: IUserScene): void;
 }
 ```
 
@@ -72,3 +74,20 @@ setActiveClipPlaneIndices(indices: number[]): void;
   getScenes(): IUserScene[];
 ```
 Возвращает список сцен. Подробнее: [IUserScene](../IUserScene).
+
+###  addScene()
+Метод добавляет новую сцену для отрисовки.
+```js
+  addScene(name: string, isClippable: boolean): IUserScene;
+```
+где:\
+`name` -- идентификатор новой сцены.\
+`isClippable` -- параметр, указывающий влияют ли секущие плоскости на отрисовку этой сцены. Если `false`, то секущие плоскости не применяются к объектам на этой сцене и проверка пересечений с объектами на этой сцене также не учитывает секущие плоскости.
+Возвращает добавленную сцену. Подробнее: [IUserScene](../IUserScene).
+
+###  removeScene()
+Метод удаляет сцену из списка используемых для отрисовки сцен.
+```js
+  removeScene(scene: IUserScene): void;
+```
+где `scene` -- сцена для удаления. Подробнее: [IUserScene](../IUserScene).
