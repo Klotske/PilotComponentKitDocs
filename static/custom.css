@@ -1,6 +1,7 @@
 :root[color-theme="light"] {
   --header-background: #95a37b;
   --header-font-color: #ffffff;
+  
 
   --body-background: #ffffff;
   --body-font-color: #343a40;
@@ -204,3 +205,5 @@ body {
 .gdoc-nav {
   font-size: 1rem;   /* буквы меню того же размера, что и основной текст*/
 }
+
+.gdoc-header {border-bottom: .3em solid #727a64;} /* подчёркивание шапки*/
