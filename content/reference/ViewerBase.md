@@ -8,7 +8,7 @@ draft: false
 
 ## Свойства
 
-### container
+### container {#container}
 ```js
 readonly container: HTMLElement;
 ```
@@ -33,7 +33,7 @@ abstract events: IEventsDispatcher;
 Объект управления событиями вьювера. Подробнее: [IEventsDispatcher](../EventsDispatcher).
 
 ### rootContainer  {#rootContainer}
-Получает контейнер-обёртку вьювера.
+Получает контейнер-обёртку вьювера. Обёртка для [container](#container)
 ```js
 get rootContainer(): HTMLElement;
 ```

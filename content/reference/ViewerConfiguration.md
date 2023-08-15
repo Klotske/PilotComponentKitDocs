@@ -37,28 +37,13 @@ direction: string;
 ```js
 content: string;
 ```
-Управляет расположением кнопок на панели инструментов.
-
-```js
-export enum ToolbarContent {
-  CENTER = 'ascn-toolbar-content-center',
-  START = 'ascn-toolbar-content-start',
-  END = 'ascn-toolbar-content-end'
-}
-```
+Управляет расположением кнопок на панели инструментов. Подробнее: [ToolbarContent](#ToolbarContent).
 
 ### theme
 ```js
 theme: string;
 ```
-Управляет темой вьювера и его компонентов.
-
-```js
-export enum SettingsTheme {
-  LIGHT_THEME = 'ascn-light',
-  DARK_THEME = 'ascn-dark',
-}
-```
+Управляет темой вьювера и его компонентов. Подробнее: [SettingsTheme](#SettingsTheme).
 
 
 ### settingsPrefix
@@ -75,6 +60,24 @@ export enum ToolbarDirection {
   TOP_FLUENT = 'ascn-toolbar-top', // Не фиксированный сверху
   BOTTOM_FIXED = 'ascn-toolbar-fixed-bottom', // Фиксированный снизу
   BOTTOM_FLUENT = 'ascn-toolbar-bottom', // Не фиксированный снизу
+}
+```
+
+## ToolbarContent {#ToolbarContent}
+**ToolbarContent**  - возможные позиции содержимого в панели инструментов.
+```js
+export enum ToolbarContent {
+  CENTER = 'ascn-toolbar-content-center', // По центру
+  START = 'ascn-toolbar-content-start', // Прижато к левому краю
+  END = 'ascn-toolbar-content-end' // Прижато к правому краю
+}
+```
+## SettingsTheme {#SettingsTheme}
+**SettingsTheme**  - возможные варианты темы вьювера.
+```js
+export enum SettingsTheme {
+  LIGHT_THEME = 'ascn-light', // Тёмная тема
+  DARK_THEME = 'ascn-dark', // Светлая тема
 }
 ```
 
