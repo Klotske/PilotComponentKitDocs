@@ -18,7 +18,7 @@ HTML элемент хранящий вьювер.
 ```js
 readonly extensionsLoader: ExtensionLoader;
 ```
-Объект управления расширениями.
+Объект управления расширениями. Подробнее: [ExtensionLoader](../ExtensionLoader).
 
 ### settings
 ```js
@@ -47,7 +47,7 @@ getConfiguration(): ViewerConfiguration;
 ```
 
 ### finish()
-Выгружает все расширения вьювера.
+Освобождает выделенные ресурсы, в том числе выгружает загруженные расширения.
 ```js
 finish(): void;
 ```

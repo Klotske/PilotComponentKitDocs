@@ -4,7 +4,7 @@ date: 2023-08-14
 draft: false
 ---
 
-**ISettingsStorage** - интерфейс управления настройками.
+**ISettingsStorage** - интерфейс управления настройками в localStorage.
 
 ```js
 export interface ISettingsStorage {
@@ -43,7 +43,7 @@ removeItem(key: string): void;
 `key` -- ключ для удаления настройки.
 
 ### setItem()
-Устанавливает новое или перезаписывает существуещее значение настрйоки
+Устанавливает новое или перезаписывает существуещее значение
 ```js
 setItem<T>(key: string, value: T): void;
 ```

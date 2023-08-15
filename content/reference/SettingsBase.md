@@ -4,12 +4,12 @@ date: 2023-08-14T12:52:00+03:00
 draft: false
 ---
 
-**SettingsBase** -- класс, предоставляющий функционал работы с настройками. Настройки сохраняются локально.
+**SettingsBase** -- класс, управляющий настройками вьювера (сохранение, получение). Настройки сохраняются локально в localStorage с указанным префиксом. Префикс назначается путём реализации метода getKeyWithPrefix в классах наследниках.
 
-**ISettings** - интерфейс управления настройками во вьюверах.
+**ISettings** - интерфейс управления настройками через вьювер, использует ISettingsStorage. Подробнее: [ISettingsStorage](../SettingsLocalStorage)
 
 ```js
-export interface IEventsDispatcher {
+export interface ISettings {
   changeSetting<T>(name: string, value: T, notify?: boolean, providedData?: any): void;
   getSettingValue<T>(name: string): T;
 }

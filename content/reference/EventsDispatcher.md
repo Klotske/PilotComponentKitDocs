@@ -4,7 +4,7 @@ draft: false
 weight: 10
 ---
 
-**EventDisptcher** - интерфейс управления подписками на события.
+**IEventsDispatcher** - интерфейс управления подписками на события.
 
 ```js
 export interface IEventsDispatcher {

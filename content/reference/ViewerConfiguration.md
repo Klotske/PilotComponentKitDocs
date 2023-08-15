@@ -24,22 +24,13 @@ class ViewerConfiguration {
 ```js
 appearance: ViewerSettings;
 ```
-Свойство для изменения внешнего вида просмотрщика.
+Параметры внешнего вида вьювера.  Подробнее: [ViewerSettings](#ViewerSettings).
 
 ### direction
 ```js
 direction: string;
 ```
-Управляет положением панели инструментов.
-
-```js
-export enum ToolbarDirection {
-  TOP_FIXED = 'ascn-toolbar-fixed-top',
-  TOP_FLUENT = 'ascn-toolbar-top',
-  BOTTOM_FIXED = 'ascn-toolbar-fixed-bottom',
-  BOTTOM_FLUENT = 'ascn-toolbar-bottom',
-}
-```
+Управляет положением панели инструментов. Подробнее: [ToolbarDirection](#ToolbarDirection).
 
 
 ### content
@@ -76,6 +67,20 @@ settingsPrefix: string;
 ```
 Задает префикс для настроек, хранящихся в браузере клиента.
 
+## ToolbarDirection {#ToolbarDirection}
+**ToolbarDirection**  - возможные позиции панели инструментов.
+```js
+export enum ToolbarDirection {
+  TOP_FIXED = 'ascn-toolbar-fixed-top', // Фиксированный сверху
+  TOP_FLUENT = 'ascn-toolbar-top', // Не фиксированный сверху
+  BOTTOM_FIXED = 'ascn-toolbar-fixed-bottom', // Фиксированный снизу
+  BOTTOM_FLUENT = 'ascn-toolbar-bottom', // Не фиксированный снизу
+}
+```
 
-
+## ViewerSettings {#ViewerSettings}
+**ViewerSettings**  - настройки, ключами свойств которого являются строки, а значениями свойств является любой тип.
+```js
+type ViewerSettings = Record<string, any>;
+```
 
