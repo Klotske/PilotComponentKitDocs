@@ -22,7 +22,7 @@ export interface ISettings {
 ## Методы
 
 ### changeSetting()
-Изменить настройку вьювера
+Метод изменяющий настройку вьювера
 ```js
 changeSetting<T>(name: string, value: T, notify?: boolean, providedData?: any): void;
 ```
@@ -34,7 +34,7 @@ changeSetting<T>(name: string, value: T, notify?: boolean, providedData?: any): 
 `providedData` -- дополнительные данные, если необходимо получить подписчикам _eventDispatcher.
 
 ### getSettingValue()
-Получить настройку вьювера
+Метод возвращающий настройку вьювера
 ```js
 getSettingValue<T>(name: string): T;
 ```
@@ -43,7 +43,7 @@ getSettingValue<T>(name: string): T;
 `name` -- имя настройки.
 
 ### getKeyWithPrefix()
-Получить настройку вьювера с необходимым префиксом. Реализуется наследниками SettingsBase.
+Метод возвращающий ключ настройки с префиксом. Реализуется наследниками SettingsBase.
 ```js
 abstract getKeyWithPrefix(key: string): string;
 ```
