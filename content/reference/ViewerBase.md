@@ -33,7 +33,7 @@ abstract events: IEventsDispatcher;
 Объект управления событиями вьювера. Подробнее: [IEventsDispatcher](../EventsDispatcher).
 
 ### rootContainer  {#rootContainer}
-Получает контейнер-обёртку вьювера. Обёртка для [container](#container)
+Свойство для получения контейнера-обёртки вьювера. Обёртка для [container](#container)
 ```js
 get rootContainer(): HTMLElement;
 ```
@@ -41,19 +41,19 @@ get rootContainer(): HTMLElement;
 ## Методы
 
 ### getConfiguration()
-Метод возвращающий конфигурацию вьювера. Подробнее: [ViewerConfiguration](../ViewerConfiguration).
+Метод возвращает конфигурацию вьювера. Подробнее: [ViewerConfiguration](../ViewerConfiguration).
 ```js
 getConfiguration(): ViewerConfiguration;
 ```
 
 ### finish()
-Метод освобождающий выделенные ресурсы, в том числе выгружает загруженные расширения.
+Метод освобождает выделенные ресурсы, в том числе выгружает загруженные расширения.
 ```js
 finish(): void;
 ```
 
 ### setThemeFromSettings()
-Метод устанавливающий тему вьювера и его компонентов из настроек Подробнее: [ISettings](../SettingsBase). Если настройки не установлены берётся переданная в конструкторе конфигурация, если конфигурация не задана берутся значения по умолчанию
+Метод устанавливает тему вьювера и его компонентов из настроек Подробнее: [ISettings](../SettingsBase). Если настройки не установлены берётся переданная в конструкторе конфигурация, если конфигурация не задана берутся значения по умолчанию
 ```js
 protected setThemeFromSettings(): void;
 ```

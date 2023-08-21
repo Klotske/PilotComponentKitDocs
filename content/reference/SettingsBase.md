@@ -34,7 +34,7 @@ changeSetting<T>(name: string, value: T, notify?: boolean, providedData?: any): 
 `providedData` -- дополнительные данные, если необходимо получить подписчикам _eventDispatcher.
 
 ### getSettingValue()
-Метод возвращающий настройку вьювера
+Метод возвращает настройку вьювера
 ```js
 getSettingValue<T>(name: string): T;
 ```
@@ -43,7 +43,7 @@ getSettingValue<T>(name: string): T;
 `name` -- имя настройки.
 
 ### getKeyWithPrefix()
-Метод возвращающий ключ настройки с префиксом. Реализуется наследниками SettingsBase.
+Метод возвращает ключ настройки с префиксом. Реализуется наследниками SettingsBase.
 ```js
 abstract getKeyWithPrefix(key: string): string;
 ```
