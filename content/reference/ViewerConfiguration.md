@@ -52,6 +52,37 @@ settingsPrefix: string;
 ```
 Задает префикс для настроек, хранящихся в браузере клиента.
 
+## Методы
+
+### mergeConfigurationAndSettings()
+Метод объединяет переданную конфигурацию и настройки, заменяя значения из конфигурации значениями из настроек.
+```js
+public mergeConfigurationAndSettings(configuration: ViewerSettings, settings: ISettings): void;
+```
+где:
+
+`configuration` -- конфигурация. Подробнее: [ViewerSettings](#ViewerSettings).\
+`settings` -- значение настройки. Подробнее: [ISettings](../ISettings).
+
+### createConfiguration()
+Метод объединяет объединяет свойства из переданных параметров в объект origin. Origin подменяется свойствами из configuration, если configuration не был передан или был передан пустой объект, то configuration присваивается origin по ссылке.
+```js
+public createConfiguration(configuration: ViewerSettings, origin: ViewerSettings): void;
+```
+где:
+
+`configuration` -- конфигурация. Подробнее: [ViewerSettings](#ViewerSettings).\
+`origin` -- значение настройки. Подробнее: [ViewerSettings](#ViewerSettings).
+
+### changeTheme()
+Метод меняет тему вьювера.
+```js
+public changeTheme(newTheme: string): void;
+```
+где:
+
+`newTheme` -- значение новой темы из SettingsTheme. Подробнее: [SettingsTheme](#SettingsTheme).
+
 ## ToolbarDirection {#ToolbarDirection}
 **ToolbarDirection**  - возможные позиции панели инструментов.
 ```js
