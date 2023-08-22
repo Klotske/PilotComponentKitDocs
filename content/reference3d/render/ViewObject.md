@@ -11,7 +11,7 @@ export abstract class ViewObject extends THREE.Object3D {
   readonly entityGuid: string;
   readonly modelGuid: string;
 
-  constructor(entityGuid: string, modelGuid: string, color: Color);
+  constructor(entityGuid?: string, modelGuid?: string, color?: Color);
 
   abstract get mesh(): THREE.Mesh | null;
   abstract get edges(): THREE.LineSegments | null;
@@ -44,12 +44,12 @@ export abstract class ViewObject extends THREE.Object3D {
 
 ## Конструктор
 ```js
-  constructor(entityGuid: string, modelGuid: string, color: Color);
+  constructor(entityGuid?: string, modelGuid?: string, color?: Color);
 ```
-где:\
-`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Подробнее: [ModelElement.id](../../ModelElement#id).\
-`modelGuid` -- идентификатор части модели, к которой относится объект модели. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).\
-`color` -- начальный цвет объекта. Подробнее: [Color](../Color).
+где:
+`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../ModelElement#id).\
+`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).\
+`color` -- начальный цвет объекта. Опциональный параметр, если не задан, то объекту присваивается цвет по умолчанию - `new Color(1, 1, 1, 1)`. Подробнее: [Color](../Color).
 
 ## Поля
 
@@ -58,12 +58,14 @@ export abstract class ViewObject extends THREE.Object3D {
 ```js
   readonly entityGuid: string;
 ```
+Значение по умолчанию: `00000000-0000-0000-0000-000000000000`.
 
 ###  modelGuid
 Идентификатор части модели, к которой относится элемент модели, соответствующий этому `ViewObject`. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).
 ```js
   readonly entityGuid: string;
 ```
+Значение по умолчанию: `00000000-0000-0000-0000-000000000000`.
 
 ## Свойства
 
@@ -88,7 +90,8 @@ export abstract class ViewObject extends THREE.Object3D {
 ```js
 setVisible(iVal: boolean): void;
 ```
-где: `iVal` -- видимость объекта.
+где:
+`iVal` -- видимость объекта.
 
 ### isVisible()
 Метод проверяет видимость объекта на сцене.
@@ -102,7 +105,8 @@ isVisible(): boolean;
 ```js
 setHidden(iVal: boolean): void;
 ```
-где: `iVal` -- скрыт ли объект.
+где:
+`iVal` -- скрыт ли объект.
 
 ### isHidden()
 Метод проверяет видимость объекта на сцене.
@@ -116,7 +120,8 @@ isHidden(): boolean;
 ```js
 setSelected(iVal: boolean): void;
 ```
-где: `iVal` -- выбран ли объект.
+где:
+`iVal` -- выбран ли объект.
 
 ### isSelected()
 Метод проверяет селектирование объекта.
@@ -130,7 +135,8 @@ isSelected(): boolean;
 ```js
 setHovered(iVal: boolean): void;
 ```
-где: `iVal` -- активность ховера над объектом.
+где:
+`iVal` -- активность ховера над объектом.
 
 ### isHovered()
 Метод проверяет активность ховера над объектом.
@@ -144,7 +150,8 @@ isHovered(): boolean;
 ```js
 setColor(color: Color): void;
 ```
-где: `color` -- цвет объекта. Подробнее: [Color](../Color).
+где:
+`color` -- цвет объекта. Подробнее: [Color](../Color).
 
 ### resetColor()
 Сбрасывает цвет объекта на изначальный.
@@ -188,7 +195,8 @@ dispose(): void;
 ```js
 protected setHoveredForObject(iVal: boolean): void;
 ```
-где: `iVal` -- активность ховера над объектом.
+где:
+`iVal` -- активность ховера над объектом.
 
 ### protected setSelectedForObject()
 Метод описывает поведение объекта при селекте.\
@@ -196,7 +204,8 @@ protected setHoveredForObject(iVal: boolean): void;
 ```js
 protected setSelectedForObject(iVal: boolean): void;
 ```
-где: `iVal` -- значение селекта над объектом.
+где:
+`iVal` -- значение селекта над объектом.
 
 ### protected setHiddenForObject()
 Метод описывает поведение объекта при скрытии.\
@@ -204,7 +213,8 @@ protected setSelectedForObject(iVal: boolean): void;
 ```js
 protected setHiddenForObject(iVal: boolean): void;
 ```
-где: `iVal` -- видимость объекта на сцене.
+где:
+`iVal` -- видимость объекта на сцене.
 
 ### protected setVisibleForObject()
 Метод описывает поведение объекта при изменении видимости.\
@@ -212,7 +222,8 @@ protected setHiddenForObject(iVal: boolean): void;
 ```js
 protected setVisibleForObject(iVal: boolean): void;
 ```
-где: `iVal` -- видимость объекта на сцене.
+где:
+`iVal` -- видимость объекта на сцене.
 
 ### protected setColorForObject() {#setColorForObject}
 Метод описывает поведение объекта при изменении цвета.\
@@ -220,7 +231,8 @@ protected setVisibleForObject(iVal: boolean): void;
 ```js
 protected setColorForObject(color: Color): void;
 ```
-где: `color` -- цвет объекта. Подробнее: [Color](../Color).
+где:
+`color` -- цвет объекта. Подробнее: [Color](../Color).
 
 ### protected resetColorForObject()
 Метод описывает поведение объекта при сбрасывании цвета объекта на изначальный.\
@@ -234,7 +246,7 @@ protected resetColorForObject(): void;
 ```js
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
 ```
-где:\
+где:
 `updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).\
 `object` -- объект, источник обновения. По умолчанию текущий объект.
 

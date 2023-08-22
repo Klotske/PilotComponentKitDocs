@@ -48,7 +48,7 @@ export class LabelSprite extends THREE.Sprite {
 ```js
   constructor(parameters: LabelSpriteParameters);
 ```
-где:\
+где:
 `parameters`-- параметры текстовой метки. Подробнее: [LabelSpriteParameters](#LabelSpriteParameters).
 
 ## Свойства
@@ -60,7 +60,7 @@ export class LabelSprite extends THREE.Sprite {
   get sizeAttenuation(): boolean;
   set sizeAttenuation(value: boolean);
 ```
-По умолчанию `false` - размер метки не зависит от перспективы.
+По умолчанию: `false` - размер метки не зависит от перспективы.
 
 ###  text: string
 Задает или возвращает строку отображаемого текста.
@@ -77,8 +77,9 @@ export class LabelSprite extends THREE.Sprite {
   get fontFace(): string | FontFace;
   set fontFace(value: string | FontFace);
 ```
-где `fontFace` -- или строка, задающая [font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family), или объект [FontFace](https://developer.mozilla.org/en-US/docs/Web/API/FontFace), описывающий параметры шрифта.\
-По умолчанию `Roboto, sans-serif`.
+где:
+ `fontFace` -- строка задающая [font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family), или объект [FontFace](https://developer.mozilla.org/en-US/docs/Web/API/FontFace) описывающий параметры шрифта.\
+По умолчанию: `Roboto, sans-serif`.
 
 
 ###  fontSize: number
@@ -87,7 +88,7 @@ export class LabelSprite extends THREE.Sprite {
   get fontSize(): number;
   set fontSize(value: number);
 ```
-По умолчанию `12`.
+По умолчанию: `12`.
 
 
 ###  borderThickness: number
@@ -96,7 +97,7 @@ export class LabelSprite extends THREE.Sprite {
   get borderThickness(): number;
   set borderThickness(value: number);
 ```
-По умолчанию `2`.
+По умолчанию: `2`.
 
 ###  borderColor: Color
 Задает или возвращает цвет рамки метки.
@@ -104,7 +105,7 @@ export class LabelSprite extends THREE.Sprite {
   get borderColor(): Color;
   set borderColor(value: Color);
 ```
-По умолчанию `Color(0, 0, 0, 1.0)`. Подробнее: [Color](../Color).
+По умолчанию: `Color(0, 0, 0, 1.0)`. Подробнее: [Color](../Color).
 
 ###  borderRadius: number
 Задает или возвращает радиус скругления рамки метки в пикселях.
@@ -112,7 +113,7 @@ export class LabelSprite extends THREE.Sprite {
   get borderRadius(): number;
   set borderRadius(value: number);
 ```
-По умолчанию `1`.
+По умолчанию: `1`.
 
 ###  backgroundColor: Color
 Задает или возвращает цвет фона метки.
@@ -120,7 +121,7 @@ export class LabelSprite extends THREE.Sprite {
   get backgroundColor(): Color;
   set backgroundColor(value: Color);
 ```
-По умолчанию `Color(1.0, 1.0, 1.0, 1.0)`. Подробнее: [Color](../Color).
+По умолчанию: `Color(1.0, 1.0, 1.0, 1.0)`. Подробнее: [Color](../Color).
 
 
 ###  textColor: Color
@@ -129,7 +130,7 @@ export class LabelSprite extends THREE.Sprite {
   get textColor(): Color;
   set textColor(value: Color);
 ```
-По умолчанию `Color(0, 0, 0, 1.0)`. Подробнее: [Color](../Color).
+По умолчанию: `Color(0, 0, 0, 1.0)`. Подробнее: [Color](../Color).
 
 ###  textPadding: THREE.Vector4Tuple
 Задает или возвращает отступ текста от границ метки. Отступ задается в пикселях по порядку: слева, сверху, справа, снизу.
@@ -137,7 +138,7 @@ export class LabelSprite extends THREE.Sprite {
   get textPadding(): THREE.Vector4Tuple;
   set textPadding(value: THREE.Vector4Tuple);
 ```
-По умолчанию `[0, 0, 0, 0]`.
+По умолчанию: `[0, 0, 0, 0]`.
 
 ## Методы
 

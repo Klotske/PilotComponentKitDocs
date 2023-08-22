@@ -5,15 +5,14 @@ weight: 9
 ---
 
 ## IUserScene {#IUserScene}
-**IUserScene** -- интерфейс, позволяющий взаимодействовать со сценой.
+**IUserScene** -- интерфейс, позволяющий взаимодействовать со сценой. Расширяет [THREE.Scene](https://threejs.org/docs/#api/en/scenes/Scene)
 
 ```js
-export interface IUserScene {
+export interface IUserScene extends THREE.Scene {
   readonly name: string;
   get needsUpdate(): boolean;
   get needsRedraw(): boolean;
   get intersectionChecker(): IModelIntersectionChecker | null;
-  get threeObjectRepresentation(): THREE.Object3D | null;
   set clippingEnable(value: boolean);
   get clippingEnable(): boolean;
 
@@ -25,7 +24,7 @@ export interface IUserScene {
   setClipping(planes: THREE.Plane[]): void;
   manageScene(context?: IRenderOperationContext): boolean;
   render(context: IRenderOperationContext): void;
-  clear(): void;
+  clear(): this;
 }
 ```
 
@@ -59,14 +58,6 @@ readonly name: string;
   get intersectionChecker(): IModelIntersectionChecker | null;
 ```
 Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
-
-###  get threeObjectRepresentation()
-Представление сцены в виде иерархии [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D) объектов.\
-Используется для построения визуального дерева, не используется в рендере.
-```js
-  get threeObjectRepresentation(): THREE.Object3D | null;
-```
-Возвращает [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D), если сцена поддерживает такое представление. В противном случае возвращается `null`.
 
 ###  get clippingEnable()
 Показывает влияют ли секущие плоскости на отрисовку и проверку пересечений на данной сцене.
@@ -156,6 +147,6 @@ render(context: IRenderOperationContext): void;
 ###  clear()
 Метод удаляет все объекты со сцены, за исключением объектов [THREE.Light](https://threejs.org/docs/?q=Light#api/en/lights/Light), добавляемых по умолчанию.
 ```js
-clear(): void;
+clear(): this;
 ```
 

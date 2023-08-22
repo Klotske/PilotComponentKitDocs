@@ -66,7 +66,7 @@ setAspectRatio(width: number, heigth: number): boolean;
 ```js
 rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
 ```
-где:\
+где:
 `movement` -- смещение в экранных координатах.\
 `rotationCenter` -- точка, относительно которой осуществляется вращение камеры.
 
@@ -75,7 +75,7 @@ rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
 ```js
 translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
 ```
-где:\
+где:
 `startNdcPos` -- начальное положение в Normalized Device Coordinates (NDC пространство).\
 `endNdcPos` -- конечное положение в Normalized Device Coordinates (NDC пространство).\
 `viewCenter` -- точка, относительно которой осуществляется смещение камеры.
@@ -85,7 +85,7 @@ translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THRE
 ```js
 spin(movement: THREE.Vector2): void;
 ```
-где:\
+где:
 `movement` -- смещение в экранных координатах.
 
 ###  orientateCamera()
@@ -93,7 +93,7 @@ spin(movement: THREE.Vector2): void;
 ```js
 orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
-где:\
+где:
 `iOrientation` -- конечная ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при изменении ориентации, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
 
@@ -102,7 +102,7 @@ orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): 
 ```js
 zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
 ```
-где:\
+где:
 `deltaSign` -- дистанция приближения.\
 `point` -- точка приближения.
 
@@ -111,7 +111,7 @@ zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
 ```js
 zoomToFit(boundingBox: THREE.Box3, iOrientation?: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
-где:\
+где:
 `boundingBox` -- ограничивающий объем, относительно которого центрируется камера. Подробнее: [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).\
 `iOrientation` -- конечная ориентация камеры. По умолчанию сохраняется текущая ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
@@ -128,7 +128,7 @@ getNavigationMode(): CameraNavigationMode;
 ```js
 setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: number): void;
 ```
-где:\
+где:
 `mode` -- тип навигации камеры. Подробнее: [CameraNavigationMode](../CameraNavigationMode).\
 `isEnable` -- активность.\
 `duration` -- продолжительность навигации в миллисекундах. Параметр применяется только если `isEnable == true`.

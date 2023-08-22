@@ -24,7 +24,7 @@ export interface ElementClass {
 ```js
   constructor(id: string, panelToAttach: HTMLElement);
 ```
-где:\
+где:
 `id`-- идентификатор диалога.\
 `panelToAttach` -- элемент на странице к которому будет прикреплено диалоговое окно.
 
@@ -55,7 +55,7 @@ get resizable(): boolean;
 ```js
 setDialogContent(value: HTMLElement): Dialog
 ```
-где:\
+где:
 `value` - HTML представление элемента.
 
 ### setHeader()
@@ -63,7 +63,7 @@ setDialogContent(value: HTMLElement): Dialog
 ```js
 setHeader(value: HTMLElement): Dialog
 ```
-где:\
+где:
 `value` - HTML представление элемента.
 
 ### setFooter()
@@ -71,7 +71,7 @@ setHeader(value: HTMLElement): Dialog
 ```js
 setFooter(value: HTMLElement): Dialog
 ```
-где:\
+где:
 `value` - HTML представление элемента.
 
 ### setDialogElementClassNames()
@@ -79,7 +79,7 @@ setFooter(value: HTMLElement): Dialog
 ```js
 setDialogElementClassNames(value: ElementClass): Dialog
 ```
-где:\
+где:
 `value` - объект с названиями классов для элементов внутри диалога.
 
 ### setResizable()
@@ -87,7 +87,7 @@ setDialogElementClassNames(value: ElementClass): Dialog
 ```js
 setResizable(value: boolean): Dialog
 ```
-где:\
+где:
 `value` - флаг для назначения включения и выключения возможности изменения размеров окна.
 
 ### setWindowOptions()
@@ -95,7 +95,7 @@ setResizable(value: boolean): Dialog
 ```js
 setWindowOptions(value: IWindowStateOptions): Dialog
 ```
-где:\
+где:
 `value` - настройки для работы измнения положения и ширины/высоты диалога.
 
 ### setDraggable()
@@ -103,7 +103,7 @@ setWindowOptions(value: IWindowStateOptions): Dialog
 ```js
 setDraggable(value: boolean): Dialog
 ```
-где:\
+где:
 `value` - флаг для назначения включения/выключения возможности изменения положения.
 
 
@@ -130,6 +130,6 @@ isDialogShown(): boolean
 ```js
 subscribe(fn: (state: boolean) => void): void
 ```
-где:\
+где:
 `fn` - функция callback для обработки события открытия/закрытия окна.
 `state` - состояние открыт или закрыт диалог.

@@ -128,7 +128,7 @@ constructor(axisDir: THREE.Vector3,
             picker?: IGizmoObject,
             helper?: IGizmoObject);
 ```
-где:\
+где:
 `axisDir` -- направление оси в локальных координатах. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
 `handle` -- задает [handle](#handle) - геометрию оси, рисуемую на сцене. Подробнее: [IGizmoObject](../IGizmoObject).
@@ -151,7 +151,7 @@ constructor(axisDir: THREE.Vector3,
 ```js
   setHovered(value: boolean): void;
 ```
-где:\
+где:
 `value` - значение ховера.
 
 ### getActive()
@@ -166,7 +166,7 @@ constructor(axisDir: THREE.Vector3,
 ```js
   setActive(value: boolean): void;
 ```
-где:\
+где:
 `value` - значение активности оси.
 Если `value` равен `true`, то запоминает текущее [положение](#worldPositionStart) оси в мировых координатах, [кватернион поворота](#worldQuaternionStart) и [вектор направления](#worldAxisDir) оси в мировых координатах. В противном случае, сбрасывает значения [начального](#StartPoint) и [конечного](#EndPoint) положения курсора.
 
@@ -181,8 +181,8 @@ constructor(axisDir: THREE.Vector3,
 ```js
   abstract moveByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera): THREE.Matrix4;
 ```
-где:\
-`ndcPos` -- [текущее положение](#EndPoint) курсора в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
+где:
+`ndcPos` -- [текущее положение](#EndPoint) курсора в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
 
 `camera` -- камера, используемая для отрисовки `GizmoAxis` на сцене. Используется для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
 
@@ -193,7 +193,7 @@ constructor(axisDir: THREE.Vector3,
 ```js
   protected abstract updateGizmoPlane(camera: THREE.Camera): void;
 ```
-где:\
+где:
 `camera` -- камера, используемая для отрисовки `GizmoAxis` на сцене. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
 
 ### setStartPt()
@@ -201,7 +201,7 @@ constructor(axisDir: THREE.Vector3,
 ```js
   protected setStartPt(ndcPos: THREE.Vector2, camera: THREE.Camera): void;
 ```
-где:\
-`ndcPos` -- положение курсора в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
+где:
+`ndcPos` -- положение курсора в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
 
 `camera` -- камера, используемая для отрисовки `GizmoAxis` на сцене. Используется для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).

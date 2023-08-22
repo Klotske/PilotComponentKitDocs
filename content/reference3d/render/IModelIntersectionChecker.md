@@ -50,7 +50,8 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
 ```
-где: `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+где:
+`ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
@@ -59,7 +60,8 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
 ```
-где: `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+где:
+`ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`. 
 
@@ -68,7 +70,7 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
 ```
-где:\
+где:
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство) в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
 `camera` -- камера, используемая для определения положения начала луча, и для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
@@ -78,7 +80,7 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionIDByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
 ```
-где:\
+где:
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство) в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
 `camera` -- камера, используемая для определения положения начала луча, и для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`.
@@ -89,12 +91,12 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, isClippingEnable: boolean = true): { modelId: string; guid: string; }[];
 ```
-где:\
+где:
 `ndcFrustumBox` -- Представление `Frsutum` в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Box3](https://threejs.org/docs/?q=Box3#api/en/math/Box3).\
 `unProjMatrix` -- Матрица проекции координат Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Matrix4](https://threejs.org/docs/#api/en/math/Matrix4).\
 `isContainsOnly` -- если `true`, то отбрасываются не полностью содержащиеся внутри пирамиды объекты. В противном случае в вывод включаются как содержащиеся внутри пирамиды объекты, так и касающиеся или пересекающиеся с ней.\
 Если при расчёте учитываются секущие плоскости, то `isContainsOnly` также указывает на то, что объект не должен быть обрезан секущими.\
-`isClippingEnable` -- если `true`, то при расчете пересечений учитываются секущие плоскости. Объекты за пределами секущего объема отбрасываются. Не обязательный параметр. По умолчанию `true`. Подробнее: [ClippingPlaneExtension](../../../extensions3d/ClippingPlane).
+`isClippingEnable` -- если `true`, то при расчете пересечений учитываются секущие плоскости. Объекты за пределами секущего объема отбрасываются. Не обязательный параметр. По умолчанию: `true`. Подробнее: [ClippingPlaneExtension](../../../extensions3d/ClippingPlane).
 
 Возвращает список объектов `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает пустой массив.
 

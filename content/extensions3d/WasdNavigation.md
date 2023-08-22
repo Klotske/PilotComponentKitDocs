@@ -101,7 +101,7 @@ getImpulseDirection(): Direction;
 ```js
 setIncreasedImpulse(isIncreased: boolean): void;
 ```
-где:\
+где:
 `isIncreased` -- `true`, для ускоренного движения.
 
 ## Перечисление WasdNavigationExtension.Direction {#Direction}

@@ -35,7 +35,7 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
   rotation: GizmoAxisDir, 
   scale: GizmoAxisDir): GizmoControl;
 ```
-где:\
+где:
 `camera` -- камера, используемая для отрисовки `GizmoControl` на сцене. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).\.
@@ -61,7 +61,7 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
     pickerSelectedMaterial?: THREE.Material
   ): GizmoAxis
 ```
-где:\
+где:
 `axisDir` -- направление оси переноса в локальных координатах. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).
@@ -92,7 +92,7 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
     pickerSelectedMaterial?: THREE.Material
   ): GizmoAxis
 ```
-где:\
+где:
 `axisDir` -- направление оси вращения в локальных координатах. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).
@@ -121,7 +121,7 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
     handleSelectedMaterial?: THREE.Material
   ): GizmoAxis
 ```
-где:\
+где:
 `axisDir` -- направление оси вращения в локальных координатах. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).

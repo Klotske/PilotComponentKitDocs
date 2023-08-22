@@ -42,10 +42,10 @@ export interface I3DRenderer {
 ```js
   clear(color?: boolean, depth?: boolean, stencil?: boolean): void;
 ```
-где:\
-`color` -- `true`, для очистки цветового буффера. По умолчанию `true`.\
-`depth` -- `true`, для очистки буффера глубины. По умолчанию `true`.\
-`stencil` -- `true`, для очистки буффера шаблона. По умолчанию `true`.
+где:
+`color` -- `true`, для очистки цветового буффера. По умолчанию: `true`.\
+`depth` -- `true`, для очистки буффера глубины. По умолчанию: `true`.\
+`stencil` -- `true`, для очистки буффера шаблона. По умолчанию: `true`.
 
 ###  clearDepth(): void
 Метод очищает буффер глубины. Эквивалентно вызову [.clear](#clear)(false, true, false).
@@ -58,7 +58,7 @@ export interface I3DRenderer {
 ```js
   render(scene: THREE.Object3D, camera: THREE.Camera): void;
 ```
-где:\
+где:
 `scene` -- объект для отрисовки. Подробнее: [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D).\
 `camera` -- камера. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).
 
@@ -67,7 +67,7 @@ export interface I3DRenderer {
 ```js
   getSize(target: THREE.Vector2): THREE.Vector2;
 ```
-где:\
+где:
 `target` -- результат будет скопирован в этот [THREE.Vector2](https://threejs.org/docs/index.html#api/en/math/Vector2).\
 Возвращает `target`.
 
@@ -77,7 +77,7 @@ export interface I3DRenderer {
 ```js
   setSize(width: number, height: number, updateStyle?: boolean): void;
 ```
-где:\
+где:
 `width` -- ширина окна.\
 `height` -- высота окна.\
 `updateStyle` -- при значении `false` предотвращает любые изменения стиля [domElement](#domElement).
@@ -87,7 +87,7 @@ export interface I3DRenderer {
 ```js
   setViewport(x: THREE.Vector4 | number, y?: number, width?: number, height?: number): void;
 ```
-где:\
+где:
 `x` -- x-координата левого нижнего угла окна, либо 4-компонентный вектор: [THREE.Vector4](https://threejs.org/docs/index.html#api/en/math/Vector4), задающий параметры окна.\
 `y` --  y-координата левого нижнего угла окна.\
 `width` -- ширина окна.\
