@@ -89,3 +89,11 @@ makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 
 `mimeType` -- необязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
 `quality` -- качество снимка.
+
+
+### getConfiguration()
+Метод получает конфигурацию вьювера. Подробнее <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
+
+```js
+getConfiguration(): Viewer3DConfiguration;
+```
