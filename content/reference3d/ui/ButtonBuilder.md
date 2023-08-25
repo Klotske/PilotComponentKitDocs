@@ -14,7 +14,7 @@ draft: false
 ```js
 withCaption(caption: string) : ButtonBuilder
 ```
-где:
+где:\
 
 `caption` -- подпись кнопки.
 
@@ -26,7 +26,7 @@ withCaption(caption: string) : ButtonBuilder
 ```js
 withIcon(icon: string): ButtonBuilder
 ```
-где:
+где:\
 
 `icon` -- имя класса `CSS` с иконкой.
 
@@ -38,7 +38,7 @@ withIcon(icon: string): ButtonBuilder
 ```js
 withClickAction(action: EventListener) : ButtonBuilder;
 ```
-где:
+где:\
 
 `action` -- обработчик события нажатия кнопки.
 
@@ -54,7 +54,7 @@ withClickAction(action: EventListener) : ButtonBuilder;
 ```js
 withIsChecked(value: boolean): ButtonBuilder;
 ```
-где:
+где:\
 
 `value` -- обработчик события нажатия кнопки.
 

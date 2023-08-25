@@ -13,7 +13,7 @@ draft: false
 ```js
 addControl(control: Control): void;
 ```
-где:
+где:\
 `control` -- экземпляр элемента управления.
 
 ### removeControl()
@@ -21,7 +21,7 @@ addControl(control: Control): void;
 ```js
 removeControl(id: string): void;
 ```
-где:
+где:\
 `id` -- идентификатор элемента управления.
 
 ### addClass()
@@ -29,7 +29,7 @@ removeControl(id: string): void;
 ```js
 addClass(cssClass: string): void;
 ```
-где:
+где:\
 `cssClass` -- имя класса `CSS` стиля.
 
 ### removeClass()
@@ -37,6 +37,6 @@ addClass(cssClass: string): void;
 ```js
 removeClass(cssClass: string): void;
 ```
-где:
+где:\
 `cssClass` -- имя класса `CSS` стиля.
 

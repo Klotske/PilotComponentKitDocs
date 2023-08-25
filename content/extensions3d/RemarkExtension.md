@@ -122,7 +122,7 @@ setActive(value: boolean): void;
 ```js  
 public getRemark(remarkId: string): RemarkViewObject | undefined;
 ```
-где:
+где:\
 `remarkId` -- идентификатор объекта замечания.
 
 ### addRemark()
@@ -130,7 +130,7 @@ public getRemark(remarkId: string): RemarkViewObject | undefined;
 ```js  
 public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: RemarkStatusParameters): RemarkViewObject | null;
 ```
-где:
+где:\
 `remarkParameters` -- параметры точки замечания. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).\
 `statusParameters` -- параметры статуса замечания, опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).\
 Возвращает добавленный на сцену объект замечания или `null`, если добавить точку не удалось. Подробнее: [RemarkViewObject](#RemarkViewObject).
@@ -141,7 +141,7 @@ public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: Re
 ```js  
 public addRemarkByDescritpions(remarks: RemarkDescription[]): void;
 ```
-где:
+где:\
 `remarks` -- массив с описаниями точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
 
   
@@ -150,7 +150,7 @@ public addRemarkByDescritpions(remarks: RemarkDescription[]): void;
 ```js  
 public getRemarkDescriptions(remarkIds?: string[]): RemarkDescription[];
 ```
-где:
+где:\
 `remarkIds` -- идентификаторы точек замечаний, описания которых нужно получить, опциональный параметр. Если не задан, то возвращаются описания всех добавленных на сцену точек замечаний.\
 Возвращает массив с описаниями точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
 
@@ -159,7 +159,7 @@ public getRemarkDescriptions(remarkIds?: string[]): RemarkDescription[];
 ```js  
 public removeRemarks(remarkIds?: string[]): void;
 ```
-где:
+где:\
 `remarkIds` -- идентификаторы точек замечаний для удаления, опциональный параметр. Если не задан, то удаляются все добавленные на сцену точки замечаний.
 
 ### setSelectedRemark()
@@ -169,7 +169,7 @@ public removeRemarks(remarkIds?: string[]): void;
 ```js  
 public setSelectedRemark(remarkId: string): void;
 ```
-где:
+где:\
 `remarkId` -- идентификатор точки замечания для выбора.
 
 ### setRemarkStatus()
@@ -177,7 +177,7 @@ public setSelectedRemark(remarkId: string): void;
 ```js  
 public setRemarkStatus(remarkId: string, statusParameters: RemarkStatusParameters): void;
 ```
-где:
+где:\
 `remarkId` -- идентификатор точки замечания для обновления статуса.\
 `statusParameters` -- параметры статуса замечания. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 
@@ -186,7 +186,7 @@ public setRemarkStatus(remarkId: string, statusParameters: RemarkStatusParameter
 ```js
 public setRemarksLayerVisibility(visibiliity: boolean): void;
 ```
-где:
+где:\
 `visibiliity` -- параметр видимости слоя замечаний. Если `true`, то слой замечаний отрисовывается в процессе рендера. 
 В противном случае, слой замечаний не рисуется и объекты замечаний на сцене не показываются.
 
@@ -211,7 +211,7 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 ```js
   constructor(remarkParamters?: RemarkObjectParameters, statusParameters?: RemarkStatusParameters);
 ```
-где:
+где:\
 `remarkParamters` -- параметры точки замечания, опциональный параметр. Если не заданы, то создается точка замечания со значениями по умолчанию. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).\
 `statusParameters` -- параметры статуса замечания, опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 

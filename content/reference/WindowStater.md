@@ -40,7 +40,7 @@ export interface IWindowStateOptions {
 ```js
   constructor(savedStateOptions: IWindowStateOptions, containerToRestore: HTMLElement);
 ```
-где:
+где:\
 `savedStateOptions`-- объект для хранения свойств работы с окном.\
 `containerToRestore` -- HTML элемент с которым происходит сохранение/восстановление настроек (css стилей). Подробнее: [IWindowStyle](#IWindowStyle).
 

@@ -29,7 +29,7 @@ clear(): void;
 ```js
 getItem<T>(key: string): T | null;
 ```
-где:
+где:\
 
 `key` -- ключ сохранённой настройки.
 
@@ -38,7 +38,7 @@ getItem<T>(key: string): T | null;
 ```js
 removeItem(key: string): void;
 ```
-где:
+где:\
 
 `key` -- ключ для удаления настройки.
 
@@ -47,7 +47,7 @@ removeItem(key: string): void;
 ```js
 setItem<T>(key: string, value: T): void;
 ```
-где:
+где:\
 
 `key` -- ключ для установки настройки.
 `value` -- значение настройки.

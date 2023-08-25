@@ -19,7 +19,7 @@ export class MeshLine extends THREE.Mesh {
 ```js
   constructor(geometry?: MeshLineGeometry, material?: MeshLineMaterial);
 ```
-где:
+где:\
 `geometry` -- геометрия, опциональный параметр. Если не задано, используется пустая геометрия.\
 `material` -- материал линий, опциональный параметр. Если не задано, используется материал по умолчанию.
 
@@ -81,7 +81,7 @@ export class MeshLineMaterial extends CustomMaterial {
 ```js
   constructor(parameters: MeshLineMaterialParameters);
 ```
-где:
+где:\
 `parameters` -- параметры материала. Подробнее [MeshLineMaterialParameters](#MeshLineMaterialParameters).
 
 ## Свойства
@@ -209,7 +209,7 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 ```js
   setPoints(points: THREE.Vector3[]): this;
 ```
-где:
+где:\
 `points` -- точки линии. Подробнее: [THREE.Vector3](https://www.google.com/search?q=THREE.Vector3).
 
 При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения координат точек, если количество точек не изменяется, следует использовать метод [updatePoint](#updatePoint).
@@ -219,7 +219,7 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 ```js
   setPositions(array: ArrayLike<number>): this;
 ```
-где:
+где:\
 `array` -- массив с координатами точек. Координаты расположены последовательно, по 3 элемента на точку: `[ x0, y0, z0, x1, y1, z1, ... ]`.
 
 При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения координат точек, если количество точек не изменяется, следует использовать метод [updatePoint](#updatePoint).
@@ -229,7 +229,7 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 ```js
   setColors(array: ArrayLike<number>): this;
 ```
-где:
+где:\
 `array` -- массив со значенями цветов точек. Значения расположены последовательно, по 3 элемента на точку: `[ r0, g0, b0, r1, g1, b1, ... ]`.
 
 При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения цветов точек, если количество точек не изменяется, следует использовать метод [updateColor](#updateColor).
@@ -239,7 +239,7 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 ```js
   updatePoint(index: number, point: THREE.Vector3): void;
 ```
-где:
+где:\
 `index` -- порядковый номер точки.\
 `point` -- обновлённые координаты точки. Подробнее: [THREE.Vector3](https://www.google.com/search?q=THREE.Vector3).
 

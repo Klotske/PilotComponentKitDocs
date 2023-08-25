@@ -30,7 +30,7 @@ export class GizmoControl extends THREE.Object3D {
 ```js
   constructor(camera: THREE.Camera, navAgent: INavigationAgent);
 ```
-где:
+где:\
 `camera` - камера, используемая на сцене. Подробнее: [THREE.Camera](https://threejs.org/docs/#api/en/cameras/Camera).\
 `navAgent` - агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).\
 Камеру и агент навигации можно получить из [INavigation](../../navigation/INavigation).
@@ -50,7 +50,7 @@ const gizmoControl = new PilotWeb3D.GizmoControl(camera, navAgent);
 ```js
 attachTo(object: THREE.Object3D, asChild = false): void;
 ```
-где:
+где:\
 `object` -- Объект привязки.\
 `asChild` -- Параметр указывает, добавить ли `GizmoControl` дочерним элементом к объекту. Не обязательный параметр, по умолчанию: `false`.\
  Если `asChild` равен `true`, то `GizmoControl` не нужно добавлять на сцену вручную. Он будет автоматически размещён на той же сцене что и родительский объект. В противном случае `GizmoControl` нужно вручную добавить на нужную сцену и задать необходимые координаты.
@@ -66,7 +66,7 @@ detach(): void;
 ```js
   updateGizmoOffset(position?: THREE.Vector3, quaternion?: THREE.Quaternion): void;
 ```
-где:
+где:\
 `position` -- позиция `GizmoControl` в локальных координатах объекта привязки. Не обязательный параметр. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).\
 `quaternion` -- вращение `GizmoControl` в локальных координатах объекта привязки. Не обязательный параметр. Подробнее: [THREE.Quaternion](https://threejs.org/docs/#api/en/math/Quaternion).
 
@@ -75,7 +75,7 @@ detach(): void;
 ```js
   addAxis(axis: GizmoAxis): void;
 ```
-где:
+где:\
 `axis` -- ось контроллера. Подробнее: [GizmoAxis](../GizmoAxis).
 
 ## dispose()

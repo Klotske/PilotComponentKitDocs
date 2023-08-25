@@ -26,7 +26,7 @@ export interface ISettings {
 ```js
 changeSetting<T>(name: string, value: T, notify?: boolean, providedData?: any): void;
 ```
-где:
+где:\
 
 `name` -- имя настройки.\
 `value` -- значение настройки.\
@@ -38,7 +38,7 @@ changeSetting<T>(name: string, value: T, notify?: boolean, providedData?: any): 
 ```js
 getSettingValue<T>(name: string): T;
 ```
-где:
+где:\
 
 `name` -- имя настройки.
 
@@ -47,6 +47,6 @@ getSettingValue<T>(name: string): T;
 ```js
 abstract getKeyWithPrefix(key: string): string;
 ```
-где:
+где:\
 
 `key` -- ключ без префикса для получения настройки.

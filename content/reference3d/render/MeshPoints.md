@@ -85,7 +85,7 @@ export class MeshPoints extends THREE.Mesh {
 ```js
   addPoint(pointParameter?: MeshPointParameter): number;
 ```
-где:
+где:\
 `pointParameter` -- параметры точки. Подробнее: [MeshPointParameter](#MeshPointParameter).\
 Возвращает порядковый номер добавленной точки.
 
@@ -94,7 +94,7 @@ export class MeshPoints extends THREE.Mesh {
 ```js
   updatePoint(index: number, pointParameter: MeshPointParameter): void;
 ```
-где:
+где:\
 `index` -- порядковый номер добавленной точки.\
 `pointParameter` -- обновлённые параметры точки. Допустимо определять внутри `pointParameter` только изменившиеся параметры точки. Например, для изменения цвета достаточно передать `{ color : newColor }`, при этом позиция точки и её размер останутся неизменными. Подробнее: [MeshPointParameter](#MeshPointParameter).
 
@@ -103,7 +103,7 @@ export class MeshPoints extends THREE.Mesh {
 ```js
   removePoint(index: number): void;
 ```
-где:
+где:\
 `index` -- порядковый номер точки.
 
 ### updateAttributes() {#updateAttributes}
@@ -127,7 +127,7 @@ export interface MeshPointParameter {
   size?: number
 }
 ```
-где:
+где:\
 `point` -- позиция точки в мировых координатах, опциональный параметр. Если не задан, будет использоваться [положение по умолчанию](#point). Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).\
 `color` -- цвет точки, опциональный параметр. Если не задан, будет использоваться [цвет по умолчанию](#color). Подробнее: [Color](../Color).\
 `size` -- размер точки в пикселях, опциональный параметр. Если не задан, будет использоваться [размер по умолчанию](#pointSize).
@@ -151,7 +151,7 @@ export class MeshPointMaterial extends CustomMaterial {;
 ```js
   constructor(parameters?: MeshPointMaterialParameters);
 ```
-где:
+где:\
 `parameters` -- параметры материала. Опциональный параметр. Подробнее: [MeshPointMaterialParameters](#MeshPointMaterialParameters); 
 
 ## Поля

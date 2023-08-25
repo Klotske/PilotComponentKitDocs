@@ -57,7 +57,7 @@ navigationAgent.keyboardNavigationSource.removeEventListener("keyup", onKeyUp, n
 ```js
 setActive(value: boolean): void;
 ```
-где:
+где:\
 `value` - активность.
 
 #### getNavigationArea()

@@ -38,7 +38,7 @@ get name(): string;
 ```js
 init(navAgent: INavigationAgent, cameraControl: ICameraControl, intersectionChecker: IModelIntersectionChecker): void;
 ```
-где:
+где:\
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../INavigationAgent).\
 `cameraControl` -- контроллер камеры. Подробнее: [ICameraControl](../ICameraControl).\
 `intersectionChecker` -- обработчик пересечений на сцене. Подробнее: [IModelIntersectionChecker](../../render/IModelIntersectionChecker).
@@ -48,7 +48,7 @@ init(navAgent: INavigationAgent, cameraControl: ICameraControl, intersectionChec
 ```js
 setActive(isActive: boolean): void;
 ```
-где:
+где:\
 `isActive` -- активность.
 
 ### getPivotPoint()
@@ -63,7 +63,7 @@ getPivotPoint(): THREE.Vector3;
 ```js
 setPivotPoint(pivotPoint: THREE.Vector3): void;
 ```
-где:
+где:\
 `pivotPoint` -- точка в мировом пространстве. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
 ### setCameraParameters()
@@ -71,7 +71,7 @@ setPivotPoint(pivotPoint: THREE.Vector3): void;
 ```js
   setCameraParameters(iParams: CameraParameters): void;
 ```
-где:
+где:\
 `iParams` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
 ### getCameraParameters()

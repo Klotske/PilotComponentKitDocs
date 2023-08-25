@@ -72,7 +72,7 @@ activeMaterial: THREE.Material;
     readonly activeMaterial: THREE.Material
   );
 ```
-где:
+где:\
 `_meshes` -- геометрии объекта для отрисовки на сцене.
 
 `baseMaterial` -- материал геометрий, применяемый в отсутствии ховера и при неактивном `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
@@ -95,7 +95,7 @@ activeMaterial: THREE.Material;
 ```js
   setHovered(value: boolean): void;
 ```
-где:
+где:\
 `value` - значение ховера.\
 Если `value` равно `true`, то материал геометрий изменится на `hoverMaterial`, если `GizmoObject` не активен. В противном случае, материалом геометрий будет или `baseMaterial`, или `activeMaterial`, в зависимости от активности `GizmoObject`.
 
@@ -111,7 +111,7 @@ activeMaterial: THREE.Material;
 ```js
   setActive(value: boolean): void;
 ```
-где:
+где:\
 `value` - значение активности.\
 Если `value` равно `true`, то материал геометрий изменится на `activeMaterial`. В противном случае, материалом геометрий будет или `baseMaterial`, или `hoverMaterial`, в зависимости от значения ховера для `GizmoObject`. Активность `GizmoObject` имеет больший приоритет в установке материала геометрий, чем ховер.
 

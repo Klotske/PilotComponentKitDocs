@@ -24,7 +24,7 @@ changeToolbarContent(content: string): void;
 ```js
 addControl(control: Control): void;
 ```
-где:
+где:\
 `control` -- объект типа Control.
 Подробнее: <a href="../Control/">Control</a>.
 
@@ -33,5 +33,5 @@ addControl(control: Control): void;
 ```js
 removeControl(id: string): void
 ```
-где:
+где:\
 `id` -- идентификатор элемента.

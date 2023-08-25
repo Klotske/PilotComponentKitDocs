@@ -48,7 +48,7 @@ export class LabelSprite extends THREE.Sprite {
 ```js
   constructor(parameters: LabelSpriteParameters);
 ```
-где:
+где:\
 `parameters`-- параметры текстовой метки. Подробнее: [LabelSpriteParameters](#LabelSpriteParameters).
 
 ## Свойства
@@ -77,7 +77,7 @@ export class LabelSprite extends THREE.Sprite {
   get fontFace(): string | FontFace;
   set fontFace(value: string | FontFace);
 ```
-где:
+где:\
  `fontFace` -- строка задающая [font-family](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family), или объект [FontFace](https://developer.mozilla.org/en-US/docs/Web/API/FontFace) описывающий параметры шрифта.\
 По умолчанию: `Roboto, sans-serif`.
 

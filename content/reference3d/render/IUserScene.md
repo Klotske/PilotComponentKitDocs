@@ -70,7 +70,7 @@ readonly name: string;
 ```js
   set clippingEnable(value: boolean);
 ```
-где:
+где:\
 `value` -- параметр. Если `value` равен `true`, то объекты на сцене обрезаются секущими плоскостями, а также при проверке пересечений на данной сцене не учитываются отсечённые объекты. 
 
 ## Методы
@@ -80,7 +80,7 @@ readonly name: string;
 ```js
 addRange(objects: THREE.Object3D[]): void;
 ```
-где:
+где:\
 `objects` -- список объектов для добавления на сцену. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
 
 ###  updateRange()
@@ -88,7 +88,7 @@ addRange(objects: THREE.Object3D[]): void;
 ```js
   updateRange(objects: TPair<THREE.Object3D, UpdateType>[]): void;
 ```
-где:
+где:\
 `objects` -- список объектов для обновления. Каждый элемент списка является парой из самого объекта и соответствующего ему типа обновления.
 Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D), [UpdateType](../UpdateType).
 
@@ -97,7 +97,7 @@ addRange(objects: THREE.Object3D[]): void;
 ```js
 removeRange(objects: THREE.Object3D[]): void;
 ```
-где:
+где:\
 `objects` -- список объектов для удаления. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
 
 ###  has()
@@ -105,7 +105,7 @@ removeRange(objects: THREE.Object3D[]): void;
 ```js
 has(obj: THREE.Object3D): boolean;
 ```
-где:
+где:\
 `objects` -- проверяемый объект. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).\
 Вовзвращает `true`, если объект добавлен на сцену. В противном случае `false`.
 
@@ -115,7 +115,7 @@ has(obj: THREE.Object3D): boolean;
 ```js
 traverse(callback: (object: THREE.Object3D) => void): void;
 ```
-где:
+где:\
 `callback` -- функция вызываемая для всех объектов на сцене.
 
 ###  setClipping()
@@ -123,7 +123,7 @@ traverse(callback: (object: THREE.Object3D) => void): void;
 ```js
 setClipping(planes: THREE.Plane[]): void;
 ```
-где:
+где:\
 `planes` -- список плоскостей сечения. Подробнее: [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).
 
 ###  manageScene()
@@ -131,7 +131,7 @@ setClipping(planes: THREE.Plane[]): void;
 ```js
 manageScene(context?: IRenderOperationContext): boolean;
 ```
-где:
+где:\
 `context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
 Вовзвращает `true`, если все запланированные операции на сцене были выполнены. Возвращает `false`, если требуется повторная передача управления.
 
@@ -140,7 +140,7 @@ manageScene(context?: IRenderOperationContext): boolean;
 ```js
 render(context: IRenderOperationContext): void;
 ```
-где:
+где:\
 `context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
 
 

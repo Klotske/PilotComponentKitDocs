@@ -13,7 +13,7 @@ draft: false
 ```js
 addClass(cssClass: string): void;
 ```
-где:
+где:\
 `cssClass` -- имя класса `CSS` стиля.
 
 ### removeClass()
@@ -21,5 +21,5 @@ addClass(cssClass: string): void;
 ```js
 removeClass(cssClass: string): void;
 ```
-где:
+где:\
 `cssClass` -- имя класса `CSS` стиля.

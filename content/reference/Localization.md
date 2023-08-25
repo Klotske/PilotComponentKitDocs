@@ -13,7 +13,7 @@ draft: false
 ```js
 static initialize(options: any): Promise<void>
 ```
-где:
+где:\
  `options`: - опции для указания какой язык использовать. 
 
 Пример:
@@ -28,7 +28,7 @@ static initialize(options: any): Promise<void>
 ```js
 static translate(stringToTrans: string): string;
 ```
-где:
+где:\
  `stringToTrans`: - ключ указанный в `translation.json`. Подробнее: <a href="https://www.i18next.com">i18next documentation</a>.
 
 
@@ -38,7 +38,7 @@ static translate(stringToTrans: string): string;
 ```js
 static setLanguage(language: string): Promise<void>;
 ```
-где:
+где:\
  `language`: - новый язык. Например: `ru` или `en`.
 
 
@@ -48,7 +48,7 @@ static setLanguage(language: string): Promise<void>;
 ```js
 static extendLocalization(locales: any): boolean;
 ```
-где:
+где:\
  `locales`: - дополнительная локализация для модуля расширения.
 
 

@@ -32,7 +32,7 @@ export interface INavigation {
 ```js
 registerNavigation(navigationTool: INavigationTool): void;
 ```
-где:
+где:\
 
 `navigationTool` -- реализация обработчика событий. Подробнее: <a href="../NavigationTool">INavigationTool</a>.
 
@@ -41,7 +41,7 @@ registerNavigation(navigationTool: INavigationTool): void;
 ```js
 unregisterNavigation(navigationTool: INavigationTool): void;
 ```
-где:
+где:\
 
 `navigationTool` -- реализация обработчика событий. Подробнее: <a href="../NavigationTool">INavigationTool</a>.
 
@@ -51,7 +51,7 @@ unregisterNavigation(navigationTool: INavigationTool): void;
 ```js
 setActive(navigationToolName: string, isActive: boolean): void;
 ```
-где:
+где:\
 `navigationToolName` -- имя обработчика навигации,\
 `isActive` -- активность.
 
@@ -81,7 +81,7 @@ getNavigationAgent(): INavigationAgent;
 ```js
 setCameraParameters(params: CameraParameters): void;
 ```
-где:
+где:\
 
 `params` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters). 
 
@@ -111,7 +111,7 @@ getCamera(): THREE.Camera;
 ```js
 fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
 ```
-где:
+где:\
 
 `elementIds` -- список идентификаторов или один идентификатор элемента сцены,\
 `modelPart` -- идентификатор части консолидированной модели или объект части консолидированной модели,\
@@ -122,7 +122,7 @@ fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediat
 ```js
 setPivotPoint(point: Point3): void;
 ```
-где:
+где:\
 
 `point` -- точка в пространстве сцены. Подробнее: [Point3](../Point3).
 

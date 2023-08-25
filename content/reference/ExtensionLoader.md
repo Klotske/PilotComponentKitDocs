@@ -17,7 +17,7 @@ weight: 9
 ```js
 loadExtension(extensionId: string): Promise<Extension>;
 ```
-где:
+где:\
 `extensionId` -- уникальное имя расширения.
 
 ### unloadExtension()
@@ -27,7 +27,7 @@ loadExtension(extensionId: string): Promise<Extension>;
 ```js
 unloadExtension(extensionId: string) : Promise<boolean>;
 ```
-где:
+где:\
 `extensionId` -- уникальное имя расширения.
 
 ### getExtensions()

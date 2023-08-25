@@ -38,7 +38,7 @@ deactivate(): void;
 ```js
 addPlanes(planes: ClippingPlaneDescription[]): void;
 ```
-где:
+где:\
 `planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
 
 ### setPlanes()
@@ -46,7 +46,7 @@ addPlanes(planes: ClippingPlaneDescription[]): void;
 ```js
 public setPlanes(planes: ClippingPlaneDescription[]): void;
 ```
-где:
+где:\
 `planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
 
 ### removePlanes() {#removePlanes}
@@ -54,7 +54,7 @@ public setPlanes(planes: ClippingPlaneDescription[]): void;
 ```js
 public removePlanes(planeIDs?: string[]): void;
 ```
-где:
+где:\
 `planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то удаляются все существующие плоскости сечения.
 
 ### ClippingPlaneExtension.ClippingPlaneDescription {#ClippingPlaneDescription}
@@ -70,7 +70,7 @@ export type ClippingPlaneDescription = {
 ```js
 normal: Point3
 ```
-где:
+где:\
 `normal` -- координаты вектора нормали в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### origin
@@ -78,7 +78,7 @@ normal: Point3
 ```js
 origin: Point3
 ```
-где:
+где:\
 `origin` -- координаты точки в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### guid

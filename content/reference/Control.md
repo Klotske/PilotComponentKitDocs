@@ -21,7 +21,7 @@ container: HTMLElement;
 ```js
 addClass(cssClass: string): void
 ```
-где:
+где:\
 `cssClass` -- имя класса.
 
 ### removeClass()
@@ -29,7 +29,7 @@ addClass(cssClass: string): void
 ```js
 removeClass(cssClass: string): void
 ```
-где:
+где:\
 `cssClass` -- имя класса.
 
 ### getId()
@@ -43,5 +43,5 @@ getId(): string
 ```js
  setToolTip(tooltipText: string): void
 ```
-где:
+где:\
 `tooltipText` -- текст для всплывающей подсказки.

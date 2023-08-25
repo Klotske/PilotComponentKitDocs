@@ -16,7 +16,7 @@ draft: false
 type InitializeSuccessCallback = () => void;
 function Initializer(options, callback: InitializeSuccessCallback): void;
 ```
-где:
+где:\
 `options` -- содержит настройки для инициализации компонента.
 `callback` -- метод обратного вызова. Вызывается, когда завершится инициализация компонента.
 
@@ -37,7 +37,7 @@ PilotWeb2D.Initializer(options, myCallback);
 ```js
 function CreateViewer(container: HTMLElement) : GuiViewer2D;
 ```
-где:
+где:\
 `container` -- HTML элемент, в котором создается компонент.
 
 Пример:

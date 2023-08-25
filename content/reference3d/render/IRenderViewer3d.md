@@ -41,7 +41,7 @@ updateCurrentCanvas(): Promise<void>;
 ```js
  placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string): Promise<void>;
 ```
-где:
+где:\
 `iObj` -- объект, который нужно поместить на сцену.\
 `sceneID` -- Имя сцены, не обязательный параметр. По умолчанию: `MainScene`.
 
@@ -50,7 +50,7 @@ updateCurrentCanvas(): Promise<void>;
 ```js
   removeObjectFromScene(iObj: THREE.Object3D): Promise<void>;
 ```
-где:
+где:\
 `iObj` -- объект, который нужно удалить.
 
 ###  setClipping() {#setClipping}
@@ -58,7 +58,7 @@ updateCurrentCanvas(): Promise<void>;
 ```js
 setClipping(planes: THREE.Plane[]): void;
 ```
-где:
+где:\
 `planes` -- список плоскостей сечения. Подробнее: [THREE.Plane](https://threejs.org/docs/#api/en/math/Plane).
 
 ###  setActiveClipPlaneIndices()
@@ -66,7 +66,7 @@ setClipping(planes: THREE.Plane[]): void;
 ```js
 setActiveClipPlaneIndices(indices: number[]): void;
 ```
-где:
+где:\
 `indices` -- список индексов активных плоскостей сечения. Каждый индекс указывает на плоскость в списке, переданном в [setClipping()](#setClipping).
 
 ###  getScenes()
@@ -81,7 +81,7 @@ setActiveClipPlaneIndices(indices: number[]): void;
 ```js
   addScene(name: string, isClippable: boolean): IUserScene;
 ```
-где:
+где:\
 `name` -- идентификатор новой сцены.\
 `isClippable` -- параметр, указывающий влияют ли секущие плоскости на отрисовку этой сцены. Если `false`, то секущие плоскости не применяются к объектам на этой сцене и проверка пересечений с объектами на этой сцене также не учитывает секущие плоскости.
 Возвращает добавленную сцену. Подробнее: [IUserScene](../IUserScene).
@@ -91,5 +91,5 @@ setActiveClipPlaneIndices(indices: number[]): void;
 ```js
   removeScene(scene: IUserScene): void;
 ```
-где:
+где:\
 `scene` -- сцена для удаления. Подробнее: [IUserScene](../IUserScene).
