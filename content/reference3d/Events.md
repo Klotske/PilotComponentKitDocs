@@ -37,6 +37,14 @@ class EventTypes extends CoreEventTypes {
   static MODEL_PART_UNLOADED: string;
   // Имя события изменения положения камеры
   static CAMERA_CHANGE_EVENT: string;
+  // Имя события изменения типа навигации камеры
+  static CAMERA_NAVIGATION_MODE_CHANGED_EVENT: string;
+  // Имя события клика по отрисованному элементу
+  static RENDER_CLICK_EVENT: string;
+  // Имя события ховера отрисованного элемента
+  static RENDER_HOVER_EVENT: string;
+  // Имя события двойного клика по отрисованному элементу
+  static RENDER_DOUBLE_CLICK_EVENT: string;
 }
 ```
 
@@ -54,4 +62,18 @@ class ModelPartEvent extends Event {
 
 // Класс события изменения положения камеры
 class CameraEvent extends Event {}
+
+// Класс события клика по отрисованному элементу
+class ClickedEvent extends Event {
+  modelId: string; // идентификатор модели
+  modelElementId: string; // идентификатор элемента модели
+  ctrlKey: boolean; // флаг нажатия клавиши Ctrl
+}
+
+// Класс события ховера отрисованного элемента
+class HoverEvent extends Event {
+  modelId: string; // идентификатор модели
+  modelElementId: string; // идентификатор элемента модели
+}
+
 ```

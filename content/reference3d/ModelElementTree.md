@@ -14,7 +14,7 @@ weight: 5
 ```js
 enumElementChildren(element: string | ModelElement, callback: (guid: string) => void, recursive?: boolean): void;
 ```
-где:
+где:\
 
 `element` -- идентификатор или экземпляр элемента.
 
@@ -45,7 +45,7 @@ getElement(id: string) : ModelElement
 ```js
 isViewableElement(element: string | ModelElement): boolean;
 ```
-где:
+где:\
 `element` -- идентификатор или экземпляр элемента.
 
 ### isDetachedElement()
@@ -53,7 +53,7 @@ isViewableElement(element: string | ModelElement): boolean;
 ```js
 isDetachedElement(element: string | ModelElement): boolean;
 ```
-где:
+где:\
 `element` -- идентификатор или экземпляр элемента.
 
 ### getChildLevelNumber()
@@ -61,5 +61,5 @@ isDetachedElement(element: string | ModelElement): boolean;
 ```js
 getChildLevelNumber(element: string | ModelElement): number
 ```
-где:
+где:\
 `element` -- идентификатор или экземпляр элемента.

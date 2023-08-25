@@ -24,7 +24,7 @@ export interface IEventsDispatcher {
 ```js
 addEventListener(event: string, listener: EventListener, options?: object): void;
 ```
-где:
+где:\
 
 `event` -- <a href="../Events">имя события</a>.\
 `listener` -- обработчик события.\
@@ -35,7 +35,7 @@ addEventListener(event: string, listener: EventListener, options?: object): void
 ```js
 removeEventListener(event: string, listener: EventListener): void;
 ```
-где:
+где:\
 
 `event` -- <a href="../Events">имя события</a>.\
 `listener` -- обработчик события.
@@ -45,7 +45,7 @@ removeEventListener(event: string, listener: EventListener): void;
 ```js
 hasEventListener(event: string, listener: EventListener): boolean;
 ```
-где:
+где:\
 
 `event` -- <a href="../Events">имя события</a>.\
 `listener` -- обработчик события.
@@ -58,7 +58,7 @@ hasEventListener(event: string, listener: EventListener): boolean;
 ```js
 dispatchEvent(event: string | Event): void;
 ```
-где:
+где:\
 
 `event` -- <a href="../Events">имя события</a> или объект `Event`.
 
@@ -68,7 +68,7 @@ dispatchEvent(event: string | Event): void;
 ```js
 dispatchEventAsync(event: string | Event): void;
 ```
-где:
+где:\
 
 `event` -- <a href="../Events">имя события</a> или объект `Event`.
 

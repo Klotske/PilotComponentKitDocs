@@ -46,7 +46,7 @@ getCameraParameters(): CameraParameters;
 ```js
   setCameraParameters(iParams: CameraParameters): void;
 ```
-где:
+где:\
 `iParams` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters).
 
 ### setAspectRatio()
@@ -54,7 +54,7 @@ getCameraParameters(): CameraParameters;
 ```js
 setAspectRatio(width: number, heigth: number): boolean;
 ```
-где:
+где:\
 
 `width` -- ширина изображения, может быть в любых величинах.\
 `heigth` -- высота изображения, может быть в любых величинах.\

@@ -56,16 +56,16 @@ export class Color {
 ```js
   static fromThreeColor(color: THREE.Color, alpha = 1.0): Color;
 ```
-где:
+где:\
 `color` - источник `r`, `g`, `b` компонент цвета. Подробнее: [THREE.Color](https://threejs.org/docs/#api/en/math/Color).\
-`alpha` - значение прозрачности, от `0.0` до `1.0`. По умолчанию `1.0`.
+`alpha` - значение прозрачности, от `0.0` до `1.0`. По умолчанию: `1.0`.
 
 ### fromColorRepresentation()
 Метод возвращает объект `Color` с параметрами цвета, соответствующими `THREE.ColorRepresentation` и прозрачностью равной `1.0`.
 ```js
   static fromColorRepresentation(representation: THREE.ColorRepresentation): Color;
 ```
-где:
+где:\
 `THREE.ColorRepresentation` - объект представления цвета в виде `THREE.Color | string | number`. Подробнее: [THREE.Color](https://threejs.org/docs/#api/en/math/Color)
 
 ### fromMaterial()
@@ -73,7 +73,7 @@ export class Color {
 ```js
   static fromMaterial(material: THREE.Material): Color;
 ```
-где:
+где:\
 `material` - материал, по которому вычисляются параметры цвета.\
  `r`, `g`, `b` - компоненты цвета берутся равнымим `r`, `g`, `b` - компонентам свойства `color`, если материал определяет это свойство (пример: [MeshBasicMaterial.color](https://threejs.org/docs/#api/en/materials/MeshBasicMaterial.color)). Если нет, то берутся значения по умолчанию: `1.0`.\
  `alpha` - значение прозрачности берётся равным значению свойства [Material.opacity](https://threejs.org/docs/#api/en/materials/Material.opacity).

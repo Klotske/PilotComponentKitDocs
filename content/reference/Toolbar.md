@@ -34,5 +34,5 @@ addControl(control: Control, index: number = 0): void;
 ```js
 removeControl(id: string): void
 ```
-где:
+где:\
 `id` -- идентификатор элемента.

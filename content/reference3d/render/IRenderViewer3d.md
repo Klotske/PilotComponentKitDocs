@@ -14,6 +14,7 @@ export interface IRenderViewer3D {
   placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string): Promise<void>;
   removeObjectFromScene(iObj: THREE.Object3D): Promise<void>;
   setClipping(planes: THREE.Plane[], sceneID?: string): void;
+  setActiveClipPlaneIndices(indices: number[]): void;
   getScenes(): IUserScene[];
   addScene(name: string, isClippable: boolean): IUserScene;
   removeScene(scene: IUserScene): void;
@@ -42,7 +43,7 @@ updateCurrentCanvas(): Promise<void>;
 ```
 где:\
 `iObj` -- объект, который нужно поместить на сцену.\
-`sceneID` -- Имя сцены. Не обязательный параметр. По умолчанию `MainScene`.
+`sceneID` -- Имя сцены, не обязательный параметр. По умолчанию: `MainScene`.
 
 ###  removeObjectFromScene()
 Метод удаляет объект со сцены.
@@ -90,4 +91,5 @@ setActiveClipPlaneIndices(indices: number[]): void;
 ```js
   removeScene(scene: IUserScene): void;
 ```
-где `scene` -- сцена для удаления. Подробнее: [IUserScene](../IUserScene).
+где:\
+`scene` -- сцена для удаления. Подробнее: [IUserScene](../IUserScene).

@@ -57,7 +57,8 @@ navigationAgent.keyboardNavigationSource.removeEventListener("keyup", onKeyUp, n
 ```js
 setActive(value: boolean): void;
 ```
-где: `value` - активность.
+где:\
+`value` - активность.
 
 #### getNavigationArea()
 Метод позволяет получить прямоугольник текущей рабочей области навигации.

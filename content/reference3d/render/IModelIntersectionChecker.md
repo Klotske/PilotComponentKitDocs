@@ -50,7 +50,8 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
 ```
-где: `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+где:\
+`ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
@@ -59,7 +60,8 @@ export interface IModelIntersectionChecker {
 ```js
   getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
 ```
-где: `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
+где:\
+`ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`. 
 
@@ -94,7 +96,7 @@ export interface IModelIntersectionChecker {
 `unProjMatrix` -- Матрица проекции координат Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Matrix4](https://threejs.org/docs/#api/en/math/Matrix4).\
 `isContainsOnly` -- если `true`, то отбрасываются не полностью содержащиеся внутри пирамиды объекты. В противном случае в вывод включаются как содержащиеся внутри пирамиды объекты, так и касающиеся или пересекающиеся с ней.\
 Если при расчёте учитываются секущие плоскости, то `isContainsOnly` также указывает на то, что объект не должен быть обрезан секущими.\
-`isClippingEnable` -- если `true`, то при расчете пересечений учитываются секущие плоскости. Объекты за пределами секущего объема отбрасываются. Не обязательный параметр. По умолчанию `true`. Подробнее: [ClippingPlaneExtension](../../../extensions3d/ClippingPlane).
+`isClippingEnable` -- если `true`, то при расчете пересечений учитываются секущие плоскости. Объекты за пределами секущего объема отбрасываются. Не обязательный параметр. По умолчанию: `true`. Подробнее: [ClippingPlaneExtension](../../../extensions3d/ClippingPlane).
 
 Возвращает список объектов `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает пустой массив.
 

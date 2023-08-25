@@ -53,7 +53,7 @@ getName(): string;
 ```js
 onToolbarCreated(builder: ToolbarBuilder): void;
 ```
-где:
+где:\
 `builder` -- построитель панели инструментов.
 
 ### onMouseDown()
@@ -62,7 +62,7 @@ onToolbarCreated(builder: ToolbarBuilder): void;
 ```js
 onMouseDown(event: MouseEvent): void;
 ```
-где:
+где:\
 `event` -- событие мыши.
 
 ### onMouseMove()
@@ -71,7 +71,7 @@ onMouseDown(event: MouseEvent): void;
 ```js
 onMouseMove(event: MouseEvent): void;
 ```
-где:
+где:\
 `event` -- событие мыши.
 
 ### onMouseUp()
@@ -80,5 +80,5 @@ onMouseMove(event: MouseEvent): void;
 ```js
 onMouseUp(event: MouseEvent): void;
 ```
-где:
+где:\
 `event` -- событие мыши.

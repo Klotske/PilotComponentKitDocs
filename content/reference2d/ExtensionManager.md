@@ -28,7 +28,7 @@ PilotWeb2D.theExtensionManager.registerExtensionType('myExtension', MyExtension)
 ```js
 registerExtensionType(extensionId: string, extension: typeof Extension) : boolean;
 ```
-где:
+где:\
 
 `extensionId` -- уникальное имя расширения.
 
@@ -41,7 +41,7 @@ registerExtensionType(extensionId: string, extension: typeof Extension) : boolea
 ```js
 unregisterExtensionType(extensionId: string) : boolean;
 ```
-где:
+где:\
 `extensionId`-- уникальное имя расширения.
 
 
@@ -51,5 +51,5 @@ unregisterExtensionType(extensionId: string) : boolean;
 ```js
 getExtensionType(extensionId: string): typeof Extension
 ```
-где:
+где:\
 `extensionId`-- уникальное имя расширения.

@@ -43,9 +43,9 @@ export interface I3DRenderer {
   clear(color?: boolean, depth?: boolean, stencil?: boolean): void;
 ```
 где:\
-`color` -- `true`, для очистки цветового буффера. По умолчанию `true`.\
-`depth` -- `true`, для очистки буффера глубины. По умолчанию `true`.\
-`stencil` -- `true`, для очистки буффера шаблона. По умолчанию `true`.
+`color` -- `true`, для очистки цветового буффера. По умолчанию: `true`.\
+`depth` -- `true`, для очистки буффера глубины. По умолчанию: `true`.\
+`stencil` -- `true`, для очистки буффера шаблона. По умолчанию: `true`.
 
 ###  clearDepth(): void
 Метод очищает буффер глубины. Эквивалентно вызову [.clear](#clear)(false, true, false).

@@ -20,6 +20,7 @@ draft: false
   export const VIEWER_CLIPPING_CUBE_ICON: string;
   export const VIEWER_DISABLED_DELETE_CLIPPING_PLANE_ICON: string;
   export const VIEWER_DISABLED_CLIPPING_FLIP_ICON: string;
+  export const VIEWER_ADD_REMARK_ICON: string;
 }
 
 export namespace ViewerGeneralIcons {
@@ -31,6 +32,7 @@ export namespace ViewerGeneralIcons {
   export const COLLAPSE_TREE: string;
   export const ARROW_DROP_DOWN: string;
   export const ARROW_DROP_RIGHT: string;
+  export const CIRCLE_ICON: string;
 }
 ```
 

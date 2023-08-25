@@ -19,7 +19,7 @@ getAllModelParts(): ModelPart[];
 ```js
 getModelPart(id: string): ModelPart;
 ```
-где:
+где:\
 
 `id` -- идентификатор части консолидированной модели.
 
@@ -41,7 +41,7 @@ getHiddenModelParts(): ModelPart[]
 ```js
 hideModelPart(modelPart: string | ModelPart): void;
 ```
-где:
+где:\
 `modelPart` -- идентификатор или экземпляр части модели.
 
 ### showModelPart()
@@ -49,7 +49,7 @@ hideModelPart(modelPart: string | ModelPart): void;
 ```js
 showModelPart(modelPart: string | ModelPart): void
 ```
-где:
+где:\
 `modelPart` -- идентификатор или экземпляр части модели.
 
 ### hide()
@@ -57,7 +57,7 @@ showModelPart(modelPart: string | ModelPart): void
 ```js
 hide(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
-где:
+где:\
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -74,7 +74,7 @@ hideAll(): void;
 ```js
 show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
 ```
-где:
+где:\
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -91,7 +91,7 @@ showAll(): void;
 ```js
 select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode): void
 ```
-где:
+где:\
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -104,7 +104,7 @@ select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMo
 ```js
 deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
-где:
+где:\
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -139,7 +139,7 @@ getVisibleElements(): ModelElementIds[]
 ```js
 setColor(elementIds: string[] | string, r: number, g: number, b: number, a: number, modelPart?: string | ModelPart): void
 ```
-где:
+где:\
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -158,7 +158,7 @@ setColor(elementIds: string[] | string, r: number, g: number, b: number, a: numb
 ```js
 clearColors(model? : string | ModelPart): void;
 ```
-где:
+где:\
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
 
@@ -168,7 +168,7 @@ clearColors(model? : string | ModelPart): void;
 ```js
 getElementProperties(elementId: string, modelPart?: string | ModelPart, version?: BigInt): ModelElementPropertySet[]
 ```
-где:
+где:\
 
 `elementId` -- идентификатор элемента.
 

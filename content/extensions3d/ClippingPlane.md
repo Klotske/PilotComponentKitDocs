@@ -70,14 +70,16 @@ export type ClippingPlaneDescription = {
 ```js
 normal: Point3
 ```
-где: `normal` -- координаты вектора нормали в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
+где:\
+`normal` -- координаты вектора нормали в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### origin
 Точка, принадлежащая плоскости сечения. Также в эту точку помещается `ClippingPlaneViewObject` - вспомогательный визуальный oбъект для отображения плоскости.
 ```js
 origin: Point3
 ```
-где: `origin` -- координаты точки в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
+где:\
+`origin` -- координаты точки в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### guid
 Идентификатор плоскости сечения. Необязательный параметр. Может использоваться для выборочного [удаления](#removePlanes) плоскостей сечения.

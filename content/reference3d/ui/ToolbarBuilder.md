@@ -14,7 +14,7 @@ draft: false
 ```js
 addButton(id: string) : ButtonBuilder;
 ```
-где:
+где:\
 
 `id` - идентификатор нового элемента управления.
 
@@ -25,5 +25,5 @@ addButton(id: string) : ButtonBuilder;
 ```js
 removeItem(id: string): void;
 ```
-где:
+где:\
 `id` - идентификатор элемента управления.

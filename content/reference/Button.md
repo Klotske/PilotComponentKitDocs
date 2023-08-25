@@ -31,7 +31,7 @@ clickAction: EventListener;
 ```js
 addClass(cssClass: string): void;
 ```
-где:
+где:\
 `cssClass` -- имя класса `CSS` стиля.
 
 ### removeClass()
@@ -39,7 +39,7 @@ addClass(cssClass: string): void;
 ```js
 removeClass(cssClass: string): void;
 ```
-где:
+где:\
 `cssClass` - имя класса `CSS` стиля.
 
 ### setIsChecked()
@@ -47,7 +47,7 @@ removeClass(cssClass: string): void;
 ```js
 setIsChecked(value: boolean): void;
 ```
-где:
+где:\
 `value` - селектирована кнопка или нет.
 
 ### setIcon()
@@ -55,7 +55,7 @@ setIsChecked(value: boolean): void;
 ```js
 setIcon(iconClassName: string): void;
 ```
-где:
+где:\
 `iconClassName` - имя класса `CSS` стиля, где содержится иконка.
 
 ### setFromSvgTemlate()
@@ -63,5 +63,5 @@ setIcon(iconClassName: string): void;
 ```js
 setFromSvgTemlate(template: string): void
 ```
-где:
+где:\
 `template` - svg элемент иконки в виде строки.

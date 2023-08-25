@@ -85,7 +85,7 @@ deactivate(): void;
 ```js
 setImpulseDirection(dir: Direction, add: boolean): void;
 ```
-где:
+где:\
 `dir` -- Направление движения отсносительно камеры. Подробнее: [Direction](#Direction).\
 `add` -- `true` для добавления, `false` для вычитания.
 

@@ -47,7 +47,7 @@ finish(): void;
 ```js
 loadDocument(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void 
 ```
-где:
+где:\
   `buffer` -- массив байт документа,
   `options` -- опции для загрузки документа,
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки документа,

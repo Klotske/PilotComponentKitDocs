@@ -61,7 +61,7 @@ finish(): void;
 ```js
 loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
 ```
-где:
+где:\
   `buffer` -- массив байт модели,
   `options` -- опции для загрузки части модели,
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
@@ -72,7 +72,7 @@ loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallb
 ```js
 unloadModelPart(modelPart: string | ModelPart): void;
 ```
-где:
+где:\
   `modelPart` -- идентификатор части модели или экземпляр части модели.
 
 ### getToolbar()
@@ -86,7 +86,7 @@ getToolbar(): ViewerToolbar;
 ```js
 makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 ```
-где:
+где:\
 `mimeType` -- необязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
 `quality` -- качество снимка.
 
