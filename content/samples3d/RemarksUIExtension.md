@@ -17,5 +17,5 @@ draft: false
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
 await viewer.start();
-viewer.extensionsLoader.loadExtension("RemarksUIExtensionSample");
+await viewer.extensionsLoader.loadExtension("RemarksUIExtensionSample");
 ```
