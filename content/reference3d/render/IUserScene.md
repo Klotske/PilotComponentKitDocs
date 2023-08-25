@@ -24,7 +24,6 @@ export interface IUserScene extends THREE.Scene {
   setClipping(planes: THREE.Plane[]): void;
   manageScene(context?: IRenderOperationContext): boolean;
   render(context: IRenderOperationContext): void;
-  clear(): this;
 }
 ```
 
@@ -144,9 +143,4 @@ render(context: IRenderOperationContext): void;
 где:
 `context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
 
-###  clear()
-Метод удаляет все объекты со сцены, за исключением объектов [THREE.Light](https://threejs.org/docs/?q=Light#api/en/lights/Light), добавляемых по умолчанию.
-```js
-clear(): this;
-```
 

@@ -17,13 +17,13 @@ draft: false
 var htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
 await viewer.start();
-viewer.extensionsLoader.loadExtension("PilotWeb3D.Remarks");
+await viewer.extensionsLoader.loadExtension("PilotWeb3D.Remarks");
 ```
 
 ## Свойства
 
 ## get remarkManager(): RemarkManager
-Возвращает контроллер точек замечаний. 
+Возвращает менеджер точек замечаний.
 Подробнее: [RemarkManager](#RemarkManager).
 ```js
 public get remarkManager(): RemarkManager;
@@ -44,7 +44,7 @@ deactivate(): void;
 
 
 # RemarkManager {#RemarkManager}
-**RemarkManager** -- контроллер замечаний, предоставляет методы API для работы с точками замечаний.
+**RemarkManager** -- менеджер замечаний, который предоставляет методы API для работы с точками замечаний.
 
 ```js
 
@@ -112,7 +112,7 @@ readonly remarkSceneName = 'RemarkViewObjectScene';
 ##  Методы
 
 ### setActive()
-Метод активирует или деактивирует контроллер точек замечаний.
+Метод активирует или деактивирует менеджер точек замечаний.
 ```js
 setActive(value: boolean): void;
 ```
@@ -137,22 +137,22 @@ public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: Re
 
 
 ### addRemarkByDescritpions()
-Метод добавляет точки замечаний, построеные из массива описаний.
+Метод добавляет точки замечаний, построенные из массива с описаниями.
 ```js  
 public addRemarkByDescritpions(remarks: RemarkDescription[]): void;
 ```
 где:
-`remarks` -- массив описаний точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
+`remarks` -- массив с описаниями точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
 
   
 ### getRemarkDescriptions()
-Метод получает массив описаний для добавленных на сцену точек замечаний.
+Метод получает массив с описаниями для добавленных на сцену точек замечаний.
 ```js  
 public getRemarkDescriptions(remarkIds?: string[]): RemarkDescription[];
 ```
 где:
-`remarkIds` -- массив идентификаторов точек замечаний описания которых нужно получить, опциональный параметр. Если не задан, то возвращаются описания всех добавленных на сцену точек замечаний.\
-Возвращает массив описаний точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
+`remarkIds` -- идентификаторы точек замечаний, описания которых нужно получить, опциональный параметр. Если не задан, то возвращаются описания всех добавленных на сцену точек замечаний.\
+Возвращает массив с описаниями точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
 
 ### removeRemarks()
 Метод удаляет точки замечаний и освобождает ресурсы, выделенные для удаляемых точек.
@@ -160,7 +160,7 @@ public getRemarkDescriptions(remarkIds?: string[]): RemarkDescription[];
 public removeRemarks(remarkIds?: string[]): void;
 ```
 где:
-`remarkIds` -- идентификаторы точек замечаний для удаления, опциональный параметрю Если не задан, то удаляются все добавленные на сцену точки замечаний.
+`remarkIds` -- идентификаторы точек замечаний для удаления, опциональный параметр. Если не задан, то удаляются все добавленные на сцену точки замечаний.
 
 ### setSelectedRemark()
 Метод управляет селектированием точек замечаний. Выбранное замечание может быть только одно.\
