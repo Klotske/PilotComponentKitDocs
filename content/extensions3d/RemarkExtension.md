@@ -247,7 +247,6 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 
 # RemarkObjectParameters {#RemarkObjectParameters}
 Параметры точки замечания.
-<!-- TODO: тобавить соответствующие свойства в RemarkViewObject? -->
 ```js
 export interface RemarkObjectParameters {
   remarkGuid?: string,
@@ -279,7 +278,6 @@ export interface RemarkObjectParameters {
 ### relativePosition : THREE.Vector3 {#remarkRelPosition}
 Координаты точки замечания относительно целевого объекта, опциональный параметр. Относительные координаты применяются только в том случае, если задан целевой объект ([targetObject](#targetObject)) и не заданы абсолютные координаты ([position](#remarkAbsPosition)). В случае если заданы и целевой объект и абсолютные координаты, то относительные координаты будут рассчитаны исходя из этих параметров. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
-<!-- TODO: поменять имя на SizeAttenuation -->
 ### pointSize : number
 Размер точки замечания без учета границы в пикселях, опциональный параметр. Если не задан, то используется значение по умолчанию: `15`.\
 При использовании геометрии по умолчанию, `pointSize` будет задавать диаметр точки без учета границы.
@@ -312,7 +310,6 @@ export interface RemarkObjectParameters {
 Цвет границы выбранной точки замечания, опциональный параметр. Если не задан, то используется цвет по умолчанию: `#c89e3fff`.\
 Подробнее: [Color](../../reference3d/render/Color).
 
-<!-- TODO: переделать под BufferGeometry, преобразование в instanced унести внутрь -->
 ### pointGeometry : THREE.InstancedBufferGeometry
 Геометрия, используемая для отрисовки точки. По умолчанию используется геометрия круга.\
 Подробнее: [THREE.InstancedBufferGeometry](https://threejs.org/docs/#api/en/core/InstancedBufferGeometry).

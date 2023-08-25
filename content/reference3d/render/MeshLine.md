@@ -102,7 +102,6 @@ export class MeshLineMaterial extends CustomMaterial {
 ```
 По умолчанию: `1`.
 
-<!-- TODO: поменять цвет на PilotWeb3d.Color ? -->
 ### color: Color {#color}
 Определяет значение цвета линий.
 ```js
@@ -111,7 +110,6 @@ export class MeshLineMaterial extends CustomMaterial {
 ```
 По умолчанию: `new Color( 1, 1, 1, 1 )`. Подробнее: [Color](../Color).
 
-<!-- TODO: поменять имя на SizeAttenuation -->
 ### worldUnits: boolean {#worldUnits}
 Определяет в каком пространстве задана ширина линий. Если `true`, то ширина линий задана в мировых координтах и на линию будет влиять перспектива - размер линии будет уменьшаться с глубиной кадра. В противном случае, размер линии считается в пикселях и остаетя неизменным, переспектива не оказывает влияния на ширину линиии.
 ```js
@@ -161,7 +159,6 @@ export class MeshLineMaterial extends CustomMaterial {
 ```
 По умолчанию: `1`.
 
-<!-- TODO: скрыть от пользователей или убрать сеттер. -->
 ### resolution: THREE.Vector2
 Задает и получает размеры области отрисовки. Нужно для корректной отрисовки линий в `worldUnits = false` режиме. Данное свойство обновляется автоматически перед отрисовкой.
 ```js
@@ -188,7 +185,6 @@ export interface MeshLineMaterialParameters extends THREE.ShaderMaterialParamete
 
 # MeshLineGeometry {#MeshLineGeometry}
 Геометрия, используемая для отрисовки линий в виде полигональной сетки. Линии задаются указанием точек.
-<!-- TODO: отрефакторить -->
 ```js
 export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 
