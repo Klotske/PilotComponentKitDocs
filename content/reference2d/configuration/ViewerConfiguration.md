@@ -11,7 +11,7 @@ class ViewerConfiguration {
   appearance: ViewerSettings = {
     [BaseSettingsNames.TOOLBAR] : {
       direction: ToolbarDirection.TOP_FLUENT,
-      content: ToolbarContent.CENTER
+      content: ToolbarContentAlignment.CENTER
     } as ToolbarStyle
   };
 }
@@ -48,7 +48,7 @@ content: string;
 Управляет расположением кнопок на панели инструментов.
 
 ```js
-export enum ToolbarContent {
+export enum ToolbarContentAlignment {
   CENTER = 'ascn-toolbar-content-center',
   START = 'ascn-toolbar-content-start',
   END = 'ascn-toolbar-content-end'
