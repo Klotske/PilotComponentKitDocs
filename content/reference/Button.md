@@ -50,6 +50,29 @@ setIsChecked(value: boolean): void;
 где:\
 `value` - селектирована кнопка или нет.
 
+### setState()
+Метод позволяет установить состояние кнопки.
+```js
+setState(state: Button.State): boolean;
+```
+где:\
+`state` - состояние кнопки. Подробнее: [Button.State](#Button.State).
+
+### setText()
+Метод позволяет установить текст кнопки.
+```js
+setText(text: string): void;
+```
+где:\
+`text` - текст, который будет отображать кнопка.
+
+
+### getState()
+Метод возвращает состояние кнопки.
+```js
+getState(): Button.State;
+```
+
 ### setIcon()
 Метод позволяет установить иконку для кнопки.
 ```js
@@ -65,3 +88,16 @@ setFromSvgTemlate(template: string): void
 ```
 где:\
 `template` - svg элемент иконки в виде строки.
+
+
+## Button.State {#Button.State}
+**Button.State**  - возможные варианты состояния кнопок.
+```js
+export namespace Button {
+  export enum State {
+    ACTIVE = 0, // Активна
+    INACTIVE = 1, // Не активна
+    DISABLED = 2 // Отключена
+  }
+}
+```
