@@ -12,7 +12,9 @@ export interface INavigationAgent  {
   readonly canvasNavigationSource: INavigationEventSource;
   readonly keyboardNavigationSource: INavigationEventSource;
 
-  setActive(value: boolean): void;
+  get isActive(): boolean;
+  set isActive(value: boolean);
+
   getNavigationArea(): DOMRect;
 }
 ```
@@ -50,15 +52,16 @@ navigationAgent.keyboardNavigationSource.addEventListener("keyup", onKeyUp, new 
 navigationAgent.keyboardNavigationSource.removeEventListener("keyup", onKeyUp, new NavigationEventOptions(false, NavigationHandlerPriority.DefaultNavigation, false, 'desktopNavigation'));
 ```
 
-### Методы
+### Свойства
 
-#### setActive()
-Метод активирует или деактивирует все источники событий навигации.
+#### isActive()
+Свойство определяет активность агента навигации.
 ```js
-setActive(value: boolean): void;
+  get isActive(): boolean;
+  set isActive(value: boolean);
 ```
-где:\
-`value` - активность.
+
+### Методы
 
 #### getNavigationArea()
 Метод позволяет получить прямоугольник текущей рабочей области навигации.
@@ -68,8 +71,8 @@ getNavigationArea(): DOMRect;
 Возвращает объект [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect).
 
 {{< hint type="important" icon=gdoc_error_outline title="Важно">}}
-При перемещении курсора за пределы рабочей области навигации происходит деактивация всех источников событий навигации. При возвращении курсора в рабочую область происходит активация источников событий навигации.\
-Таким образом, источники событий навигации не генерируют события мыши/клавиатуры/тачпада, если курсор находится за пределами рабочей области.
+В десктопной реализации навигации, при перемещении курсора за пределы рабочей области навигации происходит деактивация источника событий клавиатуры. При возвращении курсора в рабочую область происходит активация источника событий клавиатуры.\
+Таким образом, события клавиатуры не генерируются если курсор находится за пределами рабочей области.
 {{< /hint >}}
 
 
@@ -77,18 +80,36 @@ getNavigationArea(): DOMRect;
 **INavigationEventSource** -- интерфейс источника событий навигации.
 ```js
 export interface INavigationEventSource {
-  // Ивент сигнализирует об изменении активности данного источника событий навигации.
-  readonly eventSourceActivityChanged: EventDispatcher<boolean>;
+  // Свойство определяет активность источника событий навигации.
+  get isActive(): boolean;
+  set isActive(value: boolean);
 
-  // Метод активирует или деактивирует данный источник событий навигации.
-  setActive(value: boolean): void;
+  addEventListener<T extends keyof NavigationEventSourceEventMap>(type: T, listener: (this: object, ev: NavigationEventSourceEventMap[T] & NavigationEvent) => void, options?: boolean | EventListenerOptions | NavigationEventOptions): void;
 
-  addEventListener<T extends keyof HTMLElementEventMap>(type: T, listener: (this: object, ev: HTMLElementEventMap[T] & NavigationEvent) => void, options?: boolean | EventListenerOptions | NavigationEventOptions): void;
-
-  removeEventListener<T extends keyof HTMLElementEventMap>(type: T, listener: (this: object, ev: HTMLElementEventMap[T] & NavigationEvent) => void, options?: boolean | EventListenerOptions | NavigationEventOptions): void;
+  removeEventListener<T extends keyof NavigationEventSourceEventMap>(type: T, listener: (this: object, ev: NavigationEventSourceEventMap[T] & NavigationEvent) => void, options?: boolean | EventListenerOptions | NavigationEventOptions): void;
 }
 ```
-<!--more-->
+
+## NavigationEventSourceEventMap
+**NavigationEventSourceEventMap** -- события, генерируемые источником событий навигации.\
+Расширяет `HTMLElementEventMap` -- список встроенных DOM событий.
+```js
+export interface NavigationEventSourceEventMap extends HTMLElementEventMap {
+  `active`: ActiveEvent
+}
+```
+где:\
+`active` -- событие возникающее при изменении активности данного источника событий навигации. Подробнее: [ActiveEvent](#ActiveEvent).
+
+## ActiveEvent {#ActiveEvent}
+Представляет событие, которое происходит при изменении активности источника событий навигации.\
+Расширяет `Event`.
+```js
+export interface ActiveEvent extends Event {
+  // Активность источника событий навигации.
+  readonly isActive: boolean
+}
+```
 
 ## NavigationEvent {#NavigationEvent}
 **NavigationEvent** -- базовый класс события навигации.

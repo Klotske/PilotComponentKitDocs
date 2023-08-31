@@ -16,6 +16,7 @@ export interface I3DRenderer {
   getSize(target: THREE.Vector2): THREE.Vector2;
   setSize(width: number, height: number, updateStyle?: boolean): void;
   setViewport(x: THREE.Vector4 | number, y?: number, width?: number, height?: number): void;
+  getViewport(target: THREE.Vector4): THREE.Vector4;
   clippingPlanes: THREE.Plane[];
   domElement: HTMLCanvasElement;
 }
@@ -92,3 +93,15 @@ export interface I3DRenderer {
 `y` --  y-координата левого нижнего угла окна.\
 `width` -- ширина окна.\
 `height` -- высота окна.
+
+### getViewport()
+Метод возвращает размеры области отрисовки. Результат будет записан в `target` вектор.
+```js
+  getViewport(target: THREE.Vector4): THREE.Vector4;
+```
+где:\
+`target` -- вектор с размерами области отрисовки. Подробнее: [THREE.Vector4](https://threejs.org/docs/index.html#api/en/math/Vector4).\
+  `x` - x-координата левого нижнего угла окна.\
+  `y` --  y-координата левого нижнего угла окна.\
+  `z` или `width` -- ширина окна.\
+  `w` или `height` -- высота окна.

@@ -16,7 +16,8 @@ export interface ICameraControl {
   rotate(movement: THREE.Vector2, rotationCenter: THREE.Vector3): void;
   translate(startNdcPos: THREE.Vector2, endNdcPos: THREE.Vector2, viewCenter: THREE.Vector3): void;
   spin(movement: THREE.Vector2): void;
-  orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void
+  getCameraOrientation(): CameraOrientation;
+  setCameraOrientation(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
   zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
   zoomToFit(bb: THREE.Box3, iOrientation?: CameraOrientation, isAnimationEnabled?: boolean): void;
 
@@ -55,7 +56,6 @@ getCameraParameters(): CameraParameters;
 setAspectRatio(width: number, heigth: number): boolean;
 ```
 где:\
-
 `width` -- ширина изображения, может быть в любых величинах.\
 `heigth` -- высота изображения, может быть в любых величинах.\
 Результирующе соотношение сторон равно `width / heigth`.\
@@ -88,10 +88,16 @@ spin(movement: THREE.Vector2): void;
 где:\
 `movement` -- смещение в экранных координатах.
 
-###  orientateCamera()
+###  getCameraOrientation()
+Метод позволяет получить ориентацию камеры в пространстве. Подробнее: [CameraOrientation](../CameraOrientation).
+```js
+getCameraOrientation(): CameraOrientation;
+```
+
+###  setCameraOrientation()
 Метод позволяет ориентировать камеру в пространстве, позиция камеры при этом не изменяется.
 ```js
-orientateCamera(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
+setCameraOrientation(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
 ```
 где:\
 `iOrientation` -- конечная ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
