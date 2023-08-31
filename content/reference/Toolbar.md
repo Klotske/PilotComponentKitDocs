@@ -31,7 +31,7 @@ addControl(control: Control, index: number = 0): void;
 `index` -- индекс.
 
 ### addDropdown() {#addDropdown}
-Добавляет элемент в тулбар.
+Добавляет выпадающий список в тулбар.
 ```js
 addDropdown(id: string, tooltip: string, positionIndex: number = 0, selectedIndex: number, dropdownEmitter: Control, controls: Control [], 
     itemClicked: ({ index, event}: {
@@ -42,9 +42,9 @@ addDropdown(id: string, tooltip: string, positionIndex: number = 0, selectedInde
 где:\
 `id` -- идентификатор элемента.\
 `tooltip` -- всплывающая подсказка на элементе.\
-`positionIndex` -- позиция компонента в тулбаре.\
-`selectedIndex` -- выбранный в выпадающем меню пункт, если ничего не выбрано передавать -1.\
-`dropdownEmitter` -- элемент-триггер для по клику на который откроется выдающее меню.\
+`positionIndex` -- позиция элемента в тулбаре.\
+`selectedIndex` -- выбранный в выпадающем меню пункт, если ничего не выбрано передавать `-1`.\
+`dropdownEmitter` -- элемент-триггер, по клику на который откроется выпадающее меню.\
 `controls` -- пункты меню.\
 `itemClicked` -- колбек функция-обработчик клика по пункту меню.\
 `index` - номер пункта меню по которому был произведён клик.\
