@@ -404,7 +404,7 @@ export type RemarkDescription = {
 Подробнеее: [ModelElement.modelPartId](../../reference3d/ModelElement#modelPartId).
 
 ### targetEntityGuid : string
-Идентификатор элемента модели геометрия которого используется как целевой объект для привязки замечания.\
+Идентификатор элемента модели, геометрия которого используется как целевой объект для привязки замечания.\
 Подробнеее: [ModelElement.id](../../reference3d/ModelElement#id).
 
 ### absPosition : THREE.Vector3
