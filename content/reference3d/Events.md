@@ -26,7 +26,7 @@ class CoreEventTypes {
 }
 ```
 
-### Имена событий для 3D
+### Имена событий для 3D {#Events3D}
 ```js
 class EventTypes extends CoreEventTypes {
   // Имя события изменения селектированного элемента
@@ -35,6 +35,8 @@ class EventTypes extends CoreEventTypes {
   static MODEL_PART_LOADED: string;
   // Имя события выгрузки части консолидированной модели
   static MODEL_PART_UNLOADED: string;
+  // Имя события изменения положения виртуального начала координат.
+  static VIRTUAL_ORIGIN_CHANGED: string;
   // Имя события изменения положения камеры
   static CAMERA_CHANGE_EVENT: string;
   // Имя события изменения типа навигации камеры
@@ -48,7 +50,7 @@ class EventTypes extends CoreEventTypes {
 }
 ```
 
-### Классы событий для 3D {#Events3D}
+### Классы событий для 3D
 ```js
 // Класс события изменения селектированного элемента
 class SelectionChangedEvent extends Event {
@@ -58,6 +60,11 @@ class SelectionChangedEvent extends Event {
 // Класс события загрузки или выгрузки части консолидированной модели
 class ModelPartEvent extends Event {
   modelPartId: string; // идентификатор части консолидированной модели
+}
+
+class VirtualOriginEvent extends {
+  virtualOrigin: Point3; // обновлённое положение виртуального начала координат.
+  delta: Point3; // смещение объектов на сцене: oldOrigin - newOrigin.
 }
 
 // Класс события изменения положения камеры
