@@ -45,10 +45,10 @@ removeControl(index?: number): void;
 clearList(): void;
 ```
 
-### changeElementByIndex()
+### changeControl()
 Метод меняет указанный в списке элемент.
 ```js
-changeElementByIndex(index: number, item: IControl): void;
+changeControl(item: IControl, index: number): void;
 ```
 где:\
 `index` -- позиция элемента, который нужно заменить.\
@@ -62,10 +62,10 @@ getListItemByIndex(index: number): Element;
 где:\
 `index` -- позиция элемента, который вернётся.
 
-### getCountElements()
+### getControlsCount()
 Метод возвращает количество элементов в списке.
 ```js
-getCountElements(): number;
+getControlsCount(): number;
 ```
 
 ### fillList()
