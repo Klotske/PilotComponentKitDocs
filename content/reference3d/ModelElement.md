@@ -51,7 +51,7 @@ get children(): ModelElement[];
 get hasGeometry(): boolean;
 ```
 
-### viewObject
+### viewObject {#viewObject}
 Получает геометрию элемента, если она есть. В противном случае возвращает `undefined`.
 ```js
 get viewObject(): ViewObject | undefined;

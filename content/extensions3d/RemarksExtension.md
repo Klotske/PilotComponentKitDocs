@@ -53,6 +53,7 @@ export class RemarkManager {
   readonly selectedRemarkChanged: PilotWeb3D.EventDispatcher<string | null>;
   readonly remarkDoubleClicked: PilotWeb3D.EventDispatcher<string | null>;
 
+  readonly events: PilotWeb3D.IEventsDispatcher;
   readonly remarkSceneName = 'RemarkViewObjectScene';
 
   public get placeRemarkOnClick(): boolean;
@@ -91,10 +92,18 @@ export class RemarkManager {
 readonly remarkSceneName = 'RemarkViewObjectScene';
 ```
 
+### events : IEventsDispatcher
+Диспетчер событий замечаний. Подробнее: [IEventsDispatcher](../../reference/EventsDispatcher).\
+Список типов событий замечаний: [RemarkEventMap](#RemarkEventMap).
+```js
+  readonly events: PilotWeb3D.IEventsDispatcher;
+```
+
 ## Свойства
 
-### placeRemarkOnClick : boolean
-Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. После добавления точки замечания, либо при клике в пустую область, режим сбрасывается и свойство становится `false`.
+### placeRemarkOnClick : boolean {#placeRemarkOnClick}
+Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. После добавления точки замечания, либо при клике в пустую область, режим сбрасывается и свойство становится `false`.\
+Также, при смене режима размещения точек возникает событие [remarkSelectedObjectChanged](#remarkSelectedObjectChanged).
 ```js
   get placeRemarkOnClick(): boolean;
   set placeRemarkOnClick(value: boolean);
@@ -162,9 +171,9 @@ public removeRemarks(remarkIds?: string[]): void;
 где:\
 `remarkIds` -- идентификаторы точек замечаний для удаления, опциональный параметр. Если не задан, то удаляются все добавленные на сцену точки замечаний.
 
-### setSelectedRemark()
+### setSelectedRemark() {#setSelectedRemark}
 Метод управляет селектированием точек замечаний. Выбранное замечание может быть только одно.\
-При вызове `setSelectedRemark` выбирается замечание, идентификатор которого был передан как аргумент, а предыдущий выбор сбрасывается. Если замечание с нужным идентификатором не найдено, либо `remarkId` неопределён, то выбор также сбрасывается.\
+При вызове `setSelectedRemark` выбирается замечание, идентификатор которого был передан как аргумент, а предыдущий выбор сбрасывается. Если замечание с нужным идентификатором не найдено, либо `remarkId` неопределён, то выбор также сбрасывается. Также, при смене выбранного замечания возникает событие [remarkSelectedObjectChanged](#remarkSelectedObjectChanged).\
 Выбранное замечание можно получить с помощью свойства [selectedRemark](#selectedRemark).
 ```js  
 public setSelectedRemark(remarkId: string): void;
@@ -190,6 +199,33 @@ public setRemarksLayerVisibility(visibiliity: boolean): void;
 `visibiliity` -- параметр видимости слоя замечаний. Если `true`, то слой замечаний отрисовывается в процессе рендера. 
 В противном случае, слой замечаний не рисуется и объекты замечаний на сцене не показываются.
 
+
+## RemarkEventMap {#RemarkEventMap}
+События замечаний.
+```js
+interface RemarkEventMap {
+  'remarkPlacingModeChanged' : Event;
+  'remarkSelectedObjectChanged' : Event;
+  'remarkDoubleClicked' : PilotWeb3D.ClickedEvent;
+}
+```
+### remarkPlacingModeChanged {#remarkPlacingModeChanged}
+```js
+  'remarkPlacingModeChanged' : Event;
+```
+Событие возникает при изменении свойства [placeRemarkOnClick](#placeRemarkOnClick).
+
+### remarkSelectedObjectChanged {#remarkSelectedObjectChanged}
+```js
+  'remarkSelectedObjectChanged' : Event;
+```
+Событие возникает при смене выбранного замечания. Подробнее: [selectedRemark](#selectedRemark), [setSelectedRemark](#setSelectedRemark).
+
+### remarkDoubleClicked
+```js
+  'remarkDoubleClicked' : PilotWeb3D.ClickedEvent; 
+```
+Событие возникает при двойном клике по точке замечания. Подробнее: [Events3D](../../reference3d/Events#Events3D).
 
 # RemarkViewObject {#RemarkViewObject}
 Графический объект представляющий точку замечания, добавляется на слой замечаний. Расширяет [ViewObject](../../reference3d/render/ViewObject).
@@ -217,14 +253,14 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 
 ## Свойства
 
-### remarkParameters(): RemarkObjectParameters
+### remarkParameters() : RemarkObjectParameters
 Возвращает текущие параметры замечания.
 ```js
   get remarkParameters(): RemarkObjectParameters;
 ```
 Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
 
-### statusParameters(): RemarkStatusParameters
+### statusParameters() : RemarkStatusParameters
 Возвращает текущие параметры статуса замечания.
 ```js
   get statusParameters(): RemarkStatusParameters;
@@ -334,16 +370,43 @@ export interface RemarkStatusParameters {
 Определяет цвет статуса замечания, опциональный параметр. При отрисовке цвет текстуры замечания умножается на этот цвет. Если не задан, то используется значение по умолчанию: `new PilotWeb3D.Color(1, 1, 1, 1)`.\
 Подробнее: [Color](../../reference3d/render/Color).
 
-### statusSize : number
-Определяет размер текстуры статуса замечания в пикселях, опциональный параметр. Если не задан, то используется значение по умолчанию: `18`.
+### statusSize : THREE.Vector2
+Определяет размеры текстуры статуса замечания в пикселях, опциональный параметр. Если не задан, то используется значение по умолчанию: `new THREE.Vector2(30, 30)`.
 
 ### statusOffset : THREE.Vector2
-Определяет смещение текстуры статуса замечания относительно точки замечания, опциональный параметр. Указывается в процентах от размера самой текстуры.\
-Для значения `x = 0, y = 0` в центре точки замечания будет левый нижний угол текстуры замечания.\
-Для значения `x = 0.5, y = 0.5` в центре точки замечания будет центр текстуры.\
-Если не задан, то используется значение по умолчанию: `new THREE.Vector2(0, 0)`.\
+Определяет смещение текстуры статуса замечания относительно точки замечания, опциональный параметр. Указывается в пикселях.\
+Если не задан, то используется значение по умолчанию: `new THREE.Vector2(25, 25)`.\
 Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
 
 ### statusTexture : THREE.Texture
 Текстура статуса замечания, опциональный параметр.\
 Подробнее: [THREE.Texture](https://threejs.org/docs/#api/en/textures/Texture).
+
+
+## RemarkDescription {#RemarkDescription}
+Описание точки замечания.
+
+Целевым объектом замечания будет геометрия элемента модели, идентификаторы которого передаются в описании. Если у элемента модели нет геометрии, то замечание помещается на сцену но не имеет целевого объекта.
+Подробнее: [ModelElement.viewObject](../../reference3d/ModelElement#viewObject).
+```js
+export type RemarkDescription = {
+  remarkGuid: string,
+  targetModelGuid: string,
+  targetEntityGuid: string,
+  absPosition: THREE.Vector3,
+};
+```
+### remarkGuid : string
+Идентификатор точки замечания.
+
+### targetModelGuid : string
+Идентификатор части модели которой принадлежит целевой объект.\
+Подробнеее: [ModelElement.modelPartId](../../reference3d/ModelElement#modelPartId).
+
+### targetEntityGuid : string
+Идентификатор элемента модели, геометрия которого используется как целевой объект для привязки замечания.\
+Подробнеее: [ModelElement.id](../../reference3d/ModelElement#id).
+
+### absPosition : THREE.Vector3
+Координаты точки замечания в мировом пространстве.\
+Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
