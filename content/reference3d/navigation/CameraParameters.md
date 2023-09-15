@@ -6,17 +6,29 @@ weight: 9
 ---
 
 **CameraParameters** -- описание параметров камеры.
-
-## Свойства
+```js
+export type CameraParameters = {
+  /** Camera position */
+  position: Point3,
+  /** Camera view direction: vector pointing from camera to target */
+  eyeDir: Point3,
+  /** Field of view: angle in radians */
+  angle: number,
+  /** (optional) Camera up vector*/
+  upDir?: Point3,
+  /** (optional) Vector pointing to the center of viewing area. Used only in the NavigationTool */
+  viewCenter?: Point3
+};
+```
 
 ### position
-Позиция камеры. Задается параметрами x, y, z. Подробнее: [Point3](../Point3).
+Позиция камеры. Подробнее: [Point3](../Point3).
 ```js
 position: Point3;
 ```
 
 ### eyeDir
-Вектор направления взгляда камеры. Задается параметрами x, y, z. Подробнее: [Point3](../Point3).
+Вектор направления взгляда камеры. Подробнее: [Point3](../Point3).
 ```js
 eyeDir: Point3;
 ```
@@ -27,8 +39,14 @@ eyeDir: Point3;
 angle: number
 ```
 
-### viewCenter
-Вектор точки взгляда. Подробнее: [Point3](../Point3).
+### upDir
+Вектор направления верха камеры, не обязательный параметр. Подробнее: [Point3](../Point3).
 ```js
-viewCenter: Point3;
+upDir?: Point3
+```
+
+### viewCenter
+Вектор точки взгляда, не обязательный параметр. Подробнее: [Point3](../Point3).
+```js
+viewCenter?: Point3;
 ```

@@ -48,7 +48,7 @@ class EventTypes extends CoreEventTypes {
 }
 ```
 
-### Классы событий для 3D
+### Классы событий для 3D {#Events3D}
 ```js
 // Класс события изменения селектированного элемента
 class SelectionChangedEvent extends Event {

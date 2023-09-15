@@ -25,7 +25,6 @@ export interface IEventsDispatcher {
 addEventListener(event: string, listener: EventListener, options?: object): void;
 ```
 где:\
-
 `event` -- <a href="../Events">имя события</a>.\
 `listener` -- обработчик события.\
 `options` -- дополнительные параметры подписки. Необязательный параметр.
@@ -36,7 +35,6 @@ addEventListener(event: string, listener: EventListener, options?: object): void
 removeEventListener(event: string, listener: EventListener): void;
 ```
 где:\
-
 `event` -- <a href="../Events">имя события</a>.\
 `listener` -- обработчик события.
 
@@ -46,7 +44,6 @@ removeEventListener(event: string, listener: EventListener): void;
 hasEventListener(event: string, listener: EventListener): boolean;
 ```
 где:\
-
 `event` -- <a href="../Events">имя события</a>.\
 `listener` -- обработчик события.
 
@@ -59,7 +56,6 @@ hasEventListener(event: string, listener: EventListener): boolean;
 dispatchEvent(event: string | Event): void;
 ```
 где:\
-
 `event` -- <a href="../Events">имя события</a> или объект `Event`.
 
 ### dispatchEventAsync()
@@ -69,7 +65,6 @@ dispatchEvent(event: string | Event): void;
 dispatchEventAsync(event: string | Event): void;
 ```
 где:\
-
 `event` -- <a href="../Events">имя события</a> или объект `Event`.
 
 ### clearListeners()
