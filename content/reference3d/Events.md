@@ -62,7 +62,7 @@ class ModelPartEvent extends Event {
   modelPartId: string; // идентификатор части консолидированной модели
 }
 
-class VirtualOriginEvent extends {
+class VirtualOriginEvent extends Event {
   virtualOrigin: Point3; // обновлённое положение виртуального начала координат.
   delta: Point3; // смещение объектов на сцене: oldOrigin - newOrigin.
 }
