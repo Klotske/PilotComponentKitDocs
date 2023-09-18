@@ -177,7 +177,7 @@ class RemarksLayerManager {
 ### removeLayer
 Удаляет слой для замечаний со всех страниц.
 ```js
-  createLayer(): void;
+  removeLayer(): void;
 ```
 
 
