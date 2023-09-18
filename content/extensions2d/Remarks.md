@@ -55,7 +55,7 @@ deactivate(): boolean;
 ```
 
 ### getClickPage()
-Метод получает страницу, по которой был произведен щелчек мыши. Подробнее: <a href="../../reference2d/DocumentPage">DocumentPage</a>.
+Метод получает страницу, по которой был произведен клик мыши. Подробнее: <a href="../../reference2d/DocumentPage">DocumentPage</a>.
 ```js
 protected getClickPage(event: MouseEvent): PilotWeb2D.DocumentPage
 ```

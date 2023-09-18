@@ -36,12 +36,12 @@ addOverlay(overlay: HTMLElement): boolean;
 `overlay` -- HTML-элемент, который надо добавить на слой.
 
 ### removeOverlay
-Удаляет HTML-элемент из слоя.
+Удаляет HTML-элемент со слоя.
 ```js
 removeOverlay(overlay: HTMLElement): boolean;
 ```
 где:\
-`overlay` -- HTML-элемент, который надо удалить из слой.
+`overlay` -- HTML-элемент, который надо удалить со слой.
 
 ### getOverlays
 Получает все элементы добавленные на слой.

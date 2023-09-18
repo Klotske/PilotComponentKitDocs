@@ -29,7 +29,7 @@ createLayer(name: string): void;
 `name` -- уникальное имя слоя.
 
 ### deleteLayer
-Удаляет слой издокумента.
+Удаляет слой из документа.
 ```js
 deleteLayer(name: string): boolean;
 ```
