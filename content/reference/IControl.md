@@ -4,13 +4,14 @@ draft: false,
 weight: 13
 ---
 
-**IControl** - интерфейс ui элементов.
+**IControl** - интерфейс, описывающий базовый элемент управления.
 
 ```js
 export interface IControl {
   container: HTMLElement;
-  getId: () => string;
-  setToolTip?: (tooltipText: string) => void;
+  getId(): string;
+  setToolTip(tooltipText: string): void;
+  setText(text: string): void;
 }
 ```
 
@@ -20,7 +21,7 @@ export interface IControl {
 ```js
 container: HTMLElement;
 ```
-Элемент-контейнер контрола.
+DOM представление компонента.
 
 ## Методы
 
@@ -31,9 +32,18 @@ getId(): void;
 ```
 
 ### setToolTip()
-Возвращает идентификатор элемента.
+Устанавливает подсказку при наведении.
 ```js
 setToolTip(tooltipText: string): void;
 ```
 где:\
 `tooltipText` - текст, который будет отображаться при наведении.
+
+
+### setText()
+Устанавливает текст элемента.
+```js
+setText(text: string): void;
+```
+где:\
+`text` - текст, который будет отображаться в элементе.

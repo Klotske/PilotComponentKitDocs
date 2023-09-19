@@ -8,12 +8,12 @@ weight: 12
 
 ## Свойства
 ```js
-controls: IControl[];
+readonly controls: IControl[];
 ```
 Массив элементов меню. Подробнее: [IControl](../IControl).
 
 ### selectedIndex : number
-Выбранный элемент в списке.
+Индекс выбранного элемента.
 ```js
 get selectedIndex(): number;
 set selectedIndex(value: number);
@@ -23,16 +23,16 @@ set selectedIndex(value: number);
 ## Методы
 
 ### addControl()
-Функция добавления элемента в список.
+Функция добавляет элемент управления.
 ```js
 addControl(control: IControl, index?: number): void;
 ```
 где:\
-`control` -- добавляемый элемент.\
+`control` -- добавляемый элемент управления.\
 `index` -- позиция в списке куда добавляется элемент, по умолчанию в конец.
 
 ### removeControl()
-Функция удаления элемента из списка.
+Функция удаляет элемент управления из списка.
 ```js
 removeControl(index?: number): void;
 ```
@@ -54,24 +54,8 @@ changeControl(item: IControl, index: number): void;
 `index` -- позиция элемента, который нужно заменить.\
 `item` -- новый элемент.
 
-### getListItemByIndex()
-Метод возвращает элемент из списка по индексу.
-```js
-getListItemByIndex(index: number): Element;
-```
-где:\
-`index` -- позиция элемента, который вернётся.
-
 ### getControlsCount()
 Метод возвращает количество элементов в списке.
 ```js
 getControlsCount(): number;
 ```
-
-### fillList()
-Метод добавляет элементы в список к уже существующим.
-```js
-fillList(controls: IControl[]): void;
-```
-где:\
-`controls` -- новые элементы.
