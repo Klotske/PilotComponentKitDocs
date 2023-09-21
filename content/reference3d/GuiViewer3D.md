@@ -75,6 +75,21 @@ unloadModelPart(modelPart: string | ModelPart): void;
 где:\
   `modelPart` -- идентификатор части модели или экземпляр части модели.
 
+### setVirtualOrigin()
+Метод задаёт положение виртуального начала координат. Координаты объектов модели и положение камеры пересчитываются относительно нового начала координат.\
+При изменении ВНК возникает событие `VIRTUAL_ORIGIN_CHANGED`. Подробнее: [Events3D](./Events/#Events3D).
+```js
+  setVirtualOrigin(point: Point3): void;
+```
+где:\
+  `point` -- положение ВНК. Подробнее: [Point3](../../reference3d/navigation/Point3).
+
+### setVirtualOrigin()
+Метод возвращает положение виртуального начала координат. Подробнее: [Point3](../../reference3d/navigation/Point3).
+```js
+  setVirtualOrigin(point: Point3): void;
+```
+
 ### getToolbar()
 Метод получает объект для работы с панелью инструментов.
 ```js

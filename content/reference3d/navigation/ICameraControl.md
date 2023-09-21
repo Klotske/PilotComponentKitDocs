@@ -18,6 +18,8 @@ export interface ICameraControl {
   spin(movement: THREE.Vector2): void;
   getCameraOrientation(): CameraOrientation;
   setCameraOrientation(iOrientation: CameraOrientation, isAnimationEnabled?: boolean): void;
+  setViewCenter(viewCenter: THREE.Vector3): void;
+  getViewCenter(): THREE.Vector3;
   zoomToPoint(deltaSign: number, point: THREE.Vector3): void;
   zoomToFit(bb: THREE.Box3, iOrientation?: CameraOrientation, isAnimationEnabled?: boolean): void;
 
@@ -102,6 +104,20 @@ setCameraOrientation(iOrientation: CameraOrientation, isAnimationEnabled?: boole
 где:\
 `iOrientation` -- конечная ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).\
 `isAnimationEnabled` -- анимация при изменении ориентации, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
+
+###  getViewCenter() {#getViewCenter}
+Метод позволяет получить положение точки взгляда. Подробнее: [ViewCenter](../CameraParameters/#viewCenter).
+```js
+getViewCenter(): THREE.Vector3;
+```
+
+###  setViewCenter()
+Метод позволяет задать положение точки взгляда. Подробнее: [ViewCenter](../CameraParameters/#viewCenter).
+```js
+setViewCenter(viewCenter: THREE.Vector3): void;
+```
+где:\
+`viewCenter` -- положение точки взгляда в мировом пространстве.
 
 ###  zoomToPoint()
 Метод позволяет приблизить либо отдалить камеру относительно точки.
