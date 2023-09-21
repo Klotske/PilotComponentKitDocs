@@ -16,7 +16,7 @@ export type CameraParameters = {
   angle: number,
   /** (optional) Camera up vector*/
   upDir?: Point3,
-  /** (optional) Vector pointing to the center of viewing area. Used only in the NavigationTool */
+  /** (optional) Vector pointing to the center of viewing area.*/
   viewCenter?: Point3
 };
 ```
@@ -45,8 +45,9 @@ angle: number
 upDir?: Point3
 ```
 
-### viewCenter
-Вектор точки взгляда, не обязательный параметр. Подробнее: [Point3](../Point3).
+### viewCenter {#viewCenter}
+Вектор точки взгляда, не обязательный параметр. Подробнее: [Point3](../Point3).\
+Используется как опорная точка при вращении камеры во время навигации, если не задан [PivotPoint](../INavigationTool/#setPivotPoint). 
 ```js
 viewCenter?: Point3;
 ```

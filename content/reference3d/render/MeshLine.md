@@ -42,7 +42,7 @@ export class MeshLine extends THREE.Mesh {
 
 **MeshLineMaterial** -- материал для отрисовки линий в виде полигональной сетки.
 ```js
-export class MeshLineMaterial extends CustomMaterial {
+export class MeshLineMaterial extends THREE.ShaderMaterial {
   constructor(parameters: MeshLineMaterialParameters);
 
   get linewidth(): number;
@@ -95,7 +95,7 @@ export class MeshLineMaterial extends CustomMaterial {
 По умолчанию: `1`.
 
 ### opacity: number
-Определяет значение прозрачности линий.
+Определяет значение прозрачности линий. Общая прозрачность для всех линий применяется, если в материале свойство `vertexColors` установлено в `false` (значение по умолчанию).
 ```js
   get opacity(): number;
   set opacity(value: number);
@@ -103,7 +103,7 @@ export class MeshLineMaterial extends CustomMaterial {
 По умолчанию: `1`.
 
 ### color: Color {#color}
-Определяет значение цвета линий.
+Определяет значение цвета линий. Общий цвет для всех линий применяется, если в материале свойство `vertexColors` установлено в `false` (значение по умолчанию).
 ```js
   get color(): Color;
   set color(value: Color);
@@ -119,7 +119,8 @@ export class MeshLineMaterial extends CustomMaterial {
 По умолчанию: `true`.
 
 ### dashed: boolean
-Определяет является ли линия пунктирной.
+Определяет является ли линия пунктирной.\
+Для отрисовки пунктирной линии также необходимо вычислить расстояния между точками в `MeshLineGeometry`. Подробнее: [MeshLineGeometry.computeLineDistances](#computeLineDistances).
 ```js
   get dashed(): boolean;
   set dashed(value: boolean);
@@ -196,9 +197,11 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 
   setColors(array: ArrayLike<number>): this;
 
+  computeLineDistances(): this;
+
   updatePoint(index: number, point: THREE.Vector3): void;
 
-  updateColor(index: number, color: THREE.Color): void;
+  updateColor(index: number, color: Color): void;
 }
 ```
 
@@ -210,9 +213,10 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
   setPoints(points: THREE.Vector3[]): this;
 ```
 где:\
-`points` -- точки линии. Подробнее: [THREE.Vector3](https://www.google.com/search?q=THREE.Vector3).
+`points` -- точки линии. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
-При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения координат точек, если количество точек не изменяется, следует использовать метод [updatePoint](#updatePoint).
+При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения координат точек, если количество точек не изменяется, следует использовать метод [updatePoint](#updatePoint).\
+Если нужно отрисовать пунктирную линию, то следует пересчитать расстояния между точками с помощью [computeLineDistances](#computeLineDistances).
 
 ### setPositions()
 Метод задает точки линии из координат переданных в виде массива.
@@ -222,17 +226,25 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 где:\
 `array` -- массив с координатами точек. Координаты расположены последовательно, по 3 элемента на точку: `[ x0, y0, z0, x1, y1, z1, ... ]`.
 
-При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения координат точек, если количество точек не изменяется, следует использовать метод [updatePoint](#updatePoint).
+При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения координат точек, если количество точек не изменяется, следует использовать метод [updatePoint](#updatePoint).\
+Если нужно отрисовать пунктирную линию, то следует пересчитать расстояния между точками с помощью [computeLineDistances](#computeLineDistances).
 
 ### setColors()
-Метод задает цвета отдельных участков линии. Цвета действуют в окрестностях точек к которым применяются, то есть все отрезки между точками будут поделены пополам и каждая половина будет окрашена в цвет ближайшей примыкающей точки. Если цвета не заданы, то для всей линии используется цвет материала: [MeshLineMaterial.color](#color).
+Метод задает цвета отдельных участков линии. Цвета действуют в окрестностях точек к которым применяются, то есть все отрезки между точками будут поделены пополам и каждая половина будет окрашена в цвет ближайшей примыкающей точки. Если цвета не заданы, то для всей линии используется цвет материала: [MeshLineMaterial.color](#color).\
+Цвета применяются, только если в `MeshLineMaterial` свойство `vertexColors` установлено  в `true`.
 ```js
   setColors(array: ArrayLike<number>): this;
 ```
 где:\
-`array` -- массив со значенями цветов точек. Значения расположены последовательно, по 3 элемента на точку: `[ r0, g0, b0, r1, g1, b1, ... ]`.
+`array` -- массив со значенями цветов точек. Значения расположены последовательно, по 4 элемента на точку: `[ r0, g0, b0, a0, r1, g1, b1, a1, ... ]`.
 
 При вызове этого метода происходит перестроение атрибутов геометрии, что является ресурсозатратной операцией. Поэтому, для изменения цветов точек, если количество точек не изменяется, следует использовать метод [updateColor](#updateColor).
+
+### computeLineDistances() {#computeLineDistances}
+Метод вычисляет расстояния между точками и сохраняет значения в атрибуты геометрии. Необходимо только для отрисовки пунктирных линий.
+```js
+  computeLineDistances(): this;
+```
 
 ### updatePoint() {#updatePoint}
 Метод обновляет координаты точки, без перестроения всей геометрии.
@@ -241,13 +253,15 @@ export class MeshLineGeometry extends THREE.InstancedBufferGeometry {
 ```
 где:\
 `index` -- порядковый номер точки.\
-`point` -- обновлённые координаты точки. Подробнее: [THREE.Vector3](https://www.google.com/search?q=THREE.Vector3).
+`point` -- обновлённые координаты точки. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
+
+Если нужно отрисовать пунктирную линию, то следует пересчитать расстояния между точками с помощью [computeLineDistances](#computeLineDistances).
 
 
 ### updateColor() {#updateColor}
 Метод обновляет цвет точки, без перестроения всей геометрии.
 ```js
-  updateColor(index: number, color: THREE.Color): void;
+  updateColor(index: number, color: Color): void;
 ```
 `index` -- порядковый номер точки.\
-`color` -- обновлённый цвет точки. Подробнее: [THREE.Color](https://threejs.org/docs/#api/en/math/Color).
+`color` -- обновлённый цвет точки. Подробнее: [Color](../Color).

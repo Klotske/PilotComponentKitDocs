@@ -58,8 +58,10 @@ getPivotPoint(): THREE.Vector3;
 ```
 Возвращает объект типа [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
-### setPivotPoint()
-Метод позволяет задать положение опорной точки камеры.
+### setPivotPoint() {#setPivotPoint}
+Метод позволяет задать положение опорной точки камеры.\
+Опорная точка используется при навигации по сцене, вращение камеры осуществляется относительно опорной точки. Если точка не задана, то используется `viewCenter` заданный в `CameraControl`.
+Подробнее: [getViewCenter](../ICameraControl/#getViewCenter), [ViewCenter](../CameraParameters/#viewCenter).
 ```js
 setPivotPoint(pivotPoint: THREE.Vector3): void;
 ```
