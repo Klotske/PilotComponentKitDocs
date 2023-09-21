@@ -46,16 +46,16 @@ clearList(): void;
 ```
 
 ### changeControl()
-Метод меняет указанный в списке элемент.
+Метод меняет указанный в списке элемент управления.
 ```js
-changeControl(item: IControl, index: number): void;
+changeControl(control: IControl, index: number): void;
 ```
 где:\
 `index` -- позиция элемента, который нужно заменить.\
-`item` -- новый элемент.
+`control` -- новый элемент управления.
 
 ### getControlsCount()
-Метод возвращает количество элементов в списке.
+Метод возвращает количество элементов управления в списке.
 ```js
 getControlsCount(): number;
 ```
