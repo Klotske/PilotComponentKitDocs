@@ -13,7 +13,7 @@ readonly controls: IControl[];
 Массив элементов меню. Подробнее: [IControl](../IControl).
 
 ### selectedIndex : number
-Индекс выбранного элемента.
+Индекс выбранного элемента управления.
 ```js
 get selectedIndex(): number;
 set selectedIndex(value: number);
