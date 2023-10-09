@@ -73,6 +73,10 @@ export class RemarkManager {
 
   public removeRemarks(remarkIds?: string[]): void;
 
+  public select(remarkId: string): void;
+
+  public deselect(remarkId: string): void;
+
   public setSelectedRemark(remarkId: string): void;
 
   public setRemarkStatus(remarkId: string, statusParameters: RemarkStatusParameters): void;
@@ -170,6 +174,22 @@ public removeRemarks(remarkIds?: string[]): void;
 ```
 где:\
 `remarkIds` -- идентификаторы точек замечаний для удаления, опциональный параметр. Если не задан, то удаляются все добавленные на сцену точки замечаний.
+
+### select()
+Метод выделяет замечание на документе.
+```js  
+select(remarkId: string): void;
+```
+где:\
+`remarkId` -- идентификатор замечания для выделения.
+
+### deselect()
+Метод снимает выделение замечания на документе.
+```js  
+deselect(remarkId: string): void;
+```
+где:\
+`remarkId` -- идентификатор замечания для снятия выделения.
 
 ### setSelectedRemark() {#setSelectedRemark}
 Метод управляет селектированием точек замечаний. Выбранное замечание может быть только одно.\
