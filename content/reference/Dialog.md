@@ -66,6 +66,23 @@ setHeader(value: HTMLElement): Dialog
 где:\
 `value` - HTML представление элемента.
 
+### setCaption()
+Устанавливает текст заголовка диалога и возвращает класс Dialog.
+```js
+setCaption(value: string) : Dialog
+```
+где:\
+`value` - текст заголовка.
+
+
+### setSvgIcon()
+Метод позволяет установить иконку заголовка диалога в виде svg и возвращает класс Dialog.
+```js
+setSvgIcon(template: string): Dialog  
+```
+где:\
+`template` - svg элемент иконки в виде строки.
+
 ### setFooter()
 Устанавливает нижний колонтитул диалога и возвращает класс Dialog.
 ```js

@@ -82,7 +82,7 @@ setIcon(iconClassName: string): void;
 `iconClassName` - имя класса `CSS` стиля, где содержится иконка.
 
 ### setFromSvgTemlate()
-Метод позволяет установить иконку кнопки в виде svg
+Метод позволяет установить иконку кнопки в виде svg.
 ```js
 setFromSvgTemlate(template: string): void
 ```
