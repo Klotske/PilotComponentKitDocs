@@ -20,6 +20,12 @@ export interface ISelectItem {
 
 ## Свойства
 
+### select : HTMLElement
+HTML представление списка выбора.
+```js
+get select(): HTMLElement;
+```
+
 ### disabled : boolean
 Состояние для отключения списка.
 ```js
@@ -41,6 +47,18 @@ get placeholder(): string;
 set placeholder(value: string);
 ```
 
+### label : HTMLElement
+HTML представление текста-подсказки.
+```js
+get label(): HTMLElement;
+```
+
+### previousSelectedIndex : number
+Индекс предыдущего выбранного элемента в списке.
+```js
+get previousSelectedIndex(): HTMLElement;
+```
+
 ## Методы
 
 ### onChange()
@@ -51,12 +69,6 @@ onChange({ index: number, value: string }): void
 где:\
 `index` - индекс выбранного значения.\
 `value` - значение элемента списка.
-
-### createComponent()
-Метод создает компонет и возвращает его DOM-представление.
-```js
-createComponent(): Element
-```
 
 ### update()
 Метод обновляет элементы списка.
