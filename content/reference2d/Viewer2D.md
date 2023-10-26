@@ -45,10 +45,10 @@ finish(): void;
 
 ### loadDocument()
 ```js
-loadDocument(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void 
+loadDocument(data: ArrayBuffer | string, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void 
 ```
 где:\
-  `buffer` -- массив байт документа,
+  `data` -- массив байт документа или ссылка на документ,
   `options` -- опции для загрузки документа,
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки документа,
   `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки документа.

@@ -88,16 +88,3 @@ setFromSvgTemlate(template: string): void
 ```
 где:\
 `template` - svg элемент иконки в виде строки.
-
-
-## Button.State {#Button.State}
-**Button.State**  - возможные варианты состояния кнопок.
-```js
-export namespace Button {
-  export enum State {
-    ACTIVE = 0, // Активна
-    INACTIVE = 1, // Не активна
-    DISABLED = 2 // Отключена
-  }
-}
-```
