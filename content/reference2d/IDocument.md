@@ -8,8 +8,8 @@ weight: 10
 
 ```js
 export interface IDocument {
-  increaseScale(steps?: number, scaleFactor?: number): void;
-  decreaseScale(steps?: number, scaleFactor?: number): void;
+  increaseScale(scaleFactor?: number): void;
+  decreaseScale(scaleFactor?: number): void;
   fit(): void;
 
   getPageAsync(pageNumber: number): Promise<IDocumentPage>;
@@ -24,20 +24,18 @@ export interface IDocument {
 ### increaseScale
 Увиличивает масштаб отображения документа.
 ```js
-increaseScale(steps?: number, scaleFactor?: number): void;
+increaseScale(scaleFactor?: number): void;
 ```
 где:\
-`steps` -- количество шагов,
-`scaleFactor` -- масштаб.
+  `scaleFactor` -- коэффициент масштаба. Коэффициент 1 = 100%.
 
 ### decreaseScale
 Уменьшает масштаб отображения документа.
 ```js
-decreaseScale(steps?: number, scaleFactor?: number): void;
+decreaseScale(scaleFactor?: number): void;
 ```
 где:\
-`steps` -- количество шагов,
-`scaleFactor` -- масштаб.
+  `scaleFactor` -- коэффициент масштаба. Коэффициент 1 = 100%.
 
 ### fit
 Выравнивает документ по ширине просмотрщика.
@@ -51,7 +49,7 @@ fit(): void;
 getPageAsync(pageNumber: number): Promise<IDocumentPage>;
 ```
 где:\
-`pageNumber` -- номер запрашиваемой страницы.
+  `pageNumber` -- номер запрашиваемой страницы.
 
 ### getPageByTarget
 Получает страницу по заданному HTML-элементу. Подробнее [IDocumentPage](../IDocumentPage)
@@ -59,7 +57,7 @@ getPageAsync(pageNumber: number): Promise<IDocumentPage>;
 getPageByTarget(element: HTMLElement): IDocumentPage | undefined;
 ```
 где:\
-`element` -- HTML-элемент, который находится внутри страницы
+  `element` -- HTML-элемент, который находится внутри страницы
 
 ### scrollPageIntoViewAsync
 Проскролировать до указанной страницы
@@ -67,4 +65,4 @@ getPageByTarget(element: HTMLElement): IDocumentPage | undefined;
 scrollPageIntoViewAsync(pageNumber: number): Promise<void>;
 ```
 где:\
-`pageNumber` -- номер страницы.
+  `pageNumber` -- номер страницы.
