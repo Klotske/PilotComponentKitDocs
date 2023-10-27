@@ -40,7 +40,7 @@ decreaseScale(steps?: number, scaleFactor?: number): void;
 `scaleFactor` -- масштаб.
 
 ### fit
-Выравнивает документ по ширене просмотрщика.
+Выравнивает документ по ширине просмотрщика.
 ```js
 fit(): void;
 ```
