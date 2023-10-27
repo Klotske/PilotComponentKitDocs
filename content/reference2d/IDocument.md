@@ -57,10 +57,10 @@ getPageAsync(pageNumber: number): Promise<IDocumentPage>;
 getPageByTarget(element: HTMLElement): IDocumentPage | undefined;
 ```
 где:\
-  `element` -- HTML-элемент, который находится внутри страницы
+  `element` -- HTML-элемент, который находится внутри страницы.
 
 ### scrollPageIntoViewAsync
-Проскролировать до указанной страницы
+Проскролировать до указанной страницы.
 ```js
 scrollPageIntoViewAsync(pageNumber: number): Promise<void>;
 ```
