@@ -64,7 +64,7 @@ loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSucces
 ```
 где:\
   `data` -- массив байт модели или ссылка на модель,
-  `options` -- опции для загрузки части модели. Подробнее [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
+  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
   `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
 
@@ -103,7 +103,7 @@ makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 
 
 ### getConfiguration()
-Метод получает конфигурацию вьювера. Подробнее <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
+Метод получает конфигурацию вьювера. Подробнее: <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
 
 ```js
 getConfiguration(): Viewer3DConfiguration;

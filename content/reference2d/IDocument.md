@@ -44,7 +44,7 @@ fit(): void;
 ```
 
 ### getPageAsync
-Получает страницу по номеру. Подробнее [IDocumentPage](../IDocumentPage)
+Получает страницу по номеру. Подробнее: [IDocumentPage](../IDocumentPage)
 ```js
 getPageAsync(pageNumber: number): Promise<IDocumentPage>;
 ```
@@ -52,7 +52,7 @@ getPageAsync(pageNumber: number): Promise<IDocumentPage>;
   `pageNumber` -- номер запрашиваемой страницы.
 
 ### getPageByTarget
-Получает страницу по заданному HTML-элементу. Подробнее [IDocumentPage](../IDocumentPage)
+Получает страницу по заданному HTML-элементу. Подробнее: [IDocumentPage](../IDocumentPage)
 ```js
 getPageByTarget(element: HTMLElement): IDocumentPage | undefined;
 ```

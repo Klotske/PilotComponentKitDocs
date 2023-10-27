@@ -49,7 +49,7 @@ get viewport(): DOMRect;
 ```
 
 ### annotationLayer
-Содержит объект для взаимодействия со слоем замечаний. Подробнее [IAnnotationLayer](../IAnnotationLayer).
+Содержит объект для взаимодействия со слоем замечаний. Подробнее: [IAnnotationLayer](../IAnnotationLayer).
 ```js
 get annotationLayer(): IAnnotationLayer | null;
 ```
@@ -75,7 +75,7 @@ get scale() : number;
 ## Методы
 
 ### update
-Обновляет страницу с заданными параметрами. Подробнее [IPageUpdateParams](../IPageUpdateParams).
+Обновляет страницу с заданными параметрами. Подробнее: [IPageUpdateParams](../IPageUpdateParams).
 ```js
 update(params?: IPageUpdateParams): void;
 ```

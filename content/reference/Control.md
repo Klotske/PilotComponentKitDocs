@@ -60,4 +60,4 @@ setText(text: string): void {}
 setState(state: ControlState.State): void {}
 ```
 где:\
-`state` -- состояние элемента управления. Подробнее [ControlState](../../reference/ControlState).
+`state` -- состояние элемента управления. Подробнее: [ControlState](../../reference/ControlState).
