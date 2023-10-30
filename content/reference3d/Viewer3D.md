@@ -60,16 +60,12 @@ finish(): void;
 ### loadModelPart()
 Метод для управления загрузкой частей модели.
 ```js
-loadModelPart(buffer: ArrayBuffer, options: any, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
+loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
 ```
 где:\
-
-  `buffer` -- массив байт модели,
-  
-  `options` -- опции для загрузки части модели,
-  
+  `data` -- массив байт модели или ссылка на модель,
+  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
-  
   `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
 
 ### unloadModelPart()
@@ -82,17 +78,17 @@ unloadModelPart(modelPart: string | ModelPart): void;
 
 ### setVirtualOrigin()
 Метод задаёт положение виртуального начала координат. Координаты объектов модели и положение камеры пересчитываются относительно нового начала координат.\
-При изменении ВНК возникает событие `VIRTUAL_ORIGIN_CHANGED`. Подробнее: [Events3D](./Events/#Events3D).
+При изменении ВНК возникает событие `VIRTUAL_ORIGIN_CHANGED`. Подробнее: [Events3D](../Events/#Events3D).
 ```js
   setVirtualOrigin(point: Point3): void;
 ```
 где:\
-  `point` -- положение ВНК. Подробнее: [Point3](../../reference3d/navigation/Point3).
+  `point` -- положение ВНК. Подробнее: [Point3](../navigation/Point3).
 
-### setVirtualOrigin()
-Метод возвращает положение виртуального начала координат. Подробнее: [Point3](../../reference3d/navigation/Point3).
+### getVirtualOrigin()
+Метод возвращает положение виртуального начала координат. Подробнее: [Point3](../navigation/Point3).
 ```js
-  setVirtualOrigin(point: Point3): void;
+  getVirtualOrigin(): Point3;
 ```
 
 ### makeScreenshot()
@@ -107,7 +103,7 @@ makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 
 
 ### getConfiguration()
-Метод получает конфигурацию вьювера. Подробнее <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
+Метод получает конфигурацию вьювера. Подробнее: <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
 
 ```js
 getConfiguration(): Viewer3DConfiguration;

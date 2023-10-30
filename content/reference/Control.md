@@ -45,3 +45,19 @@ getId(): string
 ```
 где:\
 `tooltipText` -- текст для всплывающей подсказки.
+
+### setText()
+Задает текст для элемента управления. Используется в наследниках.
+```js
+setText(text: string): void {}
+```
+где:\
+`text` -- текст.
+
+### setState()
+Устанавливает состояние элемента управления. Используется в наследниках.
+```js
+setState(state: ControlState.State): void {}
+```
+где:\
+`state` -- состояние элемента управления. Подробнее: [ControlState](../../reference/ControlState).

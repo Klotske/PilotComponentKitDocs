@@ -34,13 +34,6 @@ remarksExtension.activate();
 get RemarksManager(): RemarksManager;
 ```
 
-## get layersManager(): RemarksLayerManager
-Возвращает менеджер слоев для замечаний.
-Подробнее: [RemarksLayerManager](#RemarksLayerManager).
-```js
-get layersManager(): RemarksLayerManager;
-```
-
 ## Методы
 
 ### activate()
@@ -55,9 +48,9 @@ deactivate(): boolean;
 ```
 
 ### getClickPage()
-Метод получает страницу, по которой был произведен клик мыши. Подробнее: <a href="../../reference2d/DocumentPage">DocumentPage</a>.
+Метод получает страницу, по которой был произведен клик мыши. Подробнее: <a href="../../reference2d/IDocumentPage">IDocumentPage</a>.
 ```js
-protected getClickPage(event: MouseEvent): PilotWeb2D.DocumentPage
+protected getClickPage(event: MouseEvent): PilotWeb2D.IDocumentPage | undefined 
 ```
 
 ### getClickPoint()
@@ -76,9 +69,10 @@ protected getClickPoint(event: MouseEvent, offsetX = 0, offsetY = 0): PilotWeb2D
 class RemarksManager {
   setActive(value: boolean): void;
   getRemark(remarkId: string): Remark | undefined;
-  addRemark(remarkParams: RemarkParameters, status?: RemarkStatus): Remark;
+  addRemark(remarkParams: RemarkParameters, status?: RemarkStatus): Promise<Remark>;
   removeRemarks(ids: string[]): boolean;
   select(remarkId: string): void;
+  deselect(remarkId: string): void;
   setStatus(remarkIs: string, status: RemarkStatus): boolean;
   setRemarksVisibility(visibility: boolean, remarkIds?: string[]): void;
 }
@@ -103,7 +97,7 @@ getRemark(remarkId: string): Remark | undefined;
 ### addRemark()
 Метод добавляет точку замечания на слой замечаний.
 ```js  
-addRemark(remarkParams: RemarkParameters, status?: RemarkStatus): Remark
+addRemark(remarkParams: RemarkParameters, status?: RemarkStatus): Promise<Remark>;
 ```
 где:\
 `remarkParams` -- параметры точки замечания. Подробнее: [RemarkParameters](#RemarkParameters).\
@@ -127,6 +121,14 @@ select(remarkId: string): void;
 где:\
 `remarkId` -- идентификатор точки замечания для выбора.
 
+### deselect()
+Метод снимает селект с заданого замечания.
+```js  
+deselect(remarkId: string): void;
+```
+где:\
+`remarkId` -- идентификатор точки замечания.
+
 ### setStatus()
 Метод задает параметры статуса точки замечания.
 ```js  
@@ -144,41 +146,6 @@ setRemarksVisibility(visibility: boolean, remarkIds: string[]): void
 где:\
 `visibiliity` -- параметр видимости замечаний.
 `remarkIds` -- идентификаторы замечаний.
-
-
-# RemarksLayerManager {#RemarksLayerManager}
-**RemarksLayerManager** -- менеджер слоев для замечаний.
-
-```js
-class RemarksLayerManager {
-  createLayer(): void;
-  getLayer(pageNumber?: number): PilotWeb2D.ILayer;
-  removeLayer(): boolean;
-}
-```
-
-##  Методы
-
-### createLayer
-Создает новый слой.
-```js
-  createLayer(): void;
-```
-
-### getLayer
-Получает слой для замечаний.
-```js
-  getLayer(pageNumber?: number): PilotWeb2D.ILayer
-```
-где:\
-`page` -- номер страницы.
-Метод возвращает объект описывающий слой. Подробнее: <a href="../../reference2d/ILayer">ILayer</a>.
-
-### removeLayer
-Удаляет слой для замечаний со всех страниц.
-```js
-  removeLayer(): void;
-```
 
 
 # Remark {#Remark}
