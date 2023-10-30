@@ -123,6 +123,13 @@ setDraggable(value: boolean): Dialog
 где:\
 `value` - флаг для назначения включения/выключения возможности изменения положения.
 
+### setCloseble(value: boolean): Dialog
+Устанавливает возможность закрытия диалога, возвращает класс Dialog.
+```js
+setCloseble(value: boolean): Dialog
+```
+где:\
+`value` - флаг для назначения включения/выключения возможности закрытия диалога.
 
 ### openDialog()
 Создаёт компонет диалога на panelToAttach и возвращает его как HTMLElement.
