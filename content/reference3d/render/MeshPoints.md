@@ -19,6 +19,8 @@ export class MeshPoints extends THREE.Mesh {
 
   pointSize: number;
 
+  point: THREE.Vector3;
+
   addPoint(pointParameter?: MeshPointParameter): number;
 
   updatePoint(index: number, pointParameter: MeshPointParameter): void;
@@ -41,40 +43,35 @@ export class MeshPoints extends THREE.Mesh {
 ### geometry: THREE.InstancedBufferGeometry
 Геометрия, используемая для отрисовки единичной точки. Все добавленные точки будут отрисованы на сцене с помощью данной геометрии.
 ```js
-  get geometry(): THREE.InstancedBufferGeometry;
-  set geometry(value: THREE.InstancedBufferGeometry);
+  geometry: THREE.InstancedBufferGeometry;
 ```
 По умолчанию используется геометрия круга. Подробнее: [THREE.InstancedBufferGeometry](https://threejs.org/docs/#api/en/core/InstancedBufferGeometry).
 
 ### material: MeshPointMaterial
 Материал точек для отрисовки.
 ```js
-  get material(): MeshPointMaterial;
-  set material(value: MeshPointMaterial);
+  material: MeshPointMaterial;
 ```
 По умолчанию: `new MeshPointMaterial({ sizeAttenuation: false, transparent: true, depthTest: false })`. Подробнее: [MeshPointMaterial](#MeshPointMaterial).
 
 ### color: Color {#color}
-Задает или возвращает значение цвета точек по умолчанию. Если цвет точки не задан при добавлении, будет использоваться именно это значение.
+Цвет точек по умолчанию. Если цвет точки не задан при добавлении, будет использоваться именно это значение.
 ```js
-  get color(): Color;
-  set color(value: Color);
+  color: Color;
 ```
 По умолчанию: `new Color( 1, 1, 1, 1 )`. Подробнее: [Color](../Color).
 
 ### pointSize: number {#pointSize}
-Задает или возвращает размер точки в пикселях по умолчанию. Если размер точки не задан при добавлении, будет использоваться именно это значение.
+Размер точки в пикселях по умолчанию. Если размер точки не задан при добавлении, будет использоваться именно это значение.
 ```js
-  get pointSize(): string;
-  set pointSize(value: string);
+  pointSize: number;
 ```
 По умолчанию: `1`.
 
-### point: number {#point}
-Задает или возвращает позицию новой точки по умолчанию. Если позиция точки не задана при добавлении, будет использоваться именно это значение.
+### point: THREE.Vector3 {#point}
+Позиция точки по умолчанию. Если позиция точки не задана при добавлении, будет использоваться именно это значение.
 ```js
-  get point(): THREE.Vector3;
-  set point(value: THREE.Vector3);
+  point: THREE.Vector3;
 ```
 По умолчанию: `new THREE.Vector3(0, 0, 0)`. Подробнее [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
@@ -137,13 +134,15 @@ export interface MeshPointParameter {
 Материал, используемый для отрисовки точек в виде полигональной сетки. Расширяет [THREE.ShaderMaterial](https://threejs.org/docs/#api/en/materials/ShaderMaterial).
 
 ```js
-export class MeshPointMaterial extends CustomMaterial {;
+export class MeshPointMaterial extends CustomMaterial {
   constructor(parameters?: MeshPointMaterialParameters);
 
   sizeAttenuation: boolean;
 
+  get discreteClipping(): boolean;
+  set discreteClipping(value: boolean);
+
   get resolution(): THREE.Vector2;
-  set resolution(value: THREE.Vector2);
 }
 ```
 
@@ -168,18 +167,25 @@ export class MeshPointMaterial extends CustomMaterial {;
 ## Свойства
 
 ### resolution: THREE.Vector2
-Задает и получает размеры области отрисовки. Нужно для корректной отрисовки точек в `sizeAttenuation = false` режиме. Данное свойство обновляется автоматически перед отрисовкой.
+Возвращает размеры области отрисовки. Нужно для корректной отрисовки точек в `sizeAttenuation = false` режиме. Данное свойство обновляется автоматически перед отрисовкой.
 ```js
   get resolution(): THREE.Vector2;
-  set resolution(value: THREE.Vector2);
 ```
 Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
 
+### discreteClipping: THREE.Vector2
+Задает тип отсечения точки секущими плоскостями. Если `true`, то точка отсекается дискретно: либо полностью видна, либо полностью отсечена секущей плоскостью (отсечение происходит, если центр точки находится позади секущей плоскости). В противном случае точка отсекается как любая другая полигональная сетка. 
+```js
+  get discreteClipping(): boolean;
+  set discreteClipping(value: boolean);
+```
+Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
 
 ## MeshPointMaterialParameters {#MeshPointMaterialParameters}
 Параметры `MeshPointMaterial`. Задают соответствующее свойства [MeshPointMaterial](#MeshPointMaterial).
 ```js
 export interface MeshPointMaterialParameters extends THREE.ShaderMaterialParameters {
   sizeAttenuation?: boolean | undefined;
+  discreteClipping?: boolean | undefined;
 }
 ```

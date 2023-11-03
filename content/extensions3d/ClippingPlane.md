@@ -23,18 +23,18 @@ viewer.extensionsLoader.loadExtension("PilotWeb3D.ClippingPlane");
 ## Методы
 
 ### activate()
-Активировать расширение.
+Метод активирует расширение.
 ```js
 activate(): void;
 ```
 ### deactivate()
-Деактивировать расширение.
+Метод деактивирует расширение.
 ```js
 deactivate(): void;
 ```
 
 ### addPlanes()
-Добавить плоскости сечения на основную сцену к уже существующим.
+Метод добавляет плоскости сечения к уже существующим.
 ```js
 addPlanes(planes: ClippingPlaneDescription[]): void;
 ```
@@ -42,20 +42,28 @@ addPlanes(planes: ClippingPlaneDescription[]): void;
 `planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
 
 ### setPlanes()
-Задать плоскости сечения на основной сцене, уже существующие плоскости на сцене удаляются.
+Метод задаёт плоскости сечения на основной сцене, уже существующие плоскости на сцене удаляются.
 ```js
 public setPlanes(planes: ClippingPlaneDescription[]): void;
 ```
 где:\
 `planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
 
+### getPlanes()
+Метод возвращает описания плоскостей сечения на сцене. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
+```js
+public getPlanes(planeIDs?: string[]): ClippingPlaneDescription[];
+```
+где:\
+`planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то возвращается описание всех плоскостей сечения.
+
 ### removePlanes() {#removePlanes}
-Удалить плоскости сечения с основной сцены.
+Метод удаляет плоскости сечения.
 ```js
 public removePlanes(planeIDs?: string[]): void;
 ```
 где:\
-`planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то удаляются все существующие плоскости сечения.
+`planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то удаляются все плоскости сечения.
 
 ### ClippingPlaneExtension.ClippingPlaneDescription {#ClippingPlaneDescription}
 Описание плоскости сечения.
