@@ -51,29 +51,23 @@ export class MeshLineMaterial extends THREE.ShaderMaterial {
   get opacity(): number;
   set opacity(value: number);
 
-  get color(): THREE.Color;
-  set color(value: THREE.Color);
-
   get worldUnits(): boolean;
   set worldUnits(value: boolean);
 
   get dashed(): boolean;
   set dashed(value: boolean);
 
-  get dashScale(): number;
-  set dashScale(value: number);
-
-  get dashSize(): number;
-  set dashSize(value: number);
-
-  get dashOffset(): number;
-  set dashOffset(value: number);
-
-  get gapSize(): number;
-  set gapSize(value: number);
-
   get resolution(): THREE.Vector2;
-  set resolution(value: THREE.Vector2);
+
+  color: THREE.Color;
+
+  dashScale: number;
+
+  dashSize: number;
+
+  dashOffset: number;
+
+  gapSize: number;
 }
 ```
 
@@ -85,30 +79,6 @@ export class MeshLineMaterial extends THREE.ShaderMaterial {
 `parameters` -- параметры материала. Подробнее [MeshLineMaterialParameters](#MeshLineMaterialParameters).
 
 ## Свойства
-
-### linewidth: number
-Определяет значение ширины линий. В зависимости от значения [worldUnits](#worldUnits) задается в мировых координатах или в пикселях.
-```js
-  get linewidth(): number;
-  set linewidth(value: number);
-```
-По умолчанию: `1`.
-
-### opacity: number
-Определяет значение прозрачности линий. Общая прозрачность для всех линий применяется, если в материале свойство `vertexColors` установлено в `false` (значение по умолчанию).
-```js
-  get opacity(): number;
-  set opacity(value: number);
-```
-По умолчанию: `1`.
-
-### color: Color {#color}
-Определяет значение цвета линий. Общий цвет для всех линий применяется, если в материале свойство `vertexColors` установлено в `false` (значение по умолчанию).
-```js
-  get color(): Color;
-  set color(value: Color);
-```
-По умолчанию: `new Color( 1, 1, 1, 1 )`. Подробнее: [Color](../Color).
 
 ### worldUnits: boolean {#worldUnits}
 Определяет в каком пространстве задана ширина линий. Если `true`, то ширина линий задана в мировых координтах и на линию будет влиять перспектива - размер линии будет уменьшаться с глубиной кадра. В противном случае, размер линии считается в пикселях и остаетя неизменным, переспектива не оказывает влияния на ширину линиии.
@@ -127,39 +97,6 @@ export class MeshLineMaterial extends THREE.ShaderMaterial {
 ```
 По умолчанию: `false`.
 
-### dashScale: boolean
-Определяет коэффициент-делитель для пунктира. Длина пунктирного отрезка (длина штриха + длина пустого промежутка) делится на данный коэффициент.\
-Нпример значение `dashScale = 2` приведёт к уменьшению длины пунктирного отрезка в два раза и соответственному увеличению частоты штрихов в линии, тоже в два раза.
-```js
-  get dashScale(): number;
-  set dashScale(value: number);
-```
-По умолчанию: `1`.
-
-### dashSize: boolean
-Определяет длину штриха в пунктирном отрезке.
-```js
-  get dashSize(): number;
-  set dashSize(value: number);
-```
-По умолчанию: `1`.
-
-### dashOffset: boolean
-Определяет смещение штриха в пунктирном отрезке.
-```js
-  get dashOffset(): number;
-  set dashOffset(value: number);
-```
-По умолчанию: `0`.
-
-### gapSize: boolean
-Определяет длину пустого промежутка в пунктирном отрезке.
-```js
-  get gapSize(): number;
-  set gapSize(value: number);
-```
-По умолчанию: `1`.
-
 ### resolution: THREE.Vector2
 Задает и получает размеры области отрисовки. Нужно для корректной отрисовки линий в `worldUnits = false` режиме. Данное свойство обновляется автоматически перед отрисовкой.
 ```js
@@ -167,6 +104,44 @@ export class MeshLineMaterial extends THREE.ShaderMaterial {
   set resolution(value: THREE.Vector2);
 ```
 Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
+
+## Поля
+
+### color: THREE.Color {#color}
+Определяет значение цвета линий. Общий цвет для всех линий применяется если в материале свойство `vertexColors` установлено в `false` (значение по умолчанию).
+```js
+  color: THREE.Color;
+```
+По умолчанию: `new THREE.Color(0xffffff)`. Подробнее: [Color](https://threejs.org/docs/#api/en/math/Color).
+
+### dashScale: boolean
+Определяет коэффициент-делитель для пунктира. Длина пунктирного отрезка (длина штриха + длина пустого промежутка) делится на данный коэффициент.\
+Например значение `dashScale = 2` приведёт к уменьшению длины пунктирного отрезка в два раза и соответственному увеличению частоты штрихов в линии, тоже в два раза.
+```js
+  dashScale: number;
+```
+По умолчанию: `1`.
+
+### dashSize: boolean
+Определяет длину штриха в пунктирном отрезке.
+```js
+  dashSize: number;
+```
+По умолчанию: `1`.
+
+### dashOffset: boolean
+Определяет смещение штриха в пунктирном отрезке.
+```js
+  dashOffset: number;
+```
+По умолчанию: `0`.
+
+### gapSize: boolean
+Определяет длину пустого промежутка в пунктирном отрезке.
+```js
+  gapSize: number;
+```
+По умолчанию: `1`.
 
 ## MeshLineMaterialParameters {#MeshLineMaterialParameters}
 Параметры `MeshLineMaterial`. Задают соответствующие свойства [MeshLineMaterial](#MeshLineMaterial).
