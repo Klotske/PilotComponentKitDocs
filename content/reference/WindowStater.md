@@ -31,8 +31,10 @@ export interface IWindowStyle {
 export interface IWindowStateOptions {
   // Ключ по которому будут сохранены настройки для восстановления при последующем открытии окна
   saveKey: string;
-  // Свойство, которое обозначает надо ли устанавливать окну сохранённые настройки при последующем открытии
+  // Свойство, которое обозначает надо ли устанавливать окну сохранённые настройки размера при последующем открытии
   restoreWindowSize: boolean;
+  // Свойство, которое обозначает надо ли устанавливать окну сохранённые настройки позиции при последующем открытии
+  restoreWindowPosition: boolean;
 }
 ```
 
@@ -61,13 +63,13 @@ get windowOptionsState(): IWindowStateOptions;
 ## Методы
 
 ### restore()
+Восстанавливает положение окна и его ширину/высоту исходя из IWindowStyle.
 ```js
 restore(): void
 ```
-Восстанавливает положение окна и его ширину/высоту исходя из IWindowStyle.
 
 ### saveWindowState()
+Сохраняет стили окна в localStorage, если был передан saveKey из IWindowStateOptions.
 ```js
 saveWindowState(): void
 ```
-Сохраняет стили окна в localStorage, если был передан saveKey из IWindowStateOptions.
