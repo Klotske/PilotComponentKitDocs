@@ -67,10 +67,6 @@ export class RemarkManager {
 
   public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: RemarkStatusParameters): RemarkViewObject;
 
-  public addRemarkByDescritpions(remarks: RemarkDescription[]): void;
-
-  public getRemarkDescriptions(remarkIds?: string[]): RemarkDescription[];
-
   public removeRemarks(remarkIds?: string[]): void;
 
   public select(remarkId: string): void;
@@ -147,25 +143,6 @@ public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: Re
 `remarkParameters` -- параметры точки замечания. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).\
 `statusParameters` -- параметры статуса замечания, опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).\
 Возвращает добавленный на сцену объект замечания или `null`, если добавить точку не удалось. Подробнее: [RemarkViewObject](#RemarkViewObject).
-
-
-### addRemarkByDescritpions()
-Метод добавляет точки замечаний, построенные из массива с описаниями.
-```js  
-public addRemarkByDescritpions(remarks: RemarkDescription[]): void;
-```
-где:\
-`remarks` -- массив с описаниями точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
-
-  
-### getRemarkDescriptions()
-Метод получает массив с описаниями для добавленных на сцену точек замечаний.
-```js  
-public getRemarkDescriptions(remarkIds?: string[]): RemarkDescription[];
-```
-где:\
-`remarkIds` -- идентификаторы точек замечаний, описания которых нужно получить, опциональный параметр. Если не задан, то возвращаются описания всех добавленных на сцену точек замечаний.\
-Возвращает массив с описаниями точек замечаний. Подробнее: [RemarkDescription](#RemarkDescription).
 
 ### removeRemarks()
 Метод удаляет точки замечаний и освобождает ресурсы, выделенные для удаляемых точек.
@@ -306,7 +283,8 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 ```js
 export interface RemarkObjectParameters {
   remarkGuid?: string,
-  targetObject?: PilotWeb3D.ViewObject,
+  targetModelGuid?: string,
+  targetEntityGuid?: string,
   position?: THREE.Vector3,
   relativePosition?: THREE.Vector3,
   pointSize?: number,
@@ -324,9 +302,14 @@ export interface RemarkObjectParameters {
 ### remarkGuid : string
 Идентификатор точки замечания, опциональный параметр. Если не задан, уникальный идентификатор генерируется автоматически.
 
-### targetObject : PilotWeb3D.ViewObject {#targetObject}
-Целевой объект к которому прикрепляется точка замечания, опциональный параметр.
-Если задан, то при изменении положения целевого объекта точка замечания соответственно меняет свое положение, сохраняя смещение относительно целевого объекта ([relativePosition](#remarkRelPosition)). В противном случае, положение точки замечания определяется координатами в мировом пространстве ([position](#remarkAbsPosition)). Подробнеее: [ViewObject](../../reference3d/render/ViewObject).
+### targetModelGuid : string
+Идентификатор части модели которой принадлежит целевой объект.\
+Не обязательный параметр, используется совместно с `targetEntityGuid`. Если не указан, то поиск целевого объекта выполняется по всем частям модели.\
+Подробнеее: [ModelElement.modelPartId](../../reference3d/ModelElement#modelPartId).
+
+### targetEntityGuid : string
+Идентификатор элемента модели, геометрия которого используется как целевой объект для привязки замечания.\
+Подробнеее: [ModelElement.id](../../reference3d/ModelElement#id).
 
 ### position : THREE.Vector3 {#remarkAbsPosition}
 Координаты точки замечания в мировом пространстве, опциональный параметр. Если координаты не заданы, но задан целевой объект ([targetObject](#targetObject)) и относительное положение точки замечания ([relativePosition](#remarkRelPosition)), то абсолютное положение точки замечания рассчитвается исходя из этих параметров. В противном случае используется значение по умолчанию: `new THREE.Vector3(0, 0, 0)`. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
@@ -401,32 +384,3 @@ export interface RemarkStatusParameters {
 ### statusTexture : THREE.Texture
 Текстура статуса замечания, опциональный параметр.\
 Подробнее: [THREE.Texture](https://threejs.org/docs/#api/en/textures/Texture).
-
-
-## RemarkDescription {#RemarkDescription}
-Описание точки замечания.
-
-Целевым объектом замечания будет геометрия элемента модели, идентификаторы которого передаются в описании. Если у элемента модели нет геометрии, то замечание помещается на сцену но не имеет целевого объекта.
-Подробнее: [ModelElement.viewObject](../../reference3d/ModelElement#viewObject).
-```js
-export type RemarkDescription = {
-  remarkGuid: string,
-  targetModelGuid: string,
-  targetEntityGuid: string,
-  absPosition: THREE.Vector3,
-};
-```
-### remarkGuid : string
-Идентификатор точки замечания.
-
-### targetModelGuid : string
-Идентификатор части модели которой принадлежит целевой объект.\
-Подробнеее: [ModelElement.modelPartId](../../reference3d/ModelElement#modelPartId).
-
-### targetEntityGuid : string
-Идентификатор элемента модели, геометрия которого используется как целевой объект для привязки замечания.\
-Подробнеее: [ModelElement.id](../../reference3d/ModelElement#id).
-
-### absPosition : THREE.Vector3
-Координаты точки замечания в мировом пространстве.\
-Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
