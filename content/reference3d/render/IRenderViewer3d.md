@@ -31,10 +31,13 @@ getIntersectionChecker(): IModelIntersectionChecker;
 Возвращается интерфейс обработки пересечений. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
 
 ### updateCurrentCanvas()
-Метод вызывает полную перерисовку сцен.
+Метод вызывает полную перерисовку сцен.\
+Если параметр `force` установлен в `true`, то отрисовка кадра произойдёт после принудительного обновления сцен.
 ```js
-updateCurrentCanvas(): Promise<void>;
+updateCurrentCanvas(force?: boolean): Promise<void>;
 ```
+где:\
+`force` -- флаг, указывающий на принудительное обновление сцен. По умолчанию `false`.
 
 ###  placeObjectOnScene()
 Метод помещает объект на определённую сцену.
