@@ -138,7 +138,7 @@ manageScene(context?: IRenderOperationContext): boolean;
 ###  render()
 Метод выполняет отрисовку сцены в данном [контексте](../IRenderOperationContext).
 ```js
-render(context: IRenderOperationContext): void;
+render(context?: IRenderOperationContext): void;
 ```
 где:\
 `context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
