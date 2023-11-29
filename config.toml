@@ -1,6 +1,6 @@
 baseURL = "https://pilotcloud.ascon.net"
 languageCode = 'en-us'
-title = "Pilot-Cloud"
+title = "Pilot-ComponentKit"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false

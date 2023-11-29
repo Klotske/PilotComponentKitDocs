@@ -80,7 +80,7 @@ unloadModelPart(modelPart: string | ModelPart): void;
 Метод задаёт положение виртуального начала координат. Координаты объектов модели и положение камеры пересчитываются относительно нового начала координат.\
 При изменении ВНК возникает событие `VIRTUAL_ORIGIN_CHANGED`. Подробнее: [Events3D](../Events/#Events3D).
 ```js
-  setVirtualOrigin(point: Point3): void;
+  setVirtualOrigin(point: Point3): Promise<void>;
 ```
 где:\
   `point` -- положение ВНК. Подробнее: [Point3](../navigation/Point3).
