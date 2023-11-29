@@ -9,8 +9,8 @@ weight: 1
 
 Пример подключения в `html`:
 ```html
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/samples/RemarksUIExtension2D/RemarksUIExtension.css">
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/samples/RemarksUIExtension2D/RemarksUIExtension.js"></script>
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/23.0.10/samples/RemarksUIExtension2D/RemarksUIExtension.css">
+<script src="https://pilotcloud.ascon.net/components/23.0.10/samples/RemarksUIExtension2D/RemarksUIExtension.js"></script>
 ```
 
 Пример подключения в `javascript`:
