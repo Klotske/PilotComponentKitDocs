@@ -1,4 +1,4 @@
-baseURL = "https://pilot.ascon.ru/componentkit"
+baseURL = "https://pilot.ascon.ru/"
 languageCode = 'en-us'
 title = "Pilot-ComponentKit"
 theme = "hugo-geekdoc"
