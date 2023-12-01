@@ -5,7 +5,7 @@ draft: false
 ---
 
 **SettingsNames** -- список настроек для просмотрщика **PilotWeb3D**.\
-Для задания настроек используейте класс <a href="../Viewer3DConfiguration">Viewer3DConfiguration</a>.
+Для задания настроек используейте класс <a href="../componentkit/Viewer3DConfiguration">Viewer3DConfiguration</a>.
 
 ```js
 class SettingsNames {
