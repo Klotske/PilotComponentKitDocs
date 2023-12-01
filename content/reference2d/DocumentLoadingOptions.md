@@ -4,7 +4,7 @@ draft: false
 weight: 12
 ---
 
-**DocumentLoadingOptions** - опции загрузки документа в компонент **PilotWeb2d**.
+**DocumentLoadingOptions** -- опции загрузки документа в компонент **PilotWeb2D**.
 
 ```js
 export class DocumentLoadingOptions {
