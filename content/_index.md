@@ -22,14 +22,14 @@ Pilot-ComponentKit функционирует как PaaS (платформа к
 это контейнер данных информационной модели.
 Он может содержать как изменение данных относительно предыдущей версии, так и актуальное состояние модели, включающее все её изменения до необходимой версии.
 
-<iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/typescript-t5zkkb?embed=1&file=style.css&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=light&view=preview"></iframe>
+<iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/typescript-t5zkkb?embed=1&file=index.ts&hideNavigation=1&theme=light&view=preview"></iframe>
 
 
 ### Документы
 
 Для загрузки документов используйте файлы в формате **.xps** (Open XML Paper Specification, ECMA-388).
 
-<iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/typescript-uzdwhd?embed=1&file=index.ts&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=light&view=preview"></iframe>
+<iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/typescript-uzdwhd?embed=1&file=index.ts&hideNavigation=1&theme=light&view=preview"></iframe>
 
 
 
