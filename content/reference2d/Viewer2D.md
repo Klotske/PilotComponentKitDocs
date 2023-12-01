@@ -12,55 +12,56 @@ weight: 8
 ## Свойства
 
 ### container
+HTML элемент, в котором создан компонент просмотра 3D моделей.
 ```js
 container: HTMLElement;
 ```
-HTML элемент, в котором создан компонент просмотра 3D моделей.
 
 ### extensionsLoader
+Тип работы с расширениями. Подробнее: <a href="../ExtensionLoader/">ExtensionLoader</a>.
 ```js
 extensionsLoader: ExtensionLoader;
 ```
-Тип работы с расширениями. Подробнее: <a href="../ExtensionLoader/">ExtensionLoader</a>.
 
 ### events
+Свойство для управления событиями компонента.
 ```js
 get events(): EventsDispatcher;
 ```
-Свойство для управления событиями компонента.
 
 ## Методы
 
 ### start()
+Метод инициализирует внутренние механизмы компонента.
 ```js
  start(): Promise<number>;
 ```
-Метод инициализирует внутренние механизмы компонента.
 
 ### finish()
+Метод деинициализирует внутренние механизмы компонента.
 ```js
 finish(): void;
 ```
-Метод деинициализирует внутренние механизмы компонента.
 
 ### loadDocument()
+Метод загружает документ в компонент.
 ```js
-loadDocument(data: ArrayBuffer | string, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void 
+loadDocument(data: ArrayBuffer | string, options: DocumentLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void 
 ```
 где:\
-  `data` -- массив байт документа или ссылка на документ,
-  `options` -- опции для загрузки документа,
-  `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки документа,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки документа.
+  `data` - массив байт документа или ссылка на документ.\
+  `options` - опции для загрузки документа (подробнее: <a href="../DocumentLoadingOptions/">DocumentLoadingOptions</a>).\
+  `onSuccessCallback` - метод для обратного вызова в случае успешной загрузки документа.\
+  `onErrorCallback` - метод для обратного вызова в случае неудачи загрузки документа.
 
 ### unloadDocument(){#unloadDocument}
+Выгружает документ из компонента.
 ```js
 unloadDocument(): void 
 ```
-Выгружает документ из компонента.
 
 ### getConfiguration()
+Получает текущие настройки просмотрщика. Подробнее: <a href="/reference2d/configuration/ViewerConfiguration">ViewerConfiguration</a>.
 ```js
 getConfiguration(): ViewerConfiguration
 ```
-Получает текущие настройки просмотрщика. Подробнее: <a href="/reference2d/configuration/ViewerConfiguration">ViewerConfiguration</a>.
