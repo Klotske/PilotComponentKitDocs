@@ -31,7 +31,7 @@ remarksExtension.activate();
 Возвращает менеджер точек замечаний.
 Подробнее: [RemarksManager](#RemarksManager).
 ```js
-get RemarksManager(): RemarksManager;
+get remarkManager(): RemarksManager;
 ```
 
 ## Методы
