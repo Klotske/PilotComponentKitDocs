@@ -8,8 +8,8 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/23.0.10/samples/RemarksUIExtension/RemarksUIExtension.css">
-<script src="https://pilotcloud.ascon.net/components/23.0.10/samples/RemarksUIExtension/RemarksUIExtension.js"></script>
+<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/samples/RemarksUIExtension/RemarksUIExtension.css">
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/samples/RemarksUIExtension/RemarksUIExtension.js"></script>
 ```
 
 Пример подключения в `javascript`:

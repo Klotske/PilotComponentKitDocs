@@ -13,7 +13,7 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/23.0.10/extensions/DeleteButton/DeleteButton.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/DeleteButton/DeleteButton.min.js"></script>
 ```
 
 Пример подключения в `javascript`:

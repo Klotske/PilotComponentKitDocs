@@ -11,7 +11,7 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/23.0.10/extensions/ViewerSettings3D/ViewerSettings.min.js"></script>
+<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/ViewerSettings3D/ViewerSettings.min.js"></script>
 ```
 
 Пример подключения в `javascript`:
