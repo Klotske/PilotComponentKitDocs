@@ -5,7 +5,7 @@ draft: false
 weight: 5
 ---
 
-**ModelElement** -- это класс для получения информации об элементе.
+**ModelElement** -- это интерфейс для получения информации об элементе.
 
 ## Свойства
 
@@ -57,10 +57,3 @@ get hasGeometry(): boolean;
 get viewObject(): ViewObject | undefined;
 ```
 Подробнее: <a href="/reference3d/render/ViewObject">ViewObject</a>.
-
-### boundingBoxCenter
-Получает центр bounding box элемента, если у элемента есть геометрия. В противном случает возвращает `null`.
-```js
-get boundingBoxCenter(): Point3 | null;
-```
-Подробнее: <a href="/reference3d/navigation/Point3">Point3</a>.

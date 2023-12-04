@@ -35,6 +35,8 @@ class EventTypes extends CoreEventTypes {
   static MODEL_PART_LOADED: string;
   // Имя события выгрузки части консолидированной модели
   static MODEL_PART_UNLOADED: string;
+  // Имя события обновления части консолидированной модели
+  static MODEL_PART_UPDATED: string;
   // Имя события изменения положения виртуального начала координат.
   static VIRTUAL_ORIGIN_CHANGED: string;
   // Имя события изменения положения камеры
@@ -62,6 +64,13 @@ class SelectionChangedEvent extends Event {
 // Класс события загрузки или выгрузки части консолидированной модели
 class ModelPartEvent extends Event {
   modelPartId: string; // идентификатор части консолидированной модели
+}
+
+// Класс события обновления части консолидированной модели
+class ModelPartUpdateEvent extends ModelPartEvent {
+  updatedElementIds?: string[]; // идентификаторы обновлённых элементов модели
+  removedElementIds?: string[]; // идентификаторы удалённых элементов модели
+  addedElementIds?: string[]; // идентификаторы добавленных элементов модели
 }
 
 class VirtualOriginEvent extends Event {
