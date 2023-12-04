@@ -4,7 +4,7 @@ date: 2022-12-04T14:44:03+03:00
 draft: false
 ---
 
-**ViewerSettings** - класс описывающий настройки просмотрщика компонента **PilotWeb3D**.
+**ViewerSettings** -- класс, описывающий настройки просмотрщика компонента **PilotWeb3D**.
 
 ```js
 type ViewerSettings = Record<string, any>;
@@ -12,7 +12,7 @@ type ViewerSettings = Record<string, any>;
 
 ### Настройки просмотрщика по умолчанию
 
-Компонент имеет следующие настройки установленные по умолчанию:
+Компонент имеет следующие настройки, установленные по умолчанию:
 
 ```js
 const defaultViewer3DSettings: ViewerSettings = {

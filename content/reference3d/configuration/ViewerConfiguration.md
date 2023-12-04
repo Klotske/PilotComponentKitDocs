@@ -4,7 +4,7 @@ date: 2022-12-04T14:44:03+03:00
 draft: false
 ---
 
-**ViewerConfiguration** - Базовый класс, описывающий настройки компонентов **PilotWeb2D** и **PilotWeb3D**.
+**ViewerConfiguration** -- базовый класс, описывающий настройки компонентов **PilotWeb2D** и **PilotWeb3D**.
 
 ```js
 class ViewerConfiguration {
@@ -20,16 +20,18 @@ class ViewerConfiguration {
 ## Свойства
 
 ### appearance
+Свойство для изменения внешнего вида просмотрщика.
+
 ```js
 appearance: ViewerSettings;
 ```
-Свойство для изменения внешнего вида просмотрщика.
 
 ### direction
+Свойство управляет положением панели инструментов.
+
 ```js
 direction: string;
 ```
-Управляет положением панели инструментов.
 
 ```js
 export enum ToolbarDirection {
@@ -40,12 +42,12 @@ export enum ToolbarDirection {
 }
 ```
 
-
 ### content
+Свойство управляет расположением кнопок на панели инструментов.
+
 ```js
 content: string;
 ```
-Управляет расположением кнопок на панели инструментов.
 
 ```js
 export enum ToolbarContentAlignment {
@@ -57,10 +59,12 @@ export enum ToolbarContentAlignment {
 
 
 ### settingsPrefix
+Свойство задает префикс для настроек, хранящихся в браузере клиента.
+
 ```js
 settingsPrefix: string;
 ```
-Задает префикс для настроек, хранящихся в браузере клиента.
+
 
 
 

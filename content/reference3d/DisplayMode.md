@@ -2,7 +2,7 @@
 title: "DisplayMode"
 date: 2022-12-04T14:44:03+03:00
 draft: false
-weight: 9
+
 ---
 
 ### Режим отображения 3D модели

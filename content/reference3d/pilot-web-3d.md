@@ -2,7 +2,7 @@
 title: "PilotWeb3D"
 date: 2022-08-29T14:44:03+03:00
 draft: false
-weight: 1
+
 ---
 
 `PilotWeb3D` -- это пространство имён верхнего уровня для взаимодействия с компонентом **PilotWeb3D**.

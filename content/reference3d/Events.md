@@ -2,7 +2,7 @@
 title: "Events"
 date: 2022-11-02T14:44:03+03:00
 draft: false
-weight: 10
+
 ---
 
 ## Системные события

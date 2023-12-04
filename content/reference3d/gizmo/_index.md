@@ -2,7 +2,7 @@
 title: "GizmoControl"
 date: 2022-08-04T12:44:03+03:00
 draft: false
-weight: 3
+
 ---
 
 [GizmoControl](./GizmoControl) -- контроллер, прикрепляемый к 3D-объекту на сцене и управляющий его положением.
