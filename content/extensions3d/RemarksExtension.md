@@ -51,6 +51,7 @@ deactivate(): void;
 export class RemarkManager {
   readonly placingModeChanged: PilotWeb3D.EventDispatcher<boolean>;
   readonly selectedRemarkChanged: PilotWeb3D.EventDispatcher<string | null>;
+  readonly remarkClicked: PilotWeb3D.EventDispatcher<string | null>;
   readonly remarkDoubleClicked: PilotWeb3D.EventDispatcher<string | null>;
 
   readonly events: PilotWeb3D.IEventsDispatcher;
@@ -203,6 +204,7 @@ public setRemarksLayerVisibility(visibiliity: boolean): void;
 interface RemarkEventMap {
   'remarkPlacingModeChanged' : Event;
   'remarkSelectedObjectChanged' : Event;
+  'remarkClicked' : PilotWeb3D.ClickedEvent;
   'remarkDoubleClicked' : PilotWeb3D.ClickedEvent;
 }
 ```
@@ -217,6 +219,12 @@ interface RemarkEventMap {
   'remarkSelectedObjectChanged' : Event;
 ```
 Событие возникает при смене выбранного замечания. Подробнее: [selectedRemark](#selectedRemark), [setSelectedRemark](#setSelectedRemark).
+
+### remarkClicked
+```js
+  'remarkClicked' : PilotWeb3D.ClickedEvent; 
+```
+Событие возникает при клике по точке замечания. Подробнее: [Events3D](../../reference3d/Events#Events3D).
 
 ### remarkDoubleClicked
 ```js
