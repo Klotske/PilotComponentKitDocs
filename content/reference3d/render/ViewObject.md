@@ -50,9 +50,13 @@ export abstract class ViewObject extends THREE.Object3D {
 ```js
   constructor(entityGuid?: string, modelGuid?: string, color?: Color);
 ```
-где:\
-`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../ModelElement#id).\
-`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).\
+
+где:
+
+`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../ModelElement#id).
+
+`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).
+
 `color` -- начальный цвет объекта. Опциональный параметр, если не задан, то объекту присваивается цвет по умолчанию - `new Color(1, 1, 1, 1)`. Подробнее: [Color](../Color).
 
 ## Поля
@@ -94,7 +98,9 @@ export abstract class ViewObject extends THREE.Object3D {
 ```js
 setVisible(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- видимость объекта.
 
 ### isVisible()
@@ -109,7 +115,9 @@ isVisible(): boolean;
 ```js
 setHidden(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- скрыт ли объект.
 
 ### isHidden()
@@ -124,7 +132,9 @@ isHidden(): boolean;
 ```js
 setSelected(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- выбран ли объект.
 
 ### isSelected()
@@ -139,7 +149,9 @@ isSelected(): boolean;
 ```js
 setHovered(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- активность ховера над объектом.
 
 ### isHovered()
@@ -154,7 +166,9 @@ isHovered(): boolean;
 ```js
 setColor(color: Color): void;
 ```
-где:\
+
+где:
+
 `color` -- цвет объекта. Подробнее: [Color](../Color).
 
 ### getColor()
@@ -177,17 +191,19 @@ getOriginalColor(): Color;
 Вовзвращает объект типа [Color](../Color).
 
 ### isGhosted()
-Метод проверяет находится ли объект в призрачном режиме отрисовки. В призрачном режиме объект рисуется бесцветным и полупрозрачным.
+Метод проверяет, находится ли объект в призрачном режиме отрисовки.
 ```js
 isGhosted(): boolean;
 ```
 
 ### setGhosted()
-Метод задает призрачный режим отрисовки объекта.
+Метод задает призрачный режим отрисовки объекта -- объект рисуется бесцветным и полупрозрачным.
 ```js
 setGhosted(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- задаёт активность призрачного режима.
 
 ### dispose()
@@ -202,11 +218,11 @@ dispose(): void;
 ```js
  getBoundingBox(): THREE.Box3;
 ```
-Вовзвращает объект типа [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).
+Возвращает объект типа [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).
 
 ### raycast()
 Метод вычисляет пересечение `ViewObject` с лучом.\
-Для расчета пересечений на сцене, должен быть переопределён в подклассах.\
+Для расчета пересечений на сцене должен быть переопределён в подклассах.\
 Метод пустой по умолчанию, доступен для переопределения.
 Подробнее: [THREE.Object3D.raycast](https://threejs.org/docs/index.html#api/en/core/Object3D.raycast)
 ```js
@@ -219,7 +235,9 @@ dispose(): void;
 ```js
 protected setHoveredForObject(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- активность ховера над объектом.
 
 ### protected setSelectedForObject()
@@ -228,7 +246,9 @@ protected setHoveredForObject(value: boolean): void;
 ```js
 protected setSelectedForObject(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- значение селекта над объектом.
 
 ### protected setHiddenForObject()
@@ -237,7 +257,9 @@ protected setSelectedForObject(value: boolean): void;
 ```js
 protected setHiddenForObject(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- видимость объекта на сцене.
 
 ### protected setVisibleForObject()
@@ -246,7 +268,9 @@ protected setHiddenForObject(value: boolean): void;
 ```js
 protected setVisibleForObject(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- видимость объекта на сцене.
 
 ### protected setColorForObject() {#setColorForObject}
@@ -255,16 +279,20 @@ protected setVisibleForObject(value: boolean): void;
 ```js
 protected setColorForObject(color: Color): void;
 ```
-где:\
+
+где:
+
 `color` -- цвет объекта. Подробнее: [Color](../Color).
 
 ### protected setGhostModeForObject() {#setColorForObject}
-Метод описывает поведение объекта а призрачном режиме.\
+Метод описывает поведение объекта в призрачном режиме.\
 Метод пустой по умолчанию, доступен для переопределения.
 ```js
 protected setGhostModeForObject(value: boolean): void;
 ```
-где:\
+
+где:
+
 `value` -- задаёт активность призрачного режима.
 
 ### protected resetColorForObject()
@@ -279,9 +307,12 @@ protected resetColorForObject(): void;
 ```js
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
 ```
-где:\
-`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).\
-`object` -- объект, источник обновения. По умолчанию текущий объект.
+
+где:
+
+`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).
+
+`object` -- объект, источник обновления. По умолчанию текущий объект.
 
   ```js
   // При изменении дочерних объектов, которые не являются `ViewObject`,
