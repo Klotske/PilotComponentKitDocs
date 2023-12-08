@@ -49,10 +49,6 @@ deactivate(): void;
 ```js
 
 export class RemarkManager {
-  readonly placingModeChanged: PilotWeb3D.EventDispatcher<boolean>;
-  readonly selectedRemarkChanged: PilotWeb3D.EventDispatcher<string | null>;
-  readonly remarkClicked: PilotWeb3D.EventDispatcher<string | null>;
-  readonly remarkDoubleClicked: PilotWeb3D.EventDispatcher<string | null>;
 
   readonly events: PilotWeb3D.IEventsDispatcher;
   readonly remarkSceneName = 'RemarkViewObjectScene';
@@ -60,7 +56,7 @@ export class RemarkManager {
   public get placeRemarkOnClick(): boolean;
   public set placeRemarkOnClick(value: boolean);
 
-  public get selectedRemark(): RemarkViewObject | undefined;
+  public get selectedRemarks(): RemarkViewObject[];
 
   public setActive(value: boolean): void;
 
@@ -70,11 +66,9 @@ export class RemarkManager {
 
   public removeRemarks(remarkIds?: string[]): void;
 
-  public select(remarkId: string): void;
+  public select(remarkId: string | string[]): void;
 
-  public deselect(remarkId: string): void;
-
-  public setSelectedRemark(remarkId: string): void;
+  public deselect(remarkId: string | string[]): void;
 
   public setRemarkStatus(remarkId: string, statusParameters: RemarkStatusParameters): void;
 
@@ -104,20 +98,20 @@ readonly remarkSceneName = 'RemarkViewObjectScene';
 
 ### placeRemarkOnClick : boolean {#placeRemarkOnClick}
 Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. После добавления точки замечания, либо при клике в пустую область, режим сбрасывается и свойство становится `false`.\
-Также, при смене режима размещения точек возникает событие [remarkSelectedObjectChanged](#remarkSelectedObjectChanged).
+Также, при смене режима размещения точек возникает событие [remarkPlacingModeChanged](#remarkPlacingModeChanged).
 ```js
   get placeRemarkOnClick(): boolean;
   set placeRemarkOnClick(value: boolean);
 ```
 По умолчанию: `false`.
 
-## selectedRemark : RemarkViewObject | undefined {#selectedRemark}
-Возвращает выбранный объект замечания либо `undefined`, если замечание не выбрано.\
+## selectedRemarks : RemarkViewObject[] {#selectedRemarks}
+Возвращает выбранные объекты замечаний либо пустой массив, если ни одно замечание не выбрано.\
 Подробнее: [RemarkViewObject](#RemarkViewObject).
 ```js
-  get selectedRemark(): RemarkViewObject;
+  get selectedRemarks(): RemarkViewObject[];
 ```
-По умолчанию: `undefined`.
+По умолчанию: `[]`.
 
 ##  Методы
 
@@ -132,7 +126,8 @@ setActive(value: boolean): void;
 ```js  
 public getRemark(remarkId: string): RemarkViewObject | undefined;
 ```
-где:\
+где:
+
 `remarkId` -- идентификатор объекта замечания.
 
 ### addRemark()
@@ -140,7 +135,8 @@ public getRemark(remarkId: string): RemarkViewObject | undefined;
 ```js  
 public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: RemarkStatusParameters): RemarkViewObject | null;
 ```
-где:\
+где:
+
 `remarkParameters` -- параметры точки замечания. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).\
 `statusParameters` -- параметры статуса замечания, опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).\
 Возвращает добавленный на сцену объект замечания или `null`, если добавить точку не удалось. Подробнее: [RemarkViewObject](#RemarkViewObject).
@@ -150,41 +146,35 @@ public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: Re
 ```js  
 public removeRemarks(remarkIds?: string[]): void;
 ```
-где:\
+где:
+
 `remarkIds` -- идентификаторы точек замечаний для удаления, опциональный параметр. Если не задан, то удаляются все добавленные на сцену точки замечаний.
 
 ### select()
-Метод выделяет замечание на документе.
+Метод выделяет замечания на документе.
 ```js  
-select(remarkId: string): void;
+select(remarkId: string | string[]): void;
 ```
-где:\
-`remarkId` -- идентификатор замечания для выделения.
+где:
+
+`remarkId` -- идентификатор замечания или массив идентификаторов для выделения.
 
 ### deselect()
-Метод снимает выделение замечания на документе.
+Метод снимает выделение замечаний на документе.
 ```js  
-deselect(remarkId: string): void;
+deselect(remarkId: string | string[]): void;
 ```
-где:\
-`remarkId` -- идентификатор замечания для снятия выделения.
+где:
 
-### setSelectedRemark() {#setSelectedRemark}
-Метод управляет селектированием точек замечаний. Выбранное замечание может быть только одно.\
-При вызове `setSelectedRemark` выбирается замечание, идентификатор которого был передан как аргумент, а предыдущий выбор сбрасывается. Если замечание с нужным идентификатором не найдено, либо `remarkId` неопределён, то выбор также сбрасывается. Также, при смене выбранного замечания возникает событие [remarkSelectedObjectChanged](#remarkSelectedObjectChanged).\
-Выбранное замечание можно получить с помощью свойства [selectedRemark](#selectedRemark).
-```js  
-public setSelectedRemark(remarkId: string): void;
-```
-где:\
-`remarkId` -- идентификатор точки замечания для выбора.
+`remarkId` -- идентификатор замечания или массив идентификаторов для снятия выделения.
 
 ### setRemarkStatus()
 Метод задает параметры статуса точки замечания.
 ```js  
 public setRemarkStatus(remarkId: string, statusParameters: RemarkStatusParameters): void;
 ```
-где:\
+где:
+
 `remarkId` -- идентификатор точки замечания для обновления статуса.\
 `statusParameters` -- параметры статуса замечания. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 
@@ -193,7 +183,8 @@ public setRemarkStatus(remarkId: string, statusParameters: RemarkStatusParameter
 ```js
 public setRemarksLayerVisibility(visibiliity: boolean): void;
 ```
-где:\
+где:
+
 `visibiliity` -- параметр видимости слоя замечаний. Если `true`, то слой замечаний отрисовывается в процессе рендера. 
 В противном случае, слой замечаний не рисуется и объекты замечаний на сцене не показываются.
 
@@ -203,9 +194,7 @@ public setRemarksLayerVisibility(visibiliity: boolean): void;
 ```js
 interface RemarkEventMap {
   'remarkPlacingModeChanged' : Event;
-  'remarkSelectedObjectChanged' : Event;
   'remarkClicked' : PilotWeb3D.ClickedEvent;
-  'remarkDoubleClicked' : PilotWeb3D.ClickedEvent;
 }
 ```
 ### remarkPlacingModeChanged {#remarkPlacingModeChanged}
@@ -214,23 +203,11 @@ interface RemarkEventMap {
 ```
 Событие возникает при изменении свойства [placeRemarkOnClick](#placeRemarkOnClick).
 
-### remarkSelectedObjectChanged {#remarkSelectedObjectChanged}
-```js
-  'remarkSelectedObjectChanged' : Event;
-```
-Событие возникает при смене выбранного замечания. Подробнее: [selectedRemark](#selectedRemark), [setSelectedRemark](#setSelectedRemark).
-
 ### remarkClicked
 ```js
   'remarkClicked' : PilotWeb3D.ClickedEvent; 
 ```
 Событие возникает при клике по точке замечания. Подробнее: [Events3D](../../reference3d/Events#Events3D).
-
-### remarkDoubleClicked
-```js
-  'remarkDoubleClicked' : PilotWeb3D.ClickedEvent; 
-```
-Событие возникает при двойном клике по точке замечания. Подробнее: [Events3D](../../reference3d/Events#Events3D).
 
 # RemarkViewObject {#RemarkViewObject}
 Графический объект представляющий точку замечания, добавляется на слой замечаний. Расширяет [ViewObject](../../reference3d/render/ViewObject).
@@ -252,7 +229,8 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 ```js
   constructor(remarkParamters?: RemarkObjectParameters, statusParameters?: RemarkStatusParameters);
 ```
-где:\
+где:
+
 `remarkParamters` -- параметры точки замечания, опциональный параметр. Если не заданы, то создается точка замечания со значениями по умолчанию. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).\
 `statusParameters` -- параметры статуса замечания, опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 
