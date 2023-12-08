@@ -24,11 +24,11 @@ export interface IRenderViewer3D {
 ## Методы
 
 ### getIntersectionChecker()
-Предоставляет [IModelIntersectionChecker](../IModelIntersectionChecker) - интерфейс обработки пересечений для всех сцен.
+Предоставляет [IModelIntersectionChecker](../IntersectionChecker#IModelIntersectionChecker) - интерфейс обработки пересечений для всех сцен.
 ```js
 getIntersectionChecker(): IModelIntersectionChecker;
 ```
-Возвращается интерфейс обработки пересечений. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
+Возвращается интерфейс обработки пересечений. Подробнее:  [IModelIntersectionChecker](../IntersectionChecker#IModelIntersectionChecker).
 
 ### updateCurrentCanvas()
 Метод вызывает полную перерисовку сцен.\

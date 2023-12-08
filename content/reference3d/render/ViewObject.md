@@ -71,14 +71,14 @@ export abstract class ViewObject extends THREE.Object3D {
 
 ###  get mesh()
 Геометрическое представление `ViewObject` в виде `THREE.Mesh`. Подробнее: [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh).\
-Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
+Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get mesh(): THREE.Mesh | null;
 ```
 
 ###  get edges()
 Геометрическое представление `ViewObject` в виде `THREE.LineSegments`. Подробнее: [THREE.LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments).\
-Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
+Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get edges(): THREE.LineSegments | null;
 ```

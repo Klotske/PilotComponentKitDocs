@@ -1,41 +1,30 @@
 ---
-title: "IModelIntersectionChecker"
+title: "IntersectionChecker"
 draft: false
 weight: 9
 ---
 
-**IModelIntersectionChecker** -- интерфейс обработки пересечений объектов на сцене.
+## IntersectionCheckOptions  {#IntersectionCheckOptions}
+**IntersectionCheckOptions** -- базовые параметры проверки пересечений. Подробнее: [SceneCheckOptions](#SceneCheckOptions) и [ModelCheckOptions](#ModelCheckOptions).
+```js
+  export type IntersectionCheckOptions = {
+    [key: string]: any;
+  };
+```
+
+## IIntersectionChecker  {#IIntersectionChecker}
+**IIntersectionChecker** -- базовый интерфейс обработки пересечений объектов. Подробнее: [ISceneIntersectionChecker](#ISceneIntersectionChecker) и [IModelIntersectionChecker](#IModelIntersectionChecker).
 
 ```js
-export interface IModelIntersectionChecker {
-  get modelCenter(): THREE.Vector3;
-  get boundingBox(): THREE.Box3;
-
+export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions> {
   getIntersectionPoint(): THREE.Intersection<THREE.Object3D> | undefined;
-  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
-  getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
-  getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
-  getIntersectionIDByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
-  getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, isClippingEnable: boolean = true): { modelId: string; guid: string; }[] | undefined;
+  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
+  getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionIDByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
+  getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, options?: TOptions): { modelId: string; guid: string; }[] | undefined;
 }
 ```
-
-## Свойства
-
-###  get modelCenter()
-Центр модели.
-```js
-  get modelCenter(): THREE.Vector3;
-```
-Возвращает вектор указывающий в центр модели. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
-
-###  get boundingBox()
-Ограничивающий объем модели.
-```js
-  get boundingBox(): THREE.Box3;
-```
-Возвращает ограничивающий объем модели. Подробнее: [THREE.Box3](https://threejs.org/docs/?q=Box3#api/en/math/Box3).
-
 ## Методы
 
 ###  getIntersectionPoint()
@@ -48,55 +37,64 @@ export interface IModelIntersectionChecker {
 ###  getIntersectionByRay()
 Метод возвращает ближайшее пересечение объекта модели с лучом.
 ```js
-  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
 ```
-где:\
+где:
+
 `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
-`camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
+`camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByRay()
 Метод возвращает `modelId` и `entityGuid` ближайшего объекта модели пересекающегося с лучом.
 ```js
-  getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
+  getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
 ```
-где:\
+где:
+
 `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionByNdcPt()
 Метод возвращает ближайшее пересечение объекта модели с лучом, выпущенным из точки нахождения камеры в направлении точки в Normalized Device Coordinates (NDC пространство).
 ```js
-  getIntersectionByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
 ```
-где:\
+где:
+
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство) в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
 `camera` -- камера, используемая для определения положения начала луча, и для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByNdcPt()
 Метод возвращает `modelId` и `entityGuid` ближайшего объекта модели, пересекающегося с лучом, выпущенным из точки нахождения камеры в направлении точки в Normalized Device Coordinates (NDC пространство).
 ```js
-  getIntersectionIDByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera): { modelId: string, guid: string } | undefined;
+  getIntersectionIDByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
 ```
-где:\
+где:
+
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство) в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
 `camera` -- камера, используемая для определения положения начала луча, и для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`.
 
 
 ###  getIntersectionIDByFrustumNdcPt() {#getIntersectionIDByFrustumNdcPt}
 Метод возвращает список `modelId` и `entityGuid` объектов модели, пересекаемых усеченной пирамидой (Frustum).
 ```js
-  getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, isClippingEnable: boolean = true): { modelId: string; guid: string; }[];
+  getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, options?: TOptions): { modelId: string; guid: string; }[];
 ```
-где:\
+где:
+
 `ndcFrustumBox` -- Представление `Frsutum` в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Box3](https://threejs.org/docs/?q=Box3#api/en/math/Box3).\
 `unProjMatrix` -- Матрица проекции координат Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Matrix4](https://threejs.org/docs/#api/en/math/Matrix4).\
 `isContainsOnly` -- если `true`, то отбрасываются не полностью содержащиеся внутри пирамиды объекты. В противном случае в вывод включаются как содержащиеся внутри пирамиды объекты, так и касающиеся или пересекающиеся с ней.\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
 Если при расчёте учитываются секущие плоскости, то `isContainsOnly` также указывает на то, что объект не должен быть обрезан секущими.\
-`isClippingEnable` -- если `true`, то при расчете пересечений учитываются секущие плоскости. Объекты за пределами секущего объема отбрасываются. Не обязательный параметр. По умолчанию: `true`. Подробнее: [ClippingPlaneExtension](../../../extensions3d/ClippingPlane).
 
 Возвращает список объектов `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает пустой массив.
 
@@ -116,3 +114,44 @@ export interface IModelIntersectionChecker {
   const intersections = intersectionChecker.getIntersectionIDByFrustumNdcPt(ndcFrustumBox, unprojectionMatrix, false, false);
 ```
 Более сложный пример использования: [BoxSelectionExtension](../../../extensions3d/BoxSelection).
+
+
+# ISceneIntersectionChecker {#ISceneIntersectionChecker}
+**ISceneIntersectionChecker** -- интерфейс обработки пересечений объектов на отдельной сцене. Расширяет `IIntersectionChecker`.
+```js
+  export interface ISceneIntersectionChecker extends IIntersectionChecker<SceneCheckOptions> {
+    /** Возвращает ограничивающий объём сцены. */
+    get boundingBox(): THREE.Box3;
+  }
+```
+
+## SceneCheckOptions  {#SceneCheckOptions}
+**SceneCheckOptions** -- опции проверки пересечений для `ISceneIntersectionChecker`.
+```js
+  export type SceneCheckOptions = IntersectionCheckOptions & {
+    /** Определяет учитываются ли секущие плоскости при расчете пересечений на данной сцене.
+     *  Если учитываются, то пересечения с объектами за пределами секущего объема отбрасываются.*/
+    filterByClipping?: boolean;
+  }
+```
+
+# IModelIntersectionChecker {#IModelIntersectionChecker}
+**IModelIntersectionChecker** -- интерфейс обработки пересечений всех объектов модели. Расширяет `IIntersectionChecker`.
+```js
+  export interface IModelIntersectionChecker extends IIntersectionChecker<ModelCheckOptions> {
+    /** Возвращает ограничивающий объём всей модели. */
+    get boundingBox(): THREE.Box3;
+    /** Возвращает центр ограничивающего объёма модели. */
+    get modelCenter(): THREE.Vector3;
+  }
+```
+
+## ModelCheckOptions  {#ModelCheckOptions}
+**ModelCheckOptions** -- опции проверки пересечений для `IModelIntersectionChecker`.
+```js
+  export type ModelCheckOptions = SceneCheckOptions & {
+    /** Наименования сцен, которые участвуют в проверке пересечений.
+     *  Если не задано, то пересечения проверяются для всех сцен. */
+    sceneNames?: string[],
+  }
+```

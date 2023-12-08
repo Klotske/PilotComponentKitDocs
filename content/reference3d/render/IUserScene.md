@@ -12,7 +12,7 @@ export interface IUserScene extends THREE.Scene {
   readonly name: string;
   get needsUpdate(): boolean;
   get needsRedraw(): boolean;
-  get intersectionChecker(): IModelIntersectionChecker | null;
+  get intersectionChecker(): ISceneIntersectionChecker;
   set clippingEnable(value: boolean);
   get clippingEnable(): boolean;
 
@@ -52,11 +52,11 @@ readonly name: string;
 Возвращает `true`, если нужно перерисовать сцену, в противном случае `false`.
 
 ###  get intersectionChecker()
-Предоставляет [IModelIntersectionChecker](../IModelIntersectionChecker) - интерфейс обработки пересечений для данной сцены.
+Предоставляет [ISceneIntersectionChecker](../IntersectionChecker#ISceneIntersectionChecker) - интерфейс обработки пересечений для данной сцены.
 ```js
-  get intersectionChecker(): IModelIntersectionChecker | null;
+  get intersectionChecker(): ISceneIntersectionChecker | null;
 ```
-Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
+Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее:  [ISceneIntersectionChecker](../IntersectionChecker#ISceneIntersectionChecker).
 
 ###  get clippingEnable()
 Показывает влияют ли секущие плоскости на отрисовку и проверку пересечений на данной сцене.
