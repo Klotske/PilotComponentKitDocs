@@ -4,14 +4,6 @@ draft: false
 weight: 9
 ---
 
-## IntersectionCheckOptions  {#IntersectionCheckOptions}
-**IntersectionCheckOptions** -- базовые параметры проверки пересечений. Подробнее: [SceneCheckOptions](#SceneCheckOptions) и [ModelCheckOptions](#ModelCheckOptions).
-```js
-  export type IntersectionCheckOptions = {
-    [key: string]: any;
-  };
-```
-
 ## IIntersectionChecker  {#IIntersectionChecker}
 **IIntersectionChecker** -- базовый интерфейс обработки пересечений объектов. Подробнее: [ISceneIntersectionChecker](#ISceneIntersectionChecker) и [IModelIntersectionChecker](#IModelIntersectionChecker).
 
@@ -43,7 +35,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 
 `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).\
-`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [SceneCheckOptions](#SceneCheckOptions), [ModelCheckOptions](#ModelCheckOptions).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByRay()
@@ -55,7 +47,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 
 `ray` -- луч с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).\
 `camera` -- камера, используемая в отрисовке. Необходима для проверки пересечений с объектами, не зависящими от глубины кадра (Спрайты, текстовые метки, точки замечаний и т.д.).
-`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [SceneCheckOptions](#SceneCheckOptions), [ModelCheckOptions](#ModelCheckOptions).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionByNdcPt()
@@ -67,7 +59,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство) в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
 `camera` -- камера, используемая для определения положения начала луча, и для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
-`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [SceneCheckOptions](#SceneCheckOptions), [ModelCheckOptions](#ModelCheckOptions).\
 Возвращает объект типа `THREE.Intersection`, если пресечение существует. В противном случае возвращает `undefined`. 
 
 ###  getIntersectionIDByNdcPt()
@@ -79,7 +71,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство) в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).\
 `camera` -- камера, используемая для определения положения начала луча, и для перевода Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Camera](https://threejs.org/docs/index.html#api/en/cameras/Camera).\
-`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [SceneCheckOptions](#SceneCheckOptions), [ModelCheckOptions](#ModelCheckOptions).\
 Возвращает объект `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает `undefined`.
 
 
@@ -93,7 +85,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 `ndcFrustumBox` -- Представление `Frsutum` в Normalized Device Coordinates (NDC пространство). Подробнее: [THREE.Box3](https://threejs.org/docs/?q=Box3#api/en/math/Box3).\
 `unProjMatrix` -- Матрица проекции координат Normalized Device Coordinates (NDC пространство) в мировые координаты. Подробнее: [THREE.Matrix4](https://threejs.org/docs/#api/en/math/Matrix4).\
 `isContainsOnly` -- если `true`, то отбрасываются не полностью содержащиеся внутри пирамиды объекты. В противном случае в вывод включаются как содержащиеся внутри пирамиды объекты, так и касающиеся или пересекающиеся с ней.\
-`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [IntersectionCheckOptions](#IntersectionCheckOptions).\
+`options` -- параметры проверки пересечений, необязательный параметр. Подробнее: [SceneCheckOptions](#SceneCheckOptions), [ModelCheckOptions](#ModelCheckOptions).\
 Если при расчёте учитываются секущие плоскости, то `isContainsOnly` также указывает на то, что объект не должен быть обрезан секущими.\
 
 Возвращает список объектов `{ modelId: string, guid: string }`, если пресечение существует. В противном случае возвращает пустой массив.
@@ -128,7 +120,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 ## SceneCheckOptions  {#SceneCheckOptions}
 **SceneCheckOptions** -- опции проверки пересечений для `ISceneIntersectionChecker`.
 ```js
-  export type SceneCheckOptions = IntersectionCheckOptions & {
+  export interface SceneCheckOptions {
     /** Определяет учитываются ли секущие плоскости при расчете пересечений на данной сцене.
      *  Если учитываются, то пересечения с объектами за пределами секущего объема отбрасываются.*/
     filterByClipping?: boolean;
@@ -149,7 +141,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 ## ModelCheckOptions  {#ModelCheckOptions}
 **ModelCheckOptions** -- опции проверки пересечений для `IModelIntersectionChecker`.
 ```js
-  export type ModelCheckOptions = SceneCheckOptions & {
+  export interface ModelCheckOptions extends SceneCheckOptions {
     /** Наименования сцен, которые участвуют в проверке пересечений.
      *  Если не задано, то пересечения проверяются для всех сцен. */
     sceneNames?: string[],
