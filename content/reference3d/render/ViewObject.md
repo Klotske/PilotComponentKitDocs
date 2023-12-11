@@ -15,27 +15,31 @@ export abstract class ViewObject extends THREE.Object3D {
 
   abstract get mesh(): THREE.Mesh | null;
   abstract get edges(): THREE.LineSegments | null;
-  setVisible(iVal: boolean): void;
+  setVisible(value: boolean): void;
   isVisible(): boolean;
-  setHidden(iVal: boolean): void;
+  setHidden(value: boolean): void;
   isHidden(): boolean;
-  setSelected(iVal: boolean): void;
+  setSelected(value: boolean): void;
   isSelected(): boolean;
-  setHovered(iVal: boolean): void;
+  setHovered(value: boolean): void;
   isHovered(): boolean;
   setColor(color: Color): void;
+  getColor(): Color;
   resetColor(): void;
   getOriginalColor(): Color;
+  isGhosted(): boolean;
+  setGhosted(value: boolean): void;
   dispose(): void;
 
   getBoundingBox(): THREE.Box3;
   raycast(iRaycaster: THREE.Raycaster, oIntersects: THREE.Intersection[]): void;
 
-  protected setHoveredForObject(iVal: boolean): void;
-  protected setSelectedForObject(iVal: boolean): void;
-  protected setHiddenForObject(iVal: boolean): void;
-  protected setVisibleForObject(iVal: boolean): void;
+  protected setHoveredForObject(value: boolean): void;
+  protected setSelectedForObject(value: boolean): void;
+  protected setHiddenForObject(value: boolean): void;
+  protected setVisibleForObject(value: boolean): void;
   protected setColorForObject(color: Color): void;
+  protected setGhostModeForObject(value: boolean): void;
   protected resetColorForObject(): void;
 
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
@@ -46,9 +50,13 @@ export abstract class ViewObject extends THREE.Object3D {
 ```js
   constructor(entityGuid?: string, modelGuid?: string, color?: Color);
 ```
-где:\
-`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../ModelElement#id).\
-`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).\
+
+где:
+
+`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../ModelElement#id).
+
+`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).
+
 `color` -- начальный цвет объекта. Опциональный параметр, если не задан, то объекту присваивается цвет по умолчанию - `new Color(1, 1, 1, 1)`. Подробнее: [Color](../Color).
 
 ## Поля
@@ -88,10 +96,12 @@ export abstract class ViewObject extends THREE.Object3D {
 ### setVisible()
 Метод управляет видимостью объекта на сцене.
 ```js
-setVisible(iVal: boolean): void;
+setVisible(value: boolean): void;
 ```
-где:\
-`iVal` -- видимость объекта.
+
+где:
+
+`value` -- видимость объекта.
 
 ### isVisible()
 Метод проверяет видимость объекта на сцене.
@@ -103,10 +113,12 @@ isVisible(): boolean;
 ### setHidden()
 Метод управляет скрытием объекта со сцены. Скрытие объектов используется только для ускорения отрисовки сцены и не влияет на проверку пересечений.
 ```js
-setHidden(iVal: boolean): void;
+setHidden(value: boolean): void;
 ```
-где:\
-`iVal` -- скрыт ли объект.
+
+где:
+
+`value` -- скрыт ли объект.
 
 ### isHidden()
 Метод проверяет видимость объекта на сцене.
@@ -118,10 +130,12 @@ isHidden(): boolean;
 ### setSelected()
 Метод управляет селектированием объекта.
 ```js
-setSelected(iVal: boolean): void;
+setSelected(value: boolean): void;
 ```
-где:\
-`iVal` -- выбран ли объект.
+
+где:
+
+`value` -- выбран ли объект.
 
 ### isSelected()
 Метод проверяет селектирование объекта.
@@ -133,10 +147,12 @@ isSelected(): boolean;
 ### setHovered()
 Метод управляет ховером объекта.
 ```js
-setHovered(iVal: boolean): void;
+setHovered(value: boolean): void;
 ```
-где:\
-`iVal` -- активность ховера над объектом.
+
+где:
+
+`value` -- активность ховера над объектом.
 
 ### isHovered()
 Метод проверяет активность ховера над объектом.
@@ -150,8 +166,16 @@ isHovered(): boolean;
 ```js
 setColor(color: Color): void;
 ```
-где:\
+
+где:
+
 `color` -- цвет объекта. Подробнее: [Color](../Color).
+
+### getColor()
+Метод возвращает текущий цвет объекта. Подробнее: [Color](../Color).
+```js
+getColor(): Color;
+```
 
 ### resetColor()
 Сбрасывает цвет объекта на изначальный.
@@ -166,6 +190,22 @@ getOriginalColor(): Color;
 ```
 Вовзвращает объект типа [Color](../Color).
 
+### isGhosted()
+Метод проверяет, находится ли объект в призрачном режиме отрисовки.
+```js
+isGhosted(): boolean;
+```
+
+### setGhosted()
+Метод задает призрачный режим отрисовки объекта -- объект рисуется бесцветным и полупрозрачным.
+```js
+setGhosted(value: boolean): void;
+```
+
+где:
+
+`value` -- задаёт активность призрачного режима.
+
 ### dispose()
 Метод освообождает ресурсы, выделенные `ViewObject`.
 ```js
@@ -178,11 +218,11 @@ dispose(): void;
 ```js
  getBoundingBox(): THREE.Box3;
 ```
-Вовзвращает объект типа [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).
+Возвращает объект типа [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).
 
 ### raycast()
 Метод вычисляет пересечение `ViewObject` с лучом.\
-Для расчета пересечений на сцене, должен быть переопределён в подклассах.\
+Для расчета пересечений на сцене должен быть переопределён в подклассах.\
 Метод пустой по умолчанию, доступен для переопределения.
 Подробнее: [THREE.Object3D.raycast](https://threejs.org/docs/index.html#api/en/core/Object3D.raycast)
 ```js
@@ -193,37 +233,45 @@ dispose(): void;
 Метод описывает поведение объекта при ховере.\
 Метод пустой по умолчанию, доступен для переопределения.
 ```js
-protected setHoveredForObject(iVal: boolean): void;
+protected setHoveredForObject(value: boolean): void;
 ```
-где:\
-`iVal` -- активность ховера над объектом.
+
+где:
+
+`value` -- активность ховера над объектом.
 
 ### protected setSelectedForObject()
 Метод описывает поведение объекта при селекте.\
 Метод пустой по умолчанию, доступен для переопределения.
 ```js
-protected setSelectedForObject(iVal: boolean): void;
+protected setSelectedForObject(value: boolean): void;
 ```
-где:\
-`iVal` -- значение селекта над объектом.
+
+где:
+
+`value` -- значение селекта над объектом.
 
 ### protected setHiddenForObject()
 Метод описывает поведение объекта при скрытии.\
 Реализация по умолчанию работает только для объектов на основной сцене `MainScene`. Метод доступен для переопределения.
 ```js
-protected setHiddenForObject(iVal: boolean): void;
+protected setHiddenForObject(value: boolean): void;
 ```
-где:\
-`iVal` -- видимость объекта на сцене.
+
+где:
+
+`value` -- видимость объекта на сцене.
 
 ### protected setVisibleForObject()
 Метод описывает поведение объекта при изменении видимости.\
 Реализация по умолчанию использует свойство [Object3D.visibility](https://threejs.org/docs/index.html#api/en/core/Object3D.visible). Метод доступен для переопределения.
 ```js
-protected setVisibleForObject(iVal: boolean): void;
+protected setVisibleForObject(value: boolean): void;
 ```
-где:\
-`iVal` -- видимость объекта на сцене.
+
+где:
+
+`value` -- видимость объекта на сцене.
 
 ### protected setColorForObject() {#setColorForObject}
 Метод описывает поведение объекта при изменении цвета.\
@@ -231,8 +279,21 @@ protected setVisibleForObject(iVal: boolean): void;
 ```js
 protected setColorForObject(color: Color): void;
 ```
-где:\
+
+где:
+
 `color` -- цвет объекта. Подробнее: [Color](../Color).
+
+### protected setGhostModeForObject() {#setColorForObject}
+Метод описывает поведение объекта в призрачном режиме.\
+Метод пустой по умолчанию, доступен для переопределения.
+```js
+protected setGhostModeForObject(value: boolean): void;
+```
+
+где:
+
+`value` -- задаёт активность призрачного режима.
 
 ### protected resetColorForObject()
 Метод описывает поведение объекта при сбрасывании цвета объекта на изначальный.\
@@ -246,9 +307,12 @@ protected resetColorForObject(): void;
 ```js
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
 ```
-где:\
-`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).\
-`object` -- объект, источник обновения. По умолчанию текущий объект.
+
+где:
+
+`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).
+
+`object` -- объект, источник обновления. По умолчанию текущий объект.
 
   ```js
   // При изменении дочерних объектов, которые не являются `ViewObject`,
