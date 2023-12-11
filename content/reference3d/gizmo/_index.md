@@ -17,7 +17,6 @@ draft: false
 ## GizmoObject
 [IGizmoObject](./IGizmoObject) -- базовый интерфейс гизмо объектов.\
 [GizmoObject](./IGizmoObject#GizmoObject) -- встроенная реализация интерфейса `IGizmoObject`.
-
 [GizmoMaterials](./GizmoMaterials) -- материалы, используемые объектами гизмо.
 
 ## GizmoBuilder
