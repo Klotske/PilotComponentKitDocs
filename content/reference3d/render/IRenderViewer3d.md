@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## IRenderViewer3D {#IRenderViewer3D}
-**IRenderViewer3D** -- интерфейс, для работы с отрисовкой сцен и объектами на сцене.
+**IRenderViewer3D** -- интерфейс для работы с отрисовкой сцен и объектами на сцене.
 
 ```js
 export interface IRenderViewer3D {
@@ -24,11 +24,11 @@ export interface IRenderViewer3D {
 ## Методы
 
 ### getIntersectionChecker()
-Предоставляет [IModelIntersectionChecker](../IntersectionChecker#IModelIntersectionChecker) - интерфейс обработки пересечений для всех сцен.
+Предоставляет [IModelIntersectionChecker](../IntersectionChecker#IModelIntersectionChecker) -- интерфейс обработки пересечений для всех сцен.
 ```js
 getIntersectionChecker(): IModelIntersectionChecker;
 ```
-Возвращается интерфейс обработки пересечений. Подробнее:  [IModelIntersectionChecker](../IntersectionChecker#IModelIntersectionChecker).
+Возвращает интерфейс обработки пересечений. Подробнее:  [IModelIntersectionChecker](../IntersectionChecker#IModelIntersectionChecker).
 
 ### updateCurrentCanvas()
 Метод вызывает полную перерисовку сцен.\
@@ -37,7 +37,7 @@ getIntersectionChecker(): IModelIntersectionChecker;
 updateCurrentCanvas(force?: boolean): Promise<void>;
 ```
 где:\
-`force` -- флаг, указывающий на принудительное обновление сцен. По умолчанию `false`.
+`force` -- флаг, указывающий на принудительное обновление сцен. По умолчанию -- `false`.
 
 ###  placeObjectOnScene()
 Метод помещает объект на определённую сцену.
@@ -46,7 +46,7 @@ updateCurrentCanvas(force?: boolean): Promise<void>;
 ```
 где:\
 `iObj` -- объект, который нужно поместить на сцену.\
-`sceneID` -- Имя сцены, не обязательный параметр. По умолчанию: `MainScene`.
+`sceneID` -- имя сцены. Необязательный параметр. По умолчанию -- `MainScene`.
 
 ###  removeObjectFromScene()
 Метод удаляет объект со сцены.
@@ -85,8 +85,9 @@ setActiveClipPlaneIndices(indices: number[]): void;
   addScene(name: string, isClippable: boolean): IUserScene;
 ```
 где:\
-`name` -- идентификатор новой сцены.\
-`isClippable` -- параметр, указывающий влияют ли секущие плоскости на отрисовку этой сцены. Если `false`, то секущие плоскости не применяются к объектам на этой сцене и проверка пересечений с объектами на этой сцене также не учитывает секущие плоскости.
+`name` -- идентификатор новой сцены.
+
+`isClippable` -- параметр, указывающий, влияют ли секущие плоскости на отрисовку этой сцены. Если `false`, то секущие плоскости не применяются к объектам на этой сцене и проверка пересечений с объектами на этой сцене также не учитывает секущие плоскости.
 Возвращает добавленную сцену. Подробнее: [IUserScene](../IUserScene).
 
 ###  removeScene()
