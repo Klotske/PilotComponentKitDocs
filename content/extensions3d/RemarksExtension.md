@@ -299,19 +299,19 @@ export interface RemarkObjectParameters {
 Необязательный параметр, используется совместно с `targetEntityGuid`. Если не указан, то поиск целевого объекта выполняется по всем частям модели.\
 Подробнее: [ModelElement.modelPartId](../../reference3d/modelelement/ModelElement#modelPartId).
 
-### targetEntityGuid : string
+### targetEntityGuid : string {#targetObject}
 Идентификатор элемента модели, геометрия которого используется как целевой объект для привязки замечания.\
 Подробнее: [ModelElement.id](../../reference3d/modelelement/ModelElement#id).
 
 ### position : THREE.Vector3 {#remarkAbsPosition}
-Координаты точки замечания в мировом пространстве. Опциональный параметр. Если координаты не заданы, но задан целевой объект ([targetObject](#targetObject)) 
+Координаты точки замечания в мировом пространстве. Опциональный параметр. Если координаты не заданы, но задан целевой объект ([targetEntityGuid](#targetObject)) 
 и относительное положение точки замечания ([relativePosition](#remarkRelPosition)), 
 то абсолютное положение точки замечания рассчитывается, исходя из этих параметров. 
 В противном случае используется значение по умолчанию: `new THREE.Vector3(0, 0, 0)`. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
 ### relativePosition : THREE.Vector3 {#remarkRelPosition}
 Координаты точки замечания относительно целевого объекта. Опциональный параметр. 
-Относительные координаты применяются только в том случае, если задан целевой объект ([targetObject](#targetObject)) и не заданы абсолютные координаты ([position](#remarkAbsPosition)). 
+Относительные координаты применяются только в том случае, если задан целевой объект ([targetEntityGuid](#targetObject)) и не заданы абсолютные координаты ([position](#remarkAbsPosition)). 
 В случае, если заданы и целевой объект, и абсолютные координаты, то относительные координаты будут рассчитаны, исходя из этих параметров. 
 Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
 
