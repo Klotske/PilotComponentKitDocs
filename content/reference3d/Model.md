@@ -19,7 +19,7 @@ getAllModelParts(): ModelPart[];
 ```js
 getModelPart(id: string): ModelPart;
 ```
-где:\
+где:
 
 `id` -- идентификатор части консолидированной модели.
 
@@ -36,12 +36,13 @@ getHiddenModelParts(): ModelPart[]
 ```
 
 ### hideModelPart()
-Метод позволяет спрятать часть консолидированной модели.
+Метод позволяет скрыть часть консолидированной модели.
 
 ```js
 hideModelPart(modelPart: string | ModelPart): void;
 ```
-где:\
+где:
+
 `modelPart` -- идентификатор или экземпляр части модели.
 
 ### showModelPart()
@@ -49,22 +50,23 @@ hideModelPart(modelPart: string | ModelPart): void;
 ```js
 showModelPart(modelPart: string | ModelPart): void
 ```
-где:\
+где:
+
 `modelPart` -- идентификатор или экземпляр части модели.
 
 ### hide()
-Метод позволяет спрятать элементы модели.
+Метод позволяет скрыть элементы модели.
 ```js
 hide(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
-где:\
+где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 ### hideAll()
-Метод позволяет спрятать все элементы и части модели.
+Метод позволяет скрыть все элементы и части модели.
 ```js
 hideAll(): void;
 ```
@@ -74,7 +76,7 @@ hideAll(): void;
 ```js
 show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
 ```
-где:\
+где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -86,25 +88,45 @@ show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
 showAll(): void;
 ```
 
+### isolate()
+Метод позволяет изолировать элементы одной части модели. Все неизолированные элементы модели будут скрыты.
+```js
+isolate(elementIds: string[], modelPart: string | ModelPart): void;
+```
+где:
+
+`elementIds` -- один или несколько идентификаторов элементов модели.
+
+`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+
+### isolateMultiple()
+Метод позволяет изолировать элементы модели. Все неизолированные элементы модели будут скрыты.
+```js
+isolateMultiple(elements: ModelElementIds[]): void;
+```
+где:
+
+`elements` -- список идентификаторов элементов модели, сгруппированных по части модели. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
+
 ### select()
 Метод позволяет выделить элементы.
 ```js
 select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode): void
 ```
-где:\
+где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели.
 
-`selectionMode` -- режим выделения. Подробнее: см <a href="/reference3d/SelectionMode">SelectionMode</a>
+`selectionMode` -- режим выделения. Подробнее:  [SelectionMode](../SelectionMode).
 
 ### deselect()
 Метод позволяет снять выделение с заданных элементов.
 ```js
 deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
-где:\
+где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -117,19 +139,25 @@ clearSelection(): void;
 ```
 
 ### getSelection()
-Метод позволяет получить выделенные элементы модели.
+Метод позволяет получить выделенные элементы модели. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
 ```js
 getSelection(): ModelElementIds[];
 ```
 
 ### getHiddenElements() {#getHiddenElements}
-Метод позволяет получить все скрытые элементы.
+Метод позволяет получить все скрытые элементы. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
 ```js
 getHiddenElements(): ModelElementIds[]
 ```
 
+### getIsolatedElements()
+Метод позволяет получить все изолированные элементы. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
+```js
+getIsolatedElements(): ModelElementIds[] 
+```
+
 ### getVisibleElements()
-Метод позволяет получить все видимые элементы.
+Метод позволяет получить все видимые элементы. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
 ```js
 getVisibleElements(): ModelElementIds[] 
 ```
@@ -139,7 +167,7 @@ getVisibleElements(): ModelElementIds[]
 ```js
 setColor(elementIds: string[] | string, r: number, g: number, b: number, a: number, modelPart?: string | ModelPart): void
 ```
-где:\
+где:
 
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
@@ -158,9 +186,18 @@ setColor(elementIds: string[] | string, r: number, g: number, b: number, a: numb
 ```js
 clearColors(model? : string | ModelPart): void;
 ```
-где:\
+где:
 
 `modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
+
+### setGhostMode()
+Метод задает призрачный режим отображения для скрытых объектов. В этом режиме скрытые объекты отображаются на сцене в полупрозрачном, бесцветном виде.
+```js
+setGhostMode(value: boolean): void;
+```
+где:
+
+`value` -- задаёт активность призрачного режима.
 
 ### getElementProperties() {#getElementProperties}
 Метод позволяет получить свойства элемента
@@ -168,7 +205,7 @@ clearColors(model? : string | ModelPart): void;
 ```js
 getElementProperties(elementId: string, modelPart?: string | ModelPart, version?: BigInt): ModelElementPropertySet[]
 ```
-где:\
+где:
 
 `elementId` -- идентификатор элемента.
 
@@ -176,4 +213,4 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 
 `version` -- версия модели. Задается в тиках. Если версия не указана, то берутся свойства актуальной версии загруженной части модели.
 
-Возвращает набор данных типа <a href="/reference3d/ModelElementPropertySet">ModelElementPropertySet</a>
+Возвращает набор данных типа [ModelElementPropertySet](../modelelement/ModelElementPropertySet).

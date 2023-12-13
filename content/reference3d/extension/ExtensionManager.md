@@ -29,10 +29,9 @@ PilotWeb3D.theExtensionManager.registerExtensionType('myExtension', MyExtension)
 registerExtensionType(extensionId: string, extension: typeof Extension) : boolean;
 ```
 где:\
-
 `extensionId` -- уникальное имя расширения.
 
-`extension` -- тип расширения унаследованный от `PilotWeb3d.Extension` или `PilotWeb2D.Extension`
+`extension` -- тип расширения, унаследованный от `PilotWeb3d.Extension` или `PilotWeb2D.Extension`.
 
 
 ### unregisterExtensionType()

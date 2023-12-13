@@ -11,7 +11,7 @@ draft: false
 
 ```js
 class CoreEventTypes {
-  // Имя события изменения размера вьювера
+  // Имя события изменения размера просмотрщика
   static VIEWER_RESIZE_EVENT: string;
   // Имя события нажатия левой клавиши мыши
   static VIEWER_MOUSE_DOWN_EVENT: string;
@@ -37,7 +37,7 @@ class EventTypes extends CoreEventTypes {
   static MODEL_PART_UNLOADED: string;
   // Имя события обновления части консолидированной модели
   static MODEL_PART_UPDATED: string;
-  // Имя события изменения положения виртуального начала координат.
+  // Имя события изменения положения виртуального начала координат
   static VIRTUAL_ORIGIN_CHANGED: string;
   // Имя события изменения положения камеры
   static CAMERA_CHANGE_EVENT: string;
@@ -73,9 +73,10 @@ class ModelPartUpdateEvent extends ModelPartEvent {
   addedElementIds?: string[]; // идентификаторы добавленных элементов модели
 }
 
+// Класс события изменения виртуального начала координат
 class VirtualOriginEvent extends Event {
-  virtualOrigin: Point3; // обновлённое положение виртуального начала координат.
-  delta: Point3; // смещение объектов на сцене: oldOrigin - newOrigin.
+  virtualOrigin: Point3; // обновлённое положение виртуального начала координат
+  delta: Point3; // смещение объектов на сцене: oldOrigin - newOrigin
 }
 
 // Класс события изменения положения камеры
