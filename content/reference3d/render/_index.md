@@ -16,7 +16,7 @@ draft: false
 [IRenderViewer3d](./IRenderViewer3d)\
 [IUserScene](./IUserScene)\
 [I3DRenderer](./I3DRenderer)\
-[IModelIntersectionChecker](./IModelIntersectionChecker)\
+[IntersectionChecker](./IntersectionChecker)\
 [IRenderOperationContext](./IRenderOperationContext)
 
 #### ViewObject:
