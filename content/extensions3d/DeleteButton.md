@@ -5,12 +5,11 @@ draft: false
 ---
 
 **DeleteButtonExtension** -- расширение для удаления селектированных объектов на сцене.\
-По нажатию на кнопку `Удалить выбранные элементы` в тулбаре или по нажатию клавиши `Delete` на клавиатуре расширение вызовет [DeleteEvent](#DeleteEvent) со списком селектированных объектов.\
+По нажатию на кнопку `Удалить выбранные элементы` в тулбаре или по нажатию клавиши `Delete` на клавиатуре расширение вызовет [delete](../../reference3d/Model#delete) метод модели со списком селектированных объектов.\
 Непосредственным удалением объектов занимаются владельцы данных объектов. 
-Для этого им необходимо подписаться на событие удаления с помощью [addDeleteEventListener](#addDeleteEventListener). 
-Также в этом методе владелец объекта должен передать фильтр для собственных удаляемых объектов -- расширение вызовет [DeleteEvent](#DeleteEvent) только в том случае, 
-если каждый из выбранных объектов соответствует хотя бы одному фильтру.\
-При селектировании объектов на сцене расширение проверяет, что все выбранные объекты соответствуют фильтрам. 
+Для этого им необходимо подписаться на событие удаления [DELETE_OBJECTS_EVENT](../../reference3d/Events#Events3D). 
+Также владелец объекта должен передать в модель фильтр для собственных удаляемых объектов - [addDeletionFilter](../../reference3d/Model#addDeletionFilter).\
+При селектировании объектов на сцене расширение проверяет, что все выбранные объекты соответствуют фильтрам удаления объектов с помощью метода [canDelete](../../reference3d/Model#canDelete) . 
 Если соответствуют, то удаление разрешено -- можно удалить объекты нажатием кнопки либо нажатием клавиши `Delete`. 
 В противном случае кнопка будет заблокированной, а нажатие клавиши `Delete` проигнорируется.
 
@@ -42,61 +41,3 @@ activate(): void;
 ```js
 deactivate(): void;
 ```
-
-### addDeleteEventListener() {#addDeleteEventListener}
-Добавить подписку на событие удаления объектов со сцены.
-```js
-  addDeleteEventListener(listener: DeleteEventListener, filter: DeleteEventFilter): void;
-```
-
-где:\
-`listener` -- обработчик события удаления. Подробнее: [DeleteEventListener](#DeleteEventListener).
-
-`filter` -- фильтр объектов для удаления. Подробнее: [DeleteEventFilter](#DeleteEventFilter).
-
-
-### removeDeleteEventListener()
-Убрать подписку на событие удаления объектов со сцены.
-```js
-  removeDeleteEventListener(listener: DeleteEventListener): void;
-```
-
-где:\
-`listener` -- обработчик события удаления. Подробнее: [DeleteEventListener](#DeleteEventListener).
-
-## DeleteEvent {#DeleteEvent}
-Событие удаления объектов со сцены. 
-```js
-class DeleteEvent extends Event {
-  deletedIds: PilotWeb3D.ModelElementIds[];
-}
-```
-
-где:\
-`deletedIds` -- идентификаторы объектов для удаления. Подробнее: [ModelElementIds](../../reference3d/modelelement/ModelElementIds).
-
-
-## DeleteEventListener {#DeleteEventListener}
-Обработчик события удаления.
-```js
-interface DeleteEventListener extends EventListener {
-  (event: DeleteEvent): void;
-}
-```
-
-где:\
-`event` -- событие удаления. Подробнее: [DeleteEvent](#DeleteEvent).
-
-## DeleteEventFilter {#DeleteEventFilter}
-Фильтр объектов для удаления. 
-```js
-interface DeleteEventFilter {
-  (modelId: string, entityId: string): boolean;
-}
-```
-
-где:\
-`modelId` -- идентификатор модели.
-
-`entityId` -- идентификатор элемента модели.\
-Возвращает `true` для объектов, которые можно удалить. В противном случае -- `false`.

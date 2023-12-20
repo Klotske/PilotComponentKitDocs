@@ -214,3 +214,59 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 `version` -- версия модели. Задается в тиках. Если версия не указана, то берутся свойства актуальной версии загруженной части модели.
 
 Возвращает набор данных типа [ModelElementPropertySet](../modelelement/ModelElementPropertySet).
+
+
+### canDelete() {#canDelete}
+Метод проверяет, что переданные идентификаторы объектов соответствуют фильтрам объектов для удаления.
+```js
+  canDelete(elementIds: ModelElementIds[]): boolean;
+```
+
+где:\
+`elementIds` -- идентификаторы объектов для проверки удаления. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
+
+Возвращает `true`, если каждый из переданных идентификаторов соответствует хотя бы одному фильтру.
+
+### delete() {#delete}
+Метод вызывает [DELETE_OBJECTS_EVENT](../Events/#Events3D) с переданными идентификаторами объектов модели, если каждый идентификатор соответствует хотя бы одному фильтру.
+```js
+  delete(elementIds: ModelElementIds[]): boolean;
+```
+
+где:\
+`elementIds` -- идентификаторы объектов для удаления. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
+
+Возвращает `true`, если удалось вызвать [DELETE_OBJECTS_EVENT](../Events/#Events3D). В противном случае возвращается `false`.
+
+### addDeletionFilter() {#addDeletionFilter}
+Метод добавляет фильтр объектов для удаления.
+```js
+  addDeleteEventListener(filter: DeleteEventFilter): void;
+```
+
+где:\
+`filter` -- фильтр объектов для удаления. Подробнее: [DeleteEventFilter](#DeleteEventFilter).
+
+
+### removeDeletionFilter()
+Метод удаляет фильтр объектов для удаления.
+```js
+  removeDeletionFilter(filter: DeleteEventFilter): void;
+```
+
+где:\
+`filter` -- фильтр объектов для удаления. Подробнее: [DeleteEventFilter](#DeleteEventFilter).
+
+
+## DeleteEventFilter {#DeleteEventFilter}
+Фильтр объектов для удаления. 
+```js
+interface DeleteEventFilter {
+  (modelId: string, entityId: string): boolean;
+}
+```
+где:\
+`modelId` -- идентификатор модели.
+
+`entityId` -- идентификатор элемента модели.\
+Возвращает `true` для объектов, которые можно удалить. В противном случае -- `false`.

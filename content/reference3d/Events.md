@@ -55,6 +55,8 @@ class EventTypes extends CoreEventTypes {
   static RENDER_HOVER_EVENT: string;
   // Имя события двойного клика по отрисованному элементу
   static RENDER_DOUBLE_CLICK_EVENT: string;
+  // Имя события удаления объектов со сцены
+  static DELETE_OBJECTS_EVENT: string;
 }
 ```
 
@@ -102,5 +104,10 @@ class HoverEvent extends Event {
 // Класс события загрузки или выгрузки расширения
 class ExtensionEvent extends Event {
   extensionName: string;
+}
+
+// Класс события удаления объектов со сцены
+class DeleteEvent extends Event {
+  deletedIds: ModelElementIds[]; // идентификаторы объектов для удаления
 }
 ```
