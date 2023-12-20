@@ -258,14 +258,14 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 ## Методы
 
 ### updateRemark()
-Метод обновляет параметры точки замечания. Допустимо определять внутри `parameters` только изменившиеся параметры точки замечания. Например, для изменения размера точки достаточно передать `{ pointSize : newSize }`, при этом позиция точки, её цвет, геометрия и другие параметры останутся неизменными. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
+Метод обновляет параметры точки замечания. Допустимо определять внутри `parameters` только изменившиеся параметры точки замечания. Например, для изменения размера точки достаточно передать `{ markSize : newSize }`, при этом позиция точки, иконка замечания и другие параметры останутся неизменными. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
 ```js
   updateRemark(parameters: RemarkObjectParameters): void;
 ```
 
 ### updateStatus()
 Метод обновляет параметры статуса точки замечания. Допустимо определять внутри `parameters` только изменившиеся параметры статуса. 
-Например, для изменения размера статуса достаточно передать `{ statusSize : newSize }`, при этом смещение статуса, цвет, текстура и другие параметры останутся неизменными. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
+Например, для изменения размера статуса достаточно передать `{ statusSize : newSize }`, при этом смещение статуса, иконка статуса и другие параметры останутся неизменными. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 ```js
   updateStatus(parameters: RemarkStatusParameters): void;
 ```
@@ -279,7 +279,7 @@ export interface RemarkObjectParameters {
   targetEntityGuid?: string,
   position?: Point3,
   relativePosition?: Point3,
-  pointSize?: { x: number, y: number },
+  markSize?: { x: number, y: number },
   svgIcon?: string
 }
 ```
@@ -308,7 +308,7 @@ export interface RemarkObjectParameters {
 В случае, если заданы и целевой объект, и абсолютные координаты, то относительные координаты будут рассчитаны, исходя из этих параметров. 
 Подробнее: Подробнее: [Point3](../../reference3d/navigation/Point3).
 
-### pointSize : {x: number, y: number}
+### markSize : {x: number, y: number}
 Размеры точки замечания. Опциональный параметр. Если не задан, то используются значения по умолчанию: `{ x: 25, y: 25 }`.
 
 ### svgIcon : string
