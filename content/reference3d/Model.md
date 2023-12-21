@@ -238,7 +238,7 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 ### addDeletionFilter() {#addDeletionFilter}
 Метод добавляет фильтр объектов для удаления.
 ```js
-  addDeleteEventListener(filter: DeleteEventFilter): void;
+  addDeletionFilter(filter: DeleteEventFilter): void;
 ```
 
 где:\
