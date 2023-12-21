@@ -5,7 +5,7 @@ draft: false
 
 **RemarksExtension** -- расширение, которое позволяет задать точки замечаний на сцене. 
 Замечания прикрепляются к графическим объектам на сцене, изменяя свое положение при изменении положения целевого объекта. 
-Замечания рисуются на отдельном слое. Также каждая точка замечания имеет статус -- опционально отображаемую текстуру.
+Замечания рисуются на отдельном слое. Каждая точка замечания имеет статус -- опционально отображаемую текстуру.
 
 Расширение имеет имя `PilotWeb3D.Remarks`.
 
@@ -101,8 +101,8 @@ readonly remarkSceneName = 'RemarkViewObjectScene';
 ### placeRemarkOnClick : boolean {#placeRemarkOnClick}
 Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, 
 то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. 
-После добавления точки замечания, либо при клике в пустую область, режим сбрасывается и свойство становится `false`.\
-Также при смене режима размещения точек возникает событие [remarkPlacingModeChanged](#remarkPlacingModeChanged).
+После добавления точки замечания, либо при клике в пустую область, режим сбрасывается, и свойство становится `false`.\
+При смене режима размещения точек возникает событие [remarkPlacingModeChanged](#remarkPlacingModeChanged).
 ```js
   get placeRemarkOnClick(): boolean;
   set placeRemarkOnClick(value: boolean);
@@ -142,7 +142,8 @@ public addRemark(remarkParameters: RemarkObjectParameters, statusParameters?: Re
 где:\
 `remarkParameters` -- параметры точки замечания. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
 
-`statusParameters` -- параметры статуса замечания. Опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).\
+`statusParameters` -- параметры статуса замечания. Опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
+
 Возвращает добавленный на сцену объект замечания или `null`, если добавить точку не удалось. Подробнее: [RemarkViewObject](#RemarkViewObject).
 
 ### removeRemarks()
@@ -190,7 +191,7 @@ public setRemarksLayerVisibility(visibiliity: boolean): void;
 где:
 
 `visibiliity` -- параметр видимости слоя замечаний. Если `true`, то слой замечаний отрисовывается в процессе рендера. 
-В противном случае слой замечаний не рисуется и объекты замечаний на сцене не показываются.
+В противном случае слой замечаний не рисуется, и объекты замечаний на сцене не показываются.
 
 
 ## RemarkEventMap {#RemarkEventMap}
@@ -258,14 +259,15 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 ## Методы
 
 ### updateRemark()
-Метод обновляет параметры точки замечания. Допустимо определять внутри `parameters` только изменившиеся параметры точки замечания. Например, для изменения размера точки достаточно передать `{ pointSize : newSize }`, при этом позиция точки, её цвет, геометрия и другие параметры останутся неизменными. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
+Метод обновляет параметры точки замечания. Внутри `parameters` можно определять только изменившиеся параметры точки замечания. 
+Например, для изменения размера точки достаточно передать `{ markSize : newSize }`. При этом позиция точки, иконка замечания и другие параметры останутся неизменными. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
 ```js
   updateRemark(parameters: RemarkObjectParameters): void;
 ```
 
 ### updateStatus()
-Метод обновляет параметры статуса точки замечания. Допустимо определять внутри `parameters` только изменившиеся параметры статуса. 
-Например, для изменения размера статуса достаточно передать `{ statusSize : newSize }`, при этом смещение статуса, цвет, текстура и другие параметры останутся неизменными. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
+Метод обновляет параметры статуса точки замечания. Внутри `parameters` можно определять только изменившиеся параметры статуса. 
+Например, для изменения размера статуса достаточно передать `{ statusSize : newSize }`. При этом смещение статуса, иконка статуса и другие параметры останутся неизменными. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 ```js
   updateStatus(parameters: RemarkStatusParameters): void;
 ```
@@ -277,17 +279,10 @@ export interface RemarkObjectParameters {
   remarkGuid?: string,
   targetModelGuid?: string,
   targetEntityGuid?: string,
-  position?: THREE.Vector3,
-  relativePosition?: THREE.Vector3,
-  pointSize?: number,
-  rimSize?: number,
-  defaultPointColor?: PilotWeb3D.Color,
-  defaultRimColor?: PilotWeb3D.Color,
-  hoveredPointColor?: PilotWeb3D.Color,
-  hoveredRimColor?: PilotWeb3D.Color,
-  selectedPointColor?: PilotWeb3D.Color,
-  selectedRimColor?: PilotWeb3D.Color,
-  pointGeometry?: THREE.InstancedBufferGeometry,
+  position?: Point3,
+  relativePosition?: Point3,
+  markSize?: { x: number, y: number },
+  svgIcon?: string
 }
 ```
 
@@ -303,54 +298,23 @@ export interface RemarkObjectParameters {
 Идентификатор элемента модели, геометрия которого используется как целевой объект для привязки замечания.\
 Подробнее: [ModelElement.id](../../reference3d/modelelement/ModelElement#id).
 
-### position : THREE.Vector3 {#remarkAbsPosition}
+### position : Point3 {#remarkAbsPosition}
 Координаты точки замечания в мировом пространстве. Опциональный параметр. Если координаты не заданы, но задан целевой объект ([targetEntityGuid](#targetObject)) 
 и относительное положение точки замечания ([relativePosition](#remarkRelPosition)), 
 то абсолютное положение точки замечания рассчитывается, исходя из этих параметров. 
-В противном случае используется значение по умолчанию: `new THREE.Vector3(0, 0, 0)`. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
+В противном случае используется значение по умолчанию: `{ x: 0, y: 0, z: 0 }`. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
-### relativePosition : THREE.Vector3 {#remarkRelPosition}
+### relativePosition : Point3 {#remarkRelPosition}
 Координаты точки замечания относительно целевого объекта. Опциональный параметр. 
 Относительные координаты применяются только в том случае, если задан целевой объект ([targetEntityGuid](#targetObject)) и не заданы абсолютные координаты ([position](#remarkAbsPosition)). 
 В случае, если заданы и целевой объект, и абсолютные координаты, то относительные координаты будут рассчитаны, исходя из этих параметров. 
-Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).
+Подробнее: [Point3](../../reference3d/navigation/Point3).
 
-### pointSize : number
-Размер точки замечания без учета границы в пикселях. Опциональный параметр. Если не задан, то используется значение по умолчанию: `15`.\
-При использовании геометрии по умолчанию `pointSize` будет задавать диаметр точки без учета границы.
+### markSize : {x: number, y: number}
+Размеры точки замечания. Опциональный параметр. Если не задан, то используются значения по умолчанию: `{ x: 25, y: 25 }`.
 
-### rimSize : number
-Размер границы точки замечания в пикселях. Опциональный параметр. Если не задан, то используется значение по умолчанию: `3`.\
-При использовании геометрии по умолчанию итоговый диаметр точки будет равен: `pointSize + 2 * rimSize`.
-
-### defaultPointColor : PilotWeb3D.Color
-Базовый цвет точки замечания. Опциональный параметр. Если не задан, то используется цвет по умолчанию: `#ffffffff`.\
-Подробнее: [Color](../../reference3d/render/Color).
-
-### defaultRimColor : PilotWeb3D.Color
-Базовый цвет границы точки замечания. Опциональный параметр. Если не задан, то используется цвет по умолчанию: `#646464ff`.\
-Подробнее: [Color](../../reference3d/render/Color).
-
-### hoveredPointColor : PilotWeb3D.Color
-Цвет точки замечания под действием ховера. Опциональный параметр. Если не задан, то используется цвет по умолчанию: `#c8c864ff`.\
-Подробнее: [Color](../../reference3d/render/Color).
-
-### hoveredRimColor : PilotWeb3D.Color
-Цвет границы точки замечания под действием ховера. Опциональный параметр. Если не задан, то используется цвет по умолчанию: `#c8c864ff`.\
-Подробнее: [Color](../../reference3d/render/Color).
-
-### selectedPointColor : PilotWeb3D.Color
-Цвет выбранной точки замечания. Опциональный параметр. Если не задан, то используется цвет по умолчанию: `#d3b268ff`.\
-Подробнее: [Color](../../reference3d/render/Color).
-
-### selectedRimColor : PilotWeb3D.Color
-Цвет границы выбранной точки замечания. Опциональный параметр. Если не задан, то используется цвет по умолчанию: `#c89e3fff`.\
-Подробнее: [Color](../../reference3d/render/Color).
-
-### pointGeometry : THREE.InstancedBufferGeometry
-Геометрия, используемая для отрисовки точки. По умолчанию используется геометрия круга.\
-Подробнее: [THREE.InstancedBufferGeometry](https://threejs.org/docs/#api/en/core/InstancedBufferGeometry).
-
+### svgIcon : string
+Иконка точки замечания, строковое описание `svg`. Необязательный параметр.
 
 # RemarkStatusParameters {#RemarkStatusParameters}
 Параметры статуса точки замечания.
@@ -358,9 +322,9 @@ export interface RemarkObjectParameters {
 export interface RemarkStatusParameters {
   visible?: boolean,
   mapColor?: PilotWeb3D.Color,
-  statusSize?: number,
-  statusOffset?: THREE.Vector2,
-  statusTexture?: THREE.Texture
+  statusSize?: { x: number, y: number },
+  statusOffset?: { x: number, y: number },
+  svgIcon?: string
 }
 ```
 
@@ -372,14 +336,12 @@ export interface RemarkStatusParameters {
 Если не задан, то используется значение по умолчанию: `new PilotWeb3D.Color(1, 1, 1, 1)`.\
 Подробнее: [Color](../../reference3d/render/Color).
 
-### statusSize : THREE.Vector2
-Определяет размеры текстуры статуса замечания в пикселях. Опциональный параметр. Если не задан, то используется значение по умолчанию: `new THREE.Vector2(30, 30)`.
+### statusSize : { x: number, y: number }
+Определяет размеры текстуры статуса замечания в пикселях. Опциональный параметр. Если не задан, то используется значение по умолчанию: `{ x: 30, y: 30 }`.
 
-### statusOffset : THREE.Vector2
-Определяет смещение текстуры статуса замечания относительно точки замечания. Опциональный параметр. Указывается в пикселях.\
-Если не задан, то используется значение по умолчанию: `new THREE.Vector2(25, 25)`.\
-Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).
+### statusOffset : { x: number, y: number }
+Определяет смещение текстуры статуса замечания относительно точки замечания. Опциональный параметр. Указывается в пикселях.
+Если не задан, то используется значение по умолчанию: `{ x: 25, y: 25 }`.
 
-### statusTexture : THREE.Texture
-Текстура статуса замечания. Опциональный параметр.\
-Подробнее: [THREE.Texture](https://threejs.org/docs/#api/en/textures/Texture).
+### svgIcon : string
+Иконка статуса замечания, строковое описание `svg`. Необязательный параметр.
