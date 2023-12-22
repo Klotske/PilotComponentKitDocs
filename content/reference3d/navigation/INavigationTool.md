@@ -41,7 +41,7 @@ init(navAgent: INavigationAgent, cameraControl: ICameraControl, intersectionChec
 где:\
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../INavigationAgent).\
 `cameraControl` -- контроллер камеры. Подробнее: [ICameraControl](../ICameraControl).\
-`intersectionChecker` -- обработчик пересечений на сцене. Подробнее: [IModelIntersectionChecker](../../render/IModelIntersectionChecker).
+`intersectionChecker` -- обработчик пересечений на сцене. Подробнее: [IModelIntersectionChecker](../../render/IntersectionChecker#IModelIntersectionChecker).
 
 ### setActive()
 Метод позволяет активировать обработчик событий навигации. Вызывается из [INavigation](../INavigation) при активации/деактивации обработчика.

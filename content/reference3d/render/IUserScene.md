@@ -12,7 +12,7 @@ export interface IUserScene extends THREE.Scene {
   readonly name: string;
   get needsUpdate(): boolean;
   get needsRedraw(): boolean;
-  get intersectionChecker(): IModelIntersectionChecker | null;
+  get intersectionChecker(): ISceneIntersectionChecker;
   set clippingEnable(value: boolean);
   get clippingEnable(): boolean;
 
@@ -38,28 +38,28 @@ readonly name: string;
 ## Свойства
 
 ###  get needsUpdate()
-Показывает нужно ли обновить сцену.
+Показывает, нужно ли обновить сцену.
 ```js
  get needsUpdate(): boolean;
 ```
-Возвращает `true`, если нужно обновить сцену, в противном случае `false`.
+Возвращает `true`, если нужно обновить сцену, в противном случае -- `false`.
 
 ###  get needsRedraw()
-Показывает нужно ли перерисовать сцену.
+Показывает, нужно ли перерисовать сцену.
 ```js
   get needsRedraw(): boolean;
 ```
-Возвращает `true`, если нужно перерисовать сцену, в противном случае `false`.
+Возвращает `true`, если нужно перерисовать сцену, в противном случае -- `false`.
 
 ###  get intersectionChecker()
-Предоставляет [IModelIntersectionChecker](../IModelIntersectionChecker) - интерфейс обработки пересечений для данной сцены.
+Предоставляет [ISceneIntersectionChecker](../IntersectionChecker#ISceneIntersectionChecker) -- интерфейс обработки пересечений для данной сцены.
 ```js
-  get intersectionChecker(): IModelIntersectionChecker | null;
+  get intersectionChecker(): ISceneIntersectionChecker | null;
 ```
-Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее:  [IModelIntersectionChecker](../IModelIntersectionChecker).
+Если проверка пересечений на сцене поддерживается, то возвращается интерфейс обработки пересечений. В противном случае возвращается `null`. Подробнее:  [ISceneIntersectionChecker](../IntersectionChecker#ISceneIntersectionChecker).
 
 ###  get clippingEnable()
-Показывает влияют ли секущие плоскости на отрисовку и проверку пересечений на данной сцене.
+Показывает, влияют ли секущие плоскости на отрисовку и проверку пересечений на данной сцене.
 ```js
   get clippingEnable(): boolean;
 ```
@@ -101,13 +101,13 @@ removeRange(objects: THREE.Object3D[]): void;
 `objects` -- список объектов для удаления. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).
 
 ###  has()
-Метод показывает добавлен ли объект на сцену.
+Метод показывает, добавлен ли объект на сцену.
 ```js
 has(obj: THREE.Object3D): boolean;
 ```
 где:\
 `objects` -- проверяемый объект. Подробнее: [THREE.Object3D](https://threejs.org/docs/#api/en/core/Object3D).\
-Вовзвращает `true`, если объект добавлен на сцену. В противном случае `false`.
+Возвращает `true`, если объект добавлен на сцену. В противном случае -- `false`.
 
 
 ###  traverse()
@@ -116,7 +116,7 @@ has(obj: THREE.Object3D): boolean;
 traverse(callback: (object: THREE.Object3D) => void): void;
 ```
 где:\
-`callback` -- функция вызываемая для всех объектов на сцене.
+`callback` -- функция, вызываемая для всех объектов на сцене.
 
 ###  setClipping()
 Метод задает плоскости сечения для данной сцены.
@@ -133,7 +133,7 @@ manageScene(context?: IRenderOperationContext): boolean;
 ```
 где:\
 `context` -- контекст операции рендера. Подробнее: [IRenderOperationContext](../IRenderOperationContext).
-Вовзвращает `true`, если все запланированные операции на сцене были выполнены. Возвращает `false`, если требуется повторная передача управления.
+Возвращает `true`, если все запланированные операции на сцене были выполнены. Возвращает `false`, если требуется повторная передача управления.
 
 ###  render()
 Метод выполняет отрисовку сцены в данном [контексте](../IRenderOperationContext).

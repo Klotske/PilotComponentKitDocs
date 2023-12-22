@@ -50,14 +50,12 @@ export abstract class ViewObject extends THREE.Object3D {
 ```js
   constructor(entityGuid?: string, modelGuid?: string, color?: Color);
 ```
+где:\
+`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр. Если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../modelelement/ModelElement#id).
 
-где:
+`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр. Если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../modelelement/ModelElement#modelPartId).
 
-`entityGuid`-- идентификатор объекта модели, которому соответствует `ViewObject`. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.id](../../ModelElement#id).
-
-`modelGuid` -- идентификатор части модели, к которой относится объект модели. Опциональный параметр, если не задан, то объекту присваивается нулевой guid. Подробнее: [ModelElement.modelPartId](../../ModelElement#modelPartId).
-
-`color` -- начальный цвет объекта. Опциональный параметр, если не задан, то объекту присваивается цвет по умолчанию - `new Color(1, 1, 1, 1)`. Подробнее: [Color](../Color).
+`color` -- начальный цвет объекта. Опциональный параметр. Если не задан, то объекту присваивается цвет по умолчанию -- `new Color(1, 1, 1, 1)`. Подробнее: [Color](../Color).
 
 ## Поля
 
@@ -79,14 +77,14 @@ export abstract class ViewObject extends THREE.Object3D {
 
 ###  get mesh()
 Геометрическое представление `ViewObject` в виде `THREE.Mesh`. Подробнее: [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh).\
-Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
+Используется для отрисовки объекта при выделении (Hover/Select) и при [расчёте пересечений](../IntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get mesh(): THREE.Mesh | null;
 ```
 
 ###  get edges()
 Геометрическое представление `ViewObject` в виде `THREE.LineSegments`. Подробнее: [THREE.LineSegments](https://threejs.org/docs/#api/en/objects/LineSegments).\
-Используется для отрисовки объекта при выделении (Hover/Select), и при [расчёте пересечений](../IModelIntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
+Используется для отрисовки объекта при выделении (Hover/Select) и при [расчёте пересечений](../IntersectionChecker#getIntersectionIDByFrustumNdcPt) с `Frustum`.
 ```js
   abstract get edges(): THREE.LineSegments | null;
 ```
@@ -108,7 +106,7 @@ setVisible(value: boolean): void;
 ```js
 isVisible(): boolean;
 ```
-Вовзращает `true`, если объект виден. В противном случае возвращает `false`.
+Возвращает `true`, если объект виден. В противном случае возвращает `false`.
 
 ### setHidden()
 Метод управляет скрытием объекта со сцены. Скрытие объектов используется только для ускорения отрисовки сцены и не влияет на проверку пересечений.
@@ -142,7 +140,7 @@ setSelected(value: boolean): void;
 ```js
 isSelected(): boolean;
 ```
-Вовзращает `true`, если объект выбран. В противном случае возвращает `false`.
+Возвращает `true`, если объект выбран. В противном случае возвращает `false`.
 
 ### setHovered()
 Метод управляет ховером объекта.
@@ -159,10 +157,10 @@ setHovered(value: boolean): void;
 ```js
 isHovered(): boolean;
 ```
-Вовзращает `true`, если ховер активен. В противном случае возвращает `false`.
+Возвращает `true`, если ховер активен. В противном случае возвращает `false`.
 
 ### setColor()
-Метод задает цвет объекта.
+Метод задаёт цвет объекта.
 ```js
 setColor(color: Color): void;
 ```
@@ -188,7 +186,7 @@ resetColor(): void;
 ```js
 getOriginalColor(): Color;
 ```
-Вовзвращает объект типа [Color](../Color).
+Возвращает объект типа [Color](../Color).
 
 ### isGhosted()
 Метод проверяет, находится ли объект в призрачном режиме отрисовки.
@@ -207,7 +205,7 @@ setGhosted(value: boolean): void;
 `value` -- задаёт активность призрачного режима.
 
 ### dispose()
-Метод освообождает ресурсы, выделенные `ViewObject`.
+Метод освобождает ресурсы, выделенные `ViewObject`.
 ```js
 dispose(): void;
 ```
@@ -307,27 +305,24 @@ protected resetColorForObject(): void;
 ```js
   protected riseOnUpdated(updateType?: UpdateType, object?: THREE.Object3D): void;
 ```
-
-где:
-
-`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).
-
-`object` -- объект, источник обновления. По умолчанию текущий объект.
+где:\
+`updateType` -- тип обновления. Подробнее: [UpdateType](../UpdateType).\
+`object` -- объект, источник обновления. По умолчанию -- текущий объект.
 
   ```js
-  // При изменении дочерних объектов, которые не являются `ViewObject`,
+  // При изменении дочерних объектов, которые не являются `ViewObject`
   // для оповещения об их изменениях можно использовать `riseOnUpdated` родительского объекта.
 
   // При изменении видимости текущего объекта:
   this.visible = false;
-  // Опопвещам об изменениях:
+  // Оповещаем об изменениях:
   this.riseOnUpdated(UpdateType.Visibility);
   // Эквивалентно вызову:
   this.dispatchEvent({ type: 'update', updateType: UpdateType.Visibility });
 
   // При изменении видимости дочернего объекта:
   childMesh.visibility = false;
-  // Опопвещам об изменениях:
+  // Оповещаем об изменениях:
   this.riseOnUpdated(UpdateType.Visibility, childMesh);
   // Эквивалентно вызову:
   childMesh.dispatchEvent({ type: 'update', updateType: UpdateType.Visibility });
