@@ -23,6 +23,12 @@ class CoreEventTypes {
   static SETTING_CHANGED_EVENT: string;
   // Имя события восстановления настройки в значение по умолчанию
   static SETTING_RESET_EVENT: string;
+  // Имя события загрузки расширения. Вызывается после загрузки расширения
+  static EXTENSION_LOADED;
+  // Имя события выгрузки расширения. Вызывается непосредственно перед выгрузкой расширения
+  static EXTENSION_UNLOADING;
+  // Имя события выгрузки расширения. Вызывается после выгрузки расширения
+  static EXTENSION_UNLOADED;
 }
 ```
 
@@ -49,8 +55,8 @@ class EventTypes extends CoreEventTypes {
   static RENDER_HOVER_EVENT: string;
   // Имя события двойного клика по отрисованному элементу
   static RENDER_DOUBLE_CLICK_EVENT: string;
-  // Имя события удаления элементов со сцены
-  static RENDER_DELETE_EVENT: string;
+  // Имя события удаления объектов со сцены
+  static DELETE_OBJECTS_EVENT: string;
 }
 ```
 
@@ -95,8 +101,13 @@ class HoverEvent extends Event {
   modelElementId: string; // идентификатор элемента модели
 }
 
-// Класс события удаления элементов со сцены
+// Класс события загрузки или выгрузки расширения
+class ExtensionEvent extends Event {
+  extensionName: string;
+}
+
+// Класс события удаления объектов со сцены
 class DeleteEvent extends Event {
-  deletedIds: ModelElementIds[]; // массив идентификаторов удаляемых элементов
+  deletedIds: ModelElementIds[]; // идентификаторы объектов для удаления
 }
 ```

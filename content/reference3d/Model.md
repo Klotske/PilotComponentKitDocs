@@ -19,8 +19,7 @@ getAllModelParts(): ModelPart[];
 ```js
 getModelPart(id: string): ModelPart;
 ```
-где:
-
+где:\
 `id` -- идентификатор части консолидированной модели.
 
 ### getVisibleModelParts()
@@ -37,12 +36,11 @@ getHiddenModelParts(): ModelPart[]
 
 ### hideModelPart()
 Метод позволяет скрыть часть консолидированной модели.
-
 ```js
 hideModelPart(modelPart: string | ModelPart): void;
 ```
-где:
 
+где:\
 `modelPart` -- идентификатор или экземпляр части модели.
 
 ### showModelPart()
@@ -50,8 +48,8 @@ hideModelPart(modelPart: string | ModelPart): void;
 ```js
 showModelPart(modelPart: string | ModelPart): void
 ```
-где:
 
+где:\
 `modelPart` -- идентификатор или экземпляр части модели.
 
 ### hide()
@@ -59,11 +57,11 @@ showModelPart(modelPart: string | ModelPart): void
 ```js
 hide(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
-где:
 
+где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+`modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 ### hideAll()
 Метод позволяет скрыть все элементы и части модели.
@@ -76,11 +74,11 @@ hideAll(): void;
 ```js
 show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
 ```
-где:
 
+где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+`modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 ### showAll()
 Метод позволяет показать все элементы и части модели.
@@ -93,19 +91,19 @@ showAll(): void;
 ```js
 isolate(elementIds: string[], modelPart: string | ModelPart): void;
 ```
-где:
 
+где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+`modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 ### isolateMultiple()
 Метод позволяет изолировать элементы модели. Все неизолированные элементы модели будут скрыты.
 ```js
 isolateMultiple(elements: ModelElementIds[]): void;
 ```
-где:
 
+где:\
 `elements` -- список идентификаторов элементов модели, сгруппированных по части модели. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
 
 ### select()
@@ -113,8 +111,8 @@ isolateMultiple(elements: ModelElementIds[]): void;
 ```js
 select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode): void
 ```
-где:
 
+где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели.
@@ -126,11 +124,11 @@ select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMo
 ```js
 deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
 ```
-где:
 
+где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+`modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 ### clearSelection()
 Метод позволяет снять выделение со всех элементов модели.
@@ -167,11 +165,11 @@ getVisibleElements(): ModelElementIds[]
 ```js
 setColor(elementIds: string[] | string, r: number, g: number, b: number, a: number, modelPart?: string | ModelPart): void
 ```
-где:
 
+где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+`modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
 `r` -- красный цвет (0-255).
 
@@ -186,27 +184,26 @@ setColor(elementIds: string[] | string, r: number, g: number, b: number, a: numb
 ```js
 clearColors(model? : string | ModelPart): void;
 ```
-где:
 
-`modelPart` -- идентификатор или экземпляр части модели. Не обязательный параметр. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
+где:\
+`modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
 
 ### setGhostMode()
 Метод задает призрачный режим отображения для скрытых объектов. В этом режиме скрытые объекты отображаются на сцене в полупрозрачном, бесцветном виде.
 ```js
 setGhostMode(value: boolean): void;
 ```
-где:
 
+где:\
 `value` -- задаёт активность призрачного режима.
 
 ### getElementProperties() {#getElementProperties}
-Метод позволяет получить свойства элемента
-
+Метод позволяет получить свойства элемента.
 ```js
 getElementProperties(elementId: string, modelPart?: string | ModelPart, version?: BigInt): ModelElementPropertySet[]
 ```
-где:
 
+где:\
 `elementId` -- идентификатор элемента.
 
 `modelPart` -- идентификатор части модели или экземпляр части модели. Если этот параметр не задан, то обрабатывается первая загруженная часть модели.
@@ -214,3 +211,60 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 `version` -- версия модели. Задается в тиках. Если версия не указана, то берутся свойства актуальной версии загруженной части модели.
 
 Возвращает набор данных типа [ModelElementPropertySet](../modelelement/ModelElementPropertySet).
+
+
+### canDelete() {#canDelete}
+Метод проверяет, что переданные идентификаторы объектов соответствуют фильтрам объектов для удаления.
+```js
+  canDelete(elementIds: ModelElementIds[]): boolean;
+```
+
+где:\
+`elementIds` -- идентификаторы объектов для проверки удаления. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
+
+Возвращает `true`, если каждый из переданных идентификаторов соответствует хотя бы одному фильтру.
+
+### delete() {#delete}
+Метод вызывает [DELETE_OBJECTS_EVENT](../Events/#Events3D) с переданными идентификаторами объектов модели, если каждый идентификатор соответствует хотя бы одному фильтру.
+```js
+  delete(elementIds: ModelElementIds[]): boolean;
+```
+
+где:\
+`elementIds` -- идентификаторы объектов для удаления. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
+
+Возвращает `true`, если удалось вызвать [DELETE_OBJECTS_EVENT](../Events/#Events3D). В противном случае возвращается `false`.
+
+### addDeletionFilter() {#addDeletionFilter}
+Метод добавляет фильтр объектов для удаления.
+```js
+  addDeletionFilter(filter: DeleteEventFilter): void;
+```
+
+где:\
+`filter` -- фильтр объектов для удаления. Подробнее: [DeleteEventFilter](#DeleteEventFilter).
+
+
+### removeDeletionFilter()
+Метод удаляет фильтр объектов для удаления.
+```js
+  removeDeletionFilter(filter: DeleteEventFilter): void;
+```
+
+где:\
+`filter` -- фильтр объектов для удаления. Подробнее: [DeleteEventFilter](#DeleteEventFilter).
+
+
+## DeleteEventFilter {#DeleteEventFilter}
+Фильтр объектов для удаления. 
+```js
+interface DeleteEventFilter {
+  (modelId: string, entityId: string): boolean;
+}
+```
+где:\
+`modelId` -- идентификатор модели.
+
+`entityId` -- идентификатор элемента модели.
+
+Возвращает `true` для объектов, которые можно удалить. В противном случае -- `false`.
