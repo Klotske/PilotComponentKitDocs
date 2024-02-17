@@ -269,14 +269,12 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 ```js
   getModelVersion(): bigint;
 ```
-Возвращает текущую версию модели.
 
 ### getAllModelVersions()
-Метод возвращает все версии модели. 
+Метод возвращает список версий модели. 
 ```js
   getAllModelVersions(): bigint[];
 ```
-Возвращает список версий модели.
 
 ## DeleteEventFilter {#DeleteEventFilter}
 Фильтр объектов для удаления. 

@@ -66,7 +66,7 @@ loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSucces
   `data` -- массив байт модели или ссылка на модель,
   `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
+  `onErrorCallback` -- метод для обратного вызова в случае неудачной загрузки части модели.
 
 ### updateModelPart()
 Метод для обновления частей модели.
@@ -77,7 +77,7 @@ updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSucc
   `data` -- обновлённый массив байт модели или ссылка на обновлённую модель,
   `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
   `onSuccessCallback` -- метод для обратного вызова в случае успешного обновления части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачи обновления части модели.
+  `onErrorCallback` -- метод для обратного вызова в случае неудачного обновления части модели.
 
 ### unloadModelPart()
 Метод для выгрузки части модели.
