@@ -66,7 +66,18 @@ loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSucces
   `data` -- массив байт модели или ссылка на модель,
   `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
   `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачи загрузки части модели.
+  `onErrorCallback` -- метод для обратного вызова в случае неудачной загрузки части модели.
+
+### updateModelPart()
+Метод для обновления частей модели.
+```js
+updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
+```
+где:\
+  `data` -- обновлённый массив байт модели или ссылка на обновлённую модель,
+  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
+  `onSuccessCallback` -- метод для обратного вызова в случае успешного обновления части модели,
+  `onErrorCallback` -- метод для обратного вызова в случае неудачного обновления части модели.
 
 ### unloadModelPart()
 Метод для выгрузки части модели.
@@ -97,7 +108,6 @@ unloadModelPart(modelPart: string | ModelPart): void;
 makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 ```
 где:\
-
 `mimeType` -- необязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
 `quality` -- качество снимка.
 

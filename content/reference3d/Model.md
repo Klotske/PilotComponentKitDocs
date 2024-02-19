@@ -255,6 +255,27 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 `filter` -- фильтр объектов для удаления. Подробнее: [DeleteEventFilter](#DeleteEventFilter).
 
 
+### setModelVersion()
+Метод задает версию модели. 
+```js
+  setModelVersion(value: bigint): void;
+```
+
+где:\
+`value` -- версия модели.
+
+### getModelVersion()
+Метод возвращает текущую версию модели. 
+```js
+  getModelVersion(): bigint;
+```
+
+### getAllModelVersions()
+Метод возвращает список версий модели. 
+```js
+  getAllModelVersions(): bigint[];
+```
+
 ## DeleteEventFilter {#DeleteEventFilter}
 Фильтр объектов для удаления. 
 ```js
