@@ -245,12 +245,12 @@ Dolor sit, sumo unique argument um no ...
 
 Например:
 ```js
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/pilotweb2d/style.css" type="text/css">
+<link rel="stylesheet" href="https://pilot.ascon.ru/componentkit/components/@VERSION@/pilotweb2d/style.css" type="text/css">
 ```
 
 В итоге после сборки TeamCity текст будет
 ```js
-<link rel="stylesheet" href="https://pilotcloud.ascon.net/components/1.0.7/pilotweb2d/style.css" type="text/css">
+<link rel="stylesheet" href="https://pilot.ascon.ru/componentkit/components/1.0.7/pilotweb2d/style.css" type="text/css">
 ```
 
 *Версия компонентов 1.0.7

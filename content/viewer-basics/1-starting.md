@@ -12,8 +12,8 @@ weight: 1
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/pilotweb3d/style.css" type="text/css">
-    <script src="https://pilotcloud.ascon.net/components/@VERSION@/pilotweb3d/pilotweb3d.min.js"></script>
+    <link rel="stylesheet" href="https://pilot.ascon.ru/componentkit/components/@VERSION@/pilotweb3d/style.css" type="text/css">
+    <script src="https://pilot.ascon.ru/componentkit/components/@VERSION@/pilotweb3d/pilotweb3d.min.js"></script>
 
     <style>
         body {
@@ -38,8 +38,8 @@ weight: 1
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="https://pilotcloud.ascon.net/components/@VERSION@/pilotweb2d/style.css" type="text/css">
-    <script src="https://pilotcloud.ascon.net/components/@VERSION@/pilotweb2d/pilotweb2d.min.js"></script>
+    <link rel="stylesheet" href="https://pilot.ascon.ru/componentkit/components/@VERSION@/pilotweb2d/style.css" type="text/css">
+    <script src="https://pilot.ascon.ru/componentkit/components/@VERSION@/pilotweb2d/pilotweb2d.min.js"></script>
 
     <style>
         body {

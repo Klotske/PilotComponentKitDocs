@@ -10,7 +10,7 @@ weight: 1
 
 Пример подключения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/Remarks2D/Remarks.min.js"></script>
+<script src="https://pilot.ascon.ru/componentkit/components/@VERSION@/extensions/Remarks2D/Remarks.min.js"></script>
 ```
 
 Пример подключения в `javascript`:

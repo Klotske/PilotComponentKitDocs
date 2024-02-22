@@ -10,7 +10,7 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/extensions/MeasurementTools3D/MeasurementTools.min.js"></script>
+<script src="https://pilot.ascon.ru/componentkit/components/@VERSION@/extensions/MeasurementTools3D/MeasurementTools.min.js"></script>
 ```
 
 Пример подключения в `javascript`:

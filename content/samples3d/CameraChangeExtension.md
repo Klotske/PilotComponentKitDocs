@@ -8,7 +8,7 @@ draft: false
 
 Пример подключения в `html`:
 ```html
-<script src="https://pilotcloud.ascon.net/components/@VERSION@/samples/CameraChangeExtension/CameraChangeExtension.js"></script>
+<script src="https://pilot.ascon.ru/componentkit/components/@VERSION@/samples/CameraChangeExtension/CameraChangeExtension.js"></script>
 ```
 
 Пример подключения в `javascript`:
