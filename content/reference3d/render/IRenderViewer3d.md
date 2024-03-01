@@ -11,8 +11,8 @@ weight: 9
 export interface IRenderViewer3D {
   getIntersectionChecker(): IModelIntersectionChecker;
   updateCurrentCanvas(): Promise<void>;
-  placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string): Promise<void>;
-  removeObjectFromScene(iObj: THREE.Object3D): Promise<void>;
+  placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string, redraw?: boolean): Promise<void>;
+  removeObjectFromScene(iObj: THREE.Object3D, redraw?: boolean): Promise<void>;
   setClipping(planes: THREE.Plane[], sceneID?: string): void;
   setActiveClipPlaneIndices(indices: number[]): void;
   getScenes(): IUserScene[];
@@ -42,19 +42,21 @@ updateCurrentCanvas(force?: boolean): Promise<void>;
 ###  placeObjectOnScene()
 Метод помещает объект на определённую сцену.
 ```js
- placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string): Promise<void>;
+ placeObjectOnScene(iObj: THREE.Object3D, sceneID?: string, redraw?: boolean): Promise<void>;
 ```
 где:\
 `iObj` -- объект, который нужно поместить на сцену.\
-`sceneID` -- имя сцены. Необязательный параметр. По умолчанию -- `MainScene`.
+`sceneID` -- имя сцены. Необязательный параметр. По умолчанию -- `MainScene`.\
+`redraw` -- флаг, указывающий на принудительную перерисовку сцен после добавления объекта. По умолчанию -- `false`.
 
 ###  removeObjectFromScene()
 Метод удаляет объект со сцены.
 ```js
-  removeObjectFromScene(iObj: THREE.Object3D): Promise<void>;
+  removeObjectFromScene(iObj: THREE.Object3D, redraw?: boolean): Promise<void>;
 ```
 где:\
-`iObj` -- объект, который нужно удалить.
+`iObj` -- объект, который нужно удалить.\
+`redraw` -- флаг, указывающий на принудительную перерисовку сцен после удаления объекта. По умолчанию -- `false`.
 
 ###  setClipping() {#setClipping}
 Метод задает секущие плоскости для визулизации.
