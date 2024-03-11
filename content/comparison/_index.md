@@ -58,7 +58,7 @@ weight: 12
 
 <---> <!-- magic separator, between columns -->
 
-`finish(): void`
+`await finish(): void`
 
 <---> <!-- magic separator, between columns -->
 

@@ -37,10 +37,10 @@ get events(): EventsDispatcher;
  start(): Promise<number>;
 ```
 
-### finish()
+### await finish()
 Метод деинициализирует внутренние механизмы компонента.
 ```js
-finish(): void;
+await finish(): void;
 ```
 
 ### loadDocument()

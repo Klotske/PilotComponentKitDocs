@@ -51,10 +51,10 @@ get navigation(): INavigation;
  start(): Promise<number>;
 ```
 
-### finish()
+### await finish()
 Метод деинициализирует внутренние механизмы компонента.
 ```js
-finish(): void;
+await finish(): void;
 ```
 
 ### loadModelPart()
