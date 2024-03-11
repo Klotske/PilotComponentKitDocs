@@ -42,7 +42,7 @@ weight: 12
 
 <---> <!-- magic separator, between columns -->
 
-`start(): number`
+`start(): Promise<number>`
 
 <---> <!-- magic separator, between columns -->
 
@@ -58,7 +58,7 @@ weight: 12
 
 <---> <!-- magic separator, between columns -->
 
-`await finish(): void`
+`finish(): Promise<void>`
 
 <---> <!-- magic separator, between columns -->
 

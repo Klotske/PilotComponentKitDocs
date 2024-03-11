@@ -65,6 +65,6 @@ PilotWeb2D.Initializer(options, async () => {
 Если компоненты больше не нужны на странице, следует завершить их работу:
 
 ```js
-  viewer.finish();
-  viewer = null;   
+  await viewer.finish();
+  viewer = null;
 ```
