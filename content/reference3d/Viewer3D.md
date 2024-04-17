@@ -48,36 +48,32 @@ get navigation(): INavigation;
 ### start()
 Метод инициализирует внутренние механизмы компонента.
 ```js
- start(): Promise<number>;
+start(): Promise<number>;
 ```
 
 ### finish()
 Метод деинициализирует внутренние механизмы компонента.
 ```js
-await finish(): Promise<void>;
+finish(): Promise<void>;
 ```
 
 ### loadModelPart()
 Метод для управления загрузкой частей модели.
 ```js
-loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
+loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions): Promise<void>;
 ```
 где:\
   `data` -- массив байт модели или ссылка на модель,
-  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
-  `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачной загрузки части модели.
+  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions)
 
 ### updateModelPart()
 Метод для обновления частей модели.
 ```js
-updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
+updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions): Promise<void>;
 ```
 где:\
   `data` -- обновлённый массив байт модели или ссылка на обновлённую модель,
-  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
-  `onSuccessCallback` -- метод для обратного вызова в случае успешного обновления части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачного обновления части модели.
+  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions)
 
 ### unloadModelPart()
 Метод для выгрузки части модели.

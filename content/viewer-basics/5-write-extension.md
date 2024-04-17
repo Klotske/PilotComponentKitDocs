@@ -61,7 +61,7 @@ viewer = PilotWeb3D.CreateViewer(htmlDiv);
 await viewer.start();
 viewer.extensionsLoader.loadExtension("My3DExtension");
 ...
-viewer.loadModelPart(...);
+await viewer.loadModelPart(...);
 ```
 
 Пример загрузки расширения для компонента **PilotWeb2D**:

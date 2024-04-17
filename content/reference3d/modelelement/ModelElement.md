@@ -56,4 +56,4 @@ get hasGeometry(): boolean;
 ```js
 get viewObject(): ViewObject | undefined;
 ```
-Подробнее: <a href="/reference3d/render/ViewObject">ViewObject</a>.
+Подробнее: [ViewObject](../../render/ViewObject).

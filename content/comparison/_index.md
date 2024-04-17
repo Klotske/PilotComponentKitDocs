@@ -74,7 +74,7 @@ weight: 12
 
 <---> <!-- magic separator, between columns -->
 
-`loadModelpart(buffer: ArrayBuffer, options: {}, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void`
+`loadModelpart(buffer: ArrayBuffer, options: {}): Promise<void>`
 
 <---> <!-- magic separator, between columns -->
 
