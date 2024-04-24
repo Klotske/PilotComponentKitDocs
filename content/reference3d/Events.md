@@ -93,12 +93,14 @@ class ClickedEvent extends Event {
   modelId: string; // идентификатор модели
   modelElementId: string; // идентификатор элемента модели
   ctrlKey: boolean; // флаг нажатия клавиши Ctrl
+  intersection?: THREE.Intersection<THREE.Object3D>; // точка пересечения с отрисованным объектом на сцене при клике по объекту
 }
 
 // Класс события ховера отрисованного элемента
 class HoverEvent extends Event {
   modelId: string; // идентификатор модели
   modelElementId: string; // идентификатор элемента модели
+  intersection?: THREE.Intersection<THREE.Object3D>; // точка пересечения с отрисованным объектом на сцене при ховере объекта
 }
 
 // Класс события загрузки или выгрузки расширения
