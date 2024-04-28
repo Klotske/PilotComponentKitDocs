@@ -13,6 +13,7 @@ weight: 1
   - выделение,
   - инструменты измерений,
   - загрузка/выгрузка LOD.
+- Деактивирован метод **getIntersectionPoint**. См. другие методы в [IntersectionChecker](../reference3d/render/IntersectionChecker) 
   
 ## Версия 24.10.0 от 08.04.2024
 - Ускорено чтение .bm файлов (PI#3-1663).
