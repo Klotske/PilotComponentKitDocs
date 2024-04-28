@@ -31,6 +31,10 @@ Pilot-ComponentKit функционирует как PaaS (платформа к
 
 <iframe height="580px" width="100%" style="box-sizing: border-box; border: 0px;" src="https://stackblitz.com/edit/typescript-uzdwhd?embed=1&file=index.ts&hideNavigation=1&theme=light&view=preview"></iframe>
 
+{{< hint type="important" icon=gdoc_error_outline title="Важно">}}
+Стоимость ПО рассчитывается индивидуально. Просим обращаться в <a href="https://pilotems.com/ru/contacts/offices/">офисы АСКОН или партнёров</a>.
+{{< /hint >}}
+
 
 
 
