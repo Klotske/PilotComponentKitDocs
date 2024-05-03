@@ -24,13 +24,20 @@ get elementTree() : ModelElementTree
 ## Методы
 
 ### setModelPartPlacement()
-Метод позволяет задать смещение и масштаб части консолидированной модели на сцене.
+Метод позволяет задать положение части консолидированной модели на сцене.
 ```js
-  setModelPartPlacement(placement?: THREE.Matrix4Tuple | number[], scaling?: number): void;
+  setModelPartPlacement(placement: THREE.Matrix4Tuple | number[]): void;
 ```
 где:\
 `placement` -- матрица трансформации в глобальном пространстве, 4х4 - row-major order.
 
+
+### setModelPartPlacement()
+Метод позволяет задать масштаб части консолидированной модели на сцене. Масштабирование работает только для облаков точек.
+```js
+  setModelPartScaling(scaling: number): void;
+```
+где:\
 `scaling` -- масштаб части модели.
 
 ### dispose()
