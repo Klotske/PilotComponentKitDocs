@@ -200,7 +200,7 @@ setGhostMode(value: boolean): void;
 ### getElementProperties() {#getElementProperties}
 Метод позволяет получить свойства элемента.
 ```js
-getElementProperties(elementId: string, modelPart?: string | ModelPart, version?: BigInt): ModelElementPropertySet[]
+getElementProperties(elementId: string, modelPart?: string | ModelPart, version?: BigInt): Promise<ModelElementPropertySet[]>
 ```
 
 где:\
@@ -258,7 +258,7 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 ### setModelVersion()
 Метод задает версию модели. 
 ```js
-  setModelVersion(value: bigint): void;
+  setModelVersion(value: bigint): Promise<void>;
 ```
 
 где:\
@@ -273,7 +273,7 @@ getElementProperties(elementId: string, modelPart?: string | ModelPart, version?
 ### getAllModelVersions()
 Метод возвращает список версий модели. 
 ```js
-  getAllModelVersions(): bigint[];
+  getAllModelVersions(): Promise<bigint[]>;
 ```
 
 ## DeleteEventFilter {#DeleteEventFilter}

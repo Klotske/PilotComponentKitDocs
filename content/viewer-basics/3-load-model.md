@@ -14,11 +14,9 @@ weight: 30
   };
   let buffer = // ArrayBuffer from .bm file
 
-  viewer.loadModelPart(buffer, options, () => {
-    console.log(`${options.Guid}: The model loaded successfully`);
-  },(e) => {
-    console.error(`${options.Guid}: An error occured while loading model part: ${e}`);
-  });
+  viewer.loadModelPart(buffer, options)
+    .then(() => console.log(`${options.Guid}: The model loaded successfully`))
+    .catch(e => console.error(`${options.Guid}: An error occured while loading model part: ${e}`));
 ```
 
 Пример загрузки нескольких частей модели:
@@ -30,11 +28,9 @@ weight: 30
   };
   let buffer = // ArrayBuffer from .bm file
   
-  viewer.loadModelPart(duffer, options, () => {
-    console.log(`${options.Guid}: The model loaded successfully`);
-  },(e) => {
-    console.error(`${options.Guid}: An error occured while loading model part: ${e}`);
-  });
+  viewer.loadModelPart(buffer, options)
+    .then(() => console.log(`${options.Guid}: The model loaded successfully`))
+    .catch(e => console.error(`${options.Guid}: An error occured while loading model part: ${e}`));
 ```
 
 {{< hint type="important" title="Важно">}}

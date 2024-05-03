@@ -9,7 +9,6 @@ weight: 9
 
 ```js
 export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions> {
-  getIntersectionPoint(): THREE.Intersection<THREE.Object3D> | undefined;
   getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
   getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
   getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
@@ -18,14 +17,6 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 }
 ```
 ## Методы
-
-###  getIntersectionPoint()
-Метод возвращает последнее рассчитанное пересечение модели.
-```js
-  getIntersectionPoint(): THREE.Intersection<THREE.Object3D> | undefined;
-```
-Возвращает объект типа `THREE.Intersection`, если пересечение существует. В противном случае возвращает `undefined`. 
-
 ###  getIntersectionByRay()
 Метод возвращает ближайшее пересечение объекта модели с лучом.
 ```js

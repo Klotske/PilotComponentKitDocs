@@ -18,7 +18,7 @@ container: HTMLElement;
 ```
 
 ### extensionsLoader
-Тип работы с расширениями. Подробнее: <a href="../ExtensionLoader/">ExtensionLoader</a>.
+Тип работы с расширениями. Подробнее: [ExtensionLoader](../extension/ExtensionLoader).
 ```js
 extensionsLoader: ExtensionLoader;
 ```
@@ -48,36 +48,33 @@ get navigation(): INavigation;
 ### start()
 Метод инициализирует внутренние механизмы компонента.
 ```js
- start(): Promise<number>;
+start(): Promise<number>;
 ```
 
 ### finish()
 Метод деинициализирует внутренние механизмы компонента.
 ```js
-await finish(): Promise<void>;
+finish(): Promise<void>;
 ```
 
 ### loadModelPart()
 Метод для управления загрузкой частей модели.
 ```js
-loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
+loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions): Promise<void>;
 ```
 где:\
-  `data` -- массив байт модели или ссылка на модель,
-  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
-  `onSuccessCallback` -- метод для обратного вызова в случае успешной загрузки части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачной загрузки части модели.
+  `data` -- массив байт модели или ссылка на модель,\
+  `options` -- опции для загрузки части модели. 
+  Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
 
 ### updateModelPart()
 Метод для обновления частей модели.
 ```js
-updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void;
+updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions): Promise<void>;
 ```
 где:\
-  `data` -- обновлённый массив байт модели или ссылка на обновлённую модель,
-  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../reference3d/ModelLoadingOptions),
-  `onSuccessCallback` -- метод для обратного вызова в случае успешного обновления части модели,
-  `onErrorCallback` -- метод для обратного вызова в случае неудачного обновления части модели.
+  `data` -- обновлённый массив байт модели или ссылка на обновлённую модель,\
+  `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
 
 ### unloadModelPart()
 Метод для выгрузки части модели.
@@ -88,7 +85,7 @@ unloadModelPart(modelPart: string | ModelPart): void;
   `modelPart` -- идентификатор части модели или экземпляр части модели.
 
 ### setVirtualOrigin()
-Метод задаёт положение виртуального начала координат. Координаты объектов модели и положение камеры пересчитываются относительно нового начала координат.\
+Метод задаёт положение виртуального начала координат (ВНК). Координаты объектов модели и положение камеры пересчитываются относительно нового начала координат.\
 При изменении ВНК возникает событие `VIRTUAL_ORIGIN_CHANGED`. Подробнее: [Events3D](../Events/#Events3D).
 ```js
   setVirtualOrigin(point: Point3): Promise<void>;
@@ -108,12 +105,12 @@ unloadModelPart(modelPart: string | ModelPart): void;
 makeScreenshot(mimeType?: string, quality?: number): Promise<Blob>;
 ```
 где:\
-`mimeType` -- необязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).
+`mimeType` -- необязательный параметр. Задает тип изображения (image/png, image/jpg и т.д.).\
 `quality` -- качество снимка.
 
 
 ### getConfiguration()
-Метод получает конфигурацию вьювера. Подробнее: <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
+Метод получает конфигурацию просмотрщика. Подробнее: <a href="../configuration/Viewer3DConfiguration">Viewer3DConfiguration</a>.
 
 ```js
 getConfiguration(): Viewer3DConfiguration;
