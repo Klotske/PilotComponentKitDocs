@@ -67,6 +67,12 @@ class SelectionChangedEvent extends Event {
   selectedIds: ModelElementIds[]; // массив идентификаторов селектированных элементов
 }
 
+// Класс события изменения видимости элемента
+class VisibilityChangedEvent extends Event {
+  elementIds: ModelElementIds[]; // массив идентификаторов элементов
+  isVisible: boolean; // видимость элементов
+}
+
 // Класс события загрузки или выгрузки части консолидированной модели
 class ModelPartEvent extends Event {
   modelPartId: string; // идентификатор части консолидированной модели
