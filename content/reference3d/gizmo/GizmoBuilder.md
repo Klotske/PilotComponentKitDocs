@@ -40,11 +40,11 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).\.
 
-`translation` -- перечисление осей переноса, которые необходимо добавить в контроллер. Не обязательный параметр. По умолчанию [GizmoAxisDir](#GizmoAxisDir).**XYZ**.
+`translation` -- перечисление осей переноса, которые необходимо добавить в контроллер. Необязательный параметр. По умолчанию [GizmoAxisDir](#GizmoAxisDir).**XYZ**.
 
-`rotation` -- перечисление осей вращения, которые необходимо добавить в контроллер. Не обязательный параметр. По умолчанию [GizmoAxisDir](#GizmoAxisDir).**XYZ**.
+`rotation` -- перечисление осей вращения, которые необходимо добавить в контроллер. Необязательный параметр. По умолчанию [GizmoAxisDir](#GizmoAxisDir).**XYZ**.
 
-`scale` -- перечисление осей масштабирования, которые необходимо добавить в контроллер. Не обязательный параметр. По умолчанию [GizmoAxisDir](#GizmoAxisDir).**XYZ**.
+`scale` -- перечисление осей масштабирования, которые необходимо добавить в контроллер. Необязательный параметр. По умолчанию [GizmoAxisDir](#GizmoAxisDir).**XYZ**.
 
 Возвращает объект [GizmoControl](../GizmoControl).
 
@@ -66,15 +66,15 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).
 
-`handleBaseMatrial` -- базовый материал [handle](../GizmoAxis#handle) - геометрии. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
+`handleBaseMatrial` -- базовый материал [handle](../GizmoAxis#handle) - геометрии. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
 
-`handleHoveredMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активном ховере. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
+`handleHoveredMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активном ховере. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
 
-`handleSelectedMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активной манипуляции над осью. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
+`handleSelectedMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активной манипуляции над осью. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
 
 `pickerBaseMatrial` -- базовый материал [picker](../GizmoAxis#picker) - геометрии. По умолчанию: [GizmoMaterials](../GizmoMaterials)**.matInvisible**.
 
-`pickerHoveredMaterial` -- материал [picker](../GizmoAxis#picker) - геометрии, при активном ховере. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials)**.matInvisible**.
+`pickerHoveredMaterial` -- материал [picker](../GizmoAxis#picker) - геометрии, при активном ховере. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials)**.matInvisible**.
 
 `pickerSelectedMaterial` -- материал [picker](../GizmoAxis#picker) - геометрии, при активной манипуляции над осью.[GizmoMaterials](../GizmoMaterials)**.matInvisible**.
 
@@ -97,15 +97,15 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).
 
-`handleBaseMatrial` -- базовый материал [handle](../GizmoAxis#handle) - геометрии. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
+`handleBaseMatrial` -- базовый материал [handle](../GizmoAxis#handle) - геометрии. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
 
-`handleHoveredMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активном ховере. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
+`handleHoveredMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активном ховере. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
 
-`handleSelectedMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активной манипуляции над осью. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matViolet**.
+`handleSelectedMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активной манипуляции над осью. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matViolet**.
 
 `pickerBaseMatrial` -- базовый материал [picker](../GizmoAxis#picker) - геометрии. По умолчанию: [GizmoMaterials](../GizmoMaterials)**.matInvisible**.
 
-`pickerHoveredMaterial` -- материал [picker](../GizmoAxis#picker) - геометрии, при активном ховере. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials)**.matYellowTransparent**.
+`pickerHoveredMaterial` -- материал [picker](../GizmoAxis#picker) - геометрии, при активном ховере. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials)**.matYellowTransparent**.
 
 `pickerSelectedMaterial` -- материал [picker](../GizmoAxis#picker) - геометрии, при активной манипуляции над осью.[GizmoMaterials](../GizmoMaterials)**.matYellowTransparent**.
 
@@ -126,11 +126,11 @@ public static build(camera: THREE.Camera, navAgent: INavigationAgent,
 
 `navAgent` -- агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).
 
-`handleBaseMatrial` -- базовый материал [handle](../GizmoAxis#handle) - геометрии. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
+`handleBaseMatrial` -- базовый материал [handle](../GizmoAxis#handle) - геометрии. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**gizmoMaterial**.
 
-`handleHoveredMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активном ховере. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
+`handleHoveredMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активном ховере. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
 
-`handleSelectedMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активной манипуляции над осью. Не обязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
+`handleSelectedMaterial` -- материал [handle](../GizmoAxis#handle) - геометрии, при активной манипуляции над осью. Необязательный параметр. По умолчанию: [GizmoMaterials](../GizmoMaterials).**matYellow**.
 
 Возвращает объект [GizmoAxis](../GizmoAxis).
 
