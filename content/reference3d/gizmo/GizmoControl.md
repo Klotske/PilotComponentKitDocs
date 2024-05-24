@@ -52,7 +52,7 @@ attachTo(object: THREE.Object3D, asChild = false): void;
 ```
 где:\
 `object` -- Объект привязки.\
-`asChild` -- Параметр указывает, добавить ли `GizmoControl` дочерним элементом к объекту. Не обязательный параметр, по умолчанию: `false`.\
+`asChild` -- Параметр указывает, добавить ли `GizmoControl` дочерним элементом к объекту. Необязательный параметр, по умолчанию: `false`.\
  Если `asChild` равен `true`, то `GizmoControl` не нужно добавлять на сцену вручную. Он будет автоматически размещён на той же сцене что и родительский объект. В противном случае `GizmoControl` нужно вручную добавить на нужную сцену и задать необходимые координаты.
 
 ## detach()
@@ -67,8 +67,8 @@ detach(): void;
   updateGizmoOffset(position?: THREE.Vector3, quaternion?: THREE.Quaternion): void;
 ```
 где:\
-`position` -- позиция `GizmoControl` в локальных координатах объекта привязки. Не обязательный параметр. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).\
-`quaternion` -- вращение `GizmoControl` в локальных координатах объекта привязки. Не обязательный параметр. Подробнее: [THREE.Quaternion](https://threejs.org/docs/#api/en/math/Quaternion).
+`position` -- позиция `GizmoControl` в локальных координатах объекта привязки. Необязательный параметр. Подробнее: [THREE.Vector3](https://threejs.org/docs/#api/en/math/Vector3).\
+`quaternion` -- вращение `GizmoControl` в локальных координатах объекта привязки. Необязательный параметр. Подробнее: [THREE.Quaternion](https://threejs.org/docs/#api/en/math/Quaternion).
 
 ## addAxis() {#addAxis}
 Метод добавляет новую ось для манипуляции в `GizmoControl`.

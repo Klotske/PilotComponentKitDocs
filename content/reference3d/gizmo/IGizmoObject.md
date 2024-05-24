@@ -75,11 +75,11 @@ activeMaterial: THREE.Material;
 где:\
 `_meshes` -- геометрии объекта для отрисовки на сцене.
 
-`baseMaterial` -- материал геометрий, применяемый в отсутствии ховера и при неактивном `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
+`baseMaterial` -- материал геометрий, применяемый в отсутствии ховера и при неактивном `GizmoObject`. Необязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
 
-`hoverMaterial` -- материал геометрий, применяемый при ховере над `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
+`hoverMaterial` -- материал геометрий, применяемый при ховере над `GizmoObject`. Необязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
 
-`activeMaterial` -- материал геометрий, применяемый при активной манипуляции над `GizmoObject`. Не обязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
+`activeMaterial` -- материал геометрий, применяемый при активной манипуляции над `GizmoObject`. Необязательный параметр. Подробнее: [THREE.Material](https://threejs.org/docs/#api/en/materials/Material).
 
 ## Методы
 

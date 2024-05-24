@@ -55,7 +55,7 @@ public setPlanes(planes: ClippingPlaneDescription[]): void;
 public getPlanes(planeIDs?: string[]): ClippingPlaneDescription[];
 ```
 где:\
-`planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то возвращается описание всех плоскостей сечения.
+`planeIDs` -- список идентификаторов плоскостей сечения. Необязательный параметр. Если не задан, то возвращается описание всех плоскостей сечения.
 
 ### removePlanes() {#removePlanes}
 Метод удаляет плоскости сечения.
@@ -63,7 +63,7 @@ public getPlanes(planeIDs?: string[]): ClippingPlaneDescription[];
 public removePlanes(planeIDs?: string[]): void;
 ```
 где:\
-`planeIDs` -- список идентификаторов плоскостей сечения. Не обязательный параметр. Если ничего не определено, то удаляются все плоскости сечения.
+`planeIDs` -- список идентификаторов плоскостей сечения. Необязательный параметр. Если не задан, то удаляются все плоскости сечения.
 
 ### ClippingPlaneExtension.ClippingPlaneDescription {#ClippingPlaneDescription}
 Описание плоскости сечения.

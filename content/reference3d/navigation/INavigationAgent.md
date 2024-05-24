@@ -130,7 +130,7 @@ export class NavigationEventOptions implements EventListenerOptions {
   priority: number | NavigationHandlerPriority;
   // Перехват события, если событие уже было обработано ранее (true), иначе событие игнорируется (false). По умолчанию false.
   alwaysHandle: boolean;
-  // Идентификатор подписчика на событие. Не обязательный параметр.
+  // Идентификатор подписчика на событие. Необязательный параметр.
   navigationTargetName?: string;
 }
 ```

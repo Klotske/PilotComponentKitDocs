@@ -140,9 +140,9 @@ constructor(axisDir: THREE.Vector3,
 
 `handle` -- задает [handle](#handle) -- геометрию оси, рисуемую на сцене. Подробнее: [IGizmoObject](../IGizmoObject).
 
-`picker` -- задает [picker](#picker) -- геометрию оси, используемую для проверки пересечений. Не обязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
+`picker` -- задает [picker](#picker) -- геометрию оси, используемую для проверки пересечений. Необязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
 
-`helper` -- задает [helper](#helper) -- вспомогательную геометрию оси. Не обязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
+`helper` -- задает [helper](#helper) -- вспомогательную геометрию оси. Необязательный параметр. Подробнее: [IGizmoObject](../IGizmoObject).
 
 ## Методы
 
