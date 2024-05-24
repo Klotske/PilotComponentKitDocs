@@ -2,7 +2,7 @@
 more:
 
   - name: Скачать руководство пользователя
-    ref: "../Pilot-ComponentKit_user_manual.pdf"
+    ref: "./Pilot-ComponentKit_user_manual.pdf"
     external: true
     icon: "gdoc_download"
  
