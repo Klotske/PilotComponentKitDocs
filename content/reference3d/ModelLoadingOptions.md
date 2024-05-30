@@ -12,5 +12,6 @@ export class ModelLoadingOptions {
   isConsolidatedModel?: boolean; // флаг, позволяющий дозагрузить модели в уже загруженную сцену
   placement?: number[]; // пользовательское смещение модели в глобальном пространстве (матрица 4х4, Row-major order)
   scaling?: number; // пользовательский масштаб модели (применяется только для облаков точек)
+  hideLoadingSpinner?: boolean; // флаг, позволяющий отключить отображение индикатора загрузки
 }
 ```
