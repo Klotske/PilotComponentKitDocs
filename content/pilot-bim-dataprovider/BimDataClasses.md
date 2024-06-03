@@ -5,10 +5,10 @@ weight: 5
 ---
 
 ## BimDataTessellation {#BimDataTessellation}
-Класс описывает тесселляцию элемента модели.
+Класс описывает тесселяцию элемента модели.
 ```js
 export class BimDataTessellation {
-  key: string;    // уникальный идентификатор тесселляции
+  key: string;    // уникальный идентификатор тесселяции
   vertices: Float32Array;   // координаты вершин [x0, y0, z0, ... , xn, yn, zn]
   normals: Float32Array;    // координаты нормалей [x0, y0, z0, ... , xn, yn, zn]
   indices: Uint32Array;   // индексы вершин в треугольниках граней меша
@@ -32,12 +32,12 @@ export class BimDataElement {
   gridObject?: BimDataGridObject;   // сетка осей элемента модели
 
   meshesProperties: Map<string, BimDataMeshProperty[]>;   // параметры графического представления элемента на сцене,
-  // ключами словаря являются уникальные идентификаторы тесселляций
-  // значениями словаря являются параметры объектов, построенных по данной тесселляции
+  // ключами словаря являются уникальные идентификаторы тесселяций
+  // значениями словаря являются параметры объектов, построенных по данной тесселяции
 }
 ```
 {{< hint type="important" title="Важно">}}
-Свойство `objectState` принимает значения отличные от `BimDataNodeState.Added` только при получении списка элементов посредством метода [IBimDataModelPart::getDiffElements](../IBimDataModelPart/#getDiffElements).
+Свойство `objectState` принимает значения, отличные от `BimDataNodeState.Added`, только при получении списка элементов посредством метода [IBimDataModelPart::getDiffElements](../IBimDataModelPart/#getDiffElements).
 {{< /hint >}}
 {{< hint type="note" title="Примечание">}}
 Свойство `parentGuid` корневого элемента равно `00000000-0000-0000-0000-000000000000`.
@@ -48,9 +48,9 @@ export class BimDataElement {
 ```js
 export enum BimDataNodeState 
 {
-  Undefined = 0,    // состояние неопределено
+  Undefined = 0,    // состояние не определено
   Added = 1,    // элемент добавлен
-  Removed = 2,    // элемент удален
+  Removed = 2,    // элемент удалён
   AttributesModified = 3,   // атрибуты элемента изменены
   AttributesQuantitiesModified = 4,   // изменены атрибуты типа IfcElementQuantity
   PlacementModified = 8,    // изменилось графическое представление объекта на сцене

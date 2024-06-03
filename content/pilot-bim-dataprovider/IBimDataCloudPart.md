@@ -4,7 +4,7 @@ draft: false
 weight: 4
 ---
 
-**IBimDataCloudPart** - интерфейс объекта посредника для чтения файлов облаков точек.
+**IBimDataCloudPart** -- интерфейс объекта-посредника для чтения файлов облаков точек.
 Наследуется от [IBimDataPart](../IBimDataPart).
 
 ```js
@@ -19,7 +19,7 @@ export interface IBimDataCloudPart extends IBimDataPart  {
 ## Методы
 
 ### getCloudPoints()
-Метод возвращает данные о точках в узле октодерева облака.
+Метод возвращает данные о точках в узле октодерева облака точек.
 ```js
   getCloudPoints(index: number): Promise<Float32Array>;
 ```
@@ -46,15 +46,13 @@ export interface IBimDataCloudPart extends IBimDataPart  {
 ```js
   getCloudParameters(): Promise<Map<string, string>>;
 ```
-Возвращает параметры облака точек в текстовом виде.
 
 ### getCloudMetadata()
 Метод возвращает параметры облака точек, в прочитанном и обработанном виде.
 ```js
   getCloudMetadata(): Promise<BimCloudMetadata>;
 ```
-Возвращает параметры облака точек. Подробнее: [BimCloudMetadata](#BimCloudMetadata).
-
+Подробнее: [BimCloudMetadata](#BimCloudMetadata).
 
 # BimCloudHierarchyItem {#BimCloudHierarchyItem}
 Класс описывает узел октодерева облака точек.
@@ -63,7 +61,7 @@ export class BimCloudHierarchyItem {
   index: number;    // идентификатор узла октодерева
   dataIndex: number;    // идентификатор данных узла октодерева
   type: BimHierarchyItemType;   // тип узла октодерева
-  mask: number;   // битовая маска, показывающая какие из дочерних узлов существуют
+  mask: number;   // битовая маска, показывающая, какие из дочерних узлов существуют
   numPoints: number;    // количество точек в узле октодерева
   min: { x: number, y: number, z: number };   //  BoundingBox.min - габариты узла октодерева
   max: { x: number, y: number, z: number };   //  BoundingBox.max - габариты узла октодерева
@@ -87,7 +85,7 @@ export class BimCloudMetadata {
   min: { x: number, y: number, z: number };   // BoundingBox.min - габариты октодерева
   max: { x: number, y: number, z: number };   // BoundingBox.max - габариты октодерева
   
-  baseSpacing: number;    // расстояние между точками на 0 уровне дерева (корневой узел)
+  baseSpacing: number;    // расстояние между точками на нулевом уровне дерева (корневой узел)
   // расстояние между точками уменьшается в 2 раза за каждый уровень: spacing = baseSpacing / (1 << node.level)
 
   version?: number;
