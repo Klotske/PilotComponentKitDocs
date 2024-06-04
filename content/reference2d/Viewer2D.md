@@ -46,13 +46,11 @@ await finish(): Promise<void>;
 ### loadDocument()
 Метод загружает документ в компонент.
 ```js
-loadDocument(data: ArrayBuffer | string, options: DocumentLoadingOptions, onSuccessCallback: SuccessCallback, onErrorCallback: ErrorCallback): void 
+loadDocument(data: ArrayBuffer | string, options: DocumentLoadingOption): Promise<void>; 
 ```
 где:\
   `data` - массив байт документа или ссылка на документ.\
-  `options` - опции для загрузки документа (подробнее: <a href="../DocumentLoadingOptions/">DocumentLoadingOptions</a>).\
-  `onSuccessCallback` - метод для обратного вызова в случае успешной загрузки документа.\
-  `onErrorCallback` - метод для обратного вызова в случае неудачи загрузки документа.
+  `options` - опции для загрузки документа (подробнее: <a href="../DocumentLoadingOptions/">DocumentLoadingOptions</a>).
 
 ### unloadDocument(){#unloadDocument}
 Выгружает документ из компонента.

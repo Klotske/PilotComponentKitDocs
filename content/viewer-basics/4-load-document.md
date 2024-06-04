@@ -11,13 +11,9 @@ weight: 40
 ```js
   let options = {};
   let buffer = // ArrayBuffer from xps document
-  let viewer.loadDocument(buffer, {}, () => {
-    console.log("The document loaded successfully");
-    /* place your code here */
-  }, 
-  (e) => {
-    console.log("An error occured while loading document: " + e)
-  });
+  viewer.loadDocument(buffer, {})
+    .then(() => console.log(`The document loaded successfully`))
+    .catch((e) => console.error(`An error occured while loading document: ${e}`));
 ```
 
 {{< hint type="note" title="Примечание">}}
