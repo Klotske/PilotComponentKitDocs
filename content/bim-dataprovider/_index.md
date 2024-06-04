@@ -1,5 +1,5 @@
 ---
-title: BIM Dataprovider
+title: Pilot BIM Dataprovider
 draft: false
 weight: 15
 ---
