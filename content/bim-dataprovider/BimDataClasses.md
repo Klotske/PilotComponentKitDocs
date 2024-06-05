@@ -27,11 +27,14 @@ export class BimDataElement {
   parentGuid: string;     // идентификатор родительского элемента
   name: string;   // имя элемента
   type: string;   // тип элемента
-  representationType!: string;
-  representationStatus!: string;
+  representationType!: string;  // IFC тип геометрического представления, считывается из IFC файла при обработке
+  representationStatus!: string;  // статус обработки геометрического представления: SUCCESS — геометрия объекта успешно построена, 
+  // NO_REPRESENTATION — объект не имеет геометрического представления, 
+  // SOLID-CREATION_ERROR — не удалось построить тело для данного объекта
+
   gridObject?: BimDataGridObject;   // сетка осей элемента модели
 
-  meshesProperties: Map<string, BimDataMeshProperty[]>;   // параметры графического представления элемента на сцене,
+  meshesProperties: Map<string, BimDataMeshProperty[]>;   // параметры геометрического представления элемента на сцене,
   // ключами словаря являются уникальные идентификаторы тесселяций
   // значениями словаря являются параметры объектов, построенных по данной тесселяции
 }
@@ -53,7 +56,7 @@ export enum BimDataNodeState
   Removed = 2,    // элемент удалён
   AttributesModified = 3,   // атрибуты элемента изменены
   AttributesQuantitiesModified = 4,   // изменены атрибуты типа IfcElementQuantity
-  PlacementModified = 8,    // изменилось графическое представление объекта на сцене
+  PlacementModified = 8,    // изменилось геометрическое представление объекта на сцене
   PlacementAndAttributesModified = AttributesModified | PlacementModified,
   PlacementAndAttributesQuantitiesModified = AttributesQuantitiesModified | PlacementModified
 }
@@ -80,10 +83,10 @@ export class BimDataGridAxis {
 ```
 
 ## BimDataMeshProperty {#BimDataMeshProperty}
-Класс описывает параметры графического представления объекта на сцене.
+Класс описывает параметры геометрического представления объекта на сцене.
 ```js
 export class BimDataMeshProperty {
-  meshColor: number;    // цвет графического представления объекта, закодирован в RGBA32 формате
+  meshColor: number;    // цвет геометрического представления объекта, закодирован в RGBA32 формате
   meshPlacement: Float64Array;    // матрица трансформации в глобальном пространстве, 4х4 - row-major order.
 }
 ```
@@ -93,8 +96,8 @@ export class BimDataMeshProperty {
 ```js
 export class BimDataElementPropertySet {
   name: string;   // наименование набора
-  properties: BimDataElementProperty[]; // список свойств в наборе
-  type: BimDataIfcType;
+  properties: BimDataElementProperty[];   // список свойств в наборе
+  type: BimDataIfcType;   // IFC тип элемента, берётся из IFC файла при обработке
 }
 ```
 
@@ -103,7 +106,7 @@ export class BimDataElementPropertySet {
 ```js
 export class BimDataElementProperty {
   name: string;  // имя свойства
-  unit: number; //
+  unit: number; // единицы измерения
   value: BimDataElementPropertyValue;  // значение свойства
 }
 ```
