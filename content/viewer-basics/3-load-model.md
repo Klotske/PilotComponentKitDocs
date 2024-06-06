@@ -16,7 +16,7 @@ weight: 30
 
   viewer.loadModelPart(buffer, options)
     .then(() => console.log(`${options.Guid}: The model loaded successfully`))
-    .catch(e => console.error(`${options.Guid}: An error occured while loading model part: ${e}`));
+    .catch((e) => console.error(`${options.Guid}: An error occured while loading model part: ${e}`));
 ```
 
 Пример загрузки нескольких частей модели:
@@ -30,7 +30,7 @@ weight: 30
   
   viewer.loadModelPart(buffer, options)
     .then(() => console.log(`${options.Guid}: The model loaded successfully`))
-    .catch(e => console.error(`${options.Guid}: An error occured while loading model part: ${e}`));
+    .catch((e) => console.error(`${options.Guid}: An error occured while loading model part: ${e}`));
 ```
 
 {{< hint type="important" title="Важно">}}

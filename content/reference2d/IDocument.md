@@ -14,6 +14,7 @@ export interface IDocument {
 
   getPageAsync(pageNumber: number): Promise<IDocumentPage>;
   getPageByTarget(element: HTMLElement): IDocumentPage | undefined;
+  getSourceData(): Promise<ArrayBuffer>;
 
   scrollPageIntoViewAsync(pageNumber: number): Promise<void>;
 }
@@ -58,6 +59,12 @@ getPageByTarget(element: HTMLElement): IDocumentPage | undefined;
 ```
 где:\
   `element` -- HTML-элемент, который находится внутри страницы.
+
+### getSourceData
+Получает исходный массив байтов документа.
+```js
+getSourceData(): Promise<ArrayBuffer>;
+```
 
 ### scrollPageIntoViewAsync
 Проскролировать до указанной страницы.

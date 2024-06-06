@@ -72,5 +72,5 @@ viewer = PilotWeb2D.CreateViewer(htmlDiv);
 await viewer.start();
 viewer.extensionsLoader.loadExtension("My2DExtension");
 ...
-viewer.loadDocument(...);
+await viewer.loadDocument(...);
 ```
