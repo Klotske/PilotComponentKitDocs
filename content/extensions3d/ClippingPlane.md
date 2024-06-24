@@ -3,7 +3,7 @@ title: "ClippingPlaneExtension"
 draft: false
 ---
 
-**ClippingPlaneExtension** -- расширение, которое позволяет задать секущие плоскости на сцене.
+**ClippingPlaneExtension** -- расширение, которое позволяет задать секущие плоскости и кубы сечений на сцене.
 
 Расширение имеет имя `PilotWeb3D.ClippingPlane`.
 
@@ -33,48 +33,44 @@ activate(): void;
 deactivate(): void;
 ```
 
-### addPlanes()
-Метод добавляет плоскости сечения к уже существующим.
+### addClipping()
+Метод добавляет секущие объекты к уже существующим на сцене.
 ```js
-addPlanes(planes: ClippingPlaneDescription[]): void;
+addClipping(clipping: ClippingDescription[]): void;
 ```
 где:\
-`planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
+`clipping` -- список описаний секущих плоскостей и кубов сечения. Подробнее: [ClippingDescription](#ClippingDescription).
 
-### setPlanes()
-Метод задаёт плоскости сечения на основной сцене, уже существующие плоскости на сцене удаляются.
+### getClipping()
+Метод возвращает описания секущих плоскостей и кубов сечения на сцене. Подробнее: [ClippingDescription](#ClippingDescription).
 ```js
-public setPlanes(planes: ClippingPlaneDescription[]): void;
+public getClipping(clippingIDs?: string[]): ClippingDescription[];
 ```
 где:\
-`planes` -- список описаний плоскостей сечения. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
+`clippingIDs` -- список идентификаторов секущих плоскостей и кубов сечения. Необязательный параметр. Если не задан, то возвращается описание всех секущих объектов.
 
-### getPlanes()
-Метод возвращает описания плоскостей сечения на сцене. Подробнее: [ClippingPlaneDescription](#ClippingPlaneDescription).
+### removeClipping() {#removePlanes}
+Метод удаляет секущие плоскости и кубы сечения.
 ```js
-public getPlanes(planeIDs?: string[]): ClippingPlaneDescription[];
+public removeClipping(clippingIDs?: string[]): void;
 ```
 где:\
-`planeIDs` -- список идентификаторов плоскостей сечения. Необязательный параметр. Если не задан, то возвращается описание всех плоскостей сечения.
+`clippingIDs` -- список идентификаторов секущих плоскостей и кубов сечения. Необязательный параметр. Если не задан, то удаляются все секущие объекты.
 
-### removePlanes() {#removePlanes}
-Метод удаляет плоскости сечения.
+### ClippingPlaneExtension.ClippingDescription {#ClippingDescription}
+Тип описания секущего объекта.
 ```js
-public removePlanes(planeIDs?: string[]): void;
-```
-где:\
-`planeIDs` -- список идентификаторов плоскостей сечения. Необязательный параметр. Если не задан, то удаляются все плоскости сечения.
-
-### ClippingPlaneExtension.ClippingPlaneDescription {#ClippingPlaneDescription}
-Описание плоскости сечения.
-```js
-export type ClippingPlaneDescription = {
+export type ClippingDescription = {
     normal: Point3,
     origin: Point3, 
-    guid?: string };
+    guid?: stringб
+    size?: number,
+    isCube?: boolean,   // определено только для куба сечений
+    scale?: Point3   // определено только для куба сечений
+  };
 ```
 ### normal
-Нормаль плоскости сечения.
+Нормаль плоскости сечения, в случае описания секущей плоскости. Для куба сечения задает ориентацию Z-оси куба.
 ```js
 normal: Point3
 ```
@@ -82,7 +78,7 @@ normal: Point3
 `normal` -- координаты вектора нормали в мировом пространстве. Подробнее: [Point3](../../reference3d/navigation/Point3).
 
 ### origin
-Точка, принадлежащая плоскости сечения. Также в эту точку помещается `ClippingPlaneViewObject` - вспомогательный визуальный oбъект для отображения плоскости.
+Точка задает положение центра отображения секущей плоскости. Для куба сечения задает положение центра куба.
 ```js
 origin: Point3
 ```
@@ -94,3 +90,24 @@ origin: Point3
 ```js
 guid?: string 
 ```
+
+### size
+Задает длину ребра отображения секущей плоскости. Для куба сечения задает длину ребра куба. Опциональный параметр.
+```js
+size?: number 
+```
+Если не задан, то для секущей плоскости используется значение по умолчанию: `10000`. Для куба сечения размер вычисляется таким образом, чтобы куб занимал одну треть экрана по высоте.
+
+### isCube
+Флаг указывает на то, что описание соответствует кубу сечения. Для куба сечения принимает значение `true`, в противном случае может быть `undefined` или `false`.
+```js
+isCube?: boolean 
+```
+
+### scale
+Задает масштаб куба сечения, опциональный параметр.
+```js
+scale?: Point3 
+```
+где:\
+`scale` -- параметры масштабирования куба сечения. Подробнее: [Point3](../../reference3d/navigation/Point3).
