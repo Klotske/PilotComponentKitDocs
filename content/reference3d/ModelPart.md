@@ -40,6 +40,13 @@ get elementTree() : ModelElementTree
 где:\
 `scaling` -- масштаб части модели.
 
+### getViewObject()
+Метод возвращает геометрический объект, соответствующий данной части модели на сцене.
+```js
+  getViewObject(): ViewObject;
+```
+Подробнее: [ViewObject](../render/ViewObject).
+
 ### dispose()
 Освобождает ресурсы, занятые частью консолидированной модели.
 ```js

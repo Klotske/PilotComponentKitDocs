@@ -33,7 +33,6 @@ export interface INavigation {
 registerNavigation(navigationTool: INavigationTool): void;
 ```
 где:\
-
 `navigationTool` -- реализация обработчика событий. Подробнее: <a href="../NavigationTool">INavigationTool</a>.
 
 ### unregisterNavigation()
@@ -42,7 +41,6 @@ registerNavigation(navigationTool: INavigationTool): void;
 unregisterNavigation(navigationTool: INavigationTool): void;
 ```
 где:\
-
 `navigationTool` -- реализация обработчика событий. Подробнее: <a href="../NavigationTool">INavigationTool</a>.
 
 ### setActive()
@@ -82,7 +80,6 @@ getNavigationAgent(): INavigationAgent;
 setCameraParameters(params: CameraParameters): void;
 ```
 где:\
-
 `params` -- параметры камеры. Подробнее: [CameraParameters](../CameraParameters). 
 
 ### getCameraParameters()
@@ -112,7 +109,6 @@ getCamera(): THREE.Camera;
 fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
 ```
 где:\
-
 `elementIds` -- список идентификаторов или один идентификатор элемента сцены,\
 `modelPart` -- идентификатор части консолидированной модели или объект части консолидированной модели,\
 `immediate` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
@@ -123,7 +119,6 @@ fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediat
 setPivotPoint(point: Point3): void;
 ```
 где:\
-
 `point` -- точка в пространстве сцены. Подробнее: [Point3](../Point3).
 
 ### getPivotPoint()

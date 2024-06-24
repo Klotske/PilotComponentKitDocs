@@ -14,7 +14,7 @@ weight: 5
 ```js
 enumElementChildren(element: string | ModelElement, callback: (guid: string) => void, recursive?: boolean): void;
 ```
-где:\
+где:
 
 `element` -- идентификатор или экземпляр элемента.
 

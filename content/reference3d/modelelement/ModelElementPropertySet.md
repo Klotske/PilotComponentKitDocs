@@ -24,13 +24,13 @@ name: string;
 ```
 
 ### properties
-Список свойств элемента. Подробнее: см <a href="/reference3d/ModelElementProperty">ModelElementProperty</a>
+Список свойств элемента. Подробнее: [ModelElementProperty](../ModelElementProperty)
 ```js
 properties: ModelElementProperty[];
 ```
 
 ### type
-Тип категории свойств элемента. Подробнее: см <a href="/reference3d/IfcType">IfcType</a>
+Тип категории свойств элемента. Подробнее: [IfcType](../../IfcType).
 ```js
 type: IfcType;
 ```
