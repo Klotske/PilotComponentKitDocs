@@ -63,7 +63,7 @@ public removeClipping(clippingIDs?: string[]): void;
 export type ClippingDescription = {
     normal: Point3,
     origin: Point3, 
-    guid?: stringб
+    guid?: string,
     size?: number,
     isCube?: boolean,   // определено только для куба сечений
     scale?: Point3   // определено только для куба сечений
