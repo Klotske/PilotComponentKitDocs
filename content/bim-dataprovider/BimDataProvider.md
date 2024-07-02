@@ -8,7 +8,10 @@ draft: false
 ```js
 class BimDataProvider {
   init(): Promise<void>;
+  createDataFile(id: string): Promise<IBimDataPart>;
+  openModelPart(dataFile: IBimDataPart): Promise<IBimDataModelPart | undefined>;
   openModelPart(id: string, buffer: ArrayBuffer): Promise<IBimDataModelPart | undefined>;
+  openCloudPart(dataFile: IBimDataPart): Promise<IBimDataCloudPart | undefined>;
   openCloudPart(id: string, buffer: ArrayBuffer): Promise<IBimDataCloudPart | undefined>;
   dispose(): Promise<void>;
   flushMemory(): Promise<void>;
@@ -24,12 +27,24 @@ class BimDataProvider {
   init(): Promise<void>;
 ```
 
+### createDataFile()
+Метод создает файл для чтения и записи.
+```js
+  createDataFile(id: string): Promise<IBimDataPart | undefined>;
+```
+где:\
+`id` -- уникальный идентификатор файла модели.\
+Возвращает объект-посредник для чтения и записи файла данных. Подробнее: [IBimDataPart](../IBimDataPart).
+
 ### openModelPart()
 Метод открывает файл модели для чтения и записи.
 ```js
+  openModelPart(dataFile: IBimDataPart): Promise<IBimDataModelPart | undefined>;
   openModelPart(id: string, buffer: ArrayBuffer): Promise<IBimDataModelPart | undefined>;
 ```
 где:\
+`dataFile` -- объект посредник для чтения или записи файла данных. Подробнее: [IBimDataPart](../IBimDataPart).\
+или:\
 `id` -- уникальный идентификатор файла модели.\
 `buffer` -- массив данных файла модели.\
 Возвращает объект-посредник для чтения или записи файла модели, если удалось открыть файл. Подробнее: [IBimDataModelPart](../IBimDataModelPart).
@@ -38,9 +53,12 @@ class BimDataProvider {
 ### openCloudPart()
 Метод открывает файл облака точек для чтения.
 ```js
+  openCloudPart(dataFile: IBimDataPart): Promise<IBimDataModelPart | undefined>;
   openCloudPart(id: string, buffer: ArrayBuffer): Promise<IBimDataCloudPart | undefined>;
 ```
 где:\
+`dataFile` -- объект посредник для чтения или записи файла облака точек. Подробнее: [IBimDataPart](../IBimDataPart).\
+или:\
 `id` -- уникальный идентификатор файла облака точек.\
 `buffer` -- массив данных файла облака точек.\
 Возвращает объект-посредник для чтения файла облака точек, если удалось открыть файл. Подробнее: [IBimDataCloudPart](../IBimDataCloudPart).
@@ -69,12 +87,13 @@ class BimDataProvider {
 ```js
 import { BimDataBigIntMaxValue, BimDataProvider } from "@pilotdev/pilot-bim-dataprovider";
 
+// --- Работа с файлами частей модели ---
 // Создаем и инициализируем компонент.
 const bimDataProvider = new BimDataProvider();
 await bimDataProvider.init();
 
 // Получаем объект-посредник для чтения .bm файла.
-const modelPart = await bimDataProvider.openModelPart("uniqueModePartId", bmFileBuffer);
+const modelPart = await bimDataProvider.openModelPart("uniqueModelPartId", bmFileBuffer);
 
 // Получаем список всех элементов части модели.
 const elements = await modelPart.getAllElements();
@@ -92,6 +111,8 @@ const properties = await modelPart.getElementProperties(elements[5].guid, BimDat
 await modelPart.close();
 await modelPart.dispose();
 
+
+// --- Работа с файлами облаков точек ---
 // Получаем объект-посредник для чтения .cloudbm файла.
 const cloudPart = await bimDataProvider.openCloudPart("uniqueCloudPartId", cloudbmFileBuffer);
 
@@ -107,6 +128,23 @@ const points = cloudPart.getCloudPoints(hierarchy[0].dataIndex);
 // Завершаем работу с файлом облака точек, освобождаем объект-посредник.
 await cloudPart.close();
 await cloudPart.dispose();
+
+
+// --- Работа с частичной записью файлов---
+// Создаем объект-посредник для записи файла
+const dataPart = await bimDataProvider.createDataFile("uniqueDataPartId");
+// Пишем в файл по частям, где chunk0, chunk1, chunk2 - массивы данных в бинарном виде
+await dataPart.write(chunk0, 0);  // пишем в начало файла
+await dataPart.write(chunk1, chunk0.byteLength);  // продолжаем запись с того места где остановились
+await dataPart.write(chunk2, chunk0.byteLength + chunk1.byteLength); // продолжаем запись с того места где остановились
+
+const modelPart2 = await bimDataProvider.openModelPart(dataPart); // открываем файл как файл части модели
+
+// Завершаем работу с файлом модели, освобождаем объект-посредник.
+// Достаточно закрыть и освободить только modelPart2, dataPart закрывать и освобождать необязательно, так как он ссылается на тот же файл
+await modelPart2.close();
+await modelPart2.dispose();
+
 
 // Завершаем работу компонента, освобождаем выделенные ресурсы.
 await bimDataProvider.dispose();
