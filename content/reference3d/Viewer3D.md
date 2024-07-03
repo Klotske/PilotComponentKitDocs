@@ -83,8 +83,16 @@ loadCloudPart(data: ArrayBuffer | string | Blob, options: ModelLoadingOptions, o
 ```
 где:\
   `data` -- массив двоичных данных облака точек или ссылка на облако точек.\
-  `options` -- опции для загрузки облака точек 
-  Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
+  `options` -- опции для загрузки облака точек. Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
+
+### updateCloudPart()
+Метод для обновления облаков точек.
+```js
+updateCloudPart(data: ArrayBuffer | string | Blob, options: ModelLoadingOptions): Promise<void>;
+```
+где:\
+  `data` -- массив двоичных данных или ссылка на облако точек.\
+  `options` --  опции для загрузки облака точек. Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
 
 ### unloadModelPart()
 Метод для выгрузки части модели.
