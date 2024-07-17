@@ -21,3 +21,15 @@ export enum CameraNavigationMode {
   Zoom = 1 << 3
 }
 ```
+
+## CameraMode {#CameraMode}
+**CameraMode** -- классификация типов проекций камеры, используемых для отображения объектов на сцене.
+
+```js
+export enum CameraMode {
+  // Ортогональная проекция
+  ORTHOGRAPHIC = 0,
+  // Перспективная проекция
+  PERSPECTIVE = 1,
+}
+```

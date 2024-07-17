@@ -25,6 +25,9 @@ export interface ICameraControl {
 
   getNavigationMode(): CameraNavigationMode;
   setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: number): void;
+
+  getCameraMode(): CameraMode;
+  setCameraMode(mode: CameraMode): boolean;
 }
 ```
 
@@ -159,3 +162,18 @@ setNavigationMode(mode: CameraNavigationMode, isEnable: boolean, duration?: numb
   Эквивалентно вызову `setNavigationMode(mode, false)` после задержки `duration`.
 
   Если во время ожидания происходит вызов `setNavigationMode` с любыми параметрами, то задержка сбрасывается и вызов `setNavigationMode(mode, false)` происходит немедленно, затем применяются новые параметры.
+
+###  getCameraMode()
+Метод позволяет получить тип проекции камеры, используемый для отображения объектов на сцене.
+```js
+  getCameraMode(): CameraMode;
+```
+Возвращает тип проекции камеры. Подробнее: [CameraMode](../CameraNavigationMode#CameraMode).
+
+###  setCameraMode()
+Метод позволяет задать тип проекции камеры, используемый для отображения объектов на сцене.
+```js
+  setCameraMode(mode: CameraMode): boolean;
+```
+где:\
+`mode` --  тип проекции. Подробнее: [CameraMode](../CameraNavigationMode#CameraMode).
