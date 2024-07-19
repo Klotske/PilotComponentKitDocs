@@ -30,7 +30,7 @@ unit: number;
 ```
 
 ### value
-Значение свойства элемента. Подробнее: см <a href="/reference3d/ModelElementPropertyValue">ModelElementPropertyValue</a>
+Значение свойства элемента. Подробнее: [ModelElementPropertyValue](../ModelElementPropertyValue).
 ```js
 value: ModelElementPropertyValue;
 ```

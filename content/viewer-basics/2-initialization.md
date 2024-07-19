@@ -8,11 +8,11 @@ weight: 20
 Инициализация компонента **PilotWeb3D** для работы с BIM-моделью:
 
 ```js
-var viewer;
-var options = {};
+let viewer;
+let options = {};
 
 PilotWeb3D.Initializer(options, async () => {
-    var htmlDiv = document.getElementById('pilotViewer');
+    let htmlDiv = document.getElementById('pilotViewer');
     viewer = PilotWeb3D.CreateViewer(htmlDiv);
     await viewer.start();
     console.log('Initialization complete, loading a model next...');
@@ -21,11 +21,11 @@ PilotWeb3D.Initializer(options, async () => {
 Инициализация компонента **PIlotWeb2D** для работы с документами:
 
 ```js
-var viewer;
-var options = {};
+let viewer;
+let options = {};
 
 PilotWeb2D.Initializer(options, async () => {
-    var htmlDiv = document.getElementById('pilotViewer');
+    let htmlDiv = document.getElementById('pilotViewer');
     viewer = PilotWeb2D.CreateViewer(htmlDiv);
     await viewer.start();
     console.log('Initialization complete, loading a document next...');

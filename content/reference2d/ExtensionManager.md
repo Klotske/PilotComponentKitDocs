@@ -29,7 +29,6 @@ PilotWeb2D.theExtensionManager.registerExtensionType('myExtension', MyExtension)
 registerExtensionType(extensionId: string, extension: typeof Extension) : boolean;
 ```
 где:\
-
 `extensionId` -- уникальное имя расширения.
 
 `extension` -- тип расширения унаследованный от `PilotWeb2D.Extension`
