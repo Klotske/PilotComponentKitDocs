@@ -28,6 +28,7 @@ const defaultViewer3DSettings: ViewerSettings = {
   [SettingsNames.LABEL_LINE_LENGTH]: 1000,
   [SettingsNames.HIDE_EDGES_WHEN_NAVIGATING]: true,
   [SettingsNames.DISPLAY_MODE]: DisplayMode.FACES_AND_EDGES,
+  [SettingsNames.CAMERA_MODE]: CameraMode.PERSPECTIVE,
   [SettingsNames.NAVIGATION_CUBE]: true
 }
 ```
