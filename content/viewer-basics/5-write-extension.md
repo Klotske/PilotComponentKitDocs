@@ -56,7 +56,7 @@ PilotWeb3D.theExtensionManager.registerExtensionType('My3DExtension', My3DExtens
 Пример загрузки расширения для компонента **PilotWeb3D**:
 
 ```js
-var htmlDiv = document.getElementById('pilotViewer')
+let htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
 await viewer.start();
 viewer.extensionsLoader.loadExtension("My3DExtension");
@@ -67,7 +67,7 @@ await viewer.loadModelPart(...);
 Пример загрузки расширения для компонента **PilotWeb2D**:
 
 ```js
-var htmlDiv = document.getElementById('pilotViewer')
+let htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb2D.CreateViewer(htmlDiv);
 await viewer.start();
 viewer.extensionsLoader.loadExtension("My2DExtension");

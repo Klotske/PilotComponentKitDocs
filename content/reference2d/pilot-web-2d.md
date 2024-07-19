@@ -24,7 +24,7 @@ function Initializer(options, callback: InitializeSuccessCallback): void;
 
 ```js
 let options = {};
-var myCallback = function() {
+let myCallback = function() {
    console.log("initialization complete, creating the viewer...");
 };
 PilotWeb2D.Initializer(options, myCallback);

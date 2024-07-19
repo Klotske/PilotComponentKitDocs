@@ -14,7 +14,7 @@ draft: false
 
 Пример подключения в `javascript`:
 ```js
-var htmlDiv = document.getElementById('pilotViewer')
+let htmlDiv = document.getElementById('pilotViewer')
 viewer = PilotWeb3D.CreateViewer(htmlDiv);
 await viewer.start();
 viewer.extensionsLoader.loadExtension("PilotWeb3D.ClippingPlane");
