@@ -10,6 +10,7 @@ weight: 3
 ```js
 export interface IBimDataModelPart extends IBimDataPart {
   update(buffer: ArrayBuffer): Promise<void>;
+  mergeWith(dataPartId: string): Promise<void>;
   getAllTessellations(): Promise<Map<string, BimDataTessellation>>;
   getTessellations(versionFrom: bigint, versionTo: bigint): Promise<Map<string, BimDataTessellation>>;
   getAllElements(): Promise<BimDataElement[]>;
@@ -25,12 +26,20 @@ export interface IBimDataModelPart extends IBimDataPart {
 ## Методы
 
 ### update()
-Метод дополняет текущий файл модели новыми данными.
+Метод выполняет слияние файла модели с другим файлом, переданным в бинарном виде.
 ```js
   update(buffer: ArrayBuffer): Promise<void>;
 ```
 где:\
-`buffer` -- массив данных файла модели.
+`buffer` -- массив данных файла модели (.bm файла).
+
+### mergeWith()
+Метод дополняет текущий файл модели данными, взятыми из существующего файла модели. Выполняется слияние двух файлов модели, меняется только текущий файл.
+```js
+  mergeWith(sourceFileId: string): Promise<void>;
+```
+где:\
+`sourceFileId` -- идентификатор файла модели для слияния (.bm файла).
 
 ### getAllTessellations()
 Метод возвращает список всех тесселяций элементов модели.
