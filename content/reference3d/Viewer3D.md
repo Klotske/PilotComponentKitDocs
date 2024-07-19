@@ -58,23 +58,41 @@ finish(): Promise<void>;
 ```
 
 ### loadModelPart()
-Метод для управления загрузкой частей модели.
+Метод для загрузки частей модели.
 ```js
-loadModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions): Promise<void>;
+loadModelPart(data: ArrayBuffer | string | Blob, options: ModelLoadingOptions): Promise<void>;
 ```
 где:\
-  `data` -- массив байт модели или ссылка на модель,\
-  `options` -- опции для загрузки части модели. 
+  `data` -- массив двоичных данных модели или ссылка на модель.\
+  `options` -- опции для загрузки части модели.
   Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
 
 ### updateModelPart()
 Метод для обновления частей модели.
 ```js
-updateModelPart(data: ArrayBuffer | string, options: ModelLoadingOptions): Promise<void>;
+updateModelPart(data: ArrayBuffer | string | Blob, options: ModelLoadingOptions): Promise<void>;
 ```
 где:\
-  `data` -- обновлённый массив байт модели или ссылка на обновлённую модель,\
+  `data` -- массив двоичных данных или ссылка на модель содержащую обновления.\
   `options` -- опции для загрузки части модели. Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
+
+### loadCloudPart()
+Метод для загрузки облаков точек.
+```js
+loadCloudPart(data: ArrayBuffer | string | Blob, options: ModelLoadingOptions, onSuccessCallback?: SuccessCallback, onErrorCallback?: ErrorCallback): Promise<void>;
+```
+где:\
+  `data` -- массив двоичных данных облака точек или ссылка на облако точек.\
+  `options` -- опции для загрузки облака точек. Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
+
+### updateCloudPart()
+Метод для обновления облаков точек.
+```js
+updateCloudPart(data: ArrayBuffer | string | Blob, options: ModelLoadingOptions): Promise<void>;
+```
+где:\
+  `data` -- массив двоичных данных или ссылка на облако точек.\
+  `options` --  опции для загрузки облака точек. Подробнее: [ModelLoadingOptions](../ModelLoadingOptions)
 
 ### unloadModelPart()
 Метод для выгрузки части модели.
