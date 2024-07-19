@@ -34,7 +34,7 @@ deactivate(): void;
 ```
 
 ### addClipping()
-Метод добавляет секущие объекты к уже существующим на сцене.
+Метод добавляет секущие объекты - секущие плоскости и кубы сечения на сцену.
 ```js
 addClipping(clipping: ClippingDescription[]): void;
 ```
