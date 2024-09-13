@@ -4,10 +4,24 @@ draft: false
 weight: 9
 ---
 
+## ViewObjectEventMap
+**ViewObjectEventMap** -- события ViewObejct.
+
+```js
+export interface ViewObjectEventMap extends THREE.Object3DEventMap {
+  // событие уничтожения объекта
+  dispose: {},
+  // событие изменения объекта
+  update: { updateType: UpdateType },
+}
+```
+При изменении объекта, подписчикам также сообщается тип изменения. Подробнее: [UpdateType](../UpdateType).
+
+## ViewObject
 **ViewObject** -- абстрактный класс, описывающий объект на сцене. Расширяет [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D).
 
 ```js
-export abstract class ViewObject extends THREE.Object3D {
+export abstract class ViewObject extends THREE.Object3D<ViewObjectEventMap> {
   readonly entityGuid: string;
   readonly modelGuid: string;
 

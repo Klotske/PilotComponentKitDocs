@@ -9,9 +9,9 @@ weight: 9
 
 ```js
 export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions> {
-  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection | undefined;
   getIntersectionIDByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
-  getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection | undefined;
   getIntersectionIDByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
   getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, options?: TOptions): { modelId: string; guid: string; }[] | undefined;
 }
@@ -20,7 +20,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 ###  getIntersectionByRay()
 Метод возвращает ближайшее пересечение объекта модели с лучом.
 ```js
-  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByRay(ray: THREE.Ray, camera: THREE.Camera, options?: TOptions): THREE.Intersection | undefined;
 ```
 где:\
 `ray` -- луч, с которым считаются пересечения. Подробнее: [THREE.Ray](https://threejs.org/docs/#api/en/math/Ray).
@@ -46,7 +46,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 ###  getIntersectionByNdcPt()
 Метод возвращает ближайшее пересечение объекта модели с лучом, выпущенным из точки нахождения камеры в направлении точки в Normalized Device Coordinates (NDC пространство).
 ```js
-  getIntersectionByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
+  getIntersectionByNdcPt(ndcPoint: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection | undefined;
 ```
 где:\
 `ndcPoint` -- 2D координаты точки в Normalized Device Coordinates (NDC пространство), в которую выпускается луч. Подробнее: [THREE.Vector2](https://threejs.org/docs/#api/en/math/Vector2).

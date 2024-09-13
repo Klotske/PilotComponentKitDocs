@@ -26,7 +26,7 @@ export interface IGizmoObject extends THREE.Object3D {
 **GizmoObject** -- реализация интерфейса [IGizmoObject](#IGizmoObject). При изменении ховера, либо активности объекта, меняет материал геометрий.
 
 ```js
-export class GizmoObject extends THREE.Object3D implements IGizmoObject {
+export class GizmoObject extends THREE.Object3D<ViewObjectEventMap> implements IGizmoObject {
   constructor(protected _meshes: THREE.Mesh[], 
     readonly baseMaterial: THREE.Material,
     readonly hoverMaterial: THREE.Material,
@@ -38,7 +38,7 @@ export class GizmoObject extends THREE.Object3D implements IGizmoObject {
   setActive(value: boolean): void;
   dispose(): void;
 
-  override raycast(raycaster: THREE.Raycaster, intersects: THREE.Intersection<THREE.Object3D<THREE.Event>>[]): void;
+  override raycast(raycaster: THREE.Raycaster, intersects: THREE.Intersection[]): void;
 }
 ```
 ## Поля
@@ -118,5 +118,5 @@ activeMaterial: THREE.Material;
 ### raycast {#raycast}
 Переопределённый метод [Object3D.raycast](https://threejs.org/docs/#api/en/core/Object3D.raycast). Проверяет пересечения для всех [геометрий](#meshes) `GizmoObject`.
 ```js
-override raycast(raycaster: THREE.Raycaster, intersects: THREE.Intersection<THREE.Object3D<THREE.Event>>[]): void
+override raycast(raycaster: THREE.Raycaster, intersects: THREE.Intersection[]): void
 ```

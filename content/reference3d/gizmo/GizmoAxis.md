@@ -11,7 +11,7 @@ weight: 9
 Примеры реализаций: [GizmoTranslationAxis](../GizmoTranslationAxis), [GizmoRotationAxis](../GizmoRotationAxis), [GizmoScaleAxis](../GizmoScaleAxis).
 
 ```js
-export class GizmoAxis extends THREE.Object3D implements IGizmoObject {
+export class GizmoAxis extends THREE.Object3D<ViewObjectEventMap> implements IGizmoObject {
   protected _isHovered: boolean;
   protected _isActive: boolean;
   protected _plane: THREE.Plane;
