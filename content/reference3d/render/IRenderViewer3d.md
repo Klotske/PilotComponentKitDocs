@@ -16,7 +16,7 @@ export interface IRenderViewer3D {
   setClipping(planes: THREE.Plane[], sceneID?: string): void;
   setActiveClipPlaneIndices(indices: number[]): void;
   getScenes(): IUserScene[];
-  addScene(name: string, isClippable: boolean): IUserScene;
+  addScene(name: string | IUserScene, isClippable?: boolean): IUserScene;
   removeScene(scene: IUserScene): void;
 }
 ```
@@ -84,12 +84,13 @@ setActiveClipPlaneIndices(indices: number[]): void;
 ###  addScene()
 Метод добавляет новую сцену для отрисовки.
 ```js
-  addScene(name: string, isClippable: boolean): IUserScene;
+  addScene(name: string | IUserScene, isClippable?: boolean): IUserScene;
 ```
 где:\
-`name` -- идентификатор новой сцены.
+`name` -- идентификатор новой сцены, либо объект сцены. Подробнее: [IUserScene](../IUserScene).
 
-`isClippable` -- параметр, указывающий, влияют ли секущие плоскости на отрисовку этой сцены. Если `false`, то секущие плоскости не применяются к объектам на этой сцене и проверка пересечений с объектами на этой сцене также не учитывает секущие плоскости.
+`isClippable` -- необязательный параметр, указывающий, влияют ли секущие плоскости на отрисовку этой сцены.\
+Если `false`, то секущие плоскости не применяются к объектам на этой сцене и проверка пересечений с объектами на этой сцене также не учитывает секущие плоскости.\
 Возвращает добавленную сцену. Подробнее: [IUserScene](../IUserScene).
 
 ###  removeScene()
