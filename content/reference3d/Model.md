@@ -55,13 +55,15 @@ showModelPart(modelPart: string | ModelPart): void
 ### hide()
 Метод позволяет скрыть элементы модели.
 ```js
-hide(elementIds: string[] | string, modelPart?: string | ModelPart): void
+hide(elementIds: string[] | string, modelPart?: string | ModelPart, recursive: boolean = true): void
 ```
 
 где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+
+`recursive` -- флаг, указывающий на рекурсивный обход элементов модели. По умолчанию: `true` - скрываются также все дочерние элементы.
 
 ### hideAll()
 Метод позволяет скрыть все элементы и части модели.
@@ -72,13 +74,15 @@ hideAll(): void;
 ### show()
 Метод позволяет показать скрытые элементы.
 ```js
-show(elementIds: string[] | string, modelPart?: string | ModelPart): void;
+show(elementIds: string[] | string, modelPart?: string | ModelPart, recursive: boolean = true): void;
 ```
 
 где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+
+`recursive` -- флаг, указывающий на рекурсивный обход элементов модели. По умолчанию: `true` - отображаются также все дочерние элементы.
 
 ### showAll()
 Метод позволяет показать все элементы и части модели.
@@ -89,7 +93,7 @@ showAll(): void;
 ### isolate()
 Метод позволяет изолировать элементы одной части модели. Все неизолированные элементы модели будут скрыты.
 ```js
-isolate(elementIds: string[], modelPart: string | ModelPart): void;
+isolate(elementIds: string[], modelPart: string | ModelPart, recursive: boolean = true): void;
 ```
 
 где:\
@@ -97,19 +101,23 @@ isolate(elementIds: string[], modelPart: string | ModelPart): void;
 
 `modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
 
+`recursive` -- флаг, указывающий на рекурсивный обход элементов модели. По умолчанию: `true` - все дочерние элементы также добавляются к изолированным элементам.
+
 ### isolateMultiple()
 Метод позволяет изолировать элементы модели. Все неизолированные элементы модели будут скрыты.
 ```js
-isolateMultiple(elements: ModelElementIds[]): void;
+isolateMultiple(elements: ModelElementIds[], recursive: boolean = true): void;
 ```
 
 где:\
 `elements` -- список идентификаторов элементов модели, сгруппированных по части модели. Подробнее: [ModelElementIds](../modelelement/ModelElementIds).
 
+`recursive` -- флаг, указывающий на рекурсивный обход элементов модели. По умолчанию: `true` - все дочерние элементы также добавляются к изолированным элементам.
+
 ### select()
 Метод позволяет выделить элементы.
 ```js
-select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode): void
+select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMode: SelectionMode, recursive: boolean = false): void
 ```
 
 где:\
@@ -119,16 +127,20 @@ select(elementIds: string[] | string, modelPart: string | ModelPart, selectionMo
 
 `selectionMode` -- режим выделения. Подробнее:  [SelectionMode](../SelectionMode).
 
+`recursive` -- флаг, указывающий на рекурсивный обход элементов модели. По умолчанию: `false` - дочерние элементы не выделяются.
+
 ### deselect()
 Метод позволяет снять выделение с заданных элементов.
 ```js
-deselect(elementIds: string[] | string, modelPart?: string | ModelPart): void
+deselect(elementIds: string[] | string, modelPart?: string | ModelPart, recursive: boolean = false): void
 ```
 
 где:\
 `elementIds` -- один или несколько идентификаторов элементов модели.
 
 `modelPart` -- идентификатор или экземпляр части модели. Необязательный параметр. Если этот параметр не задан, то обрабатываются элементы первой загруженной части модели.
+
+`recursive` -- флаг, указывающий на рекурсивный обход элементов модели. По умолчанию: `false` - с дочерних элементов выделение не снимается.
 
 ### clearSelection()
 Метод позволяет снять выделение со всех элементов модели.
