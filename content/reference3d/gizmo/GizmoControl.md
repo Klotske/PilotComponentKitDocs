@@ -4,6 +4,14 @@ draft: false
 weight: 9
 ---
 
+**GizmoEventMap** -- события `GizmoControl`. Расширяют события `ViewObjectEventMap`. Подробнее: [ViewObjectEventMap](../../render/ViewObject).
+```js
+export interface GizmoEventMap extends ViewObjectEventMap {
+  // событие изменения активной оси гизмо
+  activeAxisChanged: { isAxisActive: boolean; };
+}
+```
+
 ## GizmoControl {#GizmoControl}
 **GizmoControl** -- контроллер, прикрепляемый к 3D-объекту на сцене и управляющий его положением.
 
