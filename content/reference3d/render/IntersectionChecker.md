@@ -14,6 +14,7 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
   getIntersectionByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): THREE.Intersection<THREE.Object3D> | undefined;
   getIntersectionIDByNdcPt(ndcPos: THREE.Vector2, camera: THREE.Camera, options?: TOptions): { modelId: string, guid: string } | undefined;
   getIntersectionIDByFrustumNdcPt(ndcFrustumBox: THREE.Box3, unProjMatrix: THREE.Matrix4, isContainsOnly: boolean, options?: TOptions): { modelId: string; guid: string; }[] | undefined;
+  getObjectsBoundingBox(elements: ModelElementIds[], options?: TOptions): THREE.Box3;
 }
 ```
 ## Методы
@@ -105,6 +106,16 @@ export interface IIntersectionChecker<TOptions extends IntersectionCheckOptions>
 ```
 Более сложный пример использования: [BoxSelectionExtension](../../../extensions3d/BoxSelection).
 
+###  getObjectsBoundingBox()
+Метод возвращает общий ограничивающий объем для переданного списка элементов.
+```js
+  getObjectsBoundingBox(elements: ModelElementIds[], options?: TOptions): THREE.Box3;
+```
+где:\
+`elements` -- список элементов для вычисления общего ограниченного объема. Подробнее: [ModelElementIds](../../modelelement/ModelElementIds).
+
+`options` -- параметры проверки пересечений. Необязательный параметр. Подробнее: [SceneCheckOptions](#SceneCheckOptions), [ModelCheckOptions](#ModelCheckOptions).\
+Возвращает объект [THREE.Box3](https://threejs.org/docs/#api/en/math/Box3).
 
 # ISceneIntersectionChecker {#ISceneIntersectionChecker}
 **ISceneIntersectionChecker** -- интерфейс обработки пересечений объектов на отдельной сцене. Расширяет `IIntersectionChecker`.

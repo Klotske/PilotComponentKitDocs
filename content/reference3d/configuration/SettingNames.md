@@ -15,6 +15,8 @@ class SettingsNames {
   static DISPLAY_MODE = "displayMode";
   static CAMERA_MODE = "cameraMode";
   static NAVIGATION_CUBE = "navigationCube";
+  static HIDE_SMALL_ELEMENTS = "hideSmallElements";
+  static SMALL_ELEMENT_SIZE = "smallElementSize";
 }
 ```
 
@@ -35,7 +37,7 @@ static ANTI_ALIASING = "antiAliasing";
 
 ### HIDE_EDGES_WHEN_NAVIGATING
 Свойство для указания настройки скрытия ребер при навигации по 3D модели.
-Настройка может иметь занчения `true/false/undefined`.
+Настройка может иметь значения `true/false/undefined`.
 
 ```js
 static HIDE_EDGES_WHEN_NAVIGATING = "hideEdgesWhenNavigation";
@@ -59,8 +61,22 @@ static CAMERA_MODE = "cameraMode";
 
 ### NAVIGATION_CUBE
 Свойство для указания настройки скрытия навигационного куба.
-Настройка может иметь занчения `true/false/undefined`.
+Настройка может иметь значения `true/false/undefined`.
 
 ```js
 static NAVIGATION_CUBE = "navigationCube";
+```
+
+### HIDE_SMALL_ELEMENTS
+Свойство для указания настройки скрытия маленьких объектов.
+Настройка может иметь значения `true/false/undefined`.
+```js
+static HIDE_SMALL_ELEMENTS = "hideSmallElements";
+```
+
+### SMALL_ELEMENT_SIZE
+Свойство для указания размера скрываемых объектов в пикселях.
+Настройка может иметь числовое значение или `undefined`.
+```js
+static SMALL_ELEMENT_SIZE = "smallElementSize";
 ```
