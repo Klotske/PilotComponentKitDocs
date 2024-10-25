@@ -18,7 +18,7 @@ export interface INavigation {
   getCameraParameters(): CameraParameters;
   getCameraControl(): ICameraControl;
   getCamera(): THREE.Camera;
-  fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
+  fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean, cameraOrientation?: CameraOrientation): void;
   setPivotPoint(point: Point3): void;
   getPivotPoint(): Point3;
   resetPivotPoint(): void;
@@ -106,12 +106,13 @@ getCamera(): THREE.Camera;
 ### fitToView() {#fitToView}
 Метод позволяет спозиционировать заданные элементы в центре экрана.
 ```js
-fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean): void;
+fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean, cameraOrientation?: CameraOrientation): void;
 ```
 где:\
 `elementIds` -- список идентификаторов или один идентификатор элемента сцены,\
 `modelPart` -- идентификатор части консолидированной модели или объект части консолидированной модели,\
-`immediate` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.
+`immediate` -- анимация при центрировании, `true` -- отключить анимацию, `false` -- включить анимацию. По умолчанию анимация включена.\
+`cameraOrientation` -- конечная ориентация камеры. По умолчанию сохраняется текущая ориентация камеры. Подробнее: [CameraOrientation](../CameraOrientation).
 
 ### setPivotPoint()
 Метод позволяет задать положение опорной точки камеры.
