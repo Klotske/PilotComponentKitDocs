@@ -55,10 +55,14 @@ export class RemarkManager {
   readonly events: PilotWeb3D.IEventsDispatcher;
   readonly remarkSceneName = 'RemarkViewObjectScene';
 
+  public get selectTargetElement(): boolean;
+  public set selectTargetElement(value: boolean);
+
   public get placeRemarkOnClick(): boolean;
   public set placeRemarkOnClick(value: boolean);
 
   public get selectedRemarks(): RemarkViewObject[];
+  public get selectedRemarksIds(): string[];
 
   public setActive(value: boolean): void;
 
@@ -98,11 +102,20 @@ readonly remarkSceneName = 'RemarkViewObjectScene';
 
 ## Свойства
 
+### selectTargetElement : boolean {#selectTargetElement}
+Включает или выключает режим выделения целевого объекта точки замечания. Если `true`, 
+то выделение точки замечания приведет к выделению объекта, для которого добавлено замечание. 
+```js
+  get selectTargetElement(): boolean;
+  set selectTargetElement(value: boolean);
+```
+По умолчанию: `false`.
+
 ### placeRemarkOnClick : boolean {#placeRemarkOnClick}
 Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, 
 то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. 
 После добавления точки замечания, либо при клике в пустую область, режим сбрасывается, и свойство становится `false`.\
-При смене режима размещения точек возникает событие [remarkPlacingModeChanged](#remarkPlacingModeChanged).
+При смене режима размещения точек возникает событие [pilotRemarkPlacingModeChanged](#pilotRemarkPlacingModeChanged).
 ```js
   get placeRemarkOnClick(): boolean;
   set placeRemarkOnClick(value: boolean);
@@ -155,7 +168,8 @@ public removeRemarks(remarkIds?: string[]): void;
 `remarkIds` -- идентификаторы точек замечаний для удаления. Опциональный параметр. Если не задан, то удаляются все добавленные на сцену точки замечаний.
 
 ### select()
-Метод выделяет замечания на документе.
+Метод выделяет замечания на документе. 
+При изменении списка селектированных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
 ```js  
 select(remarkId: string | string[]): void;
 ```
@@ -165,6 +179,7 @@ select(remarkId: string | string[]): void;
 
 ### deselect()
 Метод снимает выделение замечаний на документе.
+При изменении списка селектированных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
 ```js  
 deselect(remarkId: string | string[]): void;
 ```
@@ -174,6 +189,7 @@ deselect(remarkId: string | string[]): void;
 
 ### clearSelection()
 Метод снимает выделение с текущего выбранного замечания.
+При изменении списка селектированных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
 ```js  
 clearSelection(): void;
 ```
@@ -204,21 +220,21 @@ public setRemarksLayerVisibility(visibiliity: boolean): void;
 События замечаний.
 ```js
 interface RemarkEventMap {
-  'remarkPlacingModeChanged' : Event;
-  'remarkClicked' : PilotWeb3D.ClickedEvent;
+  'pilotRemarkPlacingModeChanged' : Event;
+  'pilotRemarkSelectionChanged' : PilotWeb3D.SelectionChangedEvent;
 }
 ```
-### remarkPlacingModeChanged {#remarkPlacingModeChanged}
+### pilotRemarkPlacingModeChanged {#pilotRemarkPlacingModeChanged}
 ```js
-  'remarkPlacingModeChanged' : Event;
+  'pilotRemarkPlacingModeChanged' : Event;
 ```
 Событие возникает при изменении свойства [placeRemarkOnClick](#placeRemarkOnClick).
 
-### remarkClicked
+### pilotRemarkSelectionChanged {#pilotRemarkSelectionChanged}
 ```js
-  'remarkClicked' : PilotWeb3D.ClickedEvent; 
+  'pilotRemarkSelectionChanged' : PilotWeb3D.SelectionChangedEvent; 
 ```
-Событие возникает при клике по точке замечания. Подробнее: [Events3D](../../reference3d/Events#Events3D).
+Событие возникает при изменении списка селектированных замечаний. Подробнее: [Events3D](../../reference3d/Events#Events3D).
 
 # RemarkViewObject {#RemarkViewObject}
 Графический объект, представляющий точку замечания. Добавляется на слой замечаний. Расширяет [ViewObject](../../reference3d/render/ViewObject).
