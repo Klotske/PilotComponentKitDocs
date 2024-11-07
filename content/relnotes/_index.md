@@ -6,8 +6,8 @@ weight: 1
 
 ## Версия @VERSION@ от @DATE@
 {{< hint type="important" icon=gdoc_error_outline title="Важно">}}
-В связи с обновлением библиотеки Three.js класс [ViewObject](../reference3d/render/ViewObject/)
-и производные от него классы наследуется от THREE.Object3D с TypeParameter = 'ViewObjectEventMap'
+Обратите внимание, что в связи с обновлением библиотеки Three.js изменился интерфейс [**IIntersectionChecker**](../reference3d/render/IntersectionChecker) 
+и классы [системных событий](../reference3d/Events/#классы-событий-для-3d) **ClickedEvent** и **HoverEvent**. 
 {{< /hint >}}
 - Обновлена версия библиотеки **Three.js** с **0.148.0** до <a href="https://www.npmjs.com/package/three/v/0.161.0"> **0.161.0**</a>
 - Доработано расширение [PilotWeb3D.ZoomToFit](../extensions3d/ZoomToFit). Команда **Масштабировать по всем объектам** отображает в 3D-окне все видимые объекты сцены. <!--3-2439-->
