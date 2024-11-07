@@ -5,7 +5,7 @@ weight: 9
 ---
 
 ## ViewObjectEventMap
-**ViewObjectEventMap** -- события ViewObejct.
+**ViewObjectEventMap** -- события ViewObject.
 
 ```js
 export interface ViewObjectEventMap extends THREE.Object3DEventMap {
@@ -15,7 +15,7 @@ export interface ViewObjectEventMap extends THREE.Object3DEventMap {
   update: { updateType: UpdateType },
 }
 ```
-При изменении объекта, подписчикам также сообщается тип изменения. Подробнее: [UpdateType](../UpdateType).
+При изменении объекта подписчикам также сообщается тип изменения. Подробнее: [UpdateType](../UpdateType).
 
 ## ViewObject
 **ViewObject** -- абстрактный класс, описывающий объект на сцене. Расширяет [THREE.Object3D](https://threejs.org/docs/index.html#api/en/core/Object3D).
@@ -226,7 +226,7 @@ dispose(): void;
 
 ### getBoundingBox()
 Метод возвращает граничный объём `ViewObject`.\
-Реализация по умолчания возвращает пустой `THREE.Box3`. Метод доступен для переопределения.
+Реализация по умолчанию возвращает пустой `THREE.Box3`. Метод доступен для переопределения.
 ```js
  getBoundingBox(): THREE.Box3;
 ```
