@@ -263,4 +263,10 @@ Dolor sit, sumo unique argument um no ...
 #### Версия 5.0 от @DATE@
 ```
 
+## Логотип хранится
+C:\Git\cloudservicedocs\themes\hugo-geekdoc\static
+Прописывать логотип
+C:\Git\cloudservicedocs\config.toml
+
+footer-link-color-visited: #d9e1b5 - светлозелёный, от которого избавились
 
