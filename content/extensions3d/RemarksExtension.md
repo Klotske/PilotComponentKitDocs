@@ -44,7 +44,6 @@ activate(): void;
 deactivate(): void;
 ```
 
-
 # RemarkManager {#RemarkManager}
 **RemarkManager** -- менеджер замечаний, который предоставляет методы API для работы с точками замечаний.
 
@@ -114,7 +113,7 @@ readonly remarkSceneName = 'RemarkViewObjectScene';
 ### placeRemarkOnClick : boolean {#placeRemarkOnClick}
 Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, 
 то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. 
-После добавления точки замечания, либо при клике в пустую область, режим сбрасывается, и свойство становится `false`.\
+После добавления точки замечания, либо при клике в пустую область, режим сбрасывается и свойство становится `false`.\
 При смене режима размещения точек возникает событие [pilotRemarkPlacingModeChanged](#pilotRemarkPlacingModeChanged).
 ```js
   get placeRemarkOnClick(): boolean;
@@ -237,7 +236,7 @@ interface RemarkEventMap {
 Событие возникает при изменении списка селектированных замечаний. Подробнее: [Events3D](../../reference3d/Events#Events3D).
 
 # RemarkViewObject {#RemarkViewObject}
-Графический объект, представляющий точку замечания. Добавляется на слой замечаний. Расширяет [ViewObject](../../reference3d/render/ViewObject).
+Графический объект, представляющий собой точку замечания. Добавляется на слой замечаний. Расширяет [ViewObject](../../reference3d/render/ViewObject).
 ```js
 export class RemarkViewObject extends PilotWeb3D.ViewObject {
   constructor(remarkParamters?: RemarkObjectParameters, statusParameters?: RemarkStatusParameters);
@@ -258,9 +257,9 @@ export class RemarkViewObject extends PilotWeb3D.ViewObject {
 ```
 
 где:\
-`remarkParamters` -- параметры точки замечания, опциональный параметр. Если не заданы, то создается точка замечания со значениями по умолчанию. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
+`remarkParamters` -- опциональные параметры точки замечания. Если не заданы, то создается точка замечания со значениями по умолчанию. Подробнее: [RemarkObjectParameters](#RemarkObjectParameters).
 
-`statusParameters` -- параметры статуса замечания, опциональный параметр. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
+`statusParameters` -- опциональные параметры статуса замечания. Подробнее: [RemarkStatusParameters](#RemarkStatusParameters).
 
 ## Свойства
 
