@@ -6,11 +6,15 @@ draft: false
 **BimDataProvider** -- основной класс компонента.
 
 Компонент работает с файлами данных модели и облаков точек.\
-Используемая файловая система определяется окружением компонента: в Node.js окружении, либо в небезопасном контексте браузерного окружения будет использоваться MEMFS - файловая система, работющая с файлами только в оперативной памяти.\
+Используемая файловая система определяется окружением компонента: в Node.js окружении, либо в небезопасном контексте браузерного окружения будет использоваться MEMFS - файловая система, работающая с файлами только в оперативной памяти.\
 В [безопасном контексте](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) браузерного окружения будет использоваться [OPFS](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system) - файловая система, позволяющая работать с файлами на диске.
 
 ```js
+type FSType = 'OPFS' | 'MEMFS';
+
 class BimDataProvider {
+  get usedFSType(): FSType;
+
   init(): Promise<void>;
   createDataFile(id: string): Promise<IBimDataPart>;
   openModelPart(dataFile: IBimDataPart): Promise<IBimDataModelPart | undefined>;
@@ -21,6 +25,15 @@ class BimDataProvider {
   flushMemory(): Promise<void>;
 }
 ```
+
+## Свойства
+
+### usedFSType
+Свойство определяет тип используемой файловой системы.
+```js
+  get usedFSType(): FSType;
+```
+где `FSType` - тип файловой системы: `MEMFS` или `OPFS`.
 
 
 ## Методы

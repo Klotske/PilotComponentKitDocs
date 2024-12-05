@@ -12,8 +12,10 @@ export interface IBimDataPart {
   id: string;
   isOpen: boolean;
   open(buffer?: ArrayBuffer): Promise<void>;
+  isValid(): Promise<boolean>;
   write(buffer: ArrayBuffer, position: number): Promise<void>;
   close(): Promise<void>;
+  remove(): Promise<void>;
   dispose(): Promise<void>;
 }
 ```
@@ -55,14 +57,26 @@ export interface IBimDataPart {
 `buffer` -- массив данных файла модели.\
 `position` -- смещение указателя записи файла.
 
+### isValid()
+Метод проверяет целостность файла модели.
+```js
+  isValid(): Promise<boolean>;
+```
+
 ### close()
 Метод завершает работу с файлом модели и закрывает его для чтения.
 ```js
   close(): Promise<void>;
 ```
 
-### dispose()
-Метод завершает работу объекта-посредника, освобождает выделенные ресурсы и удаляет файл модели из памяти.
+### remove()
+Метод удаляет файл модели из файловой системы.
 ```js
-  close(): Promise<void>;
+  remove(): Promise<void>;
+```
+
+### dispose()
+Метод завершает работу объекта-посредника и освобождает выделенные ресурсы. Файл модели удаляется только для MEMFS файловой системы.
+```js
+  dispose(): Promise<void>;
 ```
