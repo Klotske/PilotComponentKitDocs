@@ -25,7 +25,7 @@ export interface GizmoEventMap extends ViewObjectEventMap {
 
 ```js
 export class GizmoControl extends THREE.Object3D {
-  constructor(camera: THREE.Camera, navAgent: INavigationAgent);
+  constructor(cameraControl: THREE.Camera | ICameraControl, navAgent: INavigationAgent);
   attachTo(object: THREE.Object3D, asChild = false): void;
   detach(): void;
   updateGizmoOffset(position?: THREE.Vector3, quaternion?: THREE.Quaternion): void;
@@ -36,16 +36,16 @@ export class GizmoControl extends THREE.Object3D {
 
 ## Конструктор
 ```js
-  constructor(camera: THREE.Camera, navAgent: INavigationAgent);
+  constructor(cameraControl: THREE.Camera | ICameraControl, navAgent: INavigationAgent);
 ```
 где:\
-`camera` - камера, используемая на сцене. Подробнее: [THREE.Camera](https://threejs.org/docs/#api/en/cameras/Camera).\
+`cameraControl` - контроллер камеры, или камера, используемая на сцене. Подробнее: [ICameraControl](../../navigation/ICameraControl).\
 `navAgent` - агент навигации. Подробнее: [INavigationAgent](../../navigation/INavigationAgent).\
-Камеру и агент навигации можно получить из [INavigation](../../navigation/INavigation).
+Контроллер камеры и агент навигации можно получить из [INavigation](../../navigation/INavigation).
 
 ```js
 //Пример создания:
-const camera = PilotWeb3D.ViewerInstance.navigation.getCamera();
+const cameraControl = PilotWeb3D.ViewerInstance.navigation.getCameraControl();
 const navAgent = PilotWeb3D.ViewerInstance.navigation.getNavigationAgent();
 const gizmoControl = new PilotWeb3D.GizmoControl(camera, navAgent);
 ```

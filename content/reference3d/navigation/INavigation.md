@@ -17,8 +17,7 @@ export interface INavigation {
   setCameraParameters(params: CameraParameters): void;
   getCameraParameters(): CameraParameters;
   getCameraControl(): ICameraControl;
-  getCamera(): THREE.Camera;
-  fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean, cameraOrientation?: CameraOrientation): void;
+  fitToView(elementIds: string[] | string | ModelElementIds[], modelPart?: string | ModelPart, immediate?: boolean, cameraOrientation?: CameraOrientation): void;
   setPivotPoint(point: Point3): void;
   getPivotPoint(): Point3;
   resetPivotPoint(): void;
@@ -96,17 +95,10 @@ getCameraParameters(): CameraParameters;
 ```
 Возвращает контроллер камеры. Подробнее: [ICameraControl](../ICameraControl).
 
-### getCamera()
-Метод позволяет получить камеру.
-```js
-getCamera(): THREE.Camera;
-```
-Возвращает объект камеры. Подробнее: <a href="https://threejs.org/docs/#api/en/cameras/Camera">THREE.Camera</a>.
-
 ### fitToView() {#fitToView}
 Метод позволяет спозиционировать заданные элементы в центре экрана.
 ```js
-fitToView(elementIds: string[] | string, modelPart: string | ModelPart, immediate?: boolean, cameraOrientation?: CameraOrientation): void;
+fitToView(elementIds: string[] | string | ModelElementIds[], modelPart?: string | ModelPart, immediate?: boolean, cameraOrientation?: CameraOrientation): void;
 ```
 где:\
 `elementIds` -- список идентификаторов или один идентификатор элемента сцены,\
