@@ -2,6 +2,7 @@
 title: "MeasurementToolsExtension"
 date: 2023-09-01T14:44:03+03:00
 draft: false
+weight: 1
 ---
 
 **MeasurementToolsExtension** -- расширение, которое предоставляет различные инструменты измерений.

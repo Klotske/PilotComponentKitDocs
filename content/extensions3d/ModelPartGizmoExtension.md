@@ -1,6 +1,7 @@
 ---
 title: "ModelPartGizmo"
 draft: false
+weight: 1
 ---
 
 **ModelPartGizmo** -- расширение, которое позволяет изменять положение частей модели с помощью гизмо на сцене.

@@ -2,6 +2,7 @@
 title: "BoxSelectionExtension"
 date: 2023-01-01T14:44:03+03:00
 draft: false
+weight: 1
 ---
 
 **BoxSelectionExtension** -- расширение, которое позволяет селектировать элементы с помощью рамки.\

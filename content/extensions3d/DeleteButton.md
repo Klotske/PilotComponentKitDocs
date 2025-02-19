@@ -2,6 +2,7 @@
 title: "DeleteButtonExtension"
 date: 2023-01-01T14:44:03+03:00
 draft: false
+weight: 1
 ---
 
 **DeleteButtonExtension** -- расширение для удаления выделенных  на сцене объектов.\

@@ -1,6 +1,7 @@
 ---
 title: "WasdNavigationExtension"
 draft: false
+weight: 1
 ---
 
 **WasdNavigationExtension** -- расширение, которое позволяет навигироваться по сцене с помощью клавиатуры, либо с помощью методов API.\

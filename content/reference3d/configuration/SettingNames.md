@@ -17,6 +17,8 @@ class SettingsNames {
   static NAVIGATION_CUBE = "navigationCube";
   static HIDE_SMALL_ELEMENTS = "hideSmallElements";
   static SMALL_ELEMENT_SIZE = "smallElementSize";
+  static SHOW_SPACE_ELEMENTS = "showSpaceElements";
+  static SHOW_VOID_ELEMENTS = "showVoidElements";
 }
 ```
 
@@ -79,4 +81,18 @@ static HIDE_SMALL_ELEMENTS = "hideSmallElements";
 Настройка может иметь числовое значение или `undefined`.
 ```js
 static SMALL_ELEMENT_SIZE = "smallElementSize";
+```
+
+### SHOW_SPACE_ELEMENTS
+Свойство для указания вьюверу загружать ли вспомогательные элементы типа `IfcSpace`. По умолчанию это свойство выключено.
+
+```js
+static SHOW_SPACE_ELEMENTS = "showSpaceElements";
+```
+
+### SHOW_VOID_ELEMENTS
+Свойство для указания вьюверу загружать ли вспомогательные элементы типа `IfcVoidElements` и `IfcVoidingFeature`. По умолчанию это свойство выключено.
+
+```js
+static SHOW_VOID_ELEMENTS = "showVoidElements";
 ```

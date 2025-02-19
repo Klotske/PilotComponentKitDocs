@@ -1,6 +1,7 @@
 ---
 title: "ClippingPlaneExtension"
 draft: false
+weight: 1
 ---
 
 **ClippingPlaneExtension** -- расширение, которое позволяет задать секущие плоскости и кубы сечений на сцене.

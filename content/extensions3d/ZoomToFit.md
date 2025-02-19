@@ -2,6 +2,7 @@
 title: "ZoomToFitExtension"
 date: 2022-11-01T14:44:03+03:00
 draft: false
+weight: 1
 ---
 
 **ZoomToFitExtension** -- расширение, которое добавляет на панель инструментов кнопку масштабирования по всем объектам сцены.

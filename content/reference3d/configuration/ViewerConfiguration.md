@@ -8,12 +8,14 @@ draft: false
 
 ```js
 class ViewerConfiguration {
+  settingsPrefix: string;
   appearance: ViewerSettings = {
     [BaseSettingsNames.TOOLBAR] : {
       direction: ToolbarDirection.TOP_FLUENT,
       content: ToolbarContentAlignment.CENTER
     } as ToolbarStyle
   };
+  extensionsOptions: Array<{ name: string, options: ViewerSettings }>;
 }
 ```
 
@@ -63,6 +65,30 @@ export enum ToolbarContentAlignment {
 
 ```js
 settingsPrefix: string;
+```
+
+### extensionsOptions
+С помощью этого свойства можно передать расширениям начальные настройки. Также для встроенных расширений есть возможность указать настройку - не загружать встроенное расширение.
+
+```js
+extensionsOptions: Array<{ name: string, options: ViewerSettings }>;
+```
+
+пример задания настройки отключения загрузки для встроенного расширения PilotWeb3D.ViewCube:
+
+```js
+
+const configuration = new PilotWeb3D.Viewer3DConfiguration();
+configuration.extensionsOptions = {
+  'PilotWeb3D.ViewCube': {
+    disabled: true
+  },
+}
+const htmlDiv = document.getElementById("viewer");
+this._viewer = PilotWeb3D.CreateViewer(htmlDiv, configuration);
+await this._viewer.start();
+...
+
 ```
 
 

@@ -29,6 +29,9 @@ const defaultViewer3DSettings: ViewerSettings = {
   [SettingsNames.HIDE_EDGES_WHEN_NAVIGATING]: true,
   [SettingsNames.DISPLAY_MODE]: DisplayMode.FACES_AND_EDGES,
   [SettingsNames.CAMERA_MODE]: CameraMode.PERSPECTIVE,
-  [SettingsNames.NAVIGATION_CUBE]: true
+  [SettingsNames.NAVIGATION_CUBE]: true,
+  [SettingsNames.SHOW_SPACE_ELEMENTS]: false,
+  [SettingsNames.SHOW_VOID_ELEMENTS]: false,
+  [SettingsNames.SHOW_HIDDEN_ELEMENTS]: false
 }
 ```

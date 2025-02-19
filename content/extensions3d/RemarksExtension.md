@@ -1,6 +1,7 @@
 ---
 title: "RemarksExtension"
 draft: false
+weight: 1
 ---
 
 **RemarksExtension** -- расширение, которое позволяет задать точки замечаний на сцене. 
