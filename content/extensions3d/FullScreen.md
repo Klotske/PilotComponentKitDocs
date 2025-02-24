@@ -26,30 +26,30 @@ viewer.extensionsLoader.loadExtension("PilotWeb3D.FullScreen");
 ## Методы
 
 ### activate()
-Перейти в полноэкранный режим
+Метод позволяет перейти в полноэкранный режим.
 ```js
 activate(): void;
 ```
 ### deactivate()
-Выход из полноэкранного режима
+Метод позволяет выйти из полноэкранного режима.
 ```js
 deactivate(): void;
 ```
 
 ### getMode()
-Получить режим отображения
+Метод получает режим отображения.
 ```js
 getMode(): FullScreenExtension.FullScreenMode;
 ```
 
-## Перечисление FullScreenExtension.FullScreenMode
-
+#### Перечисление FullScreenExtension.FullScreenMode
+Нормальный режим:
 ```js
 FullScreenExtension.FullScreenMode.NORMAL
 ```
-Нормальный режим
+Полноэкранный режим:
 ```js
 FullScreenExtension.FullScreenMode.FULLSCREEN
 ```
-Полноэкранный режим
+
 

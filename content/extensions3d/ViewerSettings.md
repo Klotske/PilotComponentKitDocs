@@ -26,12 +26,12 @@ viewer.extensionsLoader.loadExtension("PilotWeb3D.ViewerSettings");
 ## Методы
 
 ### activate()
-Показать диалог настроек просмотрщика 3D моделей
+Метод показывает диалог настроек просмотрщика 3D моделей.
 ```js
 activate(): void;
 ```
 ### deactivate()
-Скрыть диалог настроек просмотрщика 3D моделей
+Метод скрывает диалог настроек просмотрщика 3D моделей.
 ```js
 deactivate(): void;
 ```

@@ -114,7 +114,7 @@ readonly remarkSceneName = 'RemarkViewObjectScene';
 ### placeRemarkOnClick : boolean {#placeRemarkOnClick}
 Включает или выключает режим размещения точек замечаний по клику на сцене. Если `true`, 
 то клик по объекту на сцене приведёт к добавлению точки замечания для данного объекта в месте клика. 
-После добавления точки замечания, либо при клике в пустую область, режим сбрасывается и свойство становится `false`.\
+После добавления точки замечания либо при клике в пустую область, режим сбрасывается и свойство становится `false`.\
 При смене режима размещения точек возникает событие [pilotRemarkPlacingModeChanged](#pilotRemarkPlacingModeChanged).
 ```js
   get placeRemarkOnClick(): boolean;
@@ -169,7 +169,7 @@ public removeRemarks(remarkIds?: string[]): void;
 
 ### select()
 Метод выделяет замечания на документе. 
-При изменении списка селектированных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
+При изменении списка выделенных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
 ```js  
 select(remarkId: string | string[]): void;
 ```
@@ -179,7 +179,7 @@ select(remarkId: string | string[]): void;
 
 ### deselect()
 Метод снимает выделение замечаний на документе.
-При изменении списка селектированных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
+При изменении списка выделенных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
 ```js  
 deselect(remarkId: string | string[]): void;
 ```
@@ -189,7 +189,7 @@ deselect(remarkId: string | string[]): void;
 
 ### clearSelection()
 Метод снимает выделение с текущего выбранного замечания.
-При изменении списка селектированных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
+При изменении списка выделенных замечаний возникает событие [pilotRemarkSelectionChanged](#pilotRemarkSelectionChanged).
 ```js  
 clearSelection(): void;
 ```

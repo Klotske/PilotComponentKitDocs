@@ -5,14 +5,14 @@ weight: 1
 ---
 
 **WasdNavigationExtension** -- расширение, которое позволяет навигироваться по сцене с помощью клавиатуры, либо с помощью методов API.\
-Клавиши клавиатуры:
-`W` - вперед,
-`A` - влево,
-`S` - назад,
-`D` - вправо,
-`Q` - вниз,
-`E` - вверх,
-`Shift` - ускорение.
+Клавиши клавиатуры:\
+`W` -- вперед,\
+`A` -- влево,\
+`S` -- назад,\
+`D` -- вправо,\
+`Q` -- вниз\
+`E` -- вверх,\
+`Shift` -- ускорение.
 
 Расширение имеет имя `PilotWeb3D.WasdNavigation`.
 
@@ -70,13 +70,13 @@ viewer.extensionsLoader.loadExtension("PilotWeb3D.WasdNavigation");
 ## Методы
 
 ### activate()
-Включить подписку на события клавиатуры.
+Метод включает подписку на события клавиатуры.
 ```js
 activate(): void;
 ```
 
 ### deactivate()
-Выключить подписку на события клавиатуры.
+Метод выключает подписку на события клавиатуры.
 ```js
 deactivate(): void;
 ```
@@ -87,7 +87,7 @@ deactivate(): void;
 setImpulseDirection(dir: Direction, add: boolean): void;
 ```
 где:\
-`dir` -- Направление движения отсносительно камеры. Подробнее: [Direction](#Direction).\
+`dir` -- Направление движения относительно камеры. Подробнее: [Direction](#Direction).\
 `add` -- `true` для добавления, `false` для вычитания.
 
 ### getImpulseDirection()
@@ -103,7 +103,7 @@ getImpulseDirection(): Direction;
 setIncreasedImpulse(isIncreased: boolean): void;
 ```
 где:\
-`isIncreased` -- `true`, для ускоренного движения.
+`isIncreased` -- `true` для ускоренного движения.
 
 ## Перечисление WasdNavigationExtension.Direction {#Direction}
 Направления относительно камеры.

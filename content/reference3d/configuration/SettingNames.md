@@ -84,14 +84,14 @@ static SMALL_ELEMENT_SIZE = "smallElementSize";
 ```
 
 ### SHOW_SPACE_ELEMENTS
-Свойство для указания вьюверу загружать ли вспомогательные элементы типа `IfcSpace`. По умолчанию это свойство выключено.
+Свойство для указания просмотрщику загружать вспомогательные элементы типа **IfcSpace**. По умолчанию это свойство выключено.
 
 ```js
 static SHOW_SPACE_ELEMENTS = "showSpaceElements";
 ```
 
 ### SHOW_VOID_ELEMENTS
-Свойство для указания вьюверу загружать ли вспомогательные элементы типа `IfcVoidElements` и `IfcVoidingFeature`. По умолчанию это свойство выключено.
+Свойство для указания просмотрщику загружать вспомогательные элементы типа **IfcVoidElements** и **IfcVoidingFeature**. По умолчанию это свойство выключено.
 
 ```js
 static SHOW_VOID_ELEMENTS = "showVoidElements";
