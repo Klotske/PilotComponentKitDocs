@@ -117,7 +117,11 @@ enableRobotsTXT = false
   [params.geekdocContentLicense]
     name = "Лицензионное соглашение АСКОН"
     link = "https://pilot.ascon.ru/license-pilotems.pdf"
-	
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 #PAGE CONFIGURATION
 
 # Задайте тип 'posts', если вы хотите отображать страницу, как публикация в блоге.
